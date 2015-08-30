@@ -5,15 +5,11 @@ namespace App\Models\Mappers;
 use App\Models\User;
 use App\Models\UserProfile;
 use App\Models\Log;
-use App\Models\Task;
-use App\Models\View;
 use Request;
 use Auth;
 
 class LogMapper
 {
-
-
     public static function log($type, $value, $additional = null, $vars = null) {
         $ip = Request::ip();
         $user = Auth::user();

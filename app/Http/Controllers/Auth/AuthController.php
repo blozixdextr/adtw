@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Mappers\LogMapper;
 use App\Models\User;
 use App\Models\UserProfile;
 use Validator;
@@ -97,7 +98,6 @@ class AuthController extends Controller
         if ($twitchIdentity->logo) {
             $profile->avatar = $twitchIdentity->logo;
         }
-
         $user->save();
         $profile->save();
 
@@ -118,7 +118,8 @@ class AuthController extends Controller
             if ($localUser) {
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);
-                return redirect($this->redirectPath);
+                LogMapper::log('twitch_login', $localUser->id);
+                return redirect('/user/twitcher');
             } else {
                 $data = [
                     'name' => $identity->name,
@@ -133,8 +134,9 @@ class AuthController extends Controller
                 $localUser->save();
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);
+                LogMapper::log('twitch_register', $localUser->id);
 
-                return redirect($this->redirectPath);
+                return redirect('/user/twitcher');
             }
         } else {
             return Redirect::back()->withErrors(['twitch' => 'Failed twitch login']);

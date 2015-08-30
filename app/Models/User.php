@@ -16,8 +16,6 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
-    protected $dates = ['last_activity'];
-
     /**
      * The database table used by the model.
      *
@@ -39,6 +37,13 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['last_activity', 'twitch_updated'];
+
 
     public function setTwitchProfileAttribute($value)
     {
@@ -50,6 +55,24 @@ class User extends Model implements AuthenticatableContract,
     }
 
     public function getTwitchProfileAttribute($value)
+    {
+        if ($value !== null) {
+            return unserialize($value);
+        } else {
+            return null;
+        }
+    }
+
+    public function setTwitchChannelAttribute($value)
+    {
+        if ($value !== null) {
+            $this->attributes['twitch_channel'] = serialize($value);
+        } else {
+            $this->attributes['twitch_channel'] = null;
+        }
+    }
+
+    public function getTwitchChannelAttribute($value)
     {
         if ($value !== null) {
             return unserialize($value);

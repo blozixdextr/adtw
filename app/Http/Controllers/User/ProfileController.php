@@ -7,8 +7,8 @@ use Auth;
 class ProfileController extends Controller
 {
     public function index() {
+        $user = Auth::user();
 
-        dd(Auth::user());
-
+        return redirect('/');
     }
 }

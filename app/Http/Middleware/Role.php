@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class RedirectIfAuthenticated
+class Role
 {
     /**
      * The Guard implementation.
@@ -40,17 +40,24 @@ class RedirectIfAuthenticated
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $roles)
     {
         if ($this->auth->check()) {
+            $roles = explode('|', $roles);
             $user = $this->auth->user();
-            $redirectByRole = $this->redirectByRole;
-            if (isset($redirectByRole[$user->role])) {
-                return redirect($redirectByRole[$user->role]);
-            } else {
-                return redirect($this->redirectByDefault);
+            if (!in_array($user->role, $roles)) {
+                $redirectByRole = $this->redirectByRole;
+                if (isset($redirectByRole[$user->role])) {
+                    return redirect($redirectByRole[$user->role]);
+                } else {
+                    return redirect($this->redirectByDefault);
+                }
             }
+        } else {
+            return redirect($this->redirectByDefault);
         }
+
+
 
         return $next($request);
     }

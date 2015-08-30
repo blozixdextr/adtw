@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->text('twitch_profile')->nullable();
             $table->text('twitch_channel')->nullable();
             $table->timestamp('last_activity')->nullable()->index('last_activity');
+            $table->timestamp('twitch_updated')->nullable()->index('twitch_updated');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
