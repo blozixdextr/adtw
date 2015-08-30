@@ -21,12 +21,13 @@ Route::get('auth/twitch/callback', 'Auth\AuthController@twitchCallback');
 
 Route::get('profile', ['middleware' => 'auth', 'uses' => 'User\ProfileController@index']);
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('profile', 'User\ProfileController@index');
-});
+Route::get('profile/{userId}', 'User\ProfileController@index');
 
-Route::group(['middleware' => 'role:twitcher'], function () {
-    Route::get('user/twitcher', 'User\Twitcher\IndexController@index');
+Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
+
+    Route::get('/', 'IndexController@index');
+    Route::get('banners', 'IndexController@banners');
+
 });
 
 Route::group(['middleware' => 'role:client'], function () {

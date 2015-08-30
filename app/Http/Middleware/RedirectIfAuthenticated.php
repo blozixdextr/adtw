@@ -15,9 +15,7 @@ class RedirectIfAuthenticated
     protected $auth;
 
     protected $redirectByRole = [
-        'admin' => '/admin',
-        'client' => '/user/client',
-        'twitcher' => '/user/twitcher',
+        'admin' => '/admin'
     ];
 
     protected $redirectByDefault = '/';

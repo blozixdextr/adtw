@@ -5,6 +5,7 @@ namespace App\Apis;
 use Config;
 use Session;
 use Redirect;
+use Auth;
 
 class Twitch
 {
@@ -47,6 +48,18 @@ class Twitch
 
     public function getIdentity() {
         $result = $this->get_url_contents('/user', [], true);
+
+        return $result;
+    }
+
+    public function getChannel() {
+        $result = $this->get_url_contents('/channel', [], true);
+
+        return $result;
+    }
+
+    public function getVideos($channel, $limit = 10) {
+        $result = $this->get_url_contents('/channels/'.$channel.'/videos', ['limit' => $limit], true);
 
         return $result;
     }

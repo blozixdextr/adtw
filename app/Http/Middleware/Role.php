@@ -15,7 +15,6 @@ class Role
     protected $auth;
 
     protected $redirectByRole = [
-        'admin' => '/admin',
         'client' => '/user/client',
         'twitcher' => '/user/twitcher',
     ];
@@ -44,11 +43,14 @@ class Role
     {
         if ($this->auth->check()) {
             $roles = explode('|', $roles);
+            $redirectByRole = $this->redirectByRole;
             $user = $this->auth->user();
-            if (!in_array($user->role, $roles)) {
-                $redirectByRole = $this->redirectByRole;
-                if (isset($redirectByRole[$user->role])) {
-                    return redirect($redirectByRole[$user->role]);
+            if ($user->role != 'user') {
+                return redirect($redirectByRole[$user->role]);
+            }
+            if (!in_array($user->type, $roles)) {
+                if (isset($redirectByRole[$user->type])) {
+                    return redirect($redirectByRole[$user->type]);
                 } else {
                     return redirect($this->redirectByDefault);
                 }
