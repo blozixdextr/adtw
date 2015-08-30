@@ -1,4 +1,5 @@
 /.idea
+/.design
 /vendor
 /node_modules
 Homestead.yaml
