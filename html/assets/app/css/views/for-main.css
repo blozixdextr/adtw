@@ -1,0 +1,216 @@
+.shadow-fon{
+    width: 100%;
+    height: 100%;
+    padding: 8em 0em 0 0;
+    background-color: rgba(39,25,65 , 0.8);
+}
+#header {
+    /*background: -webkit-linear-gradient(90deg, #9E0660  10%, #6441A5  90%); 
+    background:    -moz-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
+    background:     -ms-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
+    background:      -o-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
+    background:         linear-gradient(90deg, #9E0660  10%, #6441A5  90%);*/
+        background: url(../../images/1.png) no-repeat -76% center;
+    background-attachment: fixed;
+    background-size: 80% 100%;
+    color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    left: 0;
+    
+    position: fixed;
+    top: 0;
+    line-height: 1.75em;
+    width: 35%;
+}
+
+.main-nav {
+    background-color: #6441A5;
+    padding: 15px 0px 15px 36%;
+}
+.main-page .page{
+    margin-left: 35%;
+    padding: 15px 15px 40px;
+    width: calc(100% - 35%);
+    box-sizing: border-box;
+}
+.main-page .page center{
+    margin:25px 0;
+}
+.main-page .page center h1{
+    color: #6441A5;
+    font-family: Roboto Slab;
+    font-size: 39px;
+}
+.work-column-item form.right,
+.work-column-item form.left{
+    width: calc(50% - 30px);
+    height: 42px;
+}
+.education-steps{
+    background-color: rgba(100,65,165, 0.03);
+    width: 100%;
+    padding: 20px 0px;
+    box-sizing: border-box;
+}
+.education-steps .step{
+    width: 32%;
+    padding: 0 5px; 
+    vertical-align: top;
+    display: inline-block;
+    box-sizing:border-box;
+}
+.step{
+    text-align: center;
+}
+.step>div>i{
+    font-size: 140px;
+}
+.step>div{
+    margin-bottom: 30px;
+}
+.step h3{
+    font-size: 24px;
+    margin-bottom: 15px;
+    color:#6441A5;
+    font-weight: bold;
+}
+.education-steps .step p{
+    padding: 0 5px;
+}
+.step h3 span{
+    font-weight: bold;
+}
+header .title-intro{
+    font-family: 'Roboto Slab';
+    font-size: 40px;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 2px 9px #6441A5;
+}
+header .title-descr{
+    font-family: 'Roboto Slab', cursive;
+    text-shadow: 0px 2px 9px #6441A5;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+}
+.about-us{
+    padding: 10px;
+    background-color: rgba(100,65,165, 0.03);
+}
+.about-us h1{
+    text-align: center;
+    font-size: 39px;
+}
+.about-us li{
+    box-sizing:border-box;
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    min-height:289px;
+    padding: 10px;
+}
+.about-us li i{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 60px;
+    color: #555;
+}
+.about-us li h2{
+    color:#6441A5;
+    margin-bottom: 10px;
+}
+footer{
+    bottom: 0px;
+    left: 0px;
+    padding: 0px 0em 6em 0px;
+    position: fixed;
+    text-align: center;
+    width: 35%;
+}
+footer .icons li{
+    display: inline-block;
+    padding: 0px 1em 0px 0px;
+}
+footer .icons li a{
+    color: #fff;
+    text-shadow: 0px 2px 9px #6441A5;
+}
+footer .copyright{
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+    list-style: none;
+    margin: 1em 0px 0px;
+    padding: 0px;
+}
+footer .fa:before {
+    font-size: 20px;
+}
+
+@media screen and (max-width:1152px){
+    .main-page .page{
+        padding: 15px 0px 20px;
+    }
+    .step h3 span{
+        display: block;
+    }
+    .about-us li{
+        width: 49%;
+    }
+}
+@media screen and (max-width:992px){
+    .education-steps .step {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .education-steps .step:last-child {
+        margin-bottom: 0;
+    }
+    .education-steps .step p {
+        padding: 0 20%;
+    }
+    .shadow-fon{
+        padding: 2em 0 1em 0;
+    }
+    #header{
+        position: static;
+        width: 100%;
+        height: auto;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+    .main-page .page {
+        margin-left: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .main-nav{
+        text-align: center;
+        padding: 1em 0;
+    }
+    .main-page header img{
+        width: 180px;
+    }
+    footer{
+        position: static;
+        width: 100%;
+        background-color: #6441A5;
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width:750px){
+    .main-nav{
+        padding: 0 0;
+    }
+    .about-us li{
+        width: 98%;
+    }
+}
+@media screen and (max-width:450px){
+    .education-steps .step p {
+        padding: 0 8%;
+    }
+}

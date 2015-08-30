@@ -30,7 +30,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'provider', 'oauth_id', 'last_visit', 'twitch_profile'];
+    protected $fillable = ['name', 'email', 'password', 'provider', 'oauth_id', 'last_activity', 'twitch_profile'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -56,5 +56,15 @@ class User extends Model implements AuthenticatableContract,
         } else {
             return null;
         }
+    }
+
+    public static function scopeOauth($query, $oauthId, $provider)
+    {
+        return $query->where('provider', '=', $provider)->where('oauth_id', '=', $oauthId);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
     }
 }

@@ -1,0 +1,134 @@
+/* Базовый контейнер табов */
+label[for="billing-alert"]{
+    font-size: 14px;
+}
+.tabs {
+  max-width: 800px;
+  padding: 0px;
+  margin: 0 auto; 
+}
+.sect-content .work-button{
+    margin: 6px 0 0 0;
+}
+.work-column-item .left.violet,
+.work-column-item .right.violet{
+    height: 40px;
+}
+/* стили секций с содержанием */
+section {
+  display: none;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.tabs input {
+  display: none;
+}
+/* стили вкладок (табов) */
+.tabs label {
+  display: inline-block;
+  font-family: Roboto Slab;
+  margin: 0 0 -1px;
+  padding: 10px 25px;
+  text-align: center;
+  color: #aaa;
+    font-size: 14px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  border-radius: 3px 3px 0 0;
+}
+/* шрифт-иконки от Font Awesome в формате Unicode */
+.tabs label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+/* изменения стиля заголовков вкладок при наведении */
+.tabs label:hover {
+  color: #888;
+  cursor: pointer;
+}
+/* стили для активной вкладки */
+.tabs input:checked + label {
+  color: #000;
+  border: 1px solid #ddd;
+  border-top: 2px solid #6441A5;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+/* активация секций с помощью переключателя :checked */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+.tabs section h3{
+    font-size: 24px;
+    color:#000;
+    margin: 10px 0 15px;
+}
+.tabs .sect-content>div{
+    display: inline-block;
+}
+.tabs .sect-content>div p{
+    max-width: 500px;
+    color:#000;
+    margin-bottom: 0;
+}
+.work-column-item input[name="billing-alert-amount"]{
+    position: relative;
+    top:-5px;
+}
+@media screen and (max-width: 400px) {
+  .tabs label {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 992px) {
+    .billing-alerts .left{
+        float: none;
+        margin-bottom: 20px;
+    }
+    .work-column-item .left.violet,
+    .work-column-item .right.violet{
+        height: auto;
+    }
+    .work-column-item>.left,
+    .work-column-item>.right{
+        width: 80%;
+    }
+    .billing-alerts .right{
+        float: none;
+    }
+}
+@media screen and (max-width: 750px) {
+    .second-page .work-column-floats .left,
+    .second-page .work-column-floats .right{
+        width: 100%;
+        padding: 0px;
+    }
+    .second-page .work-column-floats .left{
+        margin-bottom: 20px;
+    }
+    .tabs label:before {
+      margin: 0;
+      font-size: 18px;
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    .work-column-item>.left,
+    .work-column-item>.right{
+        width: 90%;
+    }
+    .work-column-item form.right a{
+        margin-left: 0;
+    }
+    .second-page .work-column-floats h3{
+        margin-left: 15px;
+    }
+    .second-page .work-column-floats span{
+        margin-right: 15px;
+    }
+}

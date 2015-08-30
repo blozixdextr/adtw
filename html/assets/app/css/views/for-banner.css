@@ -1,0 +1,109 @@
+.banner-preview{
+    font-size: 0;
+}
+.banner-preview i{
+    font-size: 44px;
+    color:#6441A5;
+    margin-right: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.banner-preview h3{
+    font-size: 18px;
+    color:#000;
+}
+.banner-preview p{
+    font-size: 12px;
+    color:#A39999;
+    margin-bottom: 6px;
+}
+.banner-preview ul li{
+    float: left;
+    width: 25%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top:2px solid #6441A5;
+    border-left:2px solid #6441A5;
+    border-bottom:2px solid #6441A5;
+}
+.banner-preview ul li:last-child{
+    border-right: 2px solid #6441A5;
+}
+.upload-variant li{
+    display: inline-block;
+}
+.choose-file-link>*,
+.alternative>*{
+    display: block;
+}
+.choose-file-link label{
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.choose-file-link input[type="file"]{
+    font-size: 18px;
+    background-color: #6441A5;
+    color:#fff;
+    text-align: center;
+}
+.choose-file-link input[type="text"],
+.alternative input[type="text"]{
+    width: 80%;
+    margin-bottom: 20px;
+}
+.alternative input[value="Save"]{
+    margin-top: 15px;
+}
+.alternative input[name="another-link"]{
+    margin-bottom: 0;
+}
+.alternative span{
+    color:#A39999;
+    margin-bottom: 10px;
+}
+.alternative textarea{
+    max-width: 80%;
+    max-height: 170px;
+    min-height: 170px;
+    min-width:80%;
+    outline:none;
+}
+label[for="textarea-alt"]{
+    margin-bottom: 10px;
+}
+.alternative input[type="submit"]{
+    cursor: pointer;
+}
+@media screen and (max-width:992px){
+    .banner-preview ul li{
+        width: 48%;
+    }
+    .banner-preview .banner-preview-2{
+        border-right:2px solid #6441A5;
+        border-bottom:0px;
+    }
+    .banner-preview .banner-preview-1{
+        border-bottom:0px;
+    }
+}
+@media screen and (max-width:750px){
+    .banner-preview ul li{
+        width: 100%;
+        border-right:2px solid #6441A5;
+    }
+    .banner-preview .banner-preview-3{
+        border-bottom:0px;
+    }
+    .upload-variant li{
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width:450px){
+    .upload-variant{
+        text-align: right;
+    }
+    .banner-preview ul li{
+        text-align: center;
+    }
+}

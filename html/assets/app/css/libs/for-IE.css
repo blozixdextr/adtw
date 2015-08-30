@@ -1,0 +1,14 @@
+header h1,
+.main-page .page center h1,
+.second-page .head-nav li a,
+.main-page .head-nav li a,
+.title-place-left h4,
+.title-place-right h4,
+.second-page .nav-column h1,
+.second-page .nav-column h4,
+.second-page .work-column-floats h3,
+.tabs label,
+.work-column-item h3,
+.faq-item h3{
+    font-family:'Roboto Slab', Helvetica, sans-serif !important;
+}

@@ -1,0 +1,29 @@
+.work-column-item .left,
+.work-column-item .right{
+    text-align: center;
+    margin-top: 30px;
+}
+.share-link>div{
+    display: inline-block;
+}
+.tw-link{
+    height: 81px;
+    text-align: center;
+    max-width: calc(20% - -5px);
+    width: 100%;
+}
+.tw-link .work-button{
+    margin-top: 0;
+    display: inline-block;
+}
+.ref-link{
+    height: 81px;
+    max-width: calc(80% - 60px);
+    width: 100%;
+}
+.ref-link input{
+    width: 80%;
+}
+.share-link h4{
+    margin: 10px 0px;
+}

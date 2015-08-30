@@ -1,0 +1,199 @@
+.modal-header h2 {
+    color: #555;  
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;    
+    margin: 0;
+}
+.modal .btn-close {
+    color: #000;
+    height: 26px;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btn-close:hover {
+    color: #6441A5;
+}
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+.modal-dialog {
+    background: #fefefe;
+    border: none;
+    position: fixed;
+    width: 80%;
+    max-width: 700px;
+    left: 50%;
+    max-height: 200px;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header h2 {
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+    margin: 0;
+}
+.modal-footer {
+    text-align: center;
+}
+.modal-body img { 
+    max-width: 100%;
+    height: auto;
+}
+.btn-primary {
+    color: #fff;
+    margin-bottom: 0;
+}
+.textbox{
+    height:45px;
+    width:100%;
+    border-radius:3px;
+    border:rgba(0,0,0,.3) 1px solid;
+    box-sizing:border-box;
+    font-size:14px; 
+    padding:8px;
+    margin-bottom:20px;  
+}
+.message:focus,
+.textbox:focus{
+    outline:none;
+    border:rgba(24,149,215,1) 1px solid;
+    color:rgba(24,149,215,1);
+}
+.message{
+	background: rgba(255, 255, 255, 0.4); 
+    width:100%;
+    height: 120px;
+    border:rgba(0,0,0,.3) 1px solid;
+    box-sizing:border-box;
+    -moz-border-radius: 3px;
+    font-size:14px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; 
+    display:block;
+    padding:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.btn-form{
+    width:100%;
+    height:45px;  
+    border:rgba(0,0,0,.2) 1px solid;
+    box-sizing:border-box;
+    background: #dedede;
+    color:#555;
+    transition:background .4s;
+}
+.btn-form:hover{
+    background: #f2f2f2;
+}
+.enter-email input{
+    outline: 0;
+    font-size:0px;
+}
+.enter-email input[type="email"],
+.enter-email button{
+    font-size: 24px;
+    height: 50px;
+    box-sizing: border-box;
+}
+.enter-email input[type="email"]{
+    width: 70%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 10px;
+    float: left;
+    border:2px solid #6441A5;
+}
+.enter-email button{
+    background-color: #6441A5;
+    color: #fff;
+    border:2px solid #6441A5;
+    width: 30%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 0;
+    outline: 0;
+    cursor: pointer;
+    float: right;
+}
+.enter-email{
+    margin: 0 auto;
+}
+.twitch-login{
+    text-align: center;
+}
+.twitch-login button{
+    margin-top: 10px;
+    outline: none;
+    background-color: transparent;
+    display: inline-block;
+}
+@media screen and (max-width:750px){
+    .enter-email input[type="email"],
+    .enter-email button,
+    .modal-header h2{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:450px){
+    .modal-dialog{
+        width: 100%;
+    }
+}

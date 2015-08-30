@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index');
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/twitch', 'Auth\AuthController@twitch');
+Route::get('auth/twitch/callback', 'Auth\AuthController@twitchCallback');
+
+Route::get('home', 'User\ProfileController@index');
+Route::get('profile', 'User\ProfileController@index');

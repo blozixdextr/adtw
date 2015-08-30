@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Apis\Twitch;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind('path.public', function() {
             return base_path().'/html';
+        });
+
+        $this->app->singleton('twitch', function($app)
+        {
+            return new Twitch();
         });
     }
 }

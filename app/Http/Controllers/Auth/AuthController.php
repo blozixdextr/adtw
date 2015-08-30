@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
+use App\Models\UserProfile;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Redirect;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -22,6 +26,9 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    public $redirectPath = '/profile';
+    public $redirectTo = '/profile';
 
     /**
      * Create a new authentication controller instance.
@@ -56,10 +63,82 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'last_activity' => \Carbon\Carbon::now(),
         ]);
+        $profile = new UserProfile([
+            'first_name' => $data['name'],
+        ]);
+        $profile->user_id = $user->id;
+        $profile->save();
+
+        return $user;
+    }
+
+    public function twitch() {
+        $twitch = app('twitch');
+        $url = $twitch->getLoginUrl();
+
+        return redirect($url);
+    }
+
+    public function updateTwitchProfile($user, $twitchIdentity) {
+        $user->twitch_profile = $twitchIdentity;
+        $profile = $user->profile;
+        if ($twitchIdentity->display_name) {
+            $profile->first_name = $twitchIdentity->display_name;
+        }
+        if ($twitchIdentity->bio) {
+            $profile->about = $twitchIdentity->bio;
+        }
+        if ($twitchIdentity->logo) {
+            $profile->avatar = $twitchIdentity->logo;
+        }
+
+        $user->save();
+        $profile->save();
+
+        return $user;
+    }
+
+    public function twitchCallback(Request $request) {
+        $twitch = app('twitch');
+        $code = $request->get('code');
+        $state = $request->get('state');
+        $result = $twitch->checkAuth($code, $state);
+        if ($result) {
+            $identity = $twitch->getIdentity();
+            if (!$identity) {
+                return Redirect::back()->withErrors(['twitch' => 'Failed twitch login']);
+            }
+            $localUser = User::oauth($identity->_id, 'twitch')->first();
+            if ($localUser) {
+                Auth::loginUsingId($localUser->id);
+                $this->updateTwitchProfile($localUser, $identity);
+                return redirect($this->redirectPath);
+            } else {
+                $data = [
+                    'name' => $identity->name,
+                    'email' => $identity->email,
+                    'password' => ''
+                ];
+                $localUser = $this->create($data);
+                $localUser->role = 'user';
+                $localUser->type = 'twitcher';
+                $localUser->provider = 'twitch';
+                $localUser->oauth_id = $identity->_id;
+                $localUser->save();
+                Auth::loginUsingId($localUser->id);
+                $this->updateTwitchProfile($localUser, $identity);
+
+                return redirect($this->redirectPath);
+            }
+        } else {
+            return Redirect::back()->withErrors(['twitch' => 'Failed twitch login']);
+        }
+
     }
 }
