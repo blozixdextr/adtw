@@ -13,7 +13,7 @@ class IndexController extends Controller
         $user = $this->user;
         $profile = $user->profile;
 
-        return view('app.user.twitcher.index', compact('user', 'profile'));
+        return view('app.pages.user.twitcher.index', compact('user', 'profile'));
     }
 
     public function updateStatistics() {
