@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\Mappers\LogMapper;
-use App\Models\Mappers\UserMapper;
-use App\Models\User;
-use App\Models\UserProfile;
+
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -14,6 +11,10 @@ use Illuminate\Http\Request;
 use Redirect;
 use Auth;
 use Mail;
+use App\Models\Mappers\LogMapper;
+use App\Models\User;
+use App\Models\UserProfile;
+use App\Models\Mappers\UserMapper;
 
 class AuthController extends Controller
 {
