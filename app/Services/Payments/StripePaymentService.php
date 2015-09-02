@@ -11,7 +11,7 @@ use Stripe\Charge;
 
 class StripePaymentService
 {
-    public $currency = 'EUR';
+    public $currency = 'USD';
     public $config = [];
 
     public function __construct() {

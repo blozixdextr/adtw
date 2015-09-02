@@ -19,10 +19,10 @@ class CreateUserProfilesTable extends Migration
             $table->string('last_name', 60)->nullable();
             $table->enum('sex', ['male', 'female', 'other'])->nullable();
             $table->date('dob')->nullable();
-            $table->string('about', 255)->nullable();
-            $table->string('avatar', 255)->nullable();
+            $table->string('about')->nullable();
+            $table->string('avatar')->nullable();
             $table->string('mobile', 20)->nullable();
-            $table->string('paypal', 255)->nullable()->index('paypal');
+            $table->string('paypal')->nullable()->index('paypal');
             $table->boolean('confirmed_paypal')->nullable()->default(0);
             $table->timestamps();
         });

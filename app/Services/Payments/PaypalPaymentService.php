@@ -25,7 +25,7 @@ class PaypalPaymentService
      */
     public $apiContext;
 
-    public $currency = 'EUR';
+    public $currency = 'USD';
     public $config = [];
 
     public function __construct() {

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotificationsTable extends Migration
+class CreateWithdrawalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,16 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index('user_id')->unsigned();
+            $table->string('transaction_number');
             $table->string('title');
-            $table->string('subtitle')->nullable();
-            $table->string('type', 50)->index('type');
+            $table->float('amount')->unsigned();
+            $table->string('currency', 5);
+            $table->text('response')->nullable();
+            $table->boolean('approved')->index('approved');
+            $table->integer('admin_id')->index('admin_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('notifications');
+        Schema::drop('withdrawals');
     }
 }
