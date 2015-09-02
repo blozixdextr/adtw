@@ -7,6 +7,7 @@
 
 @section('content')
     <div class="text-center intro-main">
+        @if (!$user)
         <div class="title-place-left">
             <img src="/assets/app/images/ts1.png" alt="">
             <div class="choose-link-descr">
@@ -40,11 +41,13 @@
                         <label class="btn-close" for="modal-1" aria-hidden="true">×</label>
                     </div>
                     <div class="modal-body">
-                        <form action="" class="enter-email">
-                            <input type="email" placeholder="your@email.com">
-                            <button>Accept</button>
+
+                        {!! Form::open(['url' => '/auth/client', 'class' => 'enter-email']) !!}
+                            <input type="email" placeholder="your@email.com" name="email">
+                            <button type="submit">Accept</button>
                             <div class="clear"></div>
-                        </form>
+                        {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>
@@ -67,6 +70,10 @@
             </div>
         </div>
     </div>
+    @else
+        <h1>Hello {{ $user->name }}.</h1>
+        <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
+    @endif
     <center><h1>How it works?</h1></center>
     <div class="education-steps">
         <div class="step">
@@ -95,3 +102,13 @@
         </ul>
     </div>
 @endsection
+
+@if ($user)
+    @section('head-js')
+        <script>
+            setTimeout(function(){
+                location.href = '/user/{{ $user->type }}';
+            }, 10000);
+        </script>
+    @endsection
+@endif

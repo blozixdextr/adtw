@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Mappers\LogMapper;
+use App\Models\Mappers\UserMapper;
 use App\Models\User;
 use App\Models\UserProfile;
 use Validator;
@@ -12,6 +13,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Redirect;
 use Auth;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -79,14 +81,16 @@ class AuthController extends Controller
         return $user;
     }
 
-    public function twitch() {
+    public function twitch()
+    {
         $twitch = app('twitch');
         $url = $twitch->getLoginUrl();
 
         return redirect($url);
     }
 
-    public function updateTwitchProfile($user, $twitchIdentity) {
+    public function updateTwitchProfile($user, $twitchIdentity)
+    {
         $user->twitch_profile = $twitchIdentity;
         $profile = $user->profile;
         if ($twitchIdentity->display_name) {
@@ -104,7 +108,8 @@ class AuthController extends Controller
         return $user;
     }
 
-    public function twitchCallback(Request $request) {
+    public function twitchCallback(Request $request)
+    {
         $twitch = app('twitch');
         $code = $request->get('code');
         $state = $request->get('state');
@@ -143,4 +148,79 @@ class AuthController extends Controller
         }
 
     }
+
+    public function randomPassword()
+    {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+
+        return implode($pass); //turn the array into a string
+    }
+
+    public function sendClientWelcome($user, $isNew, $password = '')
+    {
+        $token = UserMapper::generateAuthToken($user);
+
+        Mail::send('app.emails.auth_client', ['user' => $user, 'token' => $token, 'password' => $password, 'isNew' => $isNew], function ($m) use ($user, $isNew) {
+            if ($isNew) {
+                $subject = 'Your registration link';
+            } else {
+                $subject = 'Your authentication link';
+            }
+            $m->to($user->email)->subject($subject);
+        });
+
+    }
+
+    public function clientConfirm($userId, $token)
+    {
+        $user = User::findOrFail($userId);
+        $result = UserMapper::checkAuthToken($user, $token);
+        if ($result) {
+            Auth::loginUsingId($user->id, true);
+            LogMapper::log('client_login', $user->id, 'finish');
+            return redirect('/user/client');
+        } else {
+            LogMapper::log('client_login_failed', $user->id, 'token_mismatch');
+            return Redirect::to('/')->withErrors(['client' => 'Wrong authentication token']);
+        }
+    }
+
+    public function client(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email']);
+        $email = $request->get('email');
+        $password = '';
+
+        $localUser = UserMapper::getByEmail($email);
+        if ($localUser == false) {
+            //$password = $this->randomPassword();
+            $data = [
+                'name' => $email,
+                'email' => $email,
+                'password' => $password
+            ];
+            $localUser = $this->create($data);
+            $localUser->role = 'user';
+            $localUser->type = 'client';
+            $localUser->save();
+            $isNew = true;
+            LogMapper::log('client_register', $localUser->id);
+        } else {
+            $isNew = false;
+            LogMapper::log('client_login', $localUser->id, 'try');
+        }
+
+        $this->sendClientWelcome($localUser, $isNew, $password);
+
+        $user = $localUser;
+
+        return view('app.pages.auth.client', compact('user', 'isNew'));
+    }
+
 }

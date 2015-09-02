@@ -8,7 +8,10 @@ class IndexController extends Controller
 {
     public function index() {
 
-        dd(Auth::user());
+        $user = $this->user;
+        $profile = $user->profile;
+
+        return view('app.pages.user.client.index', compact('user', 'profile'));
 
     }
 }

@@ -90,4 +90,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasOne(UserProfile::class);
     }
+
+    public function authToken()
+    {
+        return $this->hasMany(UserAuthToken::class);
+    }
 }

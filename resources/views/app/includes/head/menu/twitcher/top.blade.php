@@ -14,7 +14,7 @@
         <li class="menu-hidden" ><h2>Account</h2></li>
         <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher/billing">Billing</a></li>
         <li class="menu-hidden" ><h2>User</h2></li>
-        <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher">Profile</a></li>
+        <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher/profile">Profile</a></li>
         <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher/notification">Notifications</a></li>
     </ul>
     <div class="handle">Menu <span>&#9776;</span></div>

@@ -13,27 +13,61 @@
 
 Route::get('/', 'IndexController@index');
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
-Route::get('auth/twitch', 'Auth\AuthController@twitch');
-Route::get('auth/twitch/callback', 'Auth\AuthController@twitchCallback');
+Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
 
-Route::get('profile', ['middleware' => 'auth', 'uses' => 'User\ProfileController@index']);
+    Route::get('login', 'AuthController@getLogin');
+    Route::post('login', 'AuthController@postLogin');
+    Route::get('logout', 'AuthController@getLogout');
+
+    Route::get('twitch', 'AuthController@twitch');
+    Route::get('twitch/callback', 'AuthController@twitchCallback');
+
+    Route::post('client', 'AuthController@client');
+    Route::get('client/{userId}/{token}', 'AuthController@clientConfirm');
+
+});
 
 Route::get('profile/{userId}', 'User\ProfileController@index');
 
 Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
 
     Route::get('/', 'IndexController@index');
-    Route::get('banners', 'IndexController@banners');
+
+    Route::get('profile', 'ProfileController@index');
+    Route::post('profile', 'ProfileController@save');
+
+    Route::get('billing', 'BillingController@index');
+    Route::post('billing/withdraw', 'BillingController@withdraw');
+
+    Route::get('notification', 'NotificationController@index');
+
+    Route::get('banner', 'BannerController@index');
+    Route::get('banner/popup', 'BannerController@popup');
+    Route::get('banner/accept/{bannerId}', 'BannerController@accept');
+    Route::get('banner/decline/{bannerId}', 'BannerController@decline');
+    Route::get('banner/remove/{bannerId}', 'BannerController@decline');
 
 });
 
-Route::group(['middleware' => 'role:client'], function () {
-    Route::get('user/client', 'User\Client\IndexController@index');
+Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'prefix' => 'user/client'], function () {
+
+    Route::get('/', 'IndexController@index');
+
+    Route::get('profile', 'ProfileController@index');
+    Route::post('profile', 'ProfileController@save');
+
+    Route::get('banner', 'BannerController@index');
+    Route::post('banner', 'BannerController@save');
+
+    Route::get('billing', 'BillingController@index');
+    Route::post('billing/pay', 'BillingController@pay');
+
+    Route::get('notification', 'NotificationController@index');
+
 });
 
-Route::group(['middleware' => 'role:admin'], function () {
+Route::group(['middleware' => 'role:admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+
     Route::get('admin', 'Admin\IndexController@index');
+
 });

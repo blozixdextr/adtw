@@ -12,9 +12,9 @@
 <body id="top">
     <div class="second-page">
         <wrapper>
-            @include('app.includes.head.menu.twitcher.top')
+            @include('app.includes.head.menu.client.top')
             <div class="page">
-                @include('app.includes.head.menu.twitcher.left')
+                @include('app.includes.head.menu.client.left')
                 <div class="work-column">
                     @include('app.includes.alerts')
                     @include('app.includes.errors')
