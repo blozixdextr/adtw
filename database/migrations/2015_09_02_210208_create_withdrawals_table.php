@@ -15,13 +15,15 @@ class CreateWithdrawalsTable extends Migration
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index('user_id')->unsigned();
-            $table->string('transaction_number');
-            $table->string('title');
+            $table->enum('merchant', ['stripe', 'paypal'])->index('merchant');
+            $table->string('account');
             $table->float('amount')->unsigned();
             $table->string('currency', 5);
+            $table->enum('status', ['waiting', 'done', 'declined'])->index('status')->default('waiting');
+            $table->string('transaction_number');
             $table->text('response')->nullable();
-            $table->boolean('approved')->index('approved');
             $table->integer('admin_id')->index('admin_id')->unsigned()->nullable();
+            $table->string('admin_comment')->nullable();
             $table->timestamps();
         });
     }

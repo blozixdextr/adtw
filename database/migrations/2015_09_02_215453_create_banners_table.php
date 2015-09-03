@@ -14,9 +14,16 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('buyer_id')->index('buyer_id')->unsigned();
-            $table->integer('seller_id')->index('seller_id')->unsigned();
+            $table->integer('client_id')->index('client_id')->unsigned();
+            $table->integer('twitcher_id')->index('twitcher_id')->unsigned();
+            $table->integer('type')->index('type')->unsigned();
             $table->string('title');
+            $table->string('description');
+            $table->string('file');
+            $table->boolean('is_active')->index('is_active');
+            $table->enum('status', ['waiting', 'accepted', 'declined', 'finished'])->index('status')->default('waiting');
+            $table->float('amount_limit')->unsigned()->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

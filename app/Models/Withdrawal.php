@@ -8,7 +8,7 @@ class Withdrawal extends Model
 {
     protected $table = 'withdrawals';
 
-    protected $fillable = ['user_id', 'transaction_number', 'title', 'amount', 'currency', 'response', 'approved', 'admin_id'];
+    protected $fillable = ['user_id', 'merchant', 'account', 'amount', 'currency', 'status', 'transaction_number', 'response', 'admin_id', 'admin_comment'];
 
     /**
      * Get the user of this profile.
