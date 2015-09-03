@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 use Redirect;
 use Auth;
 use Mail;
+use App\Models\Mappers\UserMapper;
 use App\Models\Mappers\LogMapper;
 use App\Models\User;
 use App\Models\UserProfile;
-use App\Models\Mappers\UserMapper;
+
 
 class AuthController extends Controller
 {

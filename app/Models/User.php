@@ -115,4 +115,19 @@ class User extends Model implements AuthenticatableContract,
         }
         return $this->hasMany(Banner::class, $foreignFieldName);
     }
+
+    public function refs()
+    {
+        return $this->belongsToMany(Ref::class);
+    }
+
+    public function games()
+    {
+        return $this->refs()->whereType('game');
+    }
+
+    public function bannerTypes()
+    {
+        return $this->refs()->whereType('banner_types');
+    }
 }
