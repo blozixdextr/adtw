@@ -33,6 +33,7 @@ return [
         'model'  => App\Models\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+        'payment_title' => 'Refill ADTW.CH account'
     ],
 
     'paypal' => [
@@ -53,6 +54,7 @@ return [
             // 'http.CURLOPT_CONNECTTIMEOUT' => 30
             // 'http.headers.PayPal-Partner-Attribution-Id' => '123123123'
         ],
+        'payment_title' => 'Refill ADTW.CH account'
     ],
 
 ];

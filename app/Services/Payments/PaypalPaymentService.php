@@ -5,6 +5,7 @@ namespace App\Services\Payments;
 use Config;
 use Input;
 use Session;
+use App\Models\User;
 
 //PayPal
 use PayPal\Api\Amount;
@@ -53,34 +54,32 @@ class PaypalPaymentService
         return $apiContext;
     }
 
-    public function getPayTaskUrl($task)
+    public function getRefillUrl($amount, User $user)
     {
+        $paymentTitle = Config::get('services.paypal.payment_title');
+
         $apiContext = $this->apiContext;
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
 
         $item1 = new Item();
-        $item1->setName($task->title)
+        $item1->setName($paymentTitle)
             ->setCurrency($this->currency)
             ->setQuantity(1)
-            ->setSku($task->id)
-            ->setPrice($task->total);
+            ->setSku(1)
+            ->setPrice($amount);
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
-
-        $amount = new Amount();
-        $amount->setCurrency($this->currency)
-            ->setTotal($task->total);
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($itemList)
-            ->setDescription("Payment for ".$task->title)
-            ->setInvoiceNumber($task->id.'_'.date('YmdHis'));
+            ->setDescription($paymentTitle)
+            ->setInvoiceNumber($user->id.'_'.date('YmdHis'));
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl($this->redirectSuccess.'/'.$task->id)
-            ->setCancelUrl($this->redirectFail.'/'.$task->id);
+        $redirectUrls->setReturnUrl($this->redirectSuccess.'/'.$user->id)
+            ->setCancelUrl($this->redirectFail.'/'.$user->id);
 
         $payment = new Payment();
         $payment->setIntent("sale")
@@ -90,17 +89,17 @@ class PaypalPaymentService
 
         $payment->create($apiContext);
 
-        $this->storePaymentSession($payment->getId(), $task->id);
+        $this->storePaymentSession($payment->getId(), $user->id, $amount);
 
         return $payment->getApprovalLink();
     }
 
-    public function storePaymentSession($paymentId, $taskId)
+    public function storePaymentSession($paymentId, $userId, $amount)
     {
-        Session::set('paypal.payment', ['id' => $paymentId, 'taskId' => $taskId]);
+        Session::set('paypal.payment', ['id' => $paymentId, 'userId' => $userId, 'amount' => $amount]);
     }
 
-    public function checkPaymentSession($paymentId, $task)
+    public function checkPaymentSession($paymentId, User $user)
     {
         $paymentInfo = Session::get('paypal.payment');
         if ($paymentId == $paymentInfo['id']) {
@@ -109,18 +108,13 @@ class PaypalPaymentService
         $payment = Payment::get($paymentId, $this->apiContext);
         $transactions = $payment->getTransactions();
         $transaction = $transactions[0];
-        list($taskId, $date) = explode('_', $transaction->invoice_number);
-
-        if ($transaction->amount->total != $task->total || $transaction->amount->currency != $this->currency) {
+        list($userId, $date) = explode('_', $transaction->invoice_number);
+        if ($transaction->amount->total != $paymentInfo['amount'] || $transaction->amount->currency != $this->currency) {
             throw new \Exception('Payment amount mismatch');
         }
-
-        if ($taskId != $task->id) {
-            throw new \Exception('Task Id mismatch');
+        if ($userId != $user->id) {
+            throw new \Exception('User Id mismatch');
         }
-
-        // @todo: Maybe check date here
-
         Session::remove('paypal.payment');
 
         return true;

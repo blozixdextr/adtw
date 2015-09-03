@@ -8,6 +8,7 @@ use Session;
 
 use Stripe\Stripe;
 use Stripe\Charge;
+use App\Models\User;
 
 class StripePaymentService
 {
@@ -18,19 +19,16 @@ class StripePaymentService
         Stripe::setApiKey(Config::get('services.stripe.key'));
     }
 
-    public function payTask($task, $card)
+    public function refill($card, $amount, User $user)
     {
-        /*
-        $task->id = $taskId;
-        $task->title = 'Task example title';
-        $task->total = 50.25;
-        */
+        //$card = ['number' => '4242424242424242', 'exp_month' => 10, 'exp_year' => 2015, 'cvc' => 333, 'name' => 'Test Tester'];
+
         $charge = Charge::create([
             'card' => $card,
-            'amount' => 2000,
+            'amount' => $amount,
             'currency' => 'usd',
-            'description' => 'Payment for '.$task->title,
-            'metadata' => ['task' => $task->id]
+            'description' => Config::get('services.stripe.payment_title'),
+            'metadata' => ['user' => $user->id]
         ]);
 
         return $charge;
