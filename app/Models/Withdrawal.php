@@ -33,4 +33,10 @@ class Withdrawal extends Model
         return $this->belongsTo(User::class, 'admin_id');
     }
 
+    public function bannerStream()
+    {
+        return $this->hasOne(BannerStream::class);
+    }
+
+
 }

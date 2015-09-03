@@ -10,4 +10,19 @@ class BannerStream extends Model
 
     protected $fillable = ['banner_id', 'stream_id', 'transfer_id', 'status', 'client_comment', 'twitcher_comment'];
 
+    public function banner()
+    {
+        return $this->belongsTo(Banner::class);
+    }
+
+    public function stream()
+    {
+        return $this->belongsTo(Stream::class);
+    }
+
+    public function userTransfer()
+    {
+        return $this->belongsTo(UserTransfer::class);
+    }
+
 }

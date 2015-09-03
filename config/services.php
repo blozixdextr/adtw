@@ -30,9 +30,29 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
+        'model'  => App\Models\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'paypal' => [
+        'client_id' => env('PAYPAL_CLIENT_ID'),
+        'client_secret' => env('PAYPAL_CLIENT_SECRET'),
+        'redirect_success' => env('PAYPAL_REDIRECT_SUCCESS'),
+        'redirect_fail' => env('PAYPAL_REDIRECT_FAIL'),
+        'account' => env('PAYPAL_CLIENT_ACCOUNT'),
+        'endpoint' => env('PAYPAL_CLIENT_ENDPOINT'),
+        'currency' => 'USD',
+        'config' => [
+            'mode' => 'sandbox',
+            'log.LogEnabled' => true,
+            'log.FileName' => storage_path('logs/paypal.log'),
+            'log.LogLevel' => 'DEBUG', // PLEASE USE `FINE` LEVEL FOR LOGGING IN LIVE ENVIRONMENTS
+            'validation.level' => 'log',
+            'cache.enabled' => true,
+            // 'http.CURLOPT_CONNECTTIMEOUT' => 30
+            // 'http.headers.PayPal-Partner-Attribution-Id' => '123123123'
+        ],
     ],
 
 ];

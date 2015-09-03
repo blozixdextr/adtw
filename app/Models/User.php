@@ -105,4 +105,14 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Log::class);
     }
+
+    public function banners()
+    {
+        if ($this->type == 'client') {
+            $foreignFieldName = 'client_id';
+        } else {
+            $foreignFieldName = 'twitcher_id';
+        }
+        return $this->hasMany(Banner::class, $foreignFieldName);
+    }
 }

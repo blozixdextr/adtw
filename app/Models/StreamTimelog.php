@@ -10,4 +10,9 @@ class StreamTimelog extends Model
 
     protected $fillable = ['stream_id', 'timeslot_start', 'timeslot_end', 'viewers', 'status', 'screenshot', 'response'];
 
+    public function stream()
+    {
+        return $this->belongsTo(Stream::class);
+    }
+
 }
