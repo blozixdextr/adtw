@@ -95,4 +95,14 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(UserAuthToken::class);
     }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    public function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
 }
