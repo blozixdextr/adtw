@@ -59,8 +59,14 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::get('banner', 'BannerController@index');
     Route::post('banner', 'BannerController@save');
 
-    Route::get('billing', 'BillingController@index');
-    Route::post('billing/pay', 'BillingController@pay');
+    Route::group(['prefix' => 'billing'], function () {
+        Route::get('/', 'BillingController@index');
+        Route::get('log', 'BillingController@log');
+        Route::post('card', 'BillingController@stripe');
+        Route::post('paypal', 'BillingController@paypal');
+        Route::get('paypal/callback/success/{userId}', 'BillingController@paypalSuccess');
+        Route::get('paypal/callback/fail/{userId}', 'BillingController@paypalFail');
+    });
 
     Route::get('notification', 'NotificationController@index');
 
@@ -71,3 +77,5 @@ Route::group(['middleware' => 'role:admin', 'namespace' => 'Admin', 'prefix' => 
     Route::get('admin', 'Admin\IndexController@index');
 
 });
+
+

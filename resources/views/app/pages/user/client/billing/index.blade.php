@@ -7,16 +7,16 @@
 
 
 @section('content')
-
+    <h1>Billing</h1>
     <div class="work-column-floats">
         <div class="left">
-            <h3>You Owe</h3><span>${{ $user->balance }}</span>
+            <h3>You Owe</h3><span>${{ number_format($user->balance, 2) }}</span>
             <div class="work-column-link">
                 <a class="btn-white" href="#payments">Refill your account</a>
             </div>
         </div>
         <div class="right">
-            <h3>Usage</h3><span>${{ $user->balance }}</span>
+            <h3>Usage</h3><span>${{ number_format(0, 2) }}</span>
             <div class="work-column-link">
                 <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
             </div>
@@ -94,6 +94,9 @@
                                 </div>
                             </div>
                             {!! Form::close() !!}
+                            @if (\Config::get('app.debug'))
+                            <small>testing 'number' => '4242424242424242', 'exp_month' => 10, 'exp_year' => 2015, 'cvc' => 333, 'name' => 'Test Tester'</small>
+                            @endif
                         </div>
             </section>
             <section id="content2">
@@ -111,6 +114,9 @@
                             </div>
                         </div>
                         {!! Form::close() !!}
+                        @if (\Config::get('app.debug'))
+                            <small>testing login adtw-buyer@ifrond.com pass 9CWa3QjjbaRk</small>
+                        @endif
                     </div>
                 </div>
             </section>

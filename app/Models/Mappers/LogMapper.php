@@ -10,7 +10,8 @@ use Auth;
 
 class LogMapper
 {
-    public static function log($type, $value, $additional = null, $vars = null) {
+    public static function log($type, $value, $additional = null, $vars = null)
+    {
         $ip = Request::ip();
         $user = Auth::user();
         if ($user) {
@@ -30,12 +31,14 @@ class LogMapper
         return $l;
     }
 
-    public static function reviewed(Log $log) {
+    public static function reviewed(Log $log)
+    {
         $log->review_date = \Carbon\Carbon::now();
         $log->save();
     }
 
-    public static function type($type, $onlyFresh = true, $limit = 50) {
+    public static function type($type, $onlyFresh = true, $limit = 50)
+    {
         if (is_string($type)) {
             $type = [$type];
         }

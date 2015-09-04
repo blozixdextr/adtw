@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function index() {
-
-        $user = $this->user;
-        $profile = $user->profile;
-
-        return view('app.pages.user.client.profile.index', compact('user', 'profile'));
+        return view('app.pages.user.client.profile.index');
     }
 
     public function save(Request $request) {
@@ -24,6 +20,8 @@ class ProfileController extends Controller
         $firstName = $request->get('first_name');
         $lastName = $request->get('last_name');
         $user = $this->user;
+        $user->name = $firstName.' '.$lastName;
+        $user->save();
         $profile = $user->profile;
         $profile->first_name = $firstName;
         $profile->last_name = $lastName;

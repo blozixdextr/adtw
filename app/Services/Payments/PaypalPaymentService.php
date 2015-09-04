@@ -29,6 +29,9 @@ class PaypalPaymentService
     public $currency = 'USD';
     public $config = [];
 
+    public $paymentInfo = [];
+    public $response = [];
+
     public function __construct() {
         $clientId = Config::get('services.paypal.client_id');
         $clientSecret = Config::get('services.paypal.client_secret');
@@ -36,8 +39,8 @@ class PaypalPaymentService
         $this->currency = Config::get('services.paypal.currency');
         $this->config = Config::get('services.paypal.config');
 
-        $this->redirectSuccess = Config::get('services.paypal.redirect_success');
-        $this->redirectFail = Config::get('services.paypal.redirect_fail');
+        $this->redirectSuccess = url(Config::get('services.paypal.redirect_success'));
+        $this->redirectFail = url(Config::get('services.paypal.redirect_fail'));
 
         $this->apiContext = $this->getApiContext($clientId, $clientSecret);
     }
@@ -58,6 +61,8 @@ class PaypalPaymentService
     {
         $paymentTitle = Config::get('services.paypal.payment_title');
 
+        $amount = floatval($amount);
+
         $apiContext = $this->apiContext;
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
@@ -66,17 +71,19 @@ class PaypalPaymentService
         $item1->setName($paymentTitle)
             ->setCurrency($this->currency)
             ->setQuantity(1)
-            ->setSku(1)
+            ->setSku('1')
             ->setPrice($amount);
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
 
+        $amountObj = new Amount();
+        $amountObj->setCurrency($this->currency)->setTotal($amount);
+
         $transaction = new Transaction();
-        $transaction->setAmount($amount)
+        $transaction->setAmount($amountObj)
             ->setItemList($itemList)
             ->setDescription($paymentTitle)
             ->setInvoiceNumber($user->id.'_'.date('YmdHis'));
-
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl($this->redirectSuccess.'/'.$user->id)
             ->setCancelUrl($this->redirectFail.'/'.$user->id);
@@ -89,20 +96,27 @@ class PaypalPaymentService
 
         $payment->create($apiContext);
 
-        $this->storePaymentSession($payment->getId(), $user->id, $amount);
+        $this->storePaymentSession($payment->getId(), $user->id, $amount, $this->currency, $itemList );
 
         return $payment->getApprovalLink();
     }
 
-    public function storePaymentSession($paymentId, $userId, $amount)
+    public function storePaymentSession($paymentId, $userId, $amount, $currency, ItemList $cart)
     {
-        Session::set('paypal.payment', ['id' => $paymentId, 'userId' => $userId, 'amount' => $amount]);
+        $cart = $cart->toArray();
+        Session::set('paypal.payment', [
+            'id' => $paymentId,
+            'userId' => $userId,
+            'amount' => $amount,
+            'currency' => $currency,
+            'cart' => $cart
+        ]);
     }
 
     public function checkPaymentSession($paymentId, User $user)
     {
         $paymentInfo = Session::get('paypal.payment');
-        if ($paymentId == $paymentInfo['id']) {
+        if ($paymentId != $paymentInfo['id']) {
             throw new \Exception('Payment id mismatch');
         }
         $payment = Payment::get($paymentId, $this->apiContext);
@@ -115,6 +129,8 @@ class PaypalPaymentService
         if ($userId != $user->id) {
             throw new \Exception('User Id mismatch');
         }
+        $this->paymentInfo = $paymentInfo;
+        $this->response = $transaction->toArray();
         Session::remove('paypal.payment');
 
         return true;
