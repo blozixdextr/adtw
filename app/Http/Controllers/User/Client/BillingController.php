@@ -124,7 +124,7 @@ class BillingController extends Controller
     }
 
     public function log() {
-        $payments = PaymentMapper::payments($this->user, 1);
+        $payments = PaymentMapper::payments($this->user);
         $transfers = PaymentMapper::transfers($this->user);
 
         return view('app.pages.user.client.billing.log', compact('payments', 'transfers'));
