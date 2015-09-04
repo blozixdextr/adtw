@@ -70,6 +70,11 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
     Route::get('notification', 'NotificationController@index');
 
+    Route::get('streams', 'StreamController@index');
+    Route::get('stream/{streamId}', 'StreamController@stream');
+    Route::post('stream/accept/{streamId}', 'StreamController@accept');
+    Route::post('stream/decline/{streamId}', 'StreamController@decline');
+
 });
 
 Route::group(['middleware' => 'role:admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
