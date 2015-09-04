@@ -4,14 +4,14 @@ namespace App\Http\Controllers\User\Client;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class BillingController extends Controller
 {
     public function index() {
 
         $user = $this->user;
         $profile = $user->profile;
 
-        return view('app.pages.user.client.profile.index', compact('user', 'profile'));
+        return view('app.pages.user.client.billing.index', compact('user', 'profile'));
     }
 
     public function save(Request $request) {

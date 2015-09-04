@@ -15,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        require_once base_path() . '/resources/helpers/macros.php';
+        require_once base_path() . '/resources/helpers/helpers.php';
     }
 
     /**

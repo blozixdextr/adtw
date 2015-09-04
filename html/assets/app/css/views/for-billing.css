@@ -21,11 +21,11 @@ section {
   background: #fff;
   border: 1px solid #ddd;
 }
-.tabs input {
+.tabs input.tab {
   display: none;
 }
 /* стили вкладок (табов) */
-.tabs label {
+.tabs label.tab {
   display: inline-block;
   font-family: Roboto Slab;
   margin: 0 0 -1px;
@@ -68,9 +68,6 @@ section {
     color:#000;
     margin: 10px 0 15px;
 }
-.tabs .sect-content>div{
-    display: inline-block;
-}
 .tabs .sect-content>div p{
     max-width: 500px;
     color:#000;
@@ -79,6 +76,9 @@ section {
 .work-column-item input[name="billing-alert-amount"]{
     position: relative;
     top:-5px;
+}
+.second-page .work-column-floats h3 {
+    margin-top: 0;
 }
 @media screen and (max-width: 400px) {
   .tabs label {
@@ -132,3 +132,4 @@ section {
         margin-right: 15px;
     }
 }
+

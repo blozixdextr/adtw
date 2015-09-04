@@ -54,7 +54,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::get('/', 'IndexController@index');
 
     Route::get('profile', 'ProfileController@index');
-    Route::post('profile', 'ProfileController@save');
+    Route::post('profile/save', 'ProfileController@save');
 
     Route::get('banner', 'BannerController@index');
     Route::post('banner', 'BannerController@save');

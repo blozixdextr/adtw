@@ -248,6 +248,10 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     width: 80%;
     padding: 10px;
 }
+
+.second-page .work-column .work-column-inside {
+    margin: 0 20px;
+}
 .second-page .nav-column{
     float: left;
     margin-top: 10px;
@@ -351,6 +355,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     background-color: #6441A5;
     padding: 4px 10px;
     margin-top: 7px;
+    border: none;
 }
 .tabs .sect-content a{
     float: right;

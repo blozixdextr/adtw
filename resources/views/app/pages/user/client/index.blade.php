@@ -5,5 +5,6 @@
 @endsection
 
 @section('content')
-    <h1>Profile</h1>
+    <h1>Client Dashboard</h1>
+
 @endsection
