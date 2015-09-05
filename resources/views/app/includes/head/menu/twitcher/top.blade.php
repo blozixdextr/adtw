@@ -3,10 +3,11 @@
         <a href=""><img src="/assets/app/images/gold.gif"></a>
         <hgroup>
             <h1><a href="/user/twitcher">Adtw.ch</a></h1>
-            <h2>Balance: $ 543.93</h2>
+            <h2>Balance: $ {{ number_format($user->balance, 2) }}</h2>
         </hgroup>
     </header>
     <ul class="head-nav">
+        <li><a class="btn-violet" href="/user/twitcher">Dashboard</a></li>
         <li><a class="btn-violet" href="/user/twitcher/ads">My Ads</a></li>
         <li><a class="btn-violet" href="/user/twitcher/billing">Billing</a></li>
         <li><a class="btn-violet" href="/faq">FAQ</a></li>

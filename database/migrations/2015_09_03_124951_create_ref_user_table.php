@@ -16,7 +16,6 @@ class CreateRefUserTable extends Migration
             $table->increments('id');
             $table->integer('ref_id')->index('ref_id')->unsigned();
             $table->integer('user_id')->index('user_id')->unsigned();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
