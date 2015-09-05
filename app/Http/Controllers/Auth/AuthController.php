@@ -143,7 +143,7 @@ class AuthController extends Controller
                 $this->updateTwitchProfile($localUser, $identity);
                 LogMapper::log('twitch_register', $localUser->id);
 
-                return redirect('/user/twitcher');
+                return redirect('/user/twitcher/profile');
             }
         } else {
             return Redirect::back()->withErrors(['twitch' => 'Failed twitch login']);

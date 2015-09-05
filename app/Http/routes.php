@@ -30,8 +30,6 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
 Route::get('profile', 'User\ProfileController@index');
 Route::get('profile/{userId}', 'User\ProfileController@user');
 
-Route::get('user/search', 'User\UserController@index');
-
 Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
 
     Route::get('/', 'IndexController@index');
@@ -77,6 +75,8 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::get('stream/{streamId}', 'StreamController@stream');
     Route::post('stream/accept/{streamId}', 'StreamController@accept');
     Route::post('stream/decline/{streamId}', 'StreamController@decline');
+
+    Route::get('search', 'SearchController@index');
 
 });
 

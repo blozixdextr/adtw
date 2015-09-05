@@ -47,5 +47,12 @@ class UserMapper
         return $user;
     }
 
+    public static function findTwitchers($filter, $limit = 50)
+    {
+        $user = User::whereType('twitcher')->paginate($limit);
+
+        return $user;
+    }
+
 
 }
