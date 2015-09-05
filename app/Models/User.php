@@ -128,6 +128,11 @@ class User extends Model implements AuthenticatableContract,
 
     public function bannerTypes()
     {
-        return $this->refs()->whereType('banner_types');
+        return $this->refs()->whereType('banner_type');
+    }
+
+    public function language()
+    {
+        return $this->belongsTo(Ref::class, 'language_id');
     }
 }

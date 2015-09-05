@@ -27,14 +27,17 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
 
 });
 
-Route::get('profile/{userId}', 'User\ProfileController@index');
+Route::get('profile', 'User\ProfileController@index');
+Route::get('profile/{userId}', 'User\ProfileController@user');
+
+Route::get('user/search', 'User\UserController@index');
 
 Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
 
     Route::get('/', 'IndexController@index');
 
     Route::get('profile', 'ProfileController@index');
-    Route::post('profile', 'ProfileController@save');
+    Route::post('profile/save', 'ProfileController@save');
 
     Route::get('billing', 'BillingController@index');
     Route::post('billing/withdraw', 'BillingController@withdraw');

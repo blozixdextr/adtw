@@ -29,12 +29,9 @@ class Ref extends Model
         }
     }
 
-    public function scopeType($query, $type) {
+    public function scopeTypeRoot($query, $type) {
         return $query->where('type', $type)->where('pid', 0);
     }
 
-    public function scopePid($query, $pid) {
-        return $query->where('pid', $pid);
-    }
 }
 
