@@ -2,6 +2,8 @@
 
 namespace App\Models\Mappers;
 
+use App\Models\BannerStream;
+use App\Models\StreamTimelog;
 use App\Models\User;
 use App\Models\UserProfile;
 use App\Models\Ref;
@@ -123,6 +125,11 @@ class BannerMapper
         $stream->banners()->sync($bannersClean);
     }
 
+    /**
+     * @param User $user
+     * @param $banners
+     * @return Stream
+     */
     public static function getStream(User $user, $banners)
     {
         $streamId = Session::get('stream', false);
@@ -133,7 +140,6 @@ class BannerMapper
             ]);
             self::bannersToStream($stream, $banners);
             Session::set('stream', $stream->id);
-
         } else {
             $stream = Stream::findOrFail($streamId);
         }
@@ -141,8 +147,67 @@ class BannerMapper
         return $stream;
     }
 
-    public static function pay($banner, $stream) {
+    public static function trackBanner(Banner $banner, Stream $stream, StreamTimelog $streamTimelog) {
+        $price = $streamTimelog->price();
+        $duration = $streamTimelog->duration();
+        $pivotBannerStream = BannerStream::whereBannerId($banner->id)->whereStreamId($stream->id)->first();
+        $pivotBannerStream->minutes = $pivotBannerStream->minutes + $duration;
+        $pivotBannerStream->viewers = $pivotBannerStream->viewers + $streamTimelog->viewers;
+        $pivotBannerStream->amount = $pivotBannerStream->amount + $price;
+        $pivotBannerStream->save();
 
+        $client = $banner->client;
+        $client->balance_blocked = $client->balance_blocked + $price;
+        $client->save();
+
+        $usedAmount = BannerStream::whereBannerId($banner->id)->sum('amount');
+        if ($banner->amount_limit <= $usedAmount || $client->availableBalance() <= 0) {
+            $banner->is_active = 0;
+            $banner->status = 'finished';
+            $banner->save();
+        }
+
+        return $pivotBannerStream;
+    }
+
+    /**
+     * @param Stream $stream
+     * @param $response
+     * @return StreamTimelog
+     */
+    public static function trackStream(Stream $stream, $response) {
+        $prevTrackTime = Session::get('stream.lastPing', time());
+        if ($response->stream != null) {
+            $viewers = $response->stream->viewers;
+            $screenshot = $response->stream->preview->medium;
+            if ($screenshot) {
+                $screenshotFile = public_path('/assets/app/upload/t').uniqid($stream->id.'_'.date('YmdHis')).'.jpg';
+                if (copy($screenshot, $screenshotFile)) {
+                    $screenshot = $screenshotFile;
+                } else {
+                    $screenshot = '';
+                }
+            } else {
+                $screenshot = '';
+            }
+            $status = 'live';
+        } else {
+            $viewers = 0;
+            $screenshot = '';
+            $status = 'died';
+        }
+        $streamTimelog = StreamTimelog::create([
+            'stream_id' => $stream->id,
+            'timeslot_start' => \Carbon\Carbon::createFromTimestamp($prevTrackTime),
+            'timeslot_end' => \Carbon\Carbon::now(),
+            'viewers' => $viewers,
+            'status' => $status,
+            'screenshot' => $screenshot,
+            'response' => $response
+        ]);
+        Session::set('stream.lastPing', time());
+
+        return $streamTimelog;
     }
 
 }

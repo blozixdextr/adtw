@@ -35,6 +35,9 @@
         function bannersRefresh() {
             $.getJSON('/user/twitcher/banner/ping/{{ $bannerType->id }}', function(data){
                 banners = data.banners;
+                if (banners.length == 0) {
+                    window.close();
+                }
                 bannerIndex = 0;
                 bannerRotation();
             })

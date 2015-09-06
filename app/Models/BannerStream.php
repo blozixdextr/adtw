@@ -8,7 +8,7 @@ class BannerStream extends Model
 {
     protected $table = 'banner_stream';
 
-    protected $fillable = ['banner_id', 'stream_id', 'transfer_id', 'views', 'minutes', 'status', 'client_comment', 'twitcher_comment'];
+    protected $fillable = ['banner_id', 'stream_id', 'transfer_id', 'viewers', 'minutes', 'amount', 'status', 'client_comment', 'twitcher_comment'];
 
     public function banner()
     {

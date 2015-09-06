@@ -65,17 +65,30 @@ class BannerController extends Controller
     }
 
     public function ping($bannerType) {
+
         $bannerType = Ref::findOrFail($bannerType);
         if ($bannerType->type != 'banner_type') {
             return redirect('/user/twitcher');
         }
         $banners = BannerMapper::activeTwitcher($this->user, $bannerType->id);
         $stream = BannerMapper::getStream($this->user, $banners);
+
+        $twitchApi = app('twitch');
+        $streamInfo = $twitchApi->getStream($this->user);
+        $streamTimelog = BannerMapper::trackStream($stream, $streamInfo);
+        if ($streamTimelog->status == 'live') {
+            foreach ($banners as $b) {
+                $bannersClean[] = $b->file;
+                BannerMapper::trackBanner($b, $stream, $streamTimelog);
+            }
+            $banners = BannerMapper::activeTwitcher($this->user, $bannerType->id);
+        }
         $bannersClean = [];
         foreach ($banners as $b) {
             $bannersClean[] = $b->file;
-            BannerMapper::pay($b, $stream);
         }
+        $stream->time_end = \Carbon\Carbon::now();
+        $stream->save();
 
         $result = [
             'banners' => $bannersClean
@@ -85,6 +98,10 @@ class BannerController extends Controller
     }
 
     public function show($bannerType) {
+
+
+
+
         $bannerType = Ref::findOrFail($bannerType);
         if ($bannerType->type != 'banner_type') {
             return redirect('/user/twitcher');

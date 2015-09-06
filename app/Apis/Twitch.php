@@ -64,6 +64,13 @@ class Twitch
         return $result;
     }
 
+    public function getStream($user) {
+        $chanelName = $user->twitch_channel->name;
+        $result = $this->get_url_contents('/streams/'.$chanelName, [], true);
+
+        return $result;
+    }
+
     public function checkAuth($code, $state) {
         if ($state != Session::get('twitch.state')) {
             return false;
