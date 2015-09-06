@@ -132,14 +132,14 @@ class BannerMapper
      */
     public static function getStream(User $user, $banners)
     {
-        $streamId = Session::get('stream', false);
+        $streamId = Session::get('stream_id', false);
         if (!$streamId) {
             $stream = Stream::create([
                'user_id' => $user->id,
                'time_start' => \Carbon\Carbon::now()
             ]);
             self::bannersToStream($stream, $banners);
-            Session::set('stream', $stream->id);
+            Session::set('stream_id', $stream->id);
         } else {
             $stream = Stream::findOrFail($streamId);
         }
@@ -176,14 +176,15 @@ class BannerMapper
      * @return StreamTimelog
      */
     public static function trackStream(Stream $stream, $response) {
-        $prevTrackTime = Session::get('stream.lastPing', time());
+        $prevTrackTime = Session::get('stream_lastPing', time());
         if ($response->stream != null) {
             $viewers = $response->stream->viewers;
             $screenshot = $response->stream->preview->medium;
             if ($screenshot) {
-                $screenshotFile = public_path('/assets/app/upload/t').uniqid($stream->id.'_'.date('YmdHis')).'.jpg';
+                $filename = '/assets/app/upload/t/'.uniqid($stream->id.'_'.date('YmdHis')).'.jpg';
+                $screenshotFile = public_path($filename);
                 if (copy($screenshot, $screenshotFile)) {
-                    $screenshot = $screenshotFile;
+                    $screenshot = $filename;
                 } else {
                     $screenshot = '';
                 }
@@ -205,7 +206,7 @@ class BannerMapper
             'screenshot' => $screenshot,
             'response' => $response
         ]);
-        Session::set('stream.lastPing', time());
+        Session::set('stream_lastPing', time());
 
         return $streamTimelog;
     }

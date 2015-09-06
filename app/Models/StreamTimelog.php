@@ -7,7 +7,7 @@ use Config;
 
 class StreamTimelog extends Model
 {
-    protected $table = 'banner_stream';
+    protected $table = 'stream_timelogs';
 
     protected $fillable = ['stream_id', 'timeslot_start', 'timeslot_end', 'viewers', 'status', 'screenshot', 'response'];
 

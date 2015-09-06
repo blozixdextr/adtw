@@ -65,7 +65,6 @@ class BannerController extends Controller
     }
 
     public function ping($bannerType) {
-
         $bannerType = Ref::findOrFail($bannerType);
         if ($bannerType->type != 'banner_type') {
             return redirect('/user/twitcher');
@@ -75,6 +74,16 @@ class BannerController extends Controller
 
         $twitchApi = app('twitch');
         $streamInfo = $twitchApi->getStream($this->user);
+/*
+        $streamInfo = (object)[
+            'stream' => (object)[
+                'viewers' => rand(0, 100),
+                'preview' => (object)[
+                    'medium' => 'http://im4.kommersant.ru/Issues.photo/DAILY/2015/162M/KMO_085445_02826_1_t218_222616.jpg'
+                ]
+            ]
+        ];
+*/
         $streamTimelog = BannerMapper::trackStream($stream, $streamInfo);
         if ($streamTimelog->status == 'live') {
             foreach ($banners as $b) {
@@ -98,10 +107,6 @@ class BannerController extends Controller
     }
 
     public function show($bannerType) {
-
-
-
-
         $bannerType = Ref::findOrFail($bannerType);
         if ($bannerType->type != 'banner_type') {
             return redirect('/user/twitcher');
