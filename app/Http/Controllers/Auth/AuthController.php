@@ -125,6 +125,7 @@ class AuthController extends Controller
             if ($localUser) {
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);
+                $localUser->last_activity = \Carbon\Carbon::now();
                 LogMapper::log('twitch_login', $localUser->id);
                 return redirect('/user/twitcher');
             } else {

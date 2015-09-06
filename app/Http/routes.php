@@ -46,7 +46,7 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
     Route::get('banner/popup', 'BannerController@popup');
     Route::get('banner/accept/{bannerId}', 'BannerController@accept');
     Route::get('banner/decline/{bannerId}', 'BannerController@decline');
-    Route::get('banner/remove/{bannerId}', 'BannerController@decline');
+    Route::get('banner/review/{bannerId}', 'BannerController@review');
 
 });
 

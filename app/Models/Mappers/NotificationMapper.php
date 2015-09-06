@@ -35,6 +35,24 @@ class NotificationMapper
         });
     }
 
+    public static function bannerAccept(Banner $banner)
+    {
+        $title = $banner->twitcher->name.' accepted your '.$banner->type->title.' banner';
+        self::notify($banner->client, $title, 'banner_accept');
+        Mail::send('app.emails.banner_accept', ['banner' => $banner], function ($m) use ($banner) {
+            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' accepted your banner');
+        });
+    }
+
+    public static function bannerDecline(Banner $banner)
+    {
+        $title = $banner->twitcher->name.' declined your '.$banner->type->title.' banner';
+        self::notify($banner->client, $title, 'banner_decline');
+        Mail::send('app.emails.banner_decline', ['banner' => $banner], function ($m) use ($banner) {
+            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' declined your banner');
+        });
+    }
+
 
     public static function reviewed(Notification $notification)
     {
