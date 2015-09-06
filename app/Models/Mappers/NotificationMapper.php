@@ -53,6 +53,34 @@ class NotificationMapper
         });
     }
 
+    public static function bannerStream(Banner $banner)
+    {
+        $title = $banner->twitcher->name.' started to stream your '.$banner->type->title.' banner';
+        self::notify($banner->client, $title, 'banner_stream');
+        Mail::send('app.emails.banner_stream', ['banner' => $banner], function ($m) use ($banner) {
+            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' started to stream your banner');
+        });
+    }
+
+    public static function bannerFinished(Banner $banner)
+    {
+        $title = $banner->twitcher->name.' runs out of limit for your '.$banner->type->title.' banner';
+        self::notify($banner->client, $title, 'banner_finished');
+        Mail::send('app.emails.banner_finished', ['banner' => $banner], function ($m) use ($banner) {
+            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' runs out of limit for your banner');
+        });
+    }
+
+    public static function emptyBalance(Banner $banner)
+    {
+        $title = 'You run out of your balance';
+        self::notify($banner->client, $title, 'banner_finished');
+        Mail::send('app.emails.empty_balance', ['banner' => $banner], function ($m) use ($banner, $title) {
+            $m->to($banner->twitcher->email)->subject($title);
+        });
+    }
+
+
 
     public static function reviewed(Notification $notification)
     {

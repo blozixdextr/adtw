@@ -140,6 +140,11 @@ class BannerMapper
             ]);
             self::bannersToStream($stream, $banners);
             Session::set('stream_id', $stream->id);
+            LogMapper::log('stream_start', $stream->id);
+            foreach ($banners as $b) {
+                NotificationMapper::bannerStream($b);
+            }
+
         } else {
             $stream = Stream::findOrFail($streamId);
         }
@@ -161,10 +166,17 @@ class BannerMapper
         $client->save();
 
         $usedAmount = BannerStream::whereBannerId($banner->id)->sum('amount');
-        if ($banner->amount_limit <= $usedAmount || $client->availableBalance() <= 0) {
+        if ($banner->amount_limit <= $usedAmount) {
             $banner->is_active = 0;
             $banner->status = 'finished';
             $banner->save();
+            NotificationMapper::bannerFinished($banner);
+        }
+        if ($client->availableBalance() <= 0) {
+            $banner->is_active = 0;
+            $banner->status = 'finished';
+            $banner->save();
+            NotificationMapper::emptyBalance($banner);
         }
 
         return $pivotBannerStream;
