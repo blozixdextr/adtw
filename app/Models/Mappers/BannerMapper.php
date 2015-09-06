@@ -6,9 +6,11 @@ use App\Models\User;
 use App\Models\UserProfile;
 use App\Models\Ref;
 use App\Models\Banner;
+use App\Models\Stream;
 use Request;
 use Auth;
 use Config;
+use Session;
 use App\Models\Mappers\LogMapper;
 use App\Models\Mappers\NotificationMapper;
 
@@ -70,6 +72,77 @@ class BannerMapper
         ]);
 
         return $banner;
+    }
+
+    public static function activeTwitcher(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereTwitcherId($user->id)->whereIsActive(1);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->get();
+    }
+
+    public static function activeTwitcherCount(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereTwitcherId($user->id)->whereIsActive(1);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->count();
+    }
+
+    public static function activeClient(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereClientId($user->id)->whereIsActive(1);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->get();
+    }
+
+    public static function activeClientCount(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereClientId($user->id)->whereIsActive(1);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->count();
+    }
+
+    public static function bannersToStream(Stream $stream, $banners)
+    {
+        $bannersClean = [];
+        foreach ($banners as $b) {
+            $bannersClean[] = $b->id;
+        }
+        $stream->banners()->sync($bannersClean);
+    }
+
+    public static function getStream(User $user, $banners)
+    {
+        $streamId = Session::get('stream', false);
+        if (!$streamId) {
+            $stream = Stream::create([
+               'user_id' => $user->id,
+               'time_start' => \Carbon\Carbon::now()
+            ]);
+            self::bannersToStream($stream, $banners);
+            Session::set('stream', $stream->id);
+
+        } else {
+            $stream = Stream::findOrFail($streamId);
+        }
+
+        return $stream;
+    }
+
+    public static function pay($banner, $stream) {
+
     }
 
 }

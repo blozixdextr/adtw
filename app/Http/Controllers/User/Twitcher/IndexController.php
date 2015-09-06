@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\User\Twitcher;
 
+use App\Models\Mappers\BannerMapper;
 use Auth;
 use App\Models\Mappers\LogMapper;
 use App\Apis\Twitch;
-
 class IndexController extends Controller
 {
     public function index() {
         $this->updateStatistics();
+        $banners = [];
+        $bannerTypes = $this->user->bannerTypes;
+        foreach ($bannerTypes as $bt) {
+            $banners[$bt->id] = BannerMapper::activeTwitcher($this->user, $bt->id);
+        }
 
-        return view('app.pages.user.twitcher.index');
+        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes'));
     }
 
     public function updateStatistics() {

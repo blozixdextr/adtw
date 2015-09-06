@@ -17,7 +17,7 @@ class CreateStreamsTable extends Migration
             $table->integer('user_id')->index('user_id')->unsigned();
             $table->string('title')->nullable();
             $table->dateTime('time_start');
-            $table->dateTime('time_end');
+            $table->dateTime('time_end')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

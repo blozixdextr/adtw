@@ -19,7 +19,7 @@ class Stream extends Model
 
     public function banners()
     {
-        return $this->belongsToMany(Banner::class)->withPivot(['transfer_id', 'status', 'client_comment', 'twitcher_comment']);
+        return $this->belongsToMany(Banner::class)->withPivot(['transfer_id', 'status', 'views', 'minutes', 'client_comment', 'twitcher_comment']);
     }
 
 }

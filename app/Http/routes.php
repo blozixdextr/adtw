@@ -43,10 +43,13 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
     Route::get('notification', 'NotificationController@index');
 
     Route::get('banner', 'BannerController@index');
-    Route::get('banner/popup', 'BannerController@popup');
+    Route::get('banner/show/{bannerType}', 'BannerController@show');
+    Route::get('banner/popup/{bannerType}', 'BannerController@popup');
     Route::get('banner/accept/{bannerId}', 'BannerController@accept');
     Route::get('banner/decline/{bannerId}', 'BannerController@decline');
     Route::get('banner/review/{bannerId}', 'BannerController@review');
+
+    Route::get('banner/ping/{bannerType}', 'BannerController@ping');
 
 });
 
