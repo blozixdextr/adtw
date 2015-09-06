@@ -51,7 +51,6 @@ class SearchController extends Controller
             $filters['videos'] = $videos;
         }
         $twitchers = UserMapper::findTwitchers($filters);
-        dd($twitchers);
 
         return view('app.pages.user.client.search.index', compact('twitchers', 'filters', 'languageRefs', 'bannerTypeRefs', 'gameRefs'));
     }

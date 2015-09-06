@@ -1,5 +1,23 @@
-@extends('app.layouts.client')
+<?php
 
+if (isset($filters['banner_types'])) {
+    foreach ($filters['banner_types'] as $t) {
+        $searchForBannerTypes[] = $t;
+    }
+    $bannerTypesParam = '?b='.implode(',', $searchForBannerTypes);
+} else {
+    $searchForBannerTypes = [];
+    $bannerTypesParam = '';
+}
+
+
+
+?>
+@extends('app.layouts.client')
+@section('head-style')
+    <link rel="stylesheet" href="/assets/app/css/libs/flags/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/app/css/views/for-streamers.css">
+@endsection
 @section('content')
     <h1>Search twitchers</h1>
     <div class="panel panel-default">
@@ -83,5 +101,37 @@
             {!! Form::close() !!}
         </div>
     </div>
+
+    <h2>Search results</h2>
+
+    <div class="streamers-list">
+        <div class="row">
+        @forelse($twitchers as $u)
+            <div class="col-md-6">
+                <div class="streamer-item violet">
+                    <div class="streamer-img"><i class="fa fa-twitch"></i></div>
+                    <div class="streamer-info">
+                        <h5><a href="/profile/{{ $u->id }}">{{ $u->name }}</a></h5>
+                        <div>
+                            <p>{{ $u->twitch_followers }} followers</p> /
+                            <p>{{ $u->twitch_videos }} videos</p> /
+                            <p>{{ $u->twitch_views }} views</p>
+                            {!! twitcherLanguageToFlag($u) !!}
+                        </div>
+                    </div>
+                    <div class="streamer-buy">
+                        <a href="/user/client/banner/{{ $u->id.$bannerTypesParam }}" class="work-button">Order</a>
+                    </div>
+                </div>
+            </div>
+        @empty
+            <em>no results</em>
+        @endforelse
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    {!! $twitchers->render() !!}
+
 @endsection
 
