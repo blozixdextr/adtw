@@ -1,28 +1,46 @@
 @extends('app.layouts.client')
 
+<?php
+    $bannerTypes = [];
+    foreach ($userView->bannerTypes as $b) {
+        $bannerTypes[$b->id] = $b->title;
+    }
+?>
+
 @section('content')
     <h1>Banner</h1>
-    {!! Form::open(['url' => '/user/client/banner/save', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => '/user/client/banner/save', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-    <div class="form-group {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
-        {!! Form::label('first_name', 'First Name', ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::hidden('user_id', $userView->id) !!}
+
+    <div class="form-group {!! ($errors && $errors->has('limit')) ? ' has-error' : '' !!}">
+        {!! Form::label('limit', 'Limit', ['class' => 'col-sm-3 control-label']) !!}
+        <div class="col-sm-2">
+            {!! Form::input('number', 'limit', old('limit', floor($user->availableBalance())), ['class' => 'form-control', 'placeholder' => 'Limit payments for this banner', 'required' => 'required', 'style' => 'width: 120px', 'min' => 1, 'max' => floor($user->availableBalance())]) !!}
+            {!! Form::errorMessage('limit') !!}
+        </div>
+        <div class="col-sm-1">USD</div>
+    </div>
+
+    <div class="form-group {!! ($errors && $errors->has('banner_type')) ? ' has-error' : '' !!}">
+        {!! Form::label('banner_type', 'Banner size', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-9">
-            {!! Form::text('first_name', old('first_name', $profile->first_name), ['class' => 'form-control', 'placeholder' => 'First Name', 'required' => 'required']) !!}
-            {!! Form::errorMessage('first_name') !!}
+            {!! Form::select('banner_type', $bannerTypes, old('banner_type', $bannerTypeDefault), ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::errorMessage('banner_type') !!}
         </div>
     </div>
 
-    <div class="form-group {!! ($errors && $errors->has('last_name')) ? ' has-error' : '' !!}">
-        {!! Form::label('last_name', 'Last Name', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="form-group {!! ($errors && $errors->has('banner')) ? ' has-error' : '' !!}">
+        {!! Form::label('banner', 'Banner  file', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-9">
-            {!! Form::text('last_name', old('last_name', $profile->last_name), ['class' => 'form-control', 'placeholder' => 'Last Name', 'required' => 'required']) !!}
-            {!! Form::errorMessage('last_name') !!}
+            {!! Form::file('banner', ['class' => 'form-control', 'accept' => 'image/*', 'required' => 'required']) !!}
+            {!! Form::errorMessage('banner') !!}
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-            <button type="submit" class="btn btn-default">Save</button>
+            <button type="submit" class="btn btn-default">Order</button>
         </div>
     </div>
 

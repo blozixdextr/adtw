@@ -135,4 +135,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsTo(Ref::class, 'language_id');
     }
+
+    public function availableBalance()
+    {
+        return $this->balance - $this->balance_blocked;
+    }
 }

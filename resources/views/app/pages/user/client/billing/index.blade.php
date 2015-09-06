@@ -10,7 +10,7 @@
     <h1>Billing</h1>
     <div class="work-column-floats">
         <div class="left">
-            <h3>You Owe</h3><span>${{ number_format($user->balance, 2) }}</span>
+            <h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
             <div class="work-column-link">
                 <a class="btn-white" href="#payments">Refill your account</a>
             </div>

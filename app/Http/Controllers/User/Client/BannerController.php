@@ -4,115 +4,66 @@ namespace App\Http\Controllers\User\Client;
 
 use Illuminate\Http\Request;
 use App\Models\Mappers\LogMapper;
+use App\Models\Mappers\BannerMapper;
+use App\Models\User;
+use App\Models\Ref;
 use Redirect;
 use Input;
 
 class BannerController extends Controller
 {
-    public function index()
+    public function index($userId)
     {
+        $userView = User::findOrFail($userId);
+        $bannerTypes = explode(',', Input::get('b', ''));
+        if (count($bannerTypes) > 0) {
+            $bannerTypeDefault = $bannerTypes[0];
+        }
 
-
-        return view('app.pages.user.client.banner.index');
+        return view('app.pages.user.client.banner.index', compact('userView', 'bannerTypeDefault'));
     }
 
     public function save(Request $request)
     {
-
-        return Redirect::back();
-    }
-
-    public function paypal(Request $request)
-    {
         $rules = [
-            'amount' => 'required|numeric|min:5|max:100',
+            'user_id' => 'required|numeric|exists:users,id',
+            'banner_type' => 'required|numeric|exists:refs,id',
+            'limit' => 'required|numeric|min:1:max:'.floor($this->user->availableBalance()),
+            'banner' => 'required|image'
         ];
         $this->validate($request, $rules);
-        $amount = $request->get('amount');
-        $paypalService = new PaypalPaymentService();
-        try {
-            $url = $paypalService->getRefillUrl($amount, $this->user);
-        } catch (\Exception $e) {
-            LogMapper::log('paypal_error', $e->getMessage(), 'get_url', ['user' => $this->user->id, 'amount' => $amount, 'error_data' => $e->getData()]);
+        $data = $request->all();
+        $userId = $data['user_id'];
+        $bannerType = $data['banner_type'];
+        $limit = $data['limit'];
 
-            return Redirect::back()->withErrors(['paypal' => 'Failed paypal']);
+        $user = User::findOrFail($userId);
+        if ($user->type != 'twitcher') {
+            return Redirect::back()->withErrors(['user_id' => 'Wrong user']);
         }
-
-        return redirect($url);
-    }
-
-    public function paypalSuccess($userId) {
-        $paypalService = new PaypalPaymentService();
-        $paymentId = Input::get('paymentId');
-        $payerID = Input::get('PayerID');
-        $token = Input::get('token');
-        try {
-            $paypalService->checkPaymentSession($paymentId, $this->user);
-            $paymentInfo = $paypalService->paymentInfo;
-            $amount = $paymentInfo['amount'];
-            LogMapper::log('paypal_success', $amount, $userId, $paymentInfo);
-        } catch (\Exception $e) {
-            LogMapper::log('paypal_error', $e->getMessage(), 'success_callback', ['user' => $this->user->id, 'paymentId' => $paymentId]);
-
-            return Redirect::to('/user/client/billing')->withErrors(['paypal' => 'Failed paypal']);
+        $bannerType = Ref::findOrFail($bannerType);
+        if ($bannerType->type != 'banner_type') {
+            return Redirect::back()->withErrors(['banner_type' => 'Wrong banner type']);
         }
-        $payment = PaymentMapper::refillFromPaypal($this->user, $paypalService);
-        LogMapper::log('payment', $amount, 'refilled', ['payment_id' => $payment->id, 'merchant' => 'paypal']);
-
-        return Redirect::to('/user/client/billing')->with(['success' => 'We got your payment']);
-    }
-
-    public function paypalFail($userId) {
-        LogMapper::log('paypal_error', 'Paypal failed', 'fail', ['user' => $userId, 'session' => Session::get('paypal.payment')]);
-        Session::remove('paypal.payment');
-
-        return Redirect::to('/user/client/billing')->withErrors(['paypal' => 'Failed paypal']);
-    }
-
-    public function stripe(Request $request)
-    {
-        $rules = [
-            'amount' => 'required|numeric|min:5|max:100',
-            'card_number' => 'required|digits_between:6,21',
-            'card_holder' => 'required|min:2|max:250',
-            'card_year' => 'required|numeric|min:1900|max:'.(date('Y') + 10),
-            'card_month' => 'required|numeric|min:1|max:12',
-            'card_cvc' => 'required|numeric|min:100|max:999',
-        ];
-        $this->validate($request, $rules);
-        $amount = $request->get('amount');
-        $card_number = $request->get('card_number');
-        $card_holder = $request->get('card_holder');
-        $card_year = $request->get('card_year');
-        $card_month = $request->get('card_month');
-        $card_cvc = $request->get('card_cvc');
-        $stripeService = new StripePaymentService();
-        $card = [
-            'number' => $card_number,
-            'exp_month' => $card_month,
-            'exp_year' => $card_year,
-            'cvc' => $card_cvc,
-            'name' => $card_holder
-        ];
-
-        try {
-            $charge = $stripeService->refill($card, $amount, $this->user);
-        } catch (\Exception $e) {
-            LogMapper::log('stripe_error', $e->getMessage(), 'stripe_card', ['user' => $this->user->id, 'card' => $card, 'amount' => $amount]);
-
-            return Redirect::to('/user/client/billing')->withErrors(['stripe' => 'Failed payment']);
+        if (!BannerMapper::twitcherFree($user, $bannerType->id)) {
+            return Redirect::back()->withErrors(['banner_type' => 'Twitcher already has max number of banner of this type. Please, select another banner size']);
         }
-        $payment = PaymentMapper::refillFromStripe($this->user, $stripeService);
-        LogMapper::log('payment', $amount, 'refilled', ['payment_id' => $payment->id, 'merchant' => 'stripe']);
+        $bannerFile = $request->file('banner');
+        $realSizes = getimagesize($bannerFile);
+        $requiredSizes = explode('*', $bannerType->title);
+        if ($realSizes['width'] != $requiredSizes[0]) {
+            return Redirect::back()->withErrors(['banner' => 'Wrong width for banner. Width '.$realSizes['width'].'px required but get '.$requiredSizes[0].'px']);
+        }
+        if ($realSizes['height'] != $requiredSizes[1]) {
+            return Redirect::back()->withErrors(['banner' => 'Wrong height for banner. Height '.$realSizes['width'].'px required but get '.$requiredSizes[0].'px']);
+        }
+        $filePrefix = $user->id.'_'.$this->user->id.'_'.str_replace('*', '_', $bannerType->title);
+        $bannerFile->move(public_path('assets/app/upload/b'), uniqid($filePrefix).'.'.$bannerFile->getClientOriginalExtension());
+        $path = $bannerFile->getPath();
+        $bannerFile = str_replace(public_path(), '', $path);
 
-        return Redirect::to('/user/client/billing')->with(['success' => 'We got your payment']);
+        $banner = BannerMapper::addForTwitcher($user, $this->user, $bannerType, $bannerFile, $limit);
+
+        return Redirect::to('/user/client')->with(['success' => 'We sent your banner for twitcher\'s review']);
     }
-
-    public function log() {
-        $payments = PaymentMapper::payments($this->user);
-        $transfers = PaymentMapper::transfers($this->user);
-
-        return view('app.pages.user.client.billing.log', compact('payments', 'transfers'));
-    }
-
 }

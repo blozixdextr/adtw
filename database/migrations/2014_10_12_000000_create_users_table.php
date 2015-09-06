@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('last_activity')->nullable()->index('last_activity');
             $table->timestamp('twitch_updated')->nullable()->index('twitch_updated');
             $table->float('balance')->index('balance')->default(0);
+            $table->float('balance_blocked')->index('balance_blocked')->default(0)->unsigned();
             $table->string('currency', 5)->nullable()->default('USD');
             $table->integer('language_id')->nullable()->unsigned()->index('language_id');
             $table->rememberToken();
