@@ -9,6 +9,7 @@ use App\Models\UserProfile;
 use App\Models\Mappers\LogMapper;
 use Request;
 use Auth;
+use Mail;
 
 class NotificationMapper
 {
@@ -29,6 +30,9 @@ class NotificationMapper
         $title = $banner->client->name.' added '.$banner->type->title.' banner';
         $subtitle = '<a href="/user/twitcher/banner/review/'.$banner->id.'">review it</a>';
         self::notify($banner->twitcher, $title, 'banner_add', $subtitle);
+        Mail::send('app.emails.banner_add', ['banner' => $banner], function ($m) use ($banner) {
+            $m->to($banner->twitcher->email)->subject('Someone order banner to you');
+        });
     }
 
 
