@@ -64,7 +64,8 @@ class BannerController extends Controller
         $banner = $bannerFile->move(public_path($uploadDir), $filename);
 
         $banner = BannerMapper::addForTwitcher($user, $this->user, $bannerType, $uploadDir.$filename, $limit);
-        NotificationMapper::notify($user, $this->user->name.' added banner', 'banner_add', 'size: '.$bannerType->title.', limit: '.$limit);
+        NotificationMapper::bannerAdd($banner);
+        LogMapper::log('banner_add', $banner->id);
 
         return Redirect::to('/user/client')->with(['success' => 'We sent your banner for twitcher\'s review']);
     }

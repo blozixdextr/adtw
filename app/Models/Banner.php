@@ -8,7 +8,7 @@ class Banner extends Model
 {
     protected $table = 'banners';
 
-    protected $fillable = ['client_id', 'twitcher_id', 'type', 'title', 'description', 'file', 'is_active', 'status', 'amount_limit'];
+    protected $fillable = ['client_id', 'twitcher_id', 'type_id', 'title', 'description', 'file', 'is_active', 'status', 'amount_limit'];
 
     public function client()
     {
@@ -25,6 +25,10 @@ class Banner extends Model
         return $this->belongsToMany(Stream::class)->withPivot(['transfer_id', 'status', 'client_comment', 'twitcher_comment']);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Ref::class, 'type_id');
+    }
 
 }
 

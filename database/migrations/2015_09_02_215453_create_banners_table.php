@@ -16,7 +16,7 @@ class CreateBannersTable extends Migration
             $table->increments('id');
             $table->integer('client_id')->index('client_id')->unsigned();
             $table->integer('twitcher_id')->index('twitcher_id')->unsigned();
-            $table->integer('type')->index('type')->unsigned();
+            $table->integer('type_id')->index('type')->unsigned();
             $table->string('title');
             $table->string('description');
             $table->string('file');

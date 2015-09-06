@@ -17,14 +17,14 @@ class BannerMapper
 
     public static function twitcher(User $user, $bannerType)
     {
-        $banners = Banner::whereTwitcherId($user->id)->whereType($bannerType);
+        $banners = Banner::whereTwitcherId($user->id)->whereTypeId($bannerType);
 
         return $banners->get();
     }
 
     public static function twitcherFree(User $user, $bannerType)
     {
-        $banners = Banner::whereTwitcherId($user->id)->whereType($bannerType)->count();
+        $banners = Banner::whereTwitcherId($user->id)->whereTypeId($bannerType)->count();
         $maxBannerPerTwitcher = Config::get('banner.twitcher_limit');
 
         return $banners < $maxBannerPerTwitcher;
@@ -35,7 +35,7 @@ class BannerMapper
         $banner = Banner::create([
             'client_id' => $client->id,
             'twitcher_id' => $twitcher->id,
-            'type' => $bannerType->id,
+            'type_id' => $bannerType->id,
             'title' => $client->name.' '.$bannerType->title,
             'file' => $file,
             'is_active' => 0,
