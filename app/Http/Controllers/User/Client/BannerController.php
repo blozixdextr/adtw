@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User\Client;
 use Illuminate\Http\Request;
 use App\Models\Mappers\LogMapper;
 use App\Models\Mappers\BannerMapper;
+use App\Models\Mappers\NotificationMapper;
 use App\Models\User;
 use App\Models\Ref;
 use Redirect;
@@ -28,7 +29,7 @@ class BannerController extends Controller
         $rules = [
             'user_id' => 'required|numeric|exists:users,id',
             'banner_type' => 'required|numeric|exists:refs,id',
-            'limit' => 'required|numeric|min:1:max:'.floor($this->user->availableBalance()),
+            'limit' => 'required|numeric|min:1|max:'.floor($this->user->availableBalance()),
             'banner' => 'required|image'
         ];
         $this->validate($request, $rules);
@@ -51,18 +52,19 @@ class BannerController extends Controller
         $bannerFile = $request->file('banner');
         $realSizes = getimagesize($bannerFile);
         $requiredSizes = explode('*', $bannerType->title);
-        if ($realSizes['width'] != $requiredSizes[0]) {
-            return Redirect::back()->withErrors(['banner' => 'Wrong width for banner. Width '.$realSizes['width'].'px required but get '.$requiredSizes[0].'px']);
+        if ($realSizes[0] != $requiredSizes[0]) {
+            return Redirect::back()->withErrors(['banner' => 'Wrong width for banner. Width '.$realSizes[0].'px required but get '.$requiredSizes[0].'px']);
         }
-        if ($realSizes['height'] != $requiredSizes[1]) {
-            return Redirect::back()->withErrors(['banner' => 'Wrong height for banner. Height '.$realSizes['width'].'px required but get '.$requiredSizes[0].'px']);
+        if ($realSizes[1] != $requiredSizes[1]) {
+            return Redirect::back()->withErrors(['banner' => 'Wrong height for banner. Height '.$realSizes[1].'px required but get '.$requiredSizes[0].'px']);
         }
+        $uploadDir = '/assets/app/upload/b/';
         $filePrefix = $user->id.'_'.$this->user->id.'_'.str_replace('*', '_', $bannerType->title);
-        $bannerFile->move(public_path('assets/app/upload/b'), uniqid($filePrefix).'.'.$bannerFile->getClientOriginalExtension());
-        $path = $bannerFile->getPath();
-        $bannerFile = str_replace(public_path(), '', $path);
+        $filename = uniqid($filePrefix).'.'.$bannerFile->getClientOriginalExtension();
+        $banner = $bannerFile->move(public_path($uploadDir), $filename);
 
-        $banner = BannerMapper::addForTwitcher($user, $this->user, $bannerType, $bannerFile, $limit);
+        $banner = BannerMapper::addForTwitcher($user, $this->user, $bannerType, $uploadDir.$filename, $limit);
+        NotificationMapper::notify($user, $this->user->name.' added banner', 'banner_add', 'size: '.$bannerType->title.', limit: '.$limit);
 
         return Redirect::to('/user/client')->with(['success' => 'We sent your banner for twitcher\'s review']);
     }

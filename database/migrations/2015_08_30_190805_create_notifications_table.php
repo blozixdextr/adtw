@@ -16,7 +16,7 @@ class CreateNotificationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index('user_id')->unsigned();
             $table->string('title');
-            $table->string('subtitle')->nullable();
+            $table->text('subtitle')->nullable();
             $table->dateTime('seen_at')->index('seen_at')->nullable();
             $table->string('type', 50)->index('type');
             $table->timestamps();
