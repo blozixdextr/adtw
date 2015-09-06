@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/app/css/libs/flags/css/flag-icon.min.css">
 @endsection
 @section('content')
-    <h1>{{ $userView->name }} / {{ $userView->type }}</h1>
+    <h1>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h1>
     <h2>User's Profile</h2>
     <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
     <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
@@ -20,6 +20,4 @@
         <p>{{ $userView->twitch_views }} views</p>
         <a href="/user/client/banner/{{ $userView->id }}" class="work-button">Order banner</a>
     @endif
-
-
 @endsection
