@@ -91,3 +91,5 @@ Route::group(['middleware' => 'role:admin', 'namespace' => 'Admin', 'prefix' => 
 });
 
 
+Route::get('test', 'TestController@index');
+
