@@ -40,7 +40,7 @@ class BillingController extends Controller
     public function paypal(Request $request)
     {
         $rules = [
-            'amount' => 'required|numeric|min:5|max:100',
+            'amount' => 'required|numeric|min:5|max:1000',
         ];
         $this->validate($request, $rules);
         $amount = $request->get('amount');
@@ -87,7 +87,7 @@ class BillingController extends Controller
     public function stripe(Request $request)
     {
         $rules = [
-            'amount' => 'required|numeric|min:5|max:100',
+            'amount' => 'required|numeric|min:5|max:1000',
             'card_number' => 'required|digits_between:6,21',
             'card_holder' => 'required|min:2|max:250',
             'card_year' => 'required|numeric|min:1900|max:'.(date('Y') + 10),
