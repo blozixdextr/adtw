@@ -21,7 +21,13 @@ class BannerController extends Controller
             $bannerTypeDefault = $bannerTypes[0];
         }
 
-        return view('app.pages.user.client.banner.index', compact('userView', 'bannerTypeDefault'));
+        if ($this->user->balance == 0) {
+            $balanceEmpty = true;
+        } else {
+            $balanceEmpty = false;
+        }
+
+        return view('app.pages.user.client.banner.index', compact('userView', 'bannerTypeDefault', 'balanceEmpty'));
     }
 
     public function save(Request $request)

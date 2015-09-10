@@ -9,6 +9,11 @@
 
 @section('content')
     <h1>Banner</h1>
+
+    @if ($balanceEmpty)
+        <div class="alert alert-danger" role="alert">You should <a href="/user/client/billing">refill your balance</a> first</div>
+    @endif
+
     {!! Form::open(['url' => '/user/client/banner/save', 'class' => 'form-horizontal', 'files' => true]) !!}
 
     {!! Form::hidden('user_id', $userView->id) !!}
