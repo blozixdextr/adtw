@@ -66,8 +66,14 @@ class NotificationMapper
     {
         $title = $banner->twitcher->name.' runs out of limit for your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'banner_finished');
-        Mail::send('app.emails.banner_finished', ['banner' => $banner], function ($m) use ($banner) {
-            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' runs out of limit for your banner');
+        Mail::send('app.emails.banner_finished', ['banner' => $banner], function ($m) use ($banner, $title) {
+            $m->to($banner->client->email)->subject($title);
+        });
+
+        $title = 'You runs out of limit for '.$banner->type->title.' banner';
+        self::notify($banner->twitcher, $title, 'banner_finished');
+        Mail::send('app.emails.banner_finished_twitcher', ['banner' => $banner], function ($m) use ($banner, $title) {
+            $m->to($banner->twitcher->email)->subject($title);
         });
     }
 
@@ -76,6 +82,12 @@ class NotificationMapper
         $title = 'You run out of your balance';
         self::notify($banner->client, $title, 'banner_finished');
         Mail::send('app.emails.empty_balance', ['banner' => $banner], function ($m) use ($banner, $title) {
+            $m->to($banner->client->email)->subject($title);
+        });
+
+        $title = $banner->client->name.' run out of his balance';
+        self::notify($banner->twitcher, $title, 'banner_finished');
+        Mail::send('app.emails.empty_balance_twitcher', ['banner' => $banner], function ($m) use ($banner, $title) {
             $m->to($banner->twitcher->email)->subject($title);
         });
     }
