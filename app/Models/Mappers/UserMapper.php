@@ -40,9 +40,9 @@ class UserMapper
         return true;
     }
 
-    public static function getByEmail($email)
+    public static function getByEmail($email, $type = 'client')
     {
-        $user = User::where(['email' => $email])->first();
+        $user = User::where(['email' => $email])->where(['type' => $type])->first();
 
         return $user;
     }

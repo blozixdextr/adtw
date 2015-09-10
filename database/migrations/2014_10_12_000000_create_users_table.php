@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->boolean('is_active')->index('is_active')->default(1);
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->index('email');
             $table->string('password', 60);
             $table->enum('provider', ['local', 'facebook', 'twitter', 'google', 'linkedin', 'github', 'bitbucket', 'twitch'])
                 ->index('provider')->nullable()->default('local');
