@@ -1,6 +1,6 @@
 <?php
 
-if (isset($filters['banner_types'])) {
+if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     foreach ($filters['banner_types'] as $t) {
         $searchForBannerTypes[] = $t;
     }
@@ -33,7 +33,7 @@ if (isset($filters['banner_types'])) {
                             @foreach($languageRefs as $l)
                                 <div class="checkbox">
                                     <label>
-                                        {!! Form::checkbox('languages[]', $l->id, in_array($l->id, isset($filters['languages']) ? $filters['languages'] : [])) !!}
+                                        {!! Form::checkbox('languages[]', $l->id, in_array($l->id, (isset($filters['languages']) && count($filters['languages']) > 0) ? $filters['languages'] : [])) !!}
                                         {{ $l->title }}
                                     </label>
                                 </div>
@@ -50,7 +50,7 @@ if (isset($filters['banner_types'])) {
                             @foreach($bannerTypeRefs as $b)
                                 <div class="checkbox">
                                     <label>
-                                        {!! Form::checkbox('banner_types[]', $b->id, in_array($b->id, isset($filters['banner_types']) ? $filters['banner_types'] : [])) !!}
+                                        {!! Form::checkbox('banner_types[]', $b->id, in_array($b->id, (isset($filters['banner_types']) && count($filters['banner_types']) > 0) ? $filters['banner_types'] : [])) !!}
                                         {{ $b->title }}
                                     </label>
                                 </div>
@@ -71,7 +71,7 @@ if (isset($filters['banner_types'])) {
                                             @foreach($g->children as $gc)
                                                 <div class="checkbox">
                                                     <label>
-                                                        {!! Form::checkbox('games[]', $gc->id, in_array($gc->id, isset($filters['games']) ? $filters['games'] : [])) !!}
+                                                        {!! Form::checkbox('games[]', $gc->id, in_array($gc->id, (isset($filters['games']) && count($filters['games']) > 0) ? $filters['games'] : [])) !!}
                                                         {{ $gc->title }}
                                                     </label>
                                                 </div>
@@ -91,12 +91,30 @@ if (isset($filters['banner_types'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-default">Find</button>
-                        </div>
-                    </div>
+                <div class="col-md-2">
+
+                            <div class="form-group {!! ($errors && $errors->has('followers')) ? ' has-error' : '' !!}">
+                                {!! Form::label('followers', 'Followers', ['class' => 'control-label']) !!}
+                                {!! Form::text('followers', old('followers', $filters['followers']), ['class' => 'form-control', 'placeholder' => 'Minimum followers']) !!}
+                                {!! Form::errorMessage('followers') !!}
+                            </div>
+
+                            <div class="form-group {!! ($errors && $errors->has('views')) ? ' has-error' : '' !!}">
+                                {!! Form::label('views', 'Views', ['class' => 'control-label']) !!}
+                                {!! Form::text('views', old('views', $filters['views']), ['class' => 'form-control', 'placeholder' => 'Minimum views']) !!}
+                                {!! Form::errorMessage('views') !!}
+                            </div>
+
+                            <div class="form-group {!! ($errors && $errors->has('videos')) ? ' has-error' : '' !!}">
+                                {!! Form::label('videos', 'Views', ['class' => 'control-label']) !!}
+                                {!! Form::text('videos', old('videos', $filters['videos']), ['class' => 'form-control', 'placeholder' => 'Minimum views']) !!}
+                                {!! Form::errorMessage('videos') !!}
+                            </div>
+
+                            <div class="form-group" style="margin-top:40px">
+                                <button type="submit" class="btn btn-default btn-lg">Find</button>
+                            </div>
+
                 </div>
             {!! Form::close() !!}
         </div>

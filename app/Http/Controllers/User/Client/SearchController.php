@@ -18,6 +18,7 @@ class SearchController extends Controller
         $languages = Input::get('languages', []);
         $bannerTypes = Input::get('banner_types', []);
         $games = Input::get('games', []);
+
         if (!is_array($bannerTypes)) {
             $bannerTypes = [$bannerTypes];
         }
@@ -34,21 +35,33 @@ class SearchController extends Controller
         $filters = [];
         if (count($bannerTypes) > 0) {
             $filters['banner_types'] = $bannerTypes;
+        } else {
+            $filters['banner_types'] = [];
         }
         if (count($games) > 0) {
             $filters['games'] = $games;
+        } else {
+            $filters['games'] = [];
         }
         if (count($languages) > 0) {
             $filters['languages'] = $languages;
+        } else {
+            $filters['languages'] = [];
         }
         if ($followers > 0) {
             $filters['followers'] = $followers;
+        } else {
+            $filters['followers'] = '';
         }
         if ($views > 0) {
             $filters['views'] = $views;
+        } else {
+            $filters['views'] = '';
         }
         if ($videos > 0) {
             $filters['videos'] = $videos;
+        } else {
+            $filters['videos'] = '';
         }
         $twitchers = UserMapper::findTwitchers($filters);
 
