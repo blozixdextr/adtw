@@ -53,7 +53,7 @@
                             <div class="form-group {!! ($errors && $errors->has('card_holder')) ? ' has-error' : '' !!}">
                                 {!! Form::label('card_holder', 'Cardholder', ['class' => 'col-sm-3 control-label']) !!}
                                 <div class="col-sm-9">
-                                    {!! Form::text('card_holder', old('card_holder', $profile->first_name.' '.$profile->last_name), ['class' => 'form-control', 'placeholder' => 'Your Name', 'required' => 'required']) !!}
+                                    {!! Form::text('card_holder', old('card_holder', $cardholderName), ['class' => 'form-control', 'placeholder' => 'Your Name', 'required' => 'required']) !!}
                                     {!! Form::errorMessage('card_holder') !!}
                                 </div>
                             </div>

@@ -16,7 +16,11 @@ class BillingController extends Controller
 {
     public function index()
     {
-        return view('app.pages.user.client.billing.index');
+        $cardholderName = trim($this->user->profile->first_name.' '.$this->user->profile->last_name);
+        if (strpos($cardholderName, '@') !== -1) {
+           $cardholderName = '';
+        }
+        return view('app.pages.user.client.billing.index', compact('cardholderName'));
     }
 
     public function save(Request $request)
