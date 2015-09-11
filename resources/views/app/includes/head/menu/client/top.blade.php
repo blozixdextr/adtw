@@ -7,8 +7,7 @@
         </hgroup>
     </header>
     <ul class="head-nav">
-        <li><a class="btn-violet" href="/user/client">Dashboard</a></li>
-        <li><a class="btn-violet" href="/user/client/ads">My Ads</a></li>
+        <li><a class="btn-violet" href="/user/client/search">Buy Ads</a></li>
         <li><a class="btn-violet" href="/user/client/billing">Billing</a></li>
         <li><a class="btn-violet" href="/faq">FAQ</a></li>
         <li class="menu-hidden" ><h1>Settings</h1></li>
