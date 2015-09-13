@@ -19,7 +19,6 @@
         <thead>
             <tr>
                 <th>Banner size</th>
-                <th>Views</th>
                 <th>Minutes</th>
                 <th>Costs</th>
                 <th>Status</th>
@@ -30,7 +29,6 @@
             @forelse($stream->clientsBanners($user)->get() as $b)
                 <tr>
                     <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
-                    <td>{{ $b->getOriginal('pivot_viewers') }}</td>
                     <td>{{ $b->getOriginal('pivot_minutes') }}</td>
                     <td>${{ $b->getOriginal('pivot_amount') }}</td>
                     <td>{{ $b->getOriginal('pivot_status') }}</td>
@@ -42,7 +40,39 @@
                     </td>
                 </tr>
             @empty
-                <tr><td colspan="6"><em>no your banners here</em></td></tr>
+                <tr><td colspan="5"><em>no your banners here</em></td></tr>
+            @endforelse
+        </tbody>
+    </table>
+
+    <h2>Timelogs</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>Viewers</th>
+            <th>Screenshot</th>
+        </tr>
+        </thead>
+        <tbody>
+            @forelse($stream->timelogs as $t)
+                @if ($t->status == 'live')
+                    <tr class="success">
+                @else
+                    <tr class="danger">
+                @endif
+                    <td>{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
+                    <td>{{ $t->viewers }}</td>
+                    <td>
+                        @if ($t->status == 'live' && $t->screenshot)
+                            <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
+                        @else
+                            <em>{{ $t->status }}</em>
+                        @endif
+                    </td>
+                </tr>
+            @empty
+                <tr><td colspan="3"><em>no timelogs yet</em></td></tr>
             @endforelse
         </tbody>
     </table>

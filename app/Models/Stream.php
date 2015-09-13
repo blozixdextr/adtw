@@ -32,4 +32,9 @@ class Stream extends Model
     {
         return $this->hasManyThrough(User::class, Banner::class, 'banner_id', 'client_id');
     }
+
+    public function timelogs()
+    {
+        return $this->hasMany(StreamTimelog::class);
+    }
 }
