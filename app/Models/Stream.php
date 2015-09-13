@@ -22,4 +22,14 @@ class Stream extends Model
         return $this->belongsToMany(Banner::class)->withPivot(['transfer_id', 'status', 'views', 'minutes', 'client_comment', 'twitcher_comment']);
     }
 
+    public function clientsBanners(User $client)
+    {
+        return $this->belongsToMany(Banner::class)->where('client_id', $client->id)
+            ->withPivot(['transfer_id', 'status', 'views', 'minutes', 'client_comment', 'twitcher_comment']);
+    }
+
+    public function clients()
+    {
+        return $this->hasManyThrough(User::class, Banner::class, 'banner_id', 'client_id');
+    }
 }

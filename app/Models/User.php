@@ -140,4 +140,13 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->balance - $this->balance_blocked;
     }
+
+    public function streams()
+    {
+        if ($this->type == 'client') {
+            return $this->hasManyThrough(Stream::class, Banner::class, 'client_id', 'banner_id');
+        } else {
+            return $this->hasMany(User::class);
+        }
+    }
 }

@@ -10,13 +10,15 @@ use Input;
 use Session;
 use App\Models\Mappers\PaymentMapper;
 use App\Models\Mappers\NotificationMapper;
+use App\Models\Mappers\StreamMapper;
 
 class StreamController extends Controller
 {
     public function index()
     {
-        // @todo Show all streams with client banner. Mark payed/declined/waiting/alive
-        return view('app.pages.user.client.stream.index');
+        $streams = StreamMapper::byClient($this->user);
+
+        return view('app.pages.user.client.stream.index', compact('streams'));
     }
 
     public function stream($streamId)
