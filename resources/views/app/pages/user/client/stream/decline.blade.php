@@ -6,36 +6,24 @@
     <p>Twitcher: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
     <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
 
-    <p>Your banners in stream</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Banner size</th>
-                <th>Views</th>
-                <th>Minutes</th>
-                <th>Costs</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($stream->clientsBanners($user)->get() as $b)
-                <tr>
-                    <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
-                    <td>{{ $b->getOriginal('pivot_viewers') }}</td>
-                    <td>{{ $b->getOriginal('pivot_minutes') }}</td>
-                    <td>${{ $b->getOriginal('pivot_amount') }}</td>
-                    <td>{{ $b->getOriginal('pivot_status') }}</td>
-                    <td>
-                        <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn btn-success">accept</a>
-                        <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn btn-danger">decline</a>
-                    </td>
-                </tr>
-            @empty
-                <tr><td colspan="6"><em>no your banners here</em></td></tr>
-            @endforelse
-        </tbody>
-    </table>
+    <p>We are sorry to hear about this. Please leave some comments for streamer</p>
+    {!! Form::open(['url' => '/user/client/stream/'.$stream->id.'/'.$banner->id.'/decline', 'class' => 'form-horizontal']) !!}
+
+    <div class="form-group {!! ($errors && $errors->has('comment')) ? ' has-error' : '' !!}">
+        {!! Form::label('comment', 'Comment', ['class' => 'col-sm-3 control-label']) !!}
+        <div class="col-sm-9">
+            {!! Form::textarea('comment', old('comment'), ['class' => 'form-control', 'placeholder' => 'comment', 'required' => 'required']) !!}
+            {!! Form::errorMessage('comment') !!}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </div>
+
+    {!! Form::close() !!}
 
 @endsection
 

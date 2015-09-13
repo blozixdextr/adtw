@@ -30,4 +30,9 @@ class UserTransfer extends Model
         $this->attributes['cart'] = serialize($value);
     }
 
+    public function bannerStream()
+    {
+        return $this->hasOne(BannerStream::class, 'transfer_id');
+    }
+
 }

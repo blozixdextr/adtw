@@ -35,8 +35,10 @@
                     <td>${{ $b->getOriginal('pivot_amount') }}</td>
                     <td>{{ $b->getOriginal('pivot_status') }}</td>
                     <td>
+                        @if ($b->getOriginal('pivot_status') == 'waiting')
                         <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn btn-success">accept</a>
                         <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn btn-danger">decline</a>
+                        @endif
                     </td>
                 </tr>
             @empty

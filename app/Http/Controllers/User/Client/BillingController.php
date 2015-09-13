@@ -127,11 +127,18 @@ class BillingController extends Controller
         return Redirect::to('/user/client/billing')->with(['success' => 'We got your payment']);
     }
 
-    public function log() {
+    public function log()
+    {
         $payments = PaymentMapper::payments($this->user);
+
+        return view('app.pages.user.client.billing.log', compact('payments'));
+    }
+
+    public function transfers()
+    {
         $transfers = PaymentMapper::transfers($this->user);
 
-        return view('app.pages.user.client.billing.log', compact('payments', 'transfers'));
+        return view('app.pages.user.client.billing.transfers', compact('transfers'));
     }
 
 }

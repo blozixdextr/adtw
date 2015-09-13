@@ -67,6 +67,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::group(['prefix' => 'billing'], function () {
         Route::get('/', 'BillingController@index');
         Route::get('log', 'BillingController@log');
+        Route::get('transfers', 'BillingController@transfers');
         Route::post('card', 'BillingController@stripe');
         Route::post('paypal', 'BillingController@paypal');
         Route::get('paypal/callback/success/{userId}', 'BillingController@paypalSuccess');

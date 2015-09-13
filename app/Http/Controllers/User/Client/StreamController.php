@@ -44,7 +44,7 @@ class StreamController extends Controller
         if ($pivot->status != 'waiting') {
             return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
         }
-        $pivot = StreamMapper::pay($this->user, $banner, $stream);
+        $transfer = StreamMapper::pay($this->user, $banner, $stream);
         $pivot->status = 'accepted';
         $pivot->save();
 
@@ -87,7 +87,7 @@ class StreamController extends Controller
             return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
         }
 
-        $this->validate($request, ['comment' => 'required:min:5']);
+        $this->validate($request, ['comment' => 'required|min:5']);
         $comment = $request->get('comment');
 
         $pivot->status = 'declining';
