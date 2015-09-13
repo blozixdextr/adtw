@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User\Client;
 
+use App\Models\Banner;
 use App\Models\UserPayment;
 use Illuminate\Http\Request;
 use App\Models\Mappers\LogMapper;
@@ -29,18 +30,73 @@ class StreamController extends Controller
         return view('app.pages.user.client.stream.show', compact('stream'));
     }
 
-    public function accept($streamId, Request $request)
+    public function accept($streamId, $bannerId, Request $request)
     {
-        $comment = $request->get('comment', '');
-        // @todo Transfer money to twitcher
-        return Redirect::to('/user/client/streams')->with(['success' => 'You accepted and payed stream']);
+        $stream = Stream::findOrFail($streamId);
+        $banner = Banner::findOrFail($bannerId);
+        if (!StreamMapper::checkOwner($this->user, $banner, $stream)) {
+            return Redirect::to('/user/client/streams')->withErrors('You have no rights for this');
+        }
+        if ($stream->time_end == null) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still live');
+        }
+        $pivot = StreamMapper::getPivot($banner, $stream);
+        if ($pivot->status != 'waiting') {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
+        }
+        $pivot = StreamMapper::pay($this->user, $banner, $stream);
+        $pivot->status = 'accepted';
+        $pivot->save();
+
+        LogMapper::log('banner_paid', $banner->id, $pivot->amount);
+        NotificationMapper::bannerPayAccept($banner, $stream, $pivot->amount);
+
+        return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You accepted and payed the banner in this stream']);
     }
 
-    public function decline($streamId, Request $request)
+    public function decline($streamId, $bannerId)
     {
+        $stream = Stream::findOrFail($streamId);
+        $banner = Banner::findOrFail($bannerId);
+        if (!StreamMapper::checkOwner($this->user, $banner, $stream)) {
+            return Redirect::to('/user/client/streams')->withErrors('You have no rights for this');
+        }
+        if ($stream->time_end == null) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still live');
+        }
+        $pivot = StreamMapper::getPivot($banner, $stream);
+        if ($pivot->status != 'waiting') {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
+        }
+
+        return view('app.pages.user.client.stream.decline', compact('stream', 'banner'));
+    }
+
+    public function declineSave($streamId, $bannerId, Request $request)
+    {
+        $stream = Stream::findOrFail($streamId);
+        $banner = Banner::findOrFail($bannerId);
+        if (!StreamMapper::checkOwner($this->user, $banner, $stream)) {
+            return Redirect::to('/user/client/streams')->withErrors('You have no rights for this');
+        }
+        if ($stream->time_end == null) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still live');
+        }
+        $pivot = StreamMapper::getPivot($banner, $stream);
+        if ($pivot->status != 'waiting') {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
+        }
+
         $this->validate($request, ['comment' => 'required:min:5']);
         $comment = $request->get('comment');
-        // @todo Add comment to stream and notify twitcher about decline
-        return Redirect::to('/user/client/streams')->with(['success' => 'You declined to pay stream']);
+
+        $pivot->status = 'declining';
+        $pivot->client_comment = $comment;
+        $pivot->save();
+
+        LogMapper::log('banner_declined', $banner->id, $pivot->amount);
+        NotificationMapper::bannerPayDeclining($banner, $stream, $pivot->amount);
+
+        return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You declined to pay the banner in this stream']);
     }
 }

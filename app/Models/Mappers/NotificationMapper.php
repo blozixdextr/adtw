@@ -3,6 +3,7 @@
 namespace App\Models\Mappers;
 
 use App\Models\Banner;
+use App\Models\Stream;
 use App\Models\User;
 use App\Models\Notification;
 use App\Models\UserProfile;
@@ -123,6 +124,30 @@ class NotificationMapper
         $notifications = $notifications->paginate($limit);
 
         return $notifications;
+    }
+
+    public static function bannerPayAccept(Banner $banner, Stream $stream, $amount)
+    {
+        NotificationMapper::notify($stream->user, $banner->client->name.' paid your $'.$amount);
+        NotificationMapper::notify($banner->client, 'You paid $'.$amount.' to '.$stream->user->name);
+        Mail::send('app.emails.default', [
+            'title' => 'You got paid',
+            'subtitle' => $banner->client->name.' paid your $'.$amount,
+            'url' => '/user/twitcher'], function ($m) use ($stream) {
+            $m->to($stream->user->email)->subject('You got paid');
+        });
+    }
+
+    public static function bannerPayDeclining(Banner $banner, Stream $stream, $amount)
+    {
+        NotificationMapper::notify($stream->user, $banner->client->name.' declined your stream', 'important', '<a href="/user/twitcher/stream/'.$stream->id.'/'.$banner->id.'/declining">Review it</a>');
+        NotificationMapper::notify($banner->client, 'You declined to pay for stream of '.$stream->user->name);
+        Mail::send('app.emails.default', [
+            'title' => 'Your stream was declined',
+            'subtitle' => $banner->client->name.' declined your stream',
+            'url' => '/user/twitcher/stream/'.$stream->id.'/'.$banner->id.'/declining'], function ($m) use ($stream) {
+            $m->to($stream->user->email)->subject('Your stream was declined');
+        });
     }
 
 

@@ -2,6 +2,8 @@
 
 namespace App\Models\Mappers;
 
+use App\Models\Banner;
+use App\Models\BannerStream;
 use App\Models\User;
 use App\Models\UserProfile ;
 use App\Models\UserPayment;
@@ -35,5 +37,57 @@ class StreamMapper
 
         return $streams;
     }
+
+    public static function checkOwner(User $user, Banner $banner, Stream $stream)
+    {
+        if ($banner->client_id != $user->id) {
+            return false;
+        }
+        foreach ($stream->banners as $b) {
+            if ($b->id == $banner->id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function getPivot(Banner $banner, Stream $stream)
+    {
+        return BannerStream::whereBannerId($banner->id)->whereStreamId($stream->id)->first();
+    }
+
+    public static function pay(User $user, Banner $banner, Stream $stream)
+    {
+        $pivot = self::getPivot($banner, $stream);
+
+        $twitcher = $stream->user;
+        $twitcher->balance = $twitcher->balance + $pivot->amount;
+        $twitcher->save();
+
+        $user->balance_blocked = $user->balance_blocked - $pivot->amount;
+        if ($user->balance_blocked < 0) {
+            $user->balance_blocked = 0;
+        }
+        $user->balance = $user->balance - $pivot->amount;
+        if ($user->balance < 0) {
+            $user->balance = 0;
+        }
+        $user->save();
+        $transfer = UserTransfer::create([
+            'buyer_id' => $user->id,
+            'seller_id' => $twitcher->id,
+            'title' => 'Paid banner#'.$banner->id,
+            'amount' => $pivot->amount,
+            'currency' => 'USD',
+        ]);
+
+        $pivot->status = 'accepted';
+        $pivot->transfer_id = $transfer->id;
+        $pivot->save();
+
+        return $transfer;
+    }
+
 
 }

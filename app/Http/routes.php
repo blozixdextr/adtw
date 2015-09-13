@@ -77,8 +77,9 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
     Route::get('streams', 'StreamController@index');
     Route::get('stream/{streamId}', 'StreamController@stream');
-    Route::post('stream/accept/{streamId}', 'StreamController@accept');
-    Route::post('stream/decline/{streamId}', 'StreamController@decline');
+    Route::get('stream/{streamId}/{bannerId}/accept', 'StreamController@accept');
+    Route::get('stream/{streamId}/{bannerId}/decline', 'StreamController@decline');
+    Route::post('stream/{streamId}/{bannerId}/decline', 'StreamController@declineSave');
 
     Route::get('search', 'SearchController@index');
 
