@@ -61,7 +61,10 @@ class BannerController extends Controller
         $banners = BannerMapper::activeTwitcher($this->user, $bannerType->id);
         $bgColor = Input::get('color', '00ff00');
 
-        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType'));
+        $trackPeriod = 1000 * 60 * Config::get('banner.track_minutes');
+        $rotationPeriod = 1000 * Config::get('banner.rotation_seconds');
+
+        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType', 'trackPeriod'));
     }
 
     public function ping($bannerType) {

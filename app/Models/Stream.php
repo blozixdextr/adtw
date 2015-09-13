@@ -19,13 +19,13 @@ class Stream extends Model
 
     public function banners()
     {
-        return $this->belongsToMany(Banner::class)->withPivot(['transfer_id', 'status', 'views', 'minutes', 'client_comment', 'twitcher_comment']);
+        return $this->belongsToMany(Banner::class)->withPivot(['transfer_id', 'status', 'viewers', 'minutes', 'amount', 'client_comment', 'twitcher_comment']);
     }
 
     public function clientsBanners(User $client)
     {
         return $this->belongsToMany(Banner::class)->where('client_id', $client->id)
-            ->withPivot(['transfer_id', 'status', 'views', 'minutes', 'client_comment', 'twitcher_comment']);
+            ->withPivot(['transfer_id', 'status', 'viewers', 'minutes', 'amount', 'client_comment', 'twitcher_comment']);
     }
 
     public function clients()

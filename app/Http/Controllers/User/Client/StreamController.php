@@ -11,6 +11,7 @@ use Session;
 use App\Models\Mappers\PaymentMapper;
 use App\Models\Mappers\NotificationMapper;
 use App\Models\Mappers\StreamMapper;
+use App\Models\Stream;
 
 class StreamController extends Controller
 {
@@ -23,8 +24,9 @@ class StreamController extends Controller
 
     public function stream($streamId)
     {
-        // @todo Show stream info (alive or finished, timeslots and screenshort)
-        return view('app.pages.user.client.stream.show');
+        $stream = Stream::findOrFail($streamId);
+
+        return view('app.pages.user.client.stream.show', compact('stream'));
     }
 
     public function accept($streamId, Request $request)

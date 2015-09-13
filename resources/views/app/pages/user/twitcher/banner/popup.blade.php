@@ -45,8 +45,8 @@
         $(function(){
             bannerRotation();
             bannersRefresh();
-            setInterval(bannerRotation, 1000);
-            setInterval(bannersRefresh, 1000*60);
+            setInterval(bannerRotation, {{ $rotationPeriod }});
+            setInterval(bannersRefresh, {{ $trackPeriod }});
         });
     </script>
 
