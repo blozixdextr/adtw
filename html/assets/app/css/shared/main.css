@@ -422,7 +422,6 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 /*                    footer             */
 .second-page footer{
     padding: 20px 0;
-    
     bottom: 0px;
     left: 0px;
     text-align: center;
@@ -435,7 +434,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 .second-page footer .icons li a{
     color: #fff;
-    font-size:100%;
+    font-size:100% !important;
 }
 .second-page footer .copyright{
     color: #fff;
