@@ -2,6 +2,10 @@
 /.design
 /vendor
 /node_modules
+/html-old-trash
+/html-old
+/html/Test
+/html/adminer.php
 Homestead.yaml
 Homestead.json
 .env
@@ -13,3 +17,5 @@ composer.lock
 access.log
 error.log
 Thumbs.db
+composer.phar
+
