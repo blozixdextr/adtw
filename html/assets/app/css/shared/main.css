@@ -200,6 +200,17 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 
 /*            second page             */
+body {
+ height: 100%;
+ min-width:900px;
+}
+html { 
+ position:relative; 
+ min-height:100%;
+}
+wrapper {
+ padding-bottom: 200px;
+}
 
 .second-nav .head-nav{
     margin-bottom:0;
@@ -420,10 +431,13 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     outline:none;
 }
 /*                    footer             */
+
 .second-page footer{
     padding: 20px 0;
-    bottom: 0px;
     left: 0px;
+    height: 100px; 
+ position: absolute;
+ bottom: 0;
     text-align: center;
     width: 100%;
     background-color: #6441A5;
