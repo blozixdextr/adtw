@@ -101,7 +101,7 @@
                                                 <td align="center" valign="top" width="500" class="flexibleContainerCell">
                                                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                         <tr>
-                                                            <td align="center" style="padding-top:20px;" valign="top" class="textContent">
+                                                            <td align="center" valign="top" class="textContent">
                                                                 <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/gold.gif') }}" alt="side image" width='142' height='64' data-default="placeholder" data-max-width="150"></a>
                                                                 <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/logo-for.png') }}" alt="side image" width='142' style="margin-left:15px;margin-bottom:13px;" height='42' data-default="placeholder" data-max-width="150"></a>
                                                             </td>
@@ -130,7 +130,7 @@
                                                                     @if ($isNew)
                                                                         Registration
                                                                     @else
-                                                                        Welcome back, {{ $user->name }}
+                                                                        Welcome back,<br/> {{ $user->name }}
                                                                     @endif
                                                                 </h1>
                                                             </td>
