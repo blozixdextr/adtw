@@ -221,7 +221,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 	margin:0;
 }
 .second-page header h2{
-	margin: 10px 0 0 0;
+	margin: 4px 0 0 0;
 }
 .second-page header h1 a{
     line-height: 1;
