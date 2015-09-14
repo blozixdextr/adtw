@@ -102,8 +102,8 @@
                                                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/gold.gif') }}" alt="side image" width='142' height='142' data-default="placeholder" data-max-width="150"></a>
-                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/logo-for.png') }}" style="margin-top:20px;margin-bottom:20px;" alt="side image" width='142' height='142' data-default="placeholder" data-max-width="150"></a>
+                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/gold.gif') }}" alt="side image" width='142' height='64' data-default="placeholder" data-max-width="150"></a>
+                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/logo-for.png') }}" alt="side image" width='142' style="margin-left:15px;margin-bottom:13px;" height='42' data-default="placeholder" data-max-width="150"></a>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -126,11 +126,11 @@
                                                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <h1 style="color:#5F5F5F;line-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:normal;margin-bottom:5px;text-align:center;">
+                                                                <h1 style="color:#5F5F5F;line-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:normal;margin-bottom:5px;text-align:center;padding-top:20px;">
                                                                     @if ($isNew)
                                                                         Registration
                                                                     @else
-                                                                        Welcome back, {{ $user->name }}
+                                                                        Welcome back,<br/> {{ $user->name }}
                                                                     @endif
                                                                 </h1>
                                                             </td>
@@ -186,7 +186,7 @@
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
                                                                 <div style="padding:10px;font-size:20px;color:#5F5F5F;">
-                                                                    <a href="{{ url('/auth/client/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;background-color:#6441A5;color:#fff;padding:10px;">Go to the Adtw.ch</a>
+                                                                    <a href="{{ url('/auth/client/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;text-decoration:none;background-color:#6441A5;color:#fff;padding:10px;">Go to the Adtw.ch</a>
                                                                 </div>
                                                             </td>
                                                         </tr>
