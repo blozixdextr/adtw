@@ -202,13 +202,12 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 /*            second page             */
 
 .second-nav .head-nav{
-    margin-top: 20px;
+    margin-bottom:0;
     vertical-align: top;
 }
 .second-page header img{
     width: 100px;
     position: relative;
-    top: -5px;
     margin-left: 10px;
 }
 .second-page header>*{
@@ -217,6 +216,12 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 .second-page .second-nav>header,
 .second-page .second-nav>nav{
     display: inline-block;
+}
+.second-page header h1{
+	margin:0;
+}
+.second-page header h2{
+	margin: 10px 0 0 0;
 }
 .second-page header h1 a{
     line-height: 1;
@@ -232,7 +237,15 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 .second-page .second-nav{
     padding: 5px 0px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #6441A5;
+}
+.second-page .second-nav #header{
+	display:flex;
+	justify-content: center;
+    	align-items: center;
 }
 .second-page .page{
     padding: 15px;
@@ -569,6 +582,9 @@ li.menu-hidden h2{
         margin-top: 0;
         width: 100%;
         text-align: center;
+    }
+    .second-page .second-nav{
+    	display:block;
     }
     .nav-column div{
         text-align: left;
