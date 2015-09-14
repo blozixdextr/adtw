@@ -435,6 +435,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 .second-page footer .icons li a{
     color: #fff;
+    font-size:100%;
 }
 .second-page footer .copyright{
     color: #fff;
@@ -585,6 +586,9 @@ li.menu-hidden h2{
     }
     .second-page .second-nav{
     	display:block;
+    }
+    .second-page header h2{
+    	margin-bottom:5px;
     }
     .nav-column div{
         text-align: left;
