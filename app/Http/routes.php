@@ -51,6 +51,13 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
 
     Route::get('banner/ping/{bannerType}', 'BannerController@ping');
 
+    Route::get('streams', 'StreamController@index');
+    Route::get('ads', 'StreamController@index');
+    Route::get('stream/{streamId}', 'StreamController@stream');
+    Route::get('stream/{streamId}/{bannerId}/accept-decline', 'StreamController@acceptDecline');
+    Route::get('stream/{streamId}/{bannerId}/complain-decline', 'StreamController@complainDecline');
+    Route::post('stream/{streamId}/{bannerId}/complain-decline', 'StreamController@complainDeclineSave');
+
 });
 
 Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'prefix' => 'user/client'], function () {
@@ -77,6 +84,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::get('notification', 'NotificationController@index');
 
     Route::get('streams', 'StreamController@index');
+    Route::get('ads', 'StreamController@index');
     Route::get('stream/{streamId}', 'StreamController@stream');
     Route::get('stream/{streamId}/{bannerId}/accept', 'StreamController@accept');
     Route::get('stream/{streamId}/{bannerId}/decline', 'StreamController@decline');

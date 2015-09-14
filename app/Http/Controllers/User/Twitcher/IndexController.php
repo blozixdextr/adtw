@@ -25,7 +25,7 @@ class IndexController extends Controller
         if ($user->twitch_updated == null || $now->diffInDays($user->twitch_updated, false) < 0) {
             $twitch = app('twitch');
             $channel = $twitch->getChannel();
-            if ($channel) {
+            if ($channel && isset($channel->views)) {
                 $views = $channel->views;
                 $followers = $channel->followers;
                 $videos =  $twitch->getVideos($channel->name, 2);

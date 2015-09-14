@@ -145,10 +145,36 @@ class NotificationMapper
         Mail::send('app.emails.default', [
             'title' => 'Your stream was declined',
             'subtitle' => $banner->client->name.' declined your stream',
-            'url' => '/user/twitcher/stream/'.$stream->id.'/'.$banner->id.'/declining'], function ($m) use ($stream) {
+            'url' => '/user/twitcher/stream/'.$stream->id   ], function ($m) use ($stream) {
             $m->to($stream->user->email)->subject('Your stream was declined');
         });
     }
+
+    public static function bannerPayDeclined(Banner $banner, Stream $stream, $amount)
+    {
+        NotificationMapper::notify($stream->user, 'You accepted to decline your stream');
+        NotificationMapper::notify($banner->client, $stream->user->name.' accepted to decline stream');
+        Mail::send('app.emails.default', [
+            'title' => 'Stream was declined',
+            'subtitle' => $stream->user->name.' accepted to decline stream',
+            'url' => '/user/client/stream/'.$stream->id], function ($m) use ($stream, $banner) {
+            $m->to($banner->client->email)->subject('Stream was declined');
+        });
+    }
+
+    public static function bannerPayComplained(Banner $banner, Stream $stream, $amount)
+    {
+        NotificationMapper::notify($stream->user, 'You complained about declining your stream');
+        NotificationMapper::notify($banner->client, $stream->user->name.' complained about declining stream');
+        Mail::send('app.emails.default', [
+            'title' => 'Declining was complained',
+            'subtitle' => 'The final decision will be made by site admin',
+            'url' => '/user/client/stream/'.$stream->id], function ($m) use ($stream, $banner) {
+            $m->to($banner->client->email)->subject('Declining was complained');
+        });
+    }
+
+
 
 
 }

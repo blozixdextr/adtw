@@ -38,6 +38,29 @@ class StreamMapper
         return $streams;
     }
 
+    public static function byTwitcher(User $user, $filters = [], $limit = 50)
+    {
+        //$streams = $user->streams();
+
+        $streams = Stream::whereUserId($user->id);
+        $streams->orderBy('time_start', 'desc')->distinct();
+
+        if (count($filters) > 0) {
+            if (isset($filters['active'])) {
+                if ($filters['active'] == 1) {
+                    $streams->where('streams.time_end', null);
+                }
+                if ($filters['active'] == 0) {
+                    $streams->where('streams.time_end', '<', \DB::raw('NOW()'));
+                }
+            }
+        }
+
+        $streams = $streams->paginate($limit);
+
+        return $streams;
+    }
+
     public static function checkOwner(User $user, Banner $banner, Stream $stream)
     {
         if ($banner->client_id != $user->id) {
@@ -87,6 +110,28 @@ class StreamMapper
         $pivot->save();
 
         return $transfer;
+    }
+
+    public static function decline(Banner $banner, Stream $stream)
+    {
+        $pivot = self::getPivot($banner, $stream);
+
+        $twitcher = $stream->user;
+        $twitcher->balance = $twitcher->balance + $pivot->amount;
+        $twitcher->save();
+
+        $client = $banner->client;
+
+        $client->balance_blocked = $client->balance_blocked - $pivot->amount;
+        if ($client->balance_blocked < 0) {
+            $client->balance_blocked = 0;
+        }
+        $client->save();
+
+        $pivot->status = 'declined';
+        $pivot->save();
+
+        return $pivot;
     }
 
 

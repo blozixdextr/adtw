@@ -48,7 +48,7 @@ class StreamController extends Controller
         $pivot->status = 'accepted';
         $pivot->save();
 
-        LogMapper::log('banner_paid', $banner->id, $pivot->amount);
+        LogMapper::log('banner_paid', $banner->id, $stream->id);
         NotificationMapper::bannerPayAccept($banner, $stream, $pivot->amount);
 
         return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You accepted and payed the banner in this stream']);
@@ -94,7 +94,7 @@ class StreamController extends Controller
         $pivot->client_comment = $comment;
         $pivot->save();
 
-        LogMapper::log('banner_declined', $banner->id, $pivot->amount);
+        LogMapper::log('banner_declining', $banner->id, $stream->id);
         NotificationMapper::bannerPayDeclining($banner, $stream, $pivot->amount);
 
         return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You declined to pay the banner in this stream']);
