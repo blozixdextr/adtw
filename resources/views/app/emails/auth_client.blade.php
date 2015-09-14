@@ -126,7 +126,7 @@
                                                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <h1 style="color:#5F5F5F;line-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:normal;margin-bottom:5px;text-align:center;">
+                                                                <h1 style="color:#5F5F5F;line-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:normal;margin-bottom:5px;text-align:center;padding-top:20px;">
                                                                     @if ($isNew)
                                                                         Registration
                                                                     @else
