@@ -102,8 +102,8 @@
                                                     <table border="0" cellpadding="10" cellspacing="0" width="100%">
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
-                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/gold.gif') }}" alt="side image" width='142' height='89' data-default="placeholder" data-max-width="150"></a>
-                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/logo-for.png') }}" style="margin-top:20px;margin-bottom:20px;" alt="side image" width='142' height='89' data-default="placeholder" data-max-width="150"></a>
+                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/gold.gif') }}" alt="side image" width='142' height='64' data-default="placeholder" data-max-width="150"></a>
+                                                                <a href="{{ url('/') }}" target="_blank" style="text-decoration:none;"><img src="{{ url('/assets/app/images/logo-for.png') }}" style="margin-top:20px;margin-bottom:20px;" alt="side image" width='142' height='64' data-default="placeholder" data-max-width="150"></a>
                                                             </td>
                                                         </tr>
                                                     </table>
