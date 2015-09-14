@@ -186,7 +186,7 @@
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
                                                                 <div style="padding:10px;font-size:20px;color:#5F5F5F;">
-                                                                    <a href="{{ url('/auth/client/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;background-color:#6441A5;color:#fff;padding:10px;">Go to the Adtw.ch</a>
+                                                                    <a href="{{ url('/auth/client/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;text-decoration:none;background-color:#6441A5;color:#fff;padding:10px;">Go to the Adtw.ch</a>
                                                                 </div>
                                                             </td>
                                                         </tr>
