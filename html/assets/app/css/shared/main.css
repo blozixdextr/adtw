@@ -209,7 +209,7 @@ html {
  min-height:100%;
 }
 wrapper {
- padding-bottom: 200px;
+ padding-bottom: 170px;
 }
 
 .second-nav .head-nav{
@@ -435,7 +435,7 @@ wrapper {
 .second-page footer{
     padding: 20px 0;
     left: 0px;
-    height: 100px; 
+    height: 80px; 
  position: absolute;
  bottom: 0;
     text-align: center;
