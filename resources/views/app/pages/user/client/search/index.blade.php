@@ -151,9 +151,9 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     <div class="streamers-list-new">
       <div class="streamer-id">
           <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
+              <div class="str-id-followers"><span>808,964</span> followers</div>
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
+              <div class="str-id-following"><span>65,989,753</span> views</div>
           </div>
           <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
