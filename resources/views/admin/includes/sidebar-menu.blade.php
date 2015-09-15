@@ -1,0 +1,12 @@
+
+<ul class="sidebar-menu">
+    <li class="header">References</li>
+    <li{!!HTML::activeLink('/admin/ref/banner_type') !!}><a href="/admin/ref/banner_type"><i class="fa fa-picture-o"></i> <span>Banner Sizes</span></a></li>
+    <li{!!HTML::activeLink('/admin/ref/game') !!}><a href="/admin/ref/game"><i class="fa fa-gamepad"></i> <span>Games</span></a></li>
+    <li{!!HTML::activeLink('/admin/ref/language') !!}><a href="/admin/ref/language"><i class="fa fa-language"></i> <span>Languages</span></a></li>
+    <li class="header">User Management</li>
+    <li{!!HTML::activeLink('/admin/user') !!}><a href="/admin/user"><i class="fa fa-user"></i> <span>Users</span></a></li>
+    <li class="header">Payments</li>
+    <li{!!HTML::activeLink('/admin/delcine') !!}><a href="/admin/delcine"><i class="fa fa-balance-scale"></i> <span>Declines</span></a></li>
+    <li{!!HTML::activeLink('/admin/withdraw') !!}><a href="/admin/withdraw"><i class="fa fa-money"></i> <span>Withdraw</span></a></li>
+</ul>

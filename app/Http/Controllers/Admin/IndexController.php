@@ -10,8 +10,8 @@ class IndexController extends Controller
     public function index()
     {
         $logs = LogMapper::all();
-        dd($logs);
+        //dd($logs);
 
-        return view('app.pages.admin.index', compact('logs'));
+        return view('admin.pages.index', compact('logs'));
     }
 }

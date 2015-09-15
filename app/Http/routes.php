@@ -118,6 +118,12 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
         Route::get('{userId}/login-as', 'UserController@loginAs');
     });
 
+    Route::group(['prefix' => 'ref'], function () {
+        Route::get('{type}', 'RefController@index');
+        Route::get('{type}/{userId}', 'RefController@show');
+        Route::post('{type}/{userId}', 'RefController@save');
+    });
+
     Route::get('withdraw', 'Admin\WithdrawController@index');
     Route::get('withdraw/{withdrawId}', 'Admin\WithdrawController@show');
     Route::get('withdraw/{withdrawId}/accept', 'Admin\WithdrawController@accept');
