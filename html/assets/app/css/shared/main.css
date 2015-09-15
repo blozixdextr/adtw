@@ -71,7 +71,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 .title-place-left{
     width: 45%;
     box-sizing:border-box;
-    height: 220px;
+    height: 250px;
 }
 .title-place-left{
 	margin-right:5%;
@@ -642,6 +642,9 @@ li.menu-hidden h2{
     .title-place-left{
         width: 100%;
         margin-right:0;
+    }
+    .title-place-right{
+    	margin-top:;
     }
     .second-nav .head-nav{
         margin-top: 0;
