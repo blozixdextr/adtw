@@ -106,7 +106,7 @@ header .title-descr{
     text-align: center;
     display: inline-block;
     vertical-align: top;
-    min-height:289px;
+    min-height:200px;
     padding: 10px;
 }
 .about-us li i{
