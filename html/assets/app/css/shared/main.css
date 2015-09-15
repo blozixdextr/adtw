@@ -235,14 +235,20 @@ wrapper {
 }
 .second-page header h1 a{
 	display:block;
-	height:64px;
-	width:133px;
+	min-height:27px;
+	min-width:133px;
     background-image:url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
     background-image: -webkit-image-set(url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png') 1x, url('https://cloud.githubusercontent.com/assets/14276761/9876780/3dbd27de-5bc1-11e5-9896-f5652c51bd79.png') 2x);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
 }
 .second-page header h2{
     font-size: 18px;
     color:#fff;
+}
+.second-page header hgroup{
+    margin: 0px 15px;
 }
 .second-page .second-nav{
     padding: 5px 0px;
