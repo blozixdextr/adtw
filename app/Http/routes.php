@@ -110,7 +110,7 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
     Route::get('/', 'IndexController@index');
 
     Route::group(['prefix' => 'user'], function () {
-        Route::get('list', 'UserController@index');
+        Route::get('/', 'UserController@index');
         Route::get('{userId}', 'UserController@show');
         Route::get('{userId}/billing', 'UserController@billing');
         Route::get('{userId}/ban', 'UserController@ban');

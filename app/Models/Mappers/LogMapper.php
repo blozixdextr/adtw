@@ -53,7 +53,7 @@ class LogMapper
 
     public static function all($limit = 50)
     {
-        $logs = Log::orderBy('created_at', 'desc')->paginate($limit);
+        $logs = Log::orderBy('created_at', 'desc')->with('user')->paginate($limit);
 
         return $logs;
     }

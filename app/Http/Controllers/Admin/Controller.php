@@ -15,7 +15,6 @@ abstract class Controller extends BaseController
         if ($this->user->role != 'admin') {
             return Redirect::to('/');
         }
-        view()->share('user', $this->user);
-        view()->share('profile', $this->user->profile);
+        view()->share('admin', $this->user);
     }
 }

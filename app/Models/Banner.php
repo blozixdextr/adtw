@@ -30,5 +30,12 @@ class Banner extends Model
         return $this->belongsTo(Ref::class, 'type_id');
     }
 
+    public function totalAmount()
+    {
+        $sum = BannerStream::whereBannerId($this->id)->sum('amount');
+
+        return $sum;
+    }
+
 }
 
