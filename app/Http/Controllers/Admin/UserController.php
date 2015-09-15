@@ -57,4 +57,22 @@ class UserController extends Controller
 
         return redirect('/user/'.$user->type);
     }
+
+    public function ban($userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->is_active = 0;
+        $user->save();
+
+        return Redirect::back()->with(['success' => 'User '.$user->name.' successfully banned']);
+    }
+
+    public function unban($userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->is_active = 1;
+        $user->save();
+
+        return Redirect::back()->with(['success' => 'User '.$user->name.' successfully unbanned']);
+    }
 }

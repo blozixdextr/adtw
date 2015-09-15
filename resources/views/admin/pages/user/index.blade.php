@@ -37,7 +37,6 @@
                 <th>type</th>
                 <th>email</th>
                 <th>last visit</th>
-                <th>actions</th>
             </tr>
         </thead>
     @forelse($users as $u)
@@ -57,16 +56,9 @@
             <td>
                 <span title="{{ $u->last_activity->format('Y-m-d H:i') }}">{{ $u->last_activity->diffForHumans() }}</span>
             </td>
-            <td>
-                @if ($u->is_active)
-                    <a class="btn btn-danger btn-xs confirm-delete" href="/admin/user/ban/{{ $u->id }}">ban</a>
-                @else
-                    <a class="btn btn-success btn-xs confirm-delete" href="/admin/user/unban/{{ $u->id }}">unban</a>
-                @endif
-            </td>
         </tr>
     @empty
-        <tr><td colspan="6">no result</td></tr>
+        <tr><td colspan="5">no result</td></tr>
     @endforelse
     </table>
 

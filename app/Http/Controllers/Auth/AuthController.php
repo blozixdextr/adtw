@@ -123,6 +123,10 @@ class AuthController extends Controller
             }
             $localUser = User::oauth($identity->_id, 'twitch')->first();
             if ($localUser) {
+                if ($localUser->is_active == 0) {
+                    LogMapper::log('client_login', $localUser->id, 'banned');
+                    return redirect('/')->withErrors(['login' => 'Your account is deactivated. Please contact admin ASAP']);
+                }
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);
                 $localUser->last_activity = \Carbon\Carbon::now();
@@ -185,6 +189,10 @@ class AuthController extends Controller
         $user = User::findOrFail($userId);
         $result = UserMapper::checkAuthToken($user, $token);
         if ($result) {
+            if ($user->is_active == 0) {
+                LogMapper::log('client_login', $user->id, 'banned');
+                return Redirect::back()->withErrors(['login' => 'Your account is deactivated. Please contact admin ASAP']);
+            }
             Auth::loginUsingId($user->id, true);
             LogMapper::log('client_login', $user->id, 'finish');
             return redirect('/user/client');
@@ -217,6 +225,10 @@ class AuthController extends Controller
         } else {
             $isNew = false;
             LogMapper::log('client_login', $localUser->id, 'try');
+            if ($localUser->is_active == 0) {
+                LogMapper::log('client_login', $localUser->id, 'banned');
+                return Redirect::back()->withErrors(['login' => 'Your account is deactivated. Please contact admin ASAP']);
+            }
         }
 
         $this->sendClientWelcome($localUser, $isNew, $password);
