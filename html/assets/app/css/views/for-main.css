@@ -82,8 +82,9 @@
 }
 .big-logo-link{
     display: inline-block;
-    min-height: 36px;
-    min-width: 165px;
+    min-height: 42px;
+    min-width: 200px;
+    margin: 10px 0 20px;
     background-image:url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
     background-image: -webkit-image-set(url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png') 1x, url('https://cloud.githubusercontent.com/assets/14276761/9876780/3dbd27de-5bc1-11e5-9896-f5652c51bd79.png') 2x);
     background-repeat: no-repeat;
