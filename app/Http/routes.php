@@ -101,9 +101,27 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
 });
 
-Route::group(['middleware' => 'role:admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
-    Route::get('admin', 'Admin\IndexController@index');
+    Route::get('/', 'Admin\IndexController@index');
+
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('list', 'UserController@index');
+        Route::get('{userId}', 'UserController@show');
+        Route::get('{userId}/billing', 'UserController@billing');
+        Route::get('{userId}/ban', 'UserController@ban');
+        Route::get('{userId}/unban', 'UserController@unban');
+        Route::get('{userId}/login-as', 'UserController@loginAs');
+    });
+
+    Route::get('withdraw', 'Admin\WithdrawController@index');
+    Route::get('withdraw/{withdrawId}', 'Admin\WithdrawController@show');
+    Route::get('withdraw/{withdrawId}/accept', 'Admin\WithdrawController@accept');
+
+    Route::get('decline', 'Admin\DeclineController@index');
+    Route::get('decline/{bannerStreamId}', 'Admin\DeclineController@show');
+    Route::get('decline/{bannerStreamId}/accept', 'Admin\DeclineController@accept');
+    Route::get('decline/{bannerStreamId}/decline', 'Admin\DeclineController@decline');
 
 });
 

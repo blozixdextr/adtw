@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Role
+class Admin
 {
     /**
      * The Guard implementation.
@@ -13,11 +13,6 @@ class Role
      * @var Guard
      */
     protected $auth;
-
-    protected $redirectByRole = [
-        'client' => '/user/client',
-        'twitcher' => '/user/twitcher',
-    ];
 
     protected $redirectByDefault = '/';
 
@@ -39,24 +34,15 @@ class Role
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $roles)
+    public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            $roles = explode('|', $roles);
-            $redirectByRole = $this->redirectByRole;
             $user = $this->auth->user();
-            if ($user->role != 'user') {
-                return redirect($redirectByRole[$user->type]);
-            }
-            if (!in_array($user->type, $roles)) {
-                if (isset($redirectByRole[$user->type])) {
-                    return redirect($redirectByRole[$user->type]);
-                } else {
-                    return redirect($this->redirectByDefault);
-                }
+            if ($user->role != 'admin') {
+                return redirect('/');
             }
         } else {
-            return redirect($this->redirectByDefault);
+            return redirect('/');
         }
 
 
