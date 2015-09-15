@@ -8,6 +8,7 @@ use App\Models\UserPayment;
 use App\Models\UserTransfer;
 use App\Services\Payments\PaypalPaymentService;
 use App\Services\Payments\StripePaymentService;
+use App\Models\Withdrawal;
 
 
 class PaymentMapper
@@ -65,12 +66,32 @@ class PaymentMapper
         return $payment;
     }
 
-    public static function payments(User $user, $limit = 50) {
+    public static function payments(User $user, $limit = 50)
+    {
         return UserPayment::whereUserId($user->id)->paginate($limit);
     }
 
-    public static function transfers(User $user, $limit = 50) {
+    public static function transfers(User $user, $limit = 50)
+    {
         return UserTransfer::whereBuyerId($user->id)->paginate($limit);
+    }
+
+    public static function withdrawPaypalPrepare(User $user, $paypalEmail, $amount)
+    {
+        $withdrawal = Withdrawal::create([
+            'user_id' => $user->id,
+            'merchant' => 'paypal',
+            'account' => $paypalEmail,
+            'amount' => $amount,
+            'currency' => 'USD',
+            'status' => 'waiting',
+            'transaction_number' => ''
+        ]);
+
+        $user->balance_blocked = $user->balance_blocked + $amount;
+        $user->save();
+
+        return $withdrawal;
     }
 
 }

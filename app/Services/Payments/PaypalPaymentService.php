@@ -18,6 +18,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
+use PayPal\Api\Payout;
 
 class PaypalPaymentService
 {
@@ -134,6 +135,30 @@ class PaypalPaymentService
         Session::remove('paypal.payment');
 
         return true;
+    }
+
+    public function payout(User $user, $amount, $currency, $paypalEmail, $withdrawalId)
+    {
+        $payouts = new Payout();
+
+        $senderBatchHeader = new \PayPal\Api\PayoutSenderBatchHeader();
+        $senderBatchHeader->setSenderBatchId($withdrawalId)->setEmailSubject("ADTW.ch withdraw");
+        $senderItem = new \PayPal\Api\PayoutItem();
+        $senderItem->setRecipientType('Email')
+            ->setNote('Thanks for your using ADTW.ch')
+            ->setReceiver($paypalEmail)
+            ->setSenderItemId($user->id.'_'.$withdrawalId.'_'.date('YmdHis'))
+            ->setAmount(new \PayPal\Api\Currency('{
+                                "value":"'.floatval($amount).'",
+                                "currency": '.strtoupper($currency).'
+                            }'));
+
+        $payouts->setSenderBatchHeader($senderBatchHeader)
+            ->addItem($senderItem);
+
+        $output = $payouts->createSynchronous($this->apiContext);
+
+        return $output;
     }
 
 }

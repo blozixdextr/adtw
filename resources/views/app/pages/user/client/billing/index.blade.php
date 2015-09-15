@@ -39,7 +39,7 @@
                             <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
                                 {!! Form::label('amount', 'Add to your account', ['class' => 'col-sm-3 control-label']) !!}
                                 <div class="col-sm-9">
-                                    {!! Form::text('amount', old('amount', 10), ['class' => 'form-control', 'placeholder' => 'Amount', '00.00' => 'required', 'style' => 'width:120px;display:inline-block']) !!} USD
+                                    {!! Form::text('amount', old('amount', 10), ['class' => 'form-control', 'placeholder' => 'Amount', 'required' => 'required', 'style' => 'width:120px;display:inline-block']) !!} USD
                                     {!! Form::errorMessage('amount') !!}
                                 </div>
                             </div>

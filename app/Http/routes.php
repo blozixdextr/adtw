@@ -58,6 +58,13 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
     Route::get('stream/{streamId}/{bannerId}/complain-decline', 'StreamController@complainDecline');
     Route::post('stream/{streamId}/{bannerId}/complain-decline', 'StreamController@complainDeclineSave');
 
+    Route::group(['prefix' => 'billing'], function () {
+        Route::get('/', 'BillingController@index');
+        Route::get('log', 'BillingController@log');
+        Route::get('transfers', 'BillingController@transfers');
+        Route::post('withdraw', 'BillingController@withdraw');
+    });
+
 });
 
 Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'prefix' => 'user/client'], function () {

@@ -6,6 +6,7 @@ use App\Models\Mappers\BannerMapper;
 use Auth;
 use App\Models\Mappers\LogMapper;
 use App\Apis\Twitch;
+
 class IndexController extends Controller
 {
     public function index() {
