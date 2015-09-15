@@ -12,6 +12,7 @@ use App\Models\Banner;
 use App\Apis\Twitch;
 use Illuminate\Support\Facades\Input;
 use Redirect;
+use Config;
 
 class BannerController extends Controller
 {
