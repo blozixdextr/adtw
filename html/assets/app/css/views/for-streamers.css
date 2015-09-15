@@ -16,10 +16,6 @@ padding: 0 6px;
     width: 32%;
     margin: 30px auto;
 }
-.streamer-id-header{
-    height: 100px;
-    background:#6441A5 url(1.png)no-repeat 0 -355px;
-}
 .streamer-id-follow{
     display: -webkit-flex;
     display: -moz-flex;
@@ -69,7 +65,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
     background: #E7E7E9;
     padding: 10px;
     font-size: 26px;
-    font-style: italic;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     background-image: -webkit-linear-gradient(#CDCDCD, #DCDCDC);
