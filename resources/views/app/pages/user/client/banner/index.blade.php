@@ -45,7 +45,7 @@
 
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-            <button type="submit" class="btn-violet">Order</button>
+            <button type="submit" class="btn-white">Order</button>
         </div>
     </div>
 
