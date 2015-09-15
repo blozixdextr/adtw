@@ -4,7 +4,6 @@
             <a href=""><img src="/assets/app/images/gold.gif"></a>
             <hgroup>
                 <h1><a href="/user/client"></a></h1>
-                <h2>Balance: $ {{ number_format($user->balance, 2) }}</h2>
             </hgroup>
         </header>
         <ul class="head-nav">

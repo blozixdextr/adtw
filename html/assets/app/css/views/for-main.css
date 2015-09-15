@@ -80,6 +80,16 @@
 .step h3 span{
     font-weight: bold;
 }
+.big-logo-link{
+    display: block;
+    min-height: 36px;
+    min-width: 165px;
+    background-image: url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
+    background-image: -webkit-image-set(url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-…tent.com/assets/14276761/9876780/3dbd27de-5bc1-11e5-9896-f5652c51bd79.png') 2x);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+}
 header .title-intro{
     font-family: 'Roboto Slab';
     font-size: 40px;

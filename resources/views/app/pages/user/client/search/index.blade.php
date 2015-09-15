@@ -178,141 +178,72 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
               <a href="">Order now</a>
           </div>
       </div>
+      
+      
       <div class="streamer-id">
           <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
+              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
           </div>
           <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
-                  <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
+                   <li>
+                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
+                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
+                      <p><i class="fa fa-language"></i> English Language</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
+                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
                   </li>
+
+
+
               </ul>
           </div>
           <div class="streamer-id-button">
               <a href="">Order now</a>
           </div>
       </div>
-      <div class="streamer-id">
+   
+   
+   <div class="streamer-id">
           <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
+              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
           </div>
           <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
-                  <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
+                   <li>
+                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
+                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
+                      <p><i class="fa fa-language"></i> English Language</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
+                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
                   </li>
+
+
+
               </ul>
           </div>
           <div class="streamer-id-button">
               <a href="">Order now</a>
           </div>
       </div>
-      <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                  <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
-                  </li>
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-      <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                  <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
-                  </li>
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-      <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>8,964</span> followers</div>
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>1,989</span> following</div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                  <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
-                  </li>
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
+   
+   
+    
+     
     </div>
 
     {!! $twitchers->render() !!}

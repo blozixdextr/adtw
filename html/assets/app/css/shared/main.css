@@ -261,11 +261,10 @@ wrapper {
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    justify-content: center;
     align-items: center;
     width:1000px;
     margin:0 auto;
-    padding: 0px 20px;
+        padding: 0px 20px 0 107px;
 }
 .second-page .second-nav #header{
 	display:flex;
@@ -308,6 +307,10 @@ wrapper {
     margin: 20px 0 10px;
     font-family: Roboto Slab;
     font-size: 20px;
+}
+.second-page .nav-column h2{
+	font-size:20px;
+	margin-bottom:5px;
 }
 .second-page .work-column-floats>div{
     padding: 10px 20px 20px;
