@@ -76,6 +76,11 @@ class PaymentMapper
         return UserTransfer::whereBuyerId($user->id)->paginate($limit);
     }
 
+    public static function transfersTwitcher(User $user, $limit = 50)
+    {
+        return UserTransfer::whereSellerId($user->id)->paginate($limit);
+    }
+
     public static function withdrawPaypalPrepare(User $user, $paypalEmail, $amount)
     {
         $withdrawal = Withdrawal::create([
@@ -92,6 +97,11 @@ class PaymentMapper
         $user->save();
 
         return $withdrawal;
+    }
+
+    public static function withdrawal(User $user, $limit = 50)
+    {
+        return Withdrawal::whereUserId($user->id)->paginate($limit);
     }
 
 }

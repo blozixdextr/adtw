@@ -23,11 +23,15 @@ class BillingController extends Controller
     }
 
     public function log() {
+        $withdrawals = PaymentMapper::withdrawal($this->user);
 
+        return view('app.pages.user.twitcher.billing.log', compact('withdrawals'));
     }
 
     public function transfers() {
+        $transfers = PaymentMapper::transfersTwitcher($this->user);
 
+        return view('app.pages.user.twitcher.billing.transfers', compact('transfers'));
     }
 
     public function withdraw(Request $request) {
