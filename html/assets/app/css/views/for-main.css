@@ -110,6 +110,7 @@ header .title-descr{
 .about-us ul{
     display: flex;
     justify-content: space-between;
+    flex-wrap:wrap;
 }
 .about-us h1{
     text-align: center;
@@ -165,12 +166,14 @@ footer .fa:before {
     }
     .about-us li{
         width: 49%;
+        padding: 20px 0;
+        box-sizing: border-box;
     }
 }
 @media screen and (max-width:992px){
     .education-steps .step {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
     .education-steps .step:last-child {
         margin-bottom: 0;
