@@ -51,5 +51,12 @@ class LogMapper
         return $logs;
     }
 
+    public static function all($limit = 50)
+    {
+        $logs = Log::orderBy('created_at', 'desc')->paginate($limit);
+
+        return $logs;
+    }
+
 
 }

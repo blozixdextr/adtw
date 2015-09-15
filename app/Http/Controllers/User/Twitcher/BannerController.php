@@ -65,7 +65,7 @@ class BannerController extends Controller
         $trackPeriod = 1000 * 60 * Config::get('banner.track_minutes');
         $rotationPeriod = 1000 * Config::get('banner.rotation_seconds');
 
-        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType', 'trackPeriod'));
+        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType', 'trackPeriod', 'rotationPeriod'));
     }
 
     public function ping($bannerType) {

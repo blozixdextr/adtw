@@ -226,4 +226,39 @@ class AuthController extends Controller
         return view('app.pages.auth.client', compact('user', 'isNew'));
     }
 
+    public function admin()
+    {
+        return view('app.pages.auth.admin');
+    }
+
+    public function postAdmin(Request $request)
+    {
+        $rules = [
+            'login' => 'required|email',
+            'password' => 'required|alpha_num|max:12|min:6',
+        ];
+        $this->validate($request, $rules);
+        $throttles = $this->isUsingThrottlesLoginsTrait();
+        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
+            return $this->sendLockoutResponse($request);
+        }
+        $email = $request->get('login');
+        $password = $request->get('password');
+        if (Auth::attempt(['email' => $email, 'password' => $password], $request->has('remember'))) {
+            if ($throttles) {
+                $this->clearLoginAttempts($request);
+            }
+            $user = Auth::user();
+            LogMapper::log('admin_login', $user->id);
+            return redirect('/admin');
+        }
+        if ($throttles) {
+            $this->incrementLoginAttempts($request);
+        }
+
+        return redirect('/auth/admin')
+            ->withInput($request->only('login', 'remember'))
+            ->withErrors(['login' => 'Wrong email or password']);
+    }
+
 }

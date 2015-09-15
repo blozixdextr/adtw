@@ -25,6 +25,10 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
     Route::post('client', 'AuthController@client');
     Route::get('client/{userId}/{token}', 'AuthController@clientConfirm');
 
+    Route::get('admin', 'AuthController@admin');
+    Route::post('admin', 'AuthController@postAdmin');
+
+
 });
 
 Route::get('profile', 'User\ProfileController@index');
@@ -103,7 +107,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
 Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
-    Route::get('/', 'Admin\IndexController@index');
+    Route::get('/', 'IndexController@index');
 
     Route::group(['prefix' => 'user'], function () {
         Route::get('list', 'UserController@index');

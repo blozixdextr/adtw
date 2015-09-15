@@ -102,5 +102,12 @@ class UserMapper
         return $user;
     }
 
+    public static function admin($email, $password)
+    {
+        $user = User::where(['email' => $email])->where(['role' => 'admin'])->first();
+
+        return $user;
+    }
+
 
 }

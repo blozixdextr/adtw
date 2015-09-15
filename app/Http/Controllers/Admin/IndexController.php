@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use Auth;
+use App\Models\Mappers\LogMapper;
 
 class IndexController extends Controller
 {
-    public function index() {
-        return view('app.pages.user.client.index');
+    public function index()
+    {
+        $logs = LogMapper::all();
+        dd($logs);
+
+        return view('app.pages.admin.index', compact('logs'));
     }
 }
