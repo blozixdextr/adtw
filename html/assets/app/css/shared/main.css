@@ -219,7 +219,6 @@ wrapper {
 .second-page header img{
     width: 100px;
     position: relative;
-    margin-left: 10px;
 }
 .second-page header>*{
     display: inline-block;
