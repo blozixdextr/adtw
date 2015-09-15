@@ -151,19 +151,26 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     <div class="streamers-list-new">
       <div class="streamer-id">
           <div class="streamer-id-follow">
-              <div class="str-id-followers"><span>808,964</span> followers</div>
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>65,989,753</span> views</div>
+              <div class="str-id-following"><span>65,989,753 <i class="fa fa-eye"></i></span></div>
           </div>
           <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
+                   <li>
+                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
+                  </li>
                   <li>
                       <p><i class="fa fa-video-camera"></i> 256 Videos</p>
                   </li>
                   <li>
                       <p><i class="fa fa-language"></i> English Language</p>
                   </li>
+                  <li>
+                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
+                  </li>
+
+
 
               </ul>
           </div>
