@@ -149,14 +149,13 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         <div class="clear"></div>
     </div>
     <div class="streamers-list-new">
-        <div class="streamer-id">
-          <div class="streamer-id-header"></div>
+      <div class="streamer-id">
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
@@ -178,13 +177,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
       <div class="streamer-id">
-          <div class="streamer-id-header"></div>
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
@@ -206,13 +204,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
       <div class="streamer-id">
-          <div class="streamer-id-header"></div>
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
@@ -234,13 +231,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
       <div class="streamer-id">
-          <div class="streamer-id-header"></div>
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
@@ -262,13 +258,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
       <div class="streamer-id">
-          <div class="streamer-id-header"></div>
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
@@ -290,13 +285,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
       <div class="streamer-id">
-          <div class="streamer-id-header"></div>
           <div class="streamer-id-follow">
               <div class="str-id-followers"><span>8,964</span> followers</div>
               <div class="str-id-photo"><img src="streamer.jpeg" alt=""></div>
               <div class="str-id-following"><span>1,989</span> following</div>
           </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy <span>World of Warcraft</span></div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
               <ul>
                   <li>
