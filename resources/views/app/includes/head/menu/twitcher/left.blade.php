@@ -1,6 +1,6 @@
 <div class="nav-column">
-    <h1>Dashboard</h1>
     <h2>Balance: $ {{ number_format($user->balance, 2) }}</h2>
+    <h1>Dashboard</h1>
     <div class="nav-settings">
         <p class="nav-column-item"><a href="/user/client">Timeline</a></p>
         <p class="nav-column-item"><a href="/user/twitcher/ads">My Ads</a></p>
