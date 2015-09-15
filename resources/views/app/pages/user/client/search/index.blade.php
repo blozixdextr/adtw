@@ -159,17 +159,12 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           <div class="streamer-id-info">
               <ul>
                   <li>
-                      <p><i class="fa fa-map-marker"></i> Vinnitsa, Ukraine</p>
+                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
                   </li>
                   <li>
-                      <p><i class="fa fa-comments-o"></i> <a href="">adtw.ch</a></p>
+                      <p><i class="fa fa-language"></i> English Language</p>
                   </li>
-                  <li>
-                      <p><i class="fa fa-envelope-o"></i> s.studzinskyy@yandex.ru</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-twitter"></i> @stdz</p>
-                  </li>
+
               </ul>
           </div>
           <div class="streamer-id-button">
