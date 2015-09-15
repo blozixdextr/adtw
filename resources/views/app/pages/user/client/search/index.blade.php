@@ -152,7 +152,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
       <div class="streamer-id">
           <div class="streamer-id-follow">
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span>65,989,753 <i class="fa fa-eye"></i></span></div>
+              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
           </div>
           <div class="streamer-id-name">Stanislav Studzinskyy</div>
           <div class="streamer-id-info">
