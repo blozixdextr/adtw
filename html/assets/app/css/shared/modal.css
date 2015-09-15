@@ -79,7 +79,7 @@
 }
 .modal-header,
 .modal-footer {
-    padding: 20px 20px;
+    margin: 25px 0;
 }
 .modal-header h2 {
     font-size: 28px;
