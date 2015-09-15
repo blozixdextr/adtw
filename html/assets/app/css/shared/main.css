@@ -259,6 +259,7 @@ wrapper {
     align-items: center;
     width:1000px;
     margin:0 auto;
+    padding: 0px 20px;
 }
 .second-page .second-nav #header{
 	display:flex;
