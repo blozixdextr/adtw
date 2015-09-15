@@ -34,7 +34,7 @@
     box-sizing: border-box;
 }
 .main-page .page center{
-    margin:25px 0;
+    margin: 25px 0 15px;
 }
 .main-page .page center h1{
     color: #6441A5;
@@ -66,11 +66,11 @@
     font-size: 140px;
 }
 .step>div{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .step h3{
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color:#6441A5;
     font-weight: bold;
 }
@@ -81,11 +81,12 @@
     font-weight: bold;
 }
 .big-logo-link{
-    display: block;
-    min-height: 36px;
-    min-width: 165px;
-    background-image: url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
-    background-image: -webkit-image-set(url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-…tent.com/assets/14276761/9876780/3dbd27de-5bc1-11e5-9896-f5652c51bd79.png') 2x);
+    display: inline-block;
+    min-height: 42px;
+    min-width: 200px;
+    margin: 10px 0 20px;
+    background-image:url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
+    background-image: -webkit-image-set(url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png') 1x, url('https://cloud.githubusercontent.com/assets/14276761/9876780/3dbd27de-5bc1-11e5-9896-f5652c51bd79.png') 2x);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0px 0px;
@@ -106,18 +107,18 @@ header .title-descr{
     padding: 10px;
     background-color: rgba(100,65,165, 0.03);
 }
+.about-us ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
 .about-us h1{
     text-align: center;
     font-size: 39px;
 }
 .about-us li{
-    box-sizing:border-box;
     width: 24%;
     text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    min-height:200px;
-    padding: 10px;
 }
 .about-us li i{
     display: block;
@@ -165,12 +166,14 @@ footer .fa:before {
     }
     .about-us li{
         width: 49%;
+        padding: 20px 0;
+        box-sizing: border-box;
     }
 }
 @media screen and (max-width:992px){
     .education-steps .step {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
     .education-steps .step:last-child {
         margin-bottom: 0;

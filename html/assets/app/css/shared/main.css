@@ -69,8 +69,12 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 .title-place-right,
 .title-place-left{
-    width: calc(49% - 20px);
-    height: 220px;
+    width: 45%;
+    box-sizing:border-box;
+    height: 250px;
+}
+.title-place-left{
+	margin-right:5%;
 }
 .title-place-right img{
     width: 90px;
@@ -202,7 +206,6 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 /*            second page             */
 body {
  height: 100%;
- min-width:900px;
 }
 html { 
  position:relative; 
@@ -464,6 +467,9 @@ wrapper {
     display: inline-block;
     padding: 0px 1em 0px 0px;
 }
+.second-page footer .icons li:last-child{
+	padding:0;
+}
 .second-page footer .icons li a{
     color: #fff;
     font-size:100% !important;
@@ -635,9 +641,10 @@ li.menu-hidden h2{
     .title-place-right,
     .title-place-left{
         width: 100%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        margin-right:0;
+    }
+    .title-place-right{
+    	margin-top:;
     }
     .second-nav .head-nav{
         margin-top: 0;
