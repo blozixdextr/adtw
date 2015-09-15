@@ -81,7 +81,7 @@
     font-weight: bold;
 }
 .big-logo-link{
-    display: block;
+    display: inline-block;
     min-height: 36px;
     min-width: 165px;
     background-image:url('https://cloud.githubusercontent.com/assets/14276761/9873897/79bef002-5bab-11e5-8f85-b150a5ec5cc4.png');
