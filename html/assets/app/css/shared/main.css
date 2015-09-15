@@ -247,10 +247,18 @@ wrapper {
 .second-page .second-nav{
     padding: 5px 0px;
     text-align: center;
+    background-color: #6441A5;
+}
+.second-page .second-nav>div{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6441A5;
+    width:1000px;
+    margin:0 auto;
 }
 .second-page .second-nav #header{
 	display:flex;
