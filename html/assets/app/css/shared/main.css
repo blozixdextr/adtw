@@ -600,6 +600,9 @@ li.menu-hidden h2{
     .nav-column{
     	
     }
+    .work-column-inside h2{
+    	text-align:center;
+    }
     .head-nav{
         display: block;
         max-height: 0px;
