@@ -17,6 +17,6 @@
             <li class="menu-hidden" ><a class="btn-violet" href="/user/client/profile">Profile</a></li>
             <li class="menu-hidden" ><a class="btn-violet" href="/user/client/notification">Notifications</a></li>
         </ul>
-        <div class="handle">Menu <span>&#9776;</span></div>
+        <!--<div class="handle">Menu <span>&#9776;</span></div>-->
     </div>
 </nav>
