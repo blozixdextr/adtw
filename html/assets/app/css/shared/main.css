@@ -591,11 +591,14 @@ li.menu-hidden h2{
     	display:block;
     	padding:0;
     }
+    .nav-column-title{
+    	display:none;
+    }
     .second-page .second-nav #header{
     	margin-bottom:10px;
     }
     .nav-column{
-        display: none;
+    	
     }
     .head-nav{
         display: block;
