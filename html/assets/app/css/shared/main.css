@@ -703,7 +703,7 @@ li.menu-hidden h2{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 0;
+        padding: 7px 2px 100px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;
