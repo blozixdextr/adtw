@@ -699,6 +699,9 @@ li.menu-hidden h2{
         text-align: right;
         padding-left: 20px;
     }
+    .second-page .work-column h1{
+    	text-align:center;
+    }
     .title-place-right, .title-place-left{
         height: auto;
     }
