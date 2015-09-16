@@ -275,7 +275,7 @@ wrapper {
     	align-items: center;
 }
 .second-page .page{
-    padding: 15px 15px 120px 15px;
+    padding: 15px 15px 100px 15px;
     margin:0px auto 0;
     overflow: hidden;
     width: 1000px;
@@ -567,7 +567,7 @@ li.menu-hidden h2{
 @media screen and (max-width:992px){
     .second-page .page{
         width: auto;
-        padding: 7px 7px 120px;
+        padding: 7px 7px 100px;
     }
     .streamer-item{
         width: 348px;
