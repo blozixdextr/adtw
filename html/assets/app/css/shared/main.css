@@ -586,11 +586,13 @@ li.menu-hidden h2{
 @media screen and (max-width:750px){
     .handle{
         display: block;
-        margin-top:10px;
     }
     .second-page .second-nav>div{
-    	flex-direction:column;
+    	display:block;
     	padding:0;
+    }
+    .second-page .second-nav #header{
+    	margin-bottom:10px;
     }
     .nav-column{
         display: none;
