@@ -25,7 +25,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
 
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
                         {!! Form::label('language', 'Languages', ['class' => 'control-label']) !!}
                         <div class="">
@@ -42,7 +42,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="form-group {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
                         {!! Form::label('banner_types', 'Banner sizes', ['class' => 'control-label']) !!}
                         <div class="">
@@ -58,7 +58,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
                         {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
                         <div class="">
@@ -91,7 +91,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-6 col-xs-12">
 
                             <div class="form-group {!! ($errors && $errors->has('followers')) ? ' has-error' : '' !!}">
                                 {!! Form::label('followers', 'Followers', ['class' => 'control-label']) !!}
