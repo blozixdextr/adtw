@@ -265,9 +265,9 @@ wrapper {
     display: -o-flex;
     display: flex;
     align-items: center;
-    width:1000px;
+    max-width:1000px;
     margin:0 auto;
-        padding: 0px 20px 0 107px;
+    padding: 0px 20px 0 107px;
 }
 .second-page .second-nav #header{
 	display:flex;
@@ -587,6 +587,10 @@ li.menu-hidden h2{
     .handle{
         display: block;
     }
+    .second-page .second-nav>div{
+    	flex-direction:column;
+    	padding:0;
+    }
     .nav-column{
         display: none;
     }
@@ -623,6 +627,8 @@ li.menu-hidden h2{
     }
     .second-page .second-nav{
     	display:block;
+    	padding-bottom:0;
+    	padding-top:10px;
     }
     .second-page header h2{
     	margin-bottom:5px;
