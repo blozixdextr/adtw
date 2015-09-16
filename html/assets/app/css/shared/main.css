@@ -358,7 +358,6 @@ wrapper {
 .second-page .work-column-floats .work-column-link{
     text-align: center;
     margin: 30px auto 10px;
-    width: 250px;
 }
 .second-page .page .work-column-item .left label{
     display: block;
@@ -636,6 +635,9 @@ li.menu-hidden h2{
     }
     .second-page header h2{
     	margin-bottom:5px;
+    }
+    .second-page .work-column-floats .work-column-link{
+    	width:250px;
     }
     .nav-column div{
         text-align: left;
