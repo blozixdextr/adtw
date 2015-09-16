@@ -551,10 +551,12 @@ li.menu-hidden{
 li.menu-hidden h1{
     padding: 10px 0;
     font-size: 20px;
+    margin:0;
 }
 li.menu-hidden h2{
     font-size: 16px;
     padding: 10px 0;
+    margin:0;
 }
 
 /*            media         */
