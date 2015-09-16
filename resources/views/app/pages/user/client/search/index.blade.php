@@ -154,11 +154,14 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         @empty
             <em>no results</em>
         @endforelse
-    </div>
+    	</div>
         
         
-        <div class="clear"></div>
+        
     </div>
+    <div class="clear"></div>
+    
+    
     <div class="streamers-list-new">
       <div class="streamer-id">
           <div class="streamer-id-follow">
@@ -252,7 +255,35 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
           </div>
       </div>
    
-   
+   <div class="streamer-id">
+          <div class="streamer-id-follow">
+              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
+              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
+          </div>
+          <div class="streamer-id-name">Stanislav Studzinskyy</div>
+          <div class="streamer-id-info">
+              <ul>
+                   <li>
+                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
+                  </li>
+                  <li>
+                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
+                  </li>
+                  <li>
+                      <p><i class="fa fa-language"></i> English Language</p>
+                  </li>
+                  <li>
+                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
+                  </li>
+
+
+
+              </ul>
+          </div>
+          <div class="streamer-id-button">
+              <a href="">Order now</a>
+          </div>
+      </div>
     
      
     </div>
