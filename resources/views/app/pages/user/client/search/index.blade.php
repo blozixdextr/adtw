@@ -122,8 +122,8 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
 
     <h2>Search results</h2>
 
-    <div class="streamers-list">
-        	<div class="streamer-id">
+    <div class="streamers-list-new">
+       <div class="streamer-id">
         @forelse($twitchers as $u)
             <div class="streamer-id-follow">
               <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
