@@ -18,6 +18,6 @@
             <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher/profile">Profile</a></li>
             <li class="menu-hidden" ><a class="btn-violet" href="/user/twitcher/notification">Notifications</a></li>
         </ul>
-        <div class="handle">Menu <span>&#9776;</span></div>
+        <!--<div class="handle">Menu <span>&#9776;</span></div>-->
     </div>
 </nav>
