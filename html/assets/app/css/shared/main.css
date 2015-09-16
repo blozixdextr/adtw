@@ -703,6 +703,9 @@ li.menu-hidden h2{
     .second-page .page{
         padding: 7px 0;
     }
+    footer#footer .icons li:last-child{
+    	padding-right:1em;
+    }
     footer#footer .icons li{
         display: block;
         margin-bottom: 15px;
