@@ -101,6 +101,8 @@ header .title-descr{
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap;
+    height: 250px;
+    align-items: center;
 }
 .about-us h1{
     text-align: center;
