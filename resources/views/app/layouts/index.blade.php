@@ -11,17 +11,15 @@
 </head>
 <body style="zoom: 1;">
 <div class="main-page">
-    <div class="shadow-fon">
-        <wrapper>
-            @include('app.includes.head.menu.guest.top')
-            <div class="page">
-                @include('app.includes.alerts')
-                @include('app.includes.errors')
-                @yield('content')
-            </div>
-        </wrapper>
-        @include('app.includes.footer')
-    </div>
+    <wrapper>
+        @include('app.includes.head.menu.guest.top')
+        <div class="page">
+            @include('app.includes.alerts')
+            @include('app.includes.errors')
+            @yield('content')
+        </div>
+    </wrapper>
+    @include('app.includes.footer')
 </div>
 @yield('body-js')
 </body>
