@@ -116,7 +116,7 @@
                 <li>Lorem-ipson</li>
             </ul>
             <div>
-                <a href="/" class="btn-white"></a>
+                <a href="/" class="btn-white">Something</a>
             </div>
         </div>
         <div class="bottom-info-img right">
@@ -141,7 +141,7 @@
                 <li>Lorem-ipson</li>
             </ul>
             <div>
-                <a href="/" class="btn-white"></a>
+                <a href="/" class="btn-white">Something</a>
             </div>
         </div>
         <div class="clear"></div>
