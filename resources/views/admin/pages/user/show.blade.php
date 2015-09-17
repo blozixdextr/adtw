@@ -36,9 +36,9 @@
                     @if ($user->is_active)
                         <a class="btn btn-danger btn-lg confirm-delete" href="/admin/user/{{ $user->id }}/ban">ban</a>
                     @else
-                        <a class="btn btn-success btn-lg confirm-delete" href="/admin/user/{{ $user->id }}/unban">unban</a>
+                        <a class="btn btn-success btn-lg" href="/admin/user/{{ $user->id }}/unban">unban</a>
                     @endif
-                    <a class="btn btn-primary btn-lg confirm-delete" href="/admin/user/{{ $user->id }}/login-as">login</a>
+                    <a class="btn btn-primary btn-lg" href="/admin/user/{{ $user->id }}/login-as">login</a>
 
                 </div>
             </div>

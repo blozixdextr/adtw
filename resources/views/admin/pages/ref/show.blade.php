@@ -1,8 +1,13 @@
 @extends('admin.layouts.index')
 
 @section('content')
-    <h1>{{ ucfirst($type) }}</h1>
-    <a href="/admin/ref/{{ $type }}/create" class="btn btn-lg btn-success">Add ref here</a>
+    <h1>{{ ucfirst($ref->title) }} / <small>{{ $ref->type }}</small></h1>
+    <a href="/admin/ref/{{ $ref->id }}/edit" class="btn btn-primary">Edit</a>
+    @if ($canHaveChildren)
+        <a href="/admin/ref/{{ $ref->type }}/create?pid={{ $ref->id }}" class="btn btn-success">Add child</a>
+    @endif
+
+    <h2>Children</h2>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -13,7 +18,7 @@
         </tr>
         </thead>
         <tbody>
-        @forelse($refs as $r)
+        @forelse($ref->children as $r)
             <tr>
                 <td>{{ $r->id }}</td>
                 <td>{{ $r->title }}</td>

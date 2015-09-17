@@ -122,9 +122,11 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
         Route::get('type/{type}', 'RefController@type');
         Route::get('{refId}/show', 'RefController@show');
         Route::get('{refId}/edit', 'RefController@edit');
-        Route::get('{refId}/remove', 'RefController@remove');
-        Route::post('{refId}/save', 'RefController@save');
-        Route::post('create', 'RefController@create');
+        Route::post('{refId}/update', 'RefController@update');
+        Route::get('{type}/create', 'RefController@create');
+        Route::post('{type}/store', 'RefController@store');
+        Route::get('{refId}/remove', 'RefController@destroy');
+
     });
 
     Route::get('withdraw', 'Admin\WithdrawController@index');
