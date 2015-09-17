@@ -67,7 +67,8 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     vertical-align: top;
     position: relative;
     display: inline-block;
-    width: 45%;
+    width: 47.5%;
+    box-sizing:border-box;
     height: 250px;
     background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
@@ -83,6 +84,11 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 .title-place-right>*,
 .title-place-left>*{
     display: inline-block;
+    font-size:120%;
+}
+.title-place-right>img,
+.title-place-left>img{
+	margin-right:7%;
 }
 
 .title-place{
@@ -121,10 +127,11 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     margin-bottom: 20px;
     color:#6441A5;
     font-family: Roboto Slab;
-    font-size: 30px;
+    font-size: 36px;
 }
 .intro-main{
     line-height: 1.75em;
+    font-size:0;
 }
 .choose-link.left{
     margin-left: 100px;
@@ -139,6 +146,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 .choose-link-descr p{
     line-height: 1.5;
+    font-size:18px;
 }
 .choose-link-descr{
     position: relative;
@@ -441,6 +449,7 @@ wrapper {
 }
 .choose-link p{
     margin-bottom: 15px;
+    font-size:18px;
 }
 .work-column-item>.left,
 .work-column-item>.right{
