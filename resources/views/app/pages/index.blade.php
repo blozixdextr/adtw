@@ -8,6 +8,7 @@
 @section('content')
     <div class="text-center intro-main">
         @if (!$user)
+        <center><h1>How it works?</h1></center>
         <div class="title-place-left window-bg-tiny">
             <img src="/assets/app/images/ts1.png" alt="">
             <div class="choose-link-descr">
