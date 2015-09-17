@@ -69,7 +69,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     display: inline-block;
     width: 47.5%;
     box-sizing:border-box;
-    height: 250px;
+    height: 330px;
     background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
 .title-place-left{
