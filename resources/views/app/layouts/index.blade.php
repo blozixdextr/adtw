@@ -14,9 +14,11 @@
     <wrapper>
         @include('app.includes.head.menu.guest.top')
         <div class="page">
-            @include('app.includes.alerts')
-            @include('app.includes.errors')
-            @yield('content')
+            <div class="in-page">
+                @include('app.includes.alerts')
+                @include('app.includes.errors')
+                @yield('content')
+            </div>
         </div>
     </wrapper>
     @include('app.includes.footer')
