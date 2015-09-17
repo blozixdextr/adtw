@@ -104,7 +104,14 @@ header .title-descr{
     padding: 0 30px
 }
 .bottom-info-content div:last-child{
-    text-align:center;
+    margin-top:40px;
+}
+.bottom-info-one .bottom-info-content ul li:before{
+    content: "\f00c";
+    display:inline-block;
+    margin-right:8px;
+    position:absolute;
+    font: normal normal normal 14px/1 FontAwesome;
 }
 
 .about-us{
