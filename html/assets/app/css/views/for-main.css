@@ -10,6 +10,8 @@
     height:300px;
     top: 0;
     line-height: 1.75em;
+    background: url(../../images/1.png) no-repeat;
+    background-size: cover;
 }
 
 .main-nav {
