@@ -94,6 +94,19 @@ header .title-descr{
     font-size: 24px;
     color: rgba(255, 255, 255, 1);
 }
+.bottom-info-one,
+.bottom-info-two{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-info-content{
+    padding: 0 30px
+}
+.bottom-info-content div:last-child{
+    text-align:center;
+}
+
 .about-us{
     background-color: rgba(100,65,165, 0.03);
 }
