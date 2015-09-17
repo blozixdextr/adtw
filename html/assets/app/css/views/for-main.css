@@ -40,6 +40,7 @@
 .education-steps{
     background-color: rgba(100,65,165, 0.03);
     width: 100%;
+    height:440px;
     box-sizing: border-box;
     }
 .education-steps .step{
@@ -106,7 +107,7 @@ header .title-descr{
     font-size: 39px;
 }
 .about-us li{
-    width: 24%;
+    width: 25%;
     text-align: center;
     position:relative;
     top:-20px;
