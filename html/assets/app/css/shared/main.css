@@ -184,6 +184,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 }
 .bottom-info-content ul li{
 	margin-bottom:3px;
+	position:relative;
 }
 .bottom-info-one ul{
 	margin:20px 0 0 20px;
