@@ -6,6 +6,33 @@
 @endsection
 
 @section('content')
+
+    <center><h1>Simple & Powerful Banner Ads Platform </h1></center>
+    <div class="window-bg bottom-info-one">
+        <div class="bottom-info-content left">
+            <div>
+                <h2>Start you advertising with Twitch.tv streamers</h2>
+                <p>Control your ads with simple panel</p>
+            </div>
+            <ul>
+                <li>Pay as you go</li>
+                <li>Low price</li>
+                <li>Easy to start</li>
+                <li>Huge effect</li>
+            </ul>
+            <div>
+                <a href="/" class="btn-white">Something</a>
+            </div>
+        </div>
+        <div class="bottom-info-img right">
+            <img src="http://s3.postimg.org/7oissgeir/presentation3.gif" />
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+
     <center><h1>How it works?</h1></center>
     <div class="text-center intro-main">
         @if (!$user)
@@ -121,7 +148,7 @@
             </div>
         </div>
         <div class="bottom-info-img right">
-            <img src="https://cloud.githubusercontent.com/assets/14276761/9939950/8b2d85da-5d75-11e5-81da-1fe5c2c7cb1e.png" />
+            <img src="http://s3.postimg.org/7oissgeir/presentation3.gif" />
         </div>
         <div class="clear"></div>
     </div>
