@@ -123,7 +123,32 @@ header .title-descr{
     position: absolute;
     font: normal normal normal 14px/1 FontAwesome;
 }
-
+.bottom-info-two .bottom-info-content div h2{
+	text-align:right;
+}
+.bottom-info-two .bottom-info-content div p{
+	text-align:right;
+}
+.bottom-info-content div h2{
+	margin-bottom:20px;
+}
+.bottom-info-content div p{
+	color:#9E9999;
+}
+.bottom-info-content ul li{
+	margin-bottom:3px;
+	position:relative;
+}
+.bottom-info-one ul{
+	margin:20px 0 0 32px;
+}
+.bottom-info-two ul{
+	display:inline-block;
+	margin:20px 32px 0 0;
+}
+.bottom-info-two .bottom-info-content{
+    text-align:right
+}
 .about-us{
     background-color: rgba(100,65,165, 0.03);
 }
