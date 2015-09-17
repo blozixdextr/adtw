@@ -113,7 +113,7 @@ header .title-descr{
 .bottom-info-img{
     margin:0 20px;
 }
-.bottom-info-one .bottom-info-content ul li:before{
+.bottom-info-content ul li:before{
     content: "\f00c";
     display: inline-block;
     left: -30px;
