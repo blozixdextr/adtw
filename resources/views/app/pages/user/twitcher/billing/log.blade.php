@@ -17,12 +17,22 @@
         </thead>
 
         @forelse ($withdrawals as $w)
-            <tr>
+            @if ($w->status == 'done')
+                <tr class="success">
+            @else
+                @if ($w->status == 'declined')
+                    <tr class="danger">
+                @else
+                    <tr>
+                @endif
+            @endif
+
                 <td>{{ $w->id }}</td>
                 <td>{{ $w->created_at->format('d.m.y') }}</td>
                 <td class="text-success">{{ $w->amount.' '.strtoupper($w->currency) }}</td>
                 <td>{{ $w->merchant }}</td>
                 <td>{{ $w->account }}</td>
+                <td>{{ $w->status }}</td>
                 <td>{{ $w->transaction_number }}</td>
                 <td>{{ $w->admin_comment }}</td>
             </tr>
