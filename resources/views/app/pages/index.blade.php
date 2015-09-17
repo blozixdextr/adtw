@@ -105,7 +105,7 @@
     <div class="window-bg bottom-info-one">
         <div class="bottom-info-content left">
             <div>
-                <h1>Lorem ipson</h1>
+                <h2>Lorem ipson</h2>
                 <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
             </div>
             <ul>
@@ -130,7 +130,7 @@
         </div>
         <div class="bottom-info-content right">
             <div>
-                <h1>Lorem ipson</h1>
+                <h2>Lorem ipson</h2>
                 <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
             </div>
             <ul>
