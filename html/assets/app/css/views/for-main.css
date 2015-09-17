@@ -101,15 +101,22 @@ header .title-descr{
     align-items: center;
 }
 .bottom-info-content{
-    padding: 0 30px
+    margin: 0 20px
 }
 .bottom-info-content div:last-child{
     margin-top:40px;
 }
+.bottom-info-one .bottom-info-content div:last-child a{
+    padding:10px 20px ;
+    margin-left:32px;
+}
+.bottom-info-img{
+    margin:0 20px;
+}
 .bottom-info-one .bottom-info-content ul li:before{
     content: "\f00c";
     display: inline-block;
-    left: -20px;
+    left: -30px;
     top: 3px;
     color: #6441A5;
     z-index: 10000;
