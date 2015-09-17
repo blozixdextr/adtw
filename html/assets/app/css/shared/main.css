@@ -187,10 +187,10 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 	position:relative;
 }
 .bottom-info-one ul{
-	margin:20px 0 0 20px;
+	margin:20px 0 0 32px;
 }
 .bottom-info-two ul{
-	margin:20px 20px 0 0;
+	margin:20px 32px 0 0;
 }
 .handle{
     width: 100%;
