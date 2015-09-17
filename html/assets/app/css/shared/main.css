@@ -62,8 +62,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 .title-place-left,
 .title-place-right{
    padding: 20px 0 0;
-   border-top: 1px solid #eaeaea ;
-   border-bottom: 1px solid #eaeaea ;
+   border: 1px solid #eaeaea ;
    background-color: rgba(100,65,165, 0.03);
     vertical-align: top;
     position: relative;
