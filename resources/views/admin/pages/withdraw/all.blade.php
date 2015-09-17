@@ -16,7 +16,15 @@
         </thead>
         <tbody>
         @forelse($withdrawals as $w)
-            <tr>
+            @if ($w->status == 'done')
+                <tr class="success">
+            @else
+                @if ($w->status == 'declined')
+                    <tr class="danger">
+                @else
+                    <tr>
+                @endif
+            @endif
                 <td>{{ $w->id }}</td>
                 <td>
                     <a href="/admin/user/{{ $w->user_id }}">
