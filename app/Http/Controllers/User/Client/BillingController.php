@@ -116,6 +116,7 @@ class BillingController extends Controller
 
         try {
             $charge = $stripeService->refill($card, $amount, $this->user);
+            LogMapper::log('stripe_success', $amount, $this->user->id, ['response' => $stripeService->response]);
         } catch (\Exception $e) {
             LogMapper::log('stripe_error', $e->getMessage(), 'stripe_card', ['user' => $this->user->id, 'card' => $card, 'amount' => $amount]);
 

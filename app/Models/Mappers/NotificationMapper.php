@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Notification;
 use App\Models\UserProfile;
 use App\Models\Mappers\LogMapper;
+use App\Models\Withdrawal;
 use Request;
 use Auth;
 use Mail;
@@ -118,7 +119,6 @@ class NotificationMapper
 
     public static function fresh(User $user, $limit = 50)
     {
-
         $notifications = Notification::where('user_id', $user->id);
         $notifications->where('seen_at', null);
         $notifications = $notifications->paginate($limit);
@@ -174,7 +174,26 @@ class NotificationMapper
         });
     }
 
+    public static function withdrawDecline(Withdrawal $withdrawal)
+    {
+        NotificationMapper::notify($withdrawal->user, 'Withdrawal declined', 'important', 'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>');
+        Mail::send('app.emails.default', [
+            'title' => 'Withdrawal declined',
+            'subtitle' => 'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>',
+            'url' => '/user/twitcher/billing'], function ($m) use ($withdrawal) {
+            $m->to($withdrawal->user->email)->subject('Withdrawal declined');
+        });
+    }
 
-
+    public static function withdrawAccept(Withdrawal $withdrawal)
+    {
+        NotificationMapper::notify($withdrawal->user, 'Withdrawal finished', 'important', 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful');
+        Mail::send('app.emails.default', [
+            'title' => 'Withdrawal finished',
+            'subtitle' => 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful',
+            'url' => '/user/twitcher/billing'], function ($m) use ($withdrawal) {
+            $m->to($withdrawal->user->email)->subject('Withdrawal finished');
+        });
+    }
 
 }

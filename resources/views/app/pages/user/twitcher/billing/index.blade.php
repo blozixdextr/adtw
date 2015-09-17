@@ -29,7 +29,7 @@
         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
             {!! Form::label('amount', 'Add to your account', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-9">
-                {!! Form::input('number', 'amount', old('amount', $user->availableBalance()),
+                {!! Form::input('number', 'amount', old('amount', floor($user->availableBalance())),
                     ['class' => 'form-control',
                     'placeholder' => 'Amount',
                     'required' => 'required',

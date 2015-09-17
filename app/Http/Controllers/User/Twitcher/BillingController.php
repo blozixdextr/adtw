@@ -41,6 +41,9 @@ class BillingController extends Controller
         ];
         $this->validate($request, $rules);
         $amount = floatval($request->get('amount'));
+        if ($amount > $this->user->availableBalance()) {
+            return redirect('/user/twitcher/billing')->withErrors(['amount' => 'You have no such money']);
+        }
         $account = $request->get('account');
 
         PaymentMapper::withdrawPaypalPrepare($this->user, $account, $amount);

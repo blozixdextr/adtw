@@ -129,14 +129,21 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
 
     });
 
-    Route::get('withdraw', 'Admin\WithdrawController@index');
-    Route::get('withdraw/{withdrawId}', 'Admin\WithdrawController@show');
-    Route::get('withdraw/{withdrawId}/accept', 'Admin\WithdrawController@accept');
+    Route::group(['prefix' => 'withdraw'], function () {
+        Route::get('/', 'WithdrawController@index');
+        Route::get('all', 'WithdrawController@all');
+        Route::get('{withdrawId}/show', 'WithdrawController@show');
+        Route::get('{withdrawId}/accept', 'WithdrawController@accept');
+        Route::get('{withdrawId}/decline', 'WithdrawController@decline');
+        Route::post('{withdrawId}/decline', 'WithdrawController@declineSave');
+    });
 
-    Route::get('decline', 'Admin\DeclineController@index');
-    Route::get('decline/{bannerStreamId}', 'Admin\DeclineController@show');
-    Route::get('decline/{bannerStreamId}/accept', 'Admin\DeclineController@accept');
-    Route::get('decline/{bannerStreamId}/decline', 'Admin\DeclineController@decline');
+    Route::group(['prefix' => 'decline'], function () {
+        Route::get('/', 'Admin\DeclineController@index');
+        Route::get('{bannerStreamId}/show', 'DeclineController@show');
+        Route::get('{bannerStreamId}/accept', 'DeclineController@accept');
+        Route::get('{bannerStreamId}/decline', 'DeclineController@decline');
+    });
 
 });
 

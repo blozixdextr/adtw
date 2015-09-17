@@ -150,7 +150,7 @@ class PaypalPaymentService
             ->setSenderItemId($user->id.'_'.$withdrawalId.'_'.date('YmdHis'))
             ->setAmount(new \PayPal\Api\Currency('{
                                 "value":"'.floatval($amount).'",
-                                "currency": '.strtoupper($currency).'
+                                "currency":"'.strtoupper($currency).'"
                             }'));
 
         $payouts->setSenderBatchHeader($senderBatchHeader)

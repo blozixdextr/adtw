@@ -21,7 +21,11 @@
             @if (strpos($l->type, 'error') !== false)
                 <tr class="danger">
             @else
-                <tr>
+                @if (strpos($l->type, 'success') !== false)
+                    <tr class="success">
+                @else
+                    <tr>
+                @endif
             @endif
                 <td>{{ $l->id }}</td>
                 <td>{{ $l->created_at->format('d.m.Y H:i') }}</td>
