@@ -11,7 +11,7 @@
     <div class="window-bg bottom-info-one">
         <div class="bottom-info-content left">
             <div>
-                <h2>Start you advertising with Twitch.tv streamers</h2>
+                <h2>Start you advertising with<br> top Twitch.tv streamers</h2>
                 <p>Control your ads with simple panel</p>
             </div>
             <ul>
@@ -20,9 +20,6 @@
                 <li>Easy to start</li>
                 <li>Huge effect</li>
             </ul>
-            <div>
-                <a href="/" class="btn-white">Something</a>
-            </div>
         </div>
         <div class="bottom-info-img right">
             <img src="http://s3.postimg.org/7oissgeir/presentation3.gif" />
