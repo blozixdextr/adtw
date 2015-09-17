@@ -8,7 +8,7 @@
 @section('content')
     <div class="text-center intro-main">
         @if (!$user)
-        <div class="title-place-left">
+        <div class="title-place-left window-bg-tiny">
             <img src="/assets/app/images/ts1.png" alt="">
             <div class="choose-link-descr">
                 <h4><i class="fa fa-bullhorn"></i> Ad Buyers</h4>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="title-place-right">
+        <div class="title-place-right window-bg-tiny">
             <img src="/assets/app/images/ts2.png" alt="">
             <div class="choose-link-descr">
                 <h4><i class="fa fa-twitch"></i> Streamers</h4>
@@ -75,7 +75,7 @@
         <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
     @endif
     <center><h1>How it works?</h1></center>
-    <div class="education-steps">
+    <div class="education-steps window-bg">
         <div class="step">
             <div><img src="/assets/app/images/face1.png"></div>
             <h3>Choose Best Streamers</h3>
@@ -93,7 +93,7 @@
         </div>
     </div>
     <center><h1>Why buy ads on adtw.ch?</h1></center>
-    <div class="about-us">
+    <div class="about-us window-bg">
         <ul>
             <li><i class="fa fa-file-text-o"></i><h2>Lorem ipsum.</h2><p>Viewers want to try products or services that streamer promote.</p></li>
             <li><i class="fa fa-money"></i><h2>Pay per hours.</h2><p>Streamer control system make screenshots and ads buyer pay only for streaming hours.</p></li>
