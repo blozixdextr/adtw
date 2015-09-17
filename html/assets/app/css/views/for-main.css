@@ -111,11 +111,6 @@ header .title-descr{
 .about-us li{
     width: 25%;
     text-align: center;
-    position:relative;
-    top:-20px;
-}
-.about-us li:nth-child(2n){
-    top:40px;
 }
 .about-us li i{
     display: block;
