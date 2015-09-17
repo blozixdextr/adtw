@@ -101,6 +101,47 @@
             <li><i class="fa fa-gamepad"></i><h2>Lorem ipsum.</h2><p>Viewers want to try products or services that streamer promote.</p></li>
         </ul>
     </div>
+    <center><h1>Why buy ads on adtw.ch?</h1></center>
+    <div class="window-bg bottom-info-one">
+        <div class="bottom-info-content">
+            <div>
+                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
+            </div>
+            <ul>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+            </ul>
+            <div>
+                <a href="/" class="btn-white"></a>
+            </div>
+        </div>
+        <div class="bottom-info-img">
+            <img src="https://cloud.githubusercontent.com/assets/14276761/9939950/8b2d85da-5d75-11e5-81da-1fe5c2c7cb1e.png" />
+        </div>
+    </div>
+    <div class="window-bg bottom-info-two">
+        <div class="bottom-info-img">
+            <img src="https://cloud.githubusercontent.com/assets/14276761/9939950/8b2d85da-5d75-11e5-81da-1fe5c2c7cb1e.png" />
+        </div>
+        <div class="bottom-info-content">
+            <div>
+                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
+            </div>
+            <ul>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+                <li>Lorem-ipson</li>
+            </ul>
+            <div>
+                <a href="/" class="btn-white"></a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @if ($user)
