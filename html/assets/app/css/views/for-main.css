@@ -40,7 +40,9 @@
 .education-steps{
     background-color: rgba(100,65,165, 0.03);
     width: 100%;
-    padding: 20px 0px;
+    padding: 75px 0px 60px 0px;
+   border-top: 1px solid #eaeaea ;
+   border-bottom: 1px solid #eaeaea ;
     box-sizing: border-box;
     background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
@@ -96,7 +98,9 @@ header .title-descr{
     color: rgba(255, 255, 255, 1);
 }
 .about-us{
-    padding: 10px;
+    padding: 75px 0px 60px 0px;
+   border-top: 1px solid #eaeaea ;
+   border-bottom: 1px solid #eaeaea ;
     background-color: rgba(100,65,165, 0.03);
     background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
