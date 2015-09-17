@@ -136,7 +136,7 @@ footer{
     background: url(../../images/1.png) no-repeat;
 }
 footer .icons{
-    margin-top:3em;
+    padding-top:3em;
 }
 footer .icons li{
     display: inline-block;
