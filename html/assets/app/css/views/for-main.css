@@ -59,6 +59,9 @@
 .step>div{
     margin-bottom: 10px;
 }
+.step div img {
+    max-width: 290px;
+}
 .step h3{
     font-size: 24px;
     margin-bottom: 20px;
