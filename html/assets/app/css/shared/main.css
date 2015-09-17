@@ -61,18 +61,17 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 /*                            body             ;*/
 .title-place-left,
 .title-place-right{
-    padding: 10px;
-	background-color: rgba(100,65,165, 0.03);
+   padding: 75px 0px 60px 0px;
+   border-top: 1px solid #eaeaea ;
+   border-bottom: 1px solid #eaeaea ;
+   background-color: rgba(100,65,165, 0.03);
     vertical-align: top;
     position: relative;
     display: inline-block;
-    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
-}
-.title-place-right,
-.title-place-left{
     width: 45%;
     box-sizing:border-box;
     height: 250px;
+    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
 .title-place-left{
 	margin-right:5%;
