@@ -13,10 +13,6 @@ ul,ol{
 .clear{
     clear: both;
 }
-.main-page{
-	   background: url(../../images/1.png) no-repeat;
-	   background-size:contain;
-}
 a{
     text-decoration: none;
     color:#6441A5;
