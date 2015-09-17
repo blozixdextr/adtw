@@ -113,13 +113,21 @@ header .title-descr{
 .bottom-info-img{
     margin:0 20px;
 }
-.bottom-info-content ul li:before{
+.bottom-info-one .bottom-info-content ul li:before{
     content: "\f00c";
     display: inline-block;
     left: -30px;
     top: 3px;
     color: #6441A5;
-    z-index: 10000;
+    position: absolute;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.bottom-info-two .bottom-info-content ul li:before{
+    content: "\f00c";
+    display: inline-block;
+    right: -30px;
+    top: 3px;
+    color: #6441A5;
     position: absolute;
     font: normal normal normal 14px/1 FontAwesome;
 }
