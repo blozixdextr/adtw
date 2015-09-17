@@ -139,10 +139,11 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
     });
 
     Route::group(['prefix' => 'decline'], function () {
-        Route::get('/', 'Admin\DeclineController@index');
+        Route::get('/', 'DeclineController@index');
         Route::get('{bannerStreamId}/show', 'DeclineController@show');
-        Route::get('{bannerStreamId}/accept', 'DeclineController@accept');
-        Route::get('{bannerStreamId}/decline', 'DeclineController@decline');
+        Route::get('{bannerStreamId}/stream', 'DeclineController@stream');
+        Route::get('{bannerStreamId}/client', 'DeclineController@client');
+        Route::get('{bannerStreamId}/streamer', 'DeclineController@streamer');
     });
 
 });

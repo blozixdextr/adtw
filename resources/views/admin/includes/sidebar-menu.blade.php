@@ -7,6 +7,6 @@
     <li class="header">User Management</li>
     <li{!!HTML::activeLink('/admin/user') !!}><a href="/admin/user"><i class="fa fa-user"></i> <span>Users</span></a></li>
     <li class="header">Payments</li>
-    <li{!!HTML::activeLink('/admin/delcine') !!}><a href="/admin/delcine"><i class="fa fa-balance-scale"></i> <span>Declines</span></a></li>
+    <li{!!HTML::activeLink('/admin/decline') !!}><a href="/admin/decline"><i class="fa fa-balance-scale"></i> <span>Declines</span></a></li>
     <li{!!HTML::activeLink('/admin/withdraw') !!}><a href="/admin/withdraw"><i class="fa fa-money"></i> <span>Withdraw</span></a></li>
 </ul>
