@@ -176,6 +176,12 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
    border: 1px solid #eaeaea ;
    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
+.bottom-info-two .bottom-info-content div h2{
+	text-align:right;
+}
+.bottom-info-two .bottom-info-content div p{
+	text-align:right;
+}
 .bottom-info-content div h2{
 	margin-bottom:20px;
 }
