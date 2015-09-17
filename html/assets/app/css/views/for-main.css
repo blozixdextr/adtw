@@ -129,7 +129,7 @@ footer{
     bottom: 0px;
     left: 0px;
     text-align: center;
-    background: url(../../images/1.png) no-repeat;
+    background: url(../../images/1.png) no-repeat 0px -700px;;
     background-size: cover;
     height: 200px;
 }
