@@ -132,9 +132,11 @@ header .title-descr{
 footer{
     bottom: 0px;
     left: 0px;
-    padding: 3em 0em 3em 0px;
     text-align: center;
     background: url(../../images/1.png) no-repeat;
+}
+footer .icons{
+    margin-top:3em;
 }
 footer .icons li{
     display: inline-block;
