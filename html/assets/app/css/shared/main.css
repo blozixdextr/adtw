@@ -15,7 +15,7 @@ ul,ol{
 }
 .main-page{
 	   background: url(../../images/1.png) no-repeat;
-	   background-size:cover;
+	   background-size:contain;
 }
 a{
     text-decoration: none;
