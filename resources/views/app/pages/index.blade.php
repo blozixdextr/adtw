@@ -109,11 +109,11 @@
                 <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
             </div>
             <ul>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
+                <li>Lorem-ipson do</li>
+                <li>Lorem-ipson dolar</li>
+                <li>Lorem-ipson sit</li>
+                <li>Lorem-ipson amet</li>
+                <li>Lorem-ipson dolor amet</li>
             </ul>
             <div>
                 <a href="/" class="btn-white">Something</a>
@@ -134,11 +134,11 @@
                 <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
             </div>
             <ul>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
-                <li>Lorem-ipson</li>
+                <li>Lorem-ipson do</li>
+                <li>Lorem-ipson dolar</li>
+                <li>Lorem-ipson sit</li>
+                <li>Lorem-ipson amet</li>
+                <li>Lorem-ipson dolor amet</li>
             </ul>
             <div>
                 <a href="/" class="btn-white">Something</a>
