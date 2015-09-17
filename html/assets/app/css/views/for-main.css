@@ -19,10 +19,13 @@
     padding: 15px 0px 15px 36%;
 }
 .main-page .page{
-    margin:0 auto;
+    background:url(https://cloud.githubusercontent.com/assets/14276761/9944177/43edb92e-5d8e-11e5-9020-810d8e9e2b3d.jpg) repeat;
     padding: 0px 15px 40px;
-    width: 1200px;
-    box-sizing: border-box;
+    overflow:hidden;
+}
+.main-page .in-page{
+	width:1200px;
+	margin:0 auto;
 }
 .main-page .page center{
     margin: 50px 0;
