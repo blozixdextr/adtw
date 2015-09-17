@@ -9,11 +9,11 @@
     color: #000;
     height: 26px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
     text-decoration: none;
     position: absolute;
-    right: 5px;
-    top: 0;
+    right: 15px;
+    top: 25px;
 }
 .modal .btn-close:hover {
     color: #6441A5;
@@ -47,7 +47,7 @@
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-    top: 20%;
+    top: 35%;
 }
 .modal-dialog {
     background: #fefefe;
