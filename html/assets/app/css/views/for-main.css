@@ -5,19 +5,13 @@
     background-color: rgba(39,25,65 , 0.8);
 }
 #header {
-    /*background: -webkit-linear-gradient(90deg, #9E0660  10%, #6441A5  90%); 
-    background:    -moz-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
-    background:     -ms-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
-    background:      -o-linear-gradient(90deg, #9E0660  10%, #6441A5  90%);
-    background:         linear-gradient(90deg, #9E0660  10%, #6441A5  90%);*/
-    background: url(../../images/1.png) no-repeat -76% center;
-    background-attachment: fixed;
-    /*background-size: 80% 100%;*/
     background-size: cover;
     color: rgba(255, 255, 255, 0.5);
     height:300px;
     top: 0;
     line-height: 1.75em;
+    background: url(../../images/1.png) no-repeat;
+    background-size: cover;
 }
 
 .main-nav {
@@ -27,11 +21,11 @@
 .main-page .page{
     margin:0 auto;
     padding: 15px 15px 40px;
-    width: 1000px;
+    width: 1200px;
     box-sizing: border-box;
 }
 .main-page .page center{
-    margin: 25px 0 15px;
+    margin: 50px 0;
 }
 .main-page .page center h1{
     color: #6441A5;
@@ -46,10 +40,9 @@
 .education-steps{
     background-color: rgba(100,65,165, 0.03);
     width: 100%;
-    padding: 20px 0px;
+    height:440px;
     box-sizing: border-box;
-    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
-}
+    }
 .education-steps .step{
     width: 32%;
     padding: 0 5px; 
@@ -101,22 +94,52 @@ header .title-descr{
     font-size: 24px;
     color: rgba(255, 255, 255, 1);
 }
+.bottom-info-one,
+.bottom-info-two{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-info-content{
+    margin: 0 20px
+}
+.bottom-info-content div:last-child{
+    margin-top:40px;
+}
+.bottom-info-one .bottom-info-content div:last-child a{
+    padding:10px 20px ;
+    margin-left:32px;
+}
+.bottom-info-img{
+    margin:0 20px;
+}
+.bottom-info-content ul li:before{
+    content: "\f00c";
+    display: inline-block;
+    left: -30px;
+    top: 3px;
+    color: #6441A5;
+    z-index: 10000;
+    position: absolute;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+
 .about-us{
-    padding: 10px;
     background-color: rgba(100,65,165, 0.03);
-    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
 .about-us ul{
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap;
+    height: 250px;
+    align-items: center;
 }
 .about-us h1{
     text-align: center;
     font-size: 39px;
 }
 .about-us li{
-    width: 24%;
+    width: 25%;
     text-align: center;
 }
 .about-us li i{
@@ -132,9 +155,13 @@ header .title-descr{
 footer{
     bottom: 0px;
     left: 0px;
-    padding: 3em 0em 3em 0px;
     text-align: center;
-    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
+    background: url(../../images/1.png) no-repeat 0px -700px;;
+    background-size: cover;
+    height: 200px;
+}
+footer .icons{
+    padding-top:3em;
 }
 footer .icons li{
     display: inline-block;
