@@ -112,16 +112,19 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'UserController@index');
         Route::get('{userId}', 'UserController@show');
-        Route::get('{userId}/billing', 'UserController@billing');
         Route::get('{userId}/ban', 'UserController@ban');
         Route::get('{userId}/unban', 'UserController@unban');
         Route::get('{userId}/login-as', 'UserController@loginAs');
     });
 
     Route::group(['prefix' => 'ref'], function () {
-        Route::get('{type}', 'RefController@index');
-        Route::get('{type}/{userId}', 'RefController@show');
-        Route::post('{type}/{userId}', 'RefController@save');
+        Route::get('/', 'RefController@index');
+        Route::get('type/{type}', 'RefController@type');
+        Route::get('{refId}/show', 'RefController@show');
+        Route::get('{refId}/edit', 'RefController@edit');
+        Route::get('{refId}/remove', 'RefController@remove');
+        Route::post('{refId}/save', 'RefController@save');
+        Route::post('create', 'RefController@create');
     });
 
     Route::get('withdraw', 'Admin\WithdrawController@index');

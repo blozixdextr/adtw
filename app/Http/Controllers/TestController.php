@@ -8,8 +8,9 @@ use App\Models\User;
 
 class TestController extends Controller
 {
+    /*
     public function index() {
-/*
+
         Mail::raw('test mailgun', function ($message) {
             $message->to('info@ifrond.com', 'Ravil')->subject('Test subject');
         });
@@ -20,7 +21,7 @@ class TestController extends Controller
             'password' => bcrypt('dextr12345'),
             'last_activity' => \Carbon\Carbon::now(),
         ]);
-*/
+
     }
 
     public function loginAs($userId) {
@@ -36,4 +37,6 @@ class TestController extends Controller
 
         return redirect('/admin');
     }
+
+*/
 }

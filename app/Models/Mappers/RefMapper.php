@@ -20,4 +20,10 @@ class RefMapper
         return $refs->get();
     }
 
+    public static function allTypes()
+    {
+        return Ref::select('type')->distinct()->get();
+    }
+
+
 }

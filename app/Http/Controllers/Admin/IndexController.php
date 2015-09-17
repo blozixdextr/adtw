@@ -11,6 +11,8 @@ class IndexController extends Controller
     {
         $logs = LogMapper::all();
 
+        dd($logs);
+
         return view('admin.pages.index', compact('logs'));
     }
 }
