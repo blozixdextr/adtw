@@ -121,6 +121,7 @@
         <div class="bottom-info-img right">
             <img src="https://cloud.githubusercontent.com/assets/14276761/9939950/8b2d85da-5d75-11e5-81da-1fe5c2c7cb1e.png" />
         </div>
+        <div class="clear"></div>
     </div>
     <div class="window-bg bottom-info-two">
         <div class="bottom-info-img left">
@@ -141,6 +142,7 @@
                 <a href="/" class="btn-white"></a>
             </div>
         </div>
+        <div class="clear"></div>
     </div>
 @endsection
 
