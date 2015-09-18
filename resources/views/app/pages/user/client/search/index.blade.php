@@ -1,4 +1,4 @@
-form<?php
+<?php
 
 if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     foreach ($filters['banner_types'] as $t) {
