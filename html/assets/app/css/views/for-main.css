@@ -74,6 +74,8 @@
 }
 .education-steps .step p{
     padding: 0 5px;
+    max-width:300px;
+    margin:0 auto;
 }
 .step h3 span{
     font-weight: bold;
