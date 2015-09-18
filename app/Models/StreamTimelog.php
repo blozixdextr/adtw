@@ -42,7 +42,17 @@ class StreamTimelog extends Model
 
     public function price() {
         $minutes = $this->duration();
-        $pricePerMinute = Config::get('banner.price') / 60;
+        $language = '';
+        if ($this->stream->user->language_id > 0) {
+            $language = strtolower($this->stream->user->language->title);
+        }
+        $prices = Config::get('banner.prices');
+        if (isset($prices[$language])) {
+            $price = $prices[$language];
+        } else {
+            $price = $prices['default'];
+        }
+        $pricePerMinute = $price / 60;
         $price = $minutes * $this->viewers * $pricePerMinute;
 
         return $price;
