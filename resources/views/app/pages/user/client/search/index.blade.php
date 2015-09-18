@@ -121,206 +121,38 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     </div>
 
     <h2>Search results</h2>
-
-<div class="streamers-list">
-        <div class="row">
-                    <div class="col-md-6">
-                <div class="streamer-item violet">
-                    <div class="streamer-img"><i class="fa fa-twitch"></i></div>
-                    <div class="streamer-info">
-                        <h5><a href="/profile/1">ifrond</a></h5>
-                        <div>
-                            <p>0 followers</p> /
-                            <p>0 videos</p> /
-                            <p>1 views</p>
-                            <span class="flag-icon flag-icon-us"></span> English
-                        </div>
-                    </div>
-                    <div class="streamer-buy">
-                        <a href="/user/client/banner/1" class="work-button">Order</a>
-                    </div>
-                </div>
-            </div>
-                    <div class="col-md-6">
-                <div class="streamer-item violet">
-                    <div class="streamer-img"><i class="fa fa-twitch"></i></div>
-                    <div class="streamer-info">
-                        <h5><a href="/profile/4">blozixdextr</a></h5>
-                        <div>
-                            <p>0 followers</p> /
-                            <p>0 videos</p> /
-                            <p>0 views</p>
-                            <span class="flag-icon flag-icon-us"></span> English
-                        </div>
-                    </div>
-                    <div class="streamer-buy">
-                        <a href="/user/client/banner/4" class="work-button">Order</a>
-                    </div>
-                </div>
-            </div>
-                    <div class="col-md-6">
-                <div class="streamer-item violet">
-                    <div class="streamer-img"><i class="fa fa-twitch"></i></div>
-                    <div class="streamer-info">
-                        <h5><a href="/profile/12">vterka</a></h5>
-                        <div>
-                            <p>0 followers</p> /
-                            <p>0 videos</p> /
-                            <p>15 views</p>
-                            <span class="flag-icon flag-icon-us"></span> English
-                        </div>
-                    </div>
-                    <div class="streamer-buy">
-                        <a href="/user/client/banner/12" class="work-button">Order</a>
-                    </div>
-                </div>
-            </div>
-                    <div class="col-md-6">
-                <div class="streamer-item violet">
-                    <div class="streamer-img"><i class="fa fa-twitch"></i></div>
-                    <div class="streamer-info">
-                        <h5><a href="/profile/16">junkwin</a></h5>
-                        <div>
-                            <p>0 followers</p> /
-                            <p>0 videos</p> /
-                            <p>0 views</p>
-                            <span class="flag-icon flag-icon-ru"></span> Russian
-                        </div>
-                    </div>
-                    <div class="streamer-buy">
-                        <a href="/user/client/banner/16" class="work-button">Order</a>
-                    </div>
-                </div>
-            </div>
-                </div>
-        <div class="clear"></div>
-    </div>
-    
     
     <div class="streamers-list-new">
-      <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                   <li>
-                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-language"></i> English Language</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
-                  </li>
-
-
-
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-      
-      
-      <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                   <li>
-                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-language"></i> English Language</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
-                  </li>
-
-
-
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-   
-   
-   <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                   <li>
-                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-language"></i> English Language</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
-                  </li>
-
-
-
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-   
-   <div class="streamer-id">
-          <div class="streamer-id-follow">
-              <div class="str-id-photo"><img src="https://cloud.githubusercontent.com/assets/14276761/9874571/82ee419c-5baf-11e5-86da-a91d06cbc689.jpeg" alt=""></div>
-              <div class="str-id-following"><span><i class="fa fa-eye"></i> 65,989,753 views</span></div>
-          </div>
-          <div class="streamer-id-name">Stanislav Studzinskyy</div>
-          <div class="streamer-id-info">
-              <ul>
-                   <li>
-                      <p><i class="fa fa-heart-o"></i> 808,964 Followers</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-video-camera"></i> 256 Videos</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-language"></i> English Language</p>
-                  </li>
-                  <li>
-                      <p><i class="fa fa-gamepad"></i> Dota2, Counter-Strike: GO, WarCraft 3</p>
-                  </li>
-
-
-
-              </ul>
-          </div>
-          <div class="streamer-id-button">
-              <a href="">Order now</a>
-          </div>
-      </div>
-    
-     
+        @forelse($twitchers as $u)
+            <div class="streamer-id">
+                <div class="streamer-id-follow">
+                    <div class="str-id-photo"><img src="{{ $u->profile->avatar }}" alt=""></div>
+                    <div class="str-id-following"><span><i class="fa fa-eye"></i> {{ $u->twitch_views }} views</span></div>
+                </div>
+                <div class="streamer-id-name"><a href="/profile/{{ $u->id }}">{{ $u->name }}</a></div>
+                <div class="streamer-id-info">
+                    <ul>
+                        <li>
+                            <p><i class="fa fa-heart-o"></i> {{ $u->twitch_followers }} Followers</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-video-camera"></i> {{ $u->twitch_videos }} Videos</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-language"></i> {{ $u->language_id > 0 ? ucfirst($u->language->title) : 'English' }} Language</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-gamepad"></i> {{ $u->games->implode('title', ', ') }}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="streamer-id-button">
+                    <a href="/user/client/banner/{{ $u->id.$bannerTypesParam }}">Order now</a>
+                </div>
+            </div>
+        @empty
+            <em>no results</em>
+        @endforelse
     </div>
 
     {!! $twitchers->render() !!}

@@ -17,6 +17,15 @@ class UserProfile extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getAvatarAttribute($value)
+    {
+        if ($value == '') {
+            $value = '/assets/app/images/default-avatar.png';
+        }
+
+        return $value;
+    }
+
 }
 
 
