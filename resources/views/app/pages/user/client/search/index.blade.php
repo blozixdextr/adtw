@@ -107,7 +107,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
 
                             <div class="form-group {!! ($errors && $errors->has('videos')) ? ' has-error' : '' !!}">
                                 {!! Form::label('videos', 'Videos', ['class' => 'control-label']) !!}
-                                {!! Form::text('videos', old('videos', $filters['videos']), ['class' => 'form-control', 'placeholder' => 'Minimum views']) !!}
+                                {!! Form::text('videos', old('videos', $filters['videos']), ['class' => 'form-control', 'placeholder' => 'Minimum videos']) !!}
                                 {!! Form::errorMessage('videos') !!}
                             </div>
                         </div>
