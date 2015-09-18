@@ -60,7 +60,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                 </div>
                 <div class="games">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
-                        {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
+                        <div class="text-center">{!! Form::label('games', 'Games', ['class' => 'control-label']) !!}</div>
                         <div class="">
                             {!! Form::errorMessage('games') !!}
                             @foreach($gameRefs as $g)
