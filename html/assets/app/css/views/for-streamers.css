@@ -121,6 +121,6 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
     width: 48%;
     display: inline-block;
 }
-.checkbox .choose-strimer{
+.choose-strimer .checkbox{
     margin-bottom:7px;
 }
