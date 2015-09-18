@@ -125,8 +125,11 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
     margin-bottom:7px;
 }
 .language-and-banner .checkbox{
-    margin-bottom:13px;
+    margin-bottom:12px;
 }
 .language-and-banner .form-group:first-child{
-  margin-bottom:;  
+  margin-bottom:52px;  
+}
+.games-followers>div {
+    margin-bottom: 46px;
 }
