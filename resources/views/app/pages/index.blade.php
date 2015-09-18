@@ -16,9 +16,11 @@
             </div>
             <ul>
                 <li>Pay as you go</li>
+                <li>Powerful control</li>
                 <li>Low price</li>
                 <li>Easy to start</li>
                 <li>Huge effect</li>
+                <li>Pay per 1 viewer/hour</li>
             </ul>
         </div>
         <div class="bottom-info-img right">
