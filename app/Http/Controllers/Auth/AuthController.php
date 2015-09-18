@@ -212,7 +212,7 @@ class AuthController extends Controller
         if ($localUser == false) {
             //$password = $this->randomPassword();
             $data = [
-                'name' => $email,
+                'name' => anonymizeEmail($email),
                 'email' => $email,
                 'password' => $password
             ];

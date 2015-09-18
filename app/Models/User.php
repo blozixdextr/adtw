@@ -149,4 +149,9 @@ class User extends Model implements AuthenticatableContract,
             return $this->hasMany(User::class);
         }
     }
+
+    public function getNameAttribute($value)
+    {
+        return anonymizeEmail($value);
+    }
 }
