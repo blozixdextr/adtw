@@ -131,5 +131,11 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
   margin-bottom:52px;  
 }
 .games-followers>div {
-    margin-bottom: 46px;
+    margin-bottom: 40px;
+}
+.games-followers label{
+    margin-bottom:20px;
+}
+.games .form-group label{
+    margin-left: 90px;
 }
