@@ -131,12 +131,12 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
   margin-bottom:52px;  
 }
 .games-followers>div {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 .games-followers label{
     margin-bottom:20px;
 }
-.games .form-group label{
+.games .form-group label[for="games"]{
     margin-left: 90px;
 }
 .choose-strimer .games-button{
