@@ -5,13 +5,8 @@ namespace App\Http\Controllers\User\Twitcher;
 use App\Models\Mappers\NotificationMapper;
 use App\Models\UserPayment;
 use Illuminate\Http\Request;
-use App\Services\Payments\PaypalPaymentService;
 use App\Models\Mappers\LogMapper;
-use Redirect;
-use Input;
-use Session;
 use App\Models\Mappers\PaymentMapper;
-use App\Services\Payments\StripePaymentService;
 use Config;
 
 class BillingController extends Controller
