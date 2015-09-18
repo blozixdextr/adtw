@@ -122,10 +122,10 @@
     <center><h1>Why buy ads on adtw.ch?</h1></center>
     <div class="about-us window-bg">
         <ul>
-            <li><i class="fa fa-line-chart"></i><h2>Analyze Your<br /> Campaigns</h2><p>Easy to use & powerful control panel gives you all information.</p></li>
-            <li><i class="fa fa-money"></i><h2>Pay per<br /> 1 viewer/hour.</h2><p>Streamers control system make screenshots and ads buyer pay only for streaming hours.</p></li>
-            <li><i class="fa fa-twitch"></i><h2>Best Twitch<br /> Streamers.</h2><p>Ads buyers can choose best & most trusted Twitch streamers to place banners.</p></li>
-            <li><i class="fa fa-gamepad"></i><h2>Relevant Streams<br /> for Your Ads .</h2><p>Viewers want to try products or services that streamer promote and use your product.</p></li>
+            <li><i class="fa fa-line-chart"></i><h2>Analyze Your<br />Campaigns</h2><p>Easy to use & powerful control panel gives you all information about your banner ads.</p></li>
+            <li><i class="fa fa-money"></i><h2>Pay per<br /> 1 viewer/hour</h2><p>Streamers control system make screenshots and ads buyer pay only for streaming hours.</p></li>
+            <li><i class="fa fa-twitch"></i><h2>Best Twitch<br /> Streamers</h2><p>Ads buyers can choose best & most trusted Twitch streamers to place banners.</p></li>
+            <li><i class="fa fa-gamepad"></i><h2>Relevant Streams<br /> for Your Ads</h2><p>Viewers want to try products or services that streamer promote and use your product.</p></li>
         </ul>
     </div>
     <center><h1>Why buy ads on adtw.ch?</h1></center>
