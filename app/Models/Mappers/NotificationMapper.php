@@ -42,7 +42,7 @@ class NotificationMapper
         $title = $banner->twitcher->name.' accepted your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'banner_accept');
         Mail::send('app.emails.banner_accept', ['banner' => $banner], function ($m) use ($banner) {
-            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' accepted your banner');
+            $m->to($banner->client->email)->subject($banner->twitcher->name.' accepted your banner');
         });
     }
 
@@ -51,7 +51,7 @@ class NotificationMapper
         $title = $banner->twitcher->name.' declined your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'banner_decline');
         Mail::send('app.emails.banner_decline', ['banner' => $banner], function ($m) use ($banner) {
-            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' declined your banner');
+            $m->to($banner->client->email)->subject($banner->twitcher->name.' declined your banner');
         });
     }
 
@@ -60,7 +60,7 @@ class NotificationMapper
         $title = $banner->twitcher->name.' started to stream your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'banner_stream');
         Mail::send('app.emails.banner_stream', ['banner' => $banner], function ($m) use ($banner) {
-            $m->to($banner->twitcher->email)->subject($banner->twitcher->name.' started to stream your banner');
+            $m->to($banner->client->email)->subject($banner->twitcher->name.' started to stream your banner');
         });
     }
 
