@@ -27,10 +27,27 @@
         <div class="clear"></div>
     </div>
 
-
-
-
     <center><h1>How it works?</h1></center>
+    <div class="education-steps window-bg">
+        <div class="step">
+            <div><img src="/assets/app/images/face1.png"></div>
+            <h3>Choose Best Streamers</h3>
+            <p>Ad buyer can select targeting language of streamer, number of followers and game of streamer.</p>
+        </div>
+        <div class="step">
+            <div><img src="/assets/app/images/face2.png"></div>
+            <h3>Buy Ads & upload banner</h3>
+            <p>Order ads & upload banner. Pay only for time of streaming. Pay per hour model</p>
+        </div>
+        <div class="step">
+            <div><img src="/assets/app/images/face3.png"></div>
+            <h3>Streamer Place Banner</h3>
+            <p>Our system control banner placement and ads buyer pay only for hours of banner placement.</p>
+        </div>
+    </div>
+
+
+    <center><h1>Are you ready?</h1></center>
     <div class="text-center intro-main">
         @if (!$user)
         <div class="title-place-left window-bg-tiny">
@@ -99,24 +116,7 @@
         <h1>Hello {{ $user->name }}.</h1>
         <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
     @endif
-    <center><h1>How it works?</h1></center>
-    <div class="education-steps window-bg">
-        <div class="step">
-            <div><img src="/assets/app/images/face1.png"></div>
-            <h3>Choose Best Streamers</h3>
-            <p>Ad buyer can select targeting language of streamer, number of followers and game of streamer.</p>
-        </div>
-        <div class="step">
-            <div><img src="/assets/app/images/face2.png"></div>
-            <h3>Buy Ads & upload banner</h3>
-            <p>Order ads & upload banner. Pay only for time of streaming. Pay per hour model</p>
-        </div>
-        <div class="step">
-            <div><img src="/assets/app/images/face3.png"></div>
-            <h3>Streamer Place Banner</h3>
-            <p>Our system control banner placement and ads buyer pay only for hours of banner placement.</p>
-        </div>
-    </div>
+
     <center><h1>Why buy ads on adtw.ch?</h1></center>
     <div class="about-us window-bg">
         <ul>
