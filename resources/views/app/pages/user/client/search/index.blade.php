@@ -90,9 +90,9 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                             @endforeach
                         </div>
                     </div>
+                </div>
                 
-                
-
+                        <div class="games-followers">
                             <div class="form-group {!! ($errors && $errors->has('followers')) ? ' has-error' : '' !!}">
                                 {!! Form::label('followers', 'Followers', ['class' => 'control-label']) !!}
                                 {!! Form::text('followers', old('followers', $filters['followers']), ['class' => 'form-control', 'placeholder' => 'Minimum followers']) !!}
@@ -110,7 +110,8 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 {!! Form::text('videos', old('videos', $filters['videos']), ['class' => 'form-control', 'placeholder' => 'Minimum views']) !!}
                                 {!! Form::errorMessage('videos') !!}
                             </div>
-
+                        </div>
+                        <div class="games-button">
                             <div class="form-group" style="margin-top:40px">
                                 <button type="submit" class="btn-white">Find</button>
                             </div>
