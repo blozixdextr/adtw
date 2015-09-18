@@ -97,3 +97,24 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
     background-color: #6441A5;
     color:#fff;
 }
+.choose-strimer form>div{
+    display:inline-block;
+    width:25%;
+    box-sizing:border-box;
+}
+.games-followers{
+    
+}
+.choose-strimer form>* {
+    display: inline-block;
+    vertical-align: top;
+}
+.language-and-banner{
+    width:25%;
+}
+.games{
+    width:48%;
+}
+.games-followers{
+    width:25%;
+}
