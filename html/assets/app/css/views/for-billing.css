@@ -44,10 +44,12 @@ section {
   margin-right: 10px;
 }
 /* изменения стиля заголовков вкладок при наведении */
+/* Ifrond removed it
 .tabs label:hover {
   color: #888;
   cursor: pointer;
 }
+*/
 /* стили для активной вкладки */
 .tabs input:checked + label {
   color: #000;
@@ -133,3 +135,15 @@ section {
     }
 }
 
+
+
+
+
+
+/* ifrond added */
+.tabs form {
+    margin: 15px;
+}
+.tabs form input[type="text"] {
+    border: 1px solid #CDB9F1;
+}
