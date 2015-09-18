@@ -139,7 +139,7 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
 .games .form-group label{
     margin-left: 90px;
 }
-.games-button{
+.choose-strimer .games-button{
     display: block;
     margin: 0 auto;
 }
