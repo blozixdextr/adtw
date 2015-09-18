@@ -25,7 +25,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
 
-                
+                <div class="language-and-banner">
                     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
                         {!! Form::label('language', 'Languages', ['class' => 'control-label']) !!}
                         <div class="">
@@ -57,8 +57,8 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                             @endforeach
                         </div>
                     </div>
-                
-                
+                </div>
+                <div class="games">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
                         {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
                         <div class="">
@@ -114,7 +114,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                             <div class="form-group" style="margin-top:40px">
                                 <button type="submit" class="btn-white">Find</button>
                             </div>
-
+                        </div>
                 
             {!! Form::close() !!}
         </div>
