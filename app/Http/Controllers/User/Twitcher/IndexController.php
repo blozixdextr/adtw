@@ -6,6 +6,8 @@ use App\Models\Mappers\BannerMapper;
 use Auth;
 use App\Models\Mappers\LogMapper;
 use App\Apis\Twitch;
+use App\Models\Mappers\NotificationMapper;
+use App\Models\Notification;
 
 class IndexController extends Controller
 {
@@ -13,11 +15,13 @@ class IndexController extends Controller
         $this->updateStatistics();
         $banners = [];
         $bannerTypes = $this->user->bannerTypes;
+        $notifications = NotificationMapper::fresh($this->user);
+
         foreach ($bannerTypes as $bt) {
             $banners[$bt->id] = BannerMapper::activeTwitcher($this->user, $bt->id);
         }
 
-        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes'));
+        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes', 'notifications'));
     }
 
     public function updateStatistics() {

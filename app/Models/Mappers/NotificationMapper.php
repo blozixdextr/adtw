@@ -99,7 +99,7 @@ class NotificationMapper
     public static function reviewed(Notification $notification)
     {
         $notification->seen_at = \Carbon\Carbon::now();
-        $notification->save();
+        return $notification->save();
     }
 
     public static function type(User $user, $type, $onlyFresh = true, $limit = 50)
@@ -121,6 +121,16 @@ class NotificationMapper
     {
         $notifications = Notification::where('user_id', $user->id);
         $notifications->where('seen_at', null);
+        $notifications->orderBy('created_at', 'asc');
+        $notifications = $notifications->paginate($limit);
+
+        return $notifications;
+    }
+
+    public static function user(User $user, $limit = 50)
+    {
+        $notifications = Notification::where('user_id', $user->id);
+        $notifications->orderBy('created_at', 'desc');
         $notifications = $notifications->paginate($limit);
 
         return $notifications;
