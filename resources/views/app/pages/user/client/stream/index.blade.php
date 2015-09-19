@@ -20,7 +20,7 @@
         </div>
         <div class="booking-table-row">
             <div class="booking-ban-size">
-                <p>300 * 250</p>
+                <p>300 * 250 <div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div></p>
             </div>
             <div class="booking-streamer">
                 <p>ValdemarPrestigiue2</p>
@@ -34,7 +34,7 @@
         </div>
         <div class="booking-table-row">
             <div class="booking-ban-size">
-                <p>300 * 250</p>
+                <p>300 * 250 <div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div></p>
             </div>
             <div class="booking-streamer">
                 <p>ValdemarPrestigiue2</p>
@@ -48,7 +48,7 @@
         </div>
         <div class="booking-table-row">
             <div class="booking-ban-size">
-                <p>300 * 250</p>
+                <p>300 * 250 <div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div></p>
             </div>
             <div class="booking-streamer">
                 <p>ValdemarPrestigiue2</p>
@@ -62,7 +62,7 @@
         </div>
         <div class="booking-table-row">
             <div class="booking-ban-size">
-                <p>300 * 250</p>
+                <p>300 * 250 <div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div></p>
             </div>
             <div class="booking-streamer">
                 <p>ValdemarPrestigiue2</p>
