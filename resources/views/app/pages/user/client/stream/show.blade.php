@@ -1,5 +1,26 @@
 @extends('app.layouts.client')
 
+@section('head-js')
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover({html: true, trigger: 'click'});
+        })
+    </script>
+@endsection
+
+@section('head-style')
+    <style>
+        .popover {
+            width: auto;
+            max-width: 800px;
+        }
+
+        .second-page .page {
+            overflow: visible;
+        }
+    </style>
+@endsection
+
 @section('content')
     <h1>Stream #{{ $stream->id }}</h1>
 
@@ -66,7 +87,7 @@
                     <td class="success-live">
                         @if ($t->status == 'live' && $t->screenshot)
                             <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
-                            <div class="streamer-online-view"><i class="fa fa-eye"></i><div class="streamer-absolute"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div>
+                            <div class="streamer-online-view"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $t->screenshot }}'>"></i></div>
                         @else
                             <em>{{ $t->status }}</em>
                         @endif

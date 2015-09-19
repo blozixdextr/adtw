@@ -52,7 +52,7 @@
                     <p>{{ $b->amount_limit }}USD</p>
                 </div>
                 <div class="booking-actions">
-                    <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></a></i></p>
+                    <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a></p>
                 </div>
             </div>
         @empty

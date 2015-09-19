@@ -191,7 +191,7 @@ class BannerMapper
         $prevTrackTime = Session::get('stream_lastPing', time());
         if ($response->stream != null) {
             $viewers = $response->stream->viewers;
-            $screenshot = $response->stream->preview->medium;
+            $screenshot = $response->stream->preview->large;
             if ($screenshot) {
                 $filename = '/assets/app/upload/t/'.uniqid($stream->id.'_'.date('YmdHis')).'.jpg';
                 $screenshotFile = public_path($filename);
