@@ -603,7 +603,7 @@ table .success td a{
 table .success .success-live{
 	position:relative;
 }
-table .success .streamer-online-view:after{
+table .success .streamer-online-view{
 	content: "\f06e";
 	color:#6441A5;
 	display: inline-block;
