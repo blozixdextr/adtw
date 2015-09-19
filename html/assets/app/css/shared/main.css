@@ -647,15 +647,16 @@ table .success .streamer-online-view{
 }
 .booking-table-row>div{
 	box-sizing:border-box;
+	text-align:center;
 }
 .booking-table p{
 	padding:10px;
 	margin-bottom:0px;
 }
-.booking-table-row .booking-ban-size{width:30%;}
-.booking-table-row .booking-streamer{width:40%;}
-.booking-table-row .booking-cost-limit{width:10%;}
-.booking-table-row .booking-actions{width:20%;}
+.booking-table-row .booking-ban-size{width:20%;text-align:left;}
+.booking-table-row .booking-streamer{width:45%;}
+.booking-table-row .booking-cost-limit{width:15%;}
+.booking-table-row .booking-actions{width:20%;text-align:right;}
 
 
 
