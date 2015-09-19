@@ -609,10 +609,10 @@ table .success .success-live:after{
 	display: inline-block;
     	font: normal normal normal 14px/1 FontAwesome;
     	position:absolute;
-    	right: 0px;
+    	left: 50px;
     	cursor:pointer;
     	font-size: 24px;
-    	top: -2px;
+    	top: 5px;
 }
 
 /*            media         */
