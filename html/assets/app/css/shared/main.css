@@ -600,10 +600,10 @@ li.menu-hidden h2{
 table .success td a{
 	position:relative;
 }
-table .success-live{
+table .success .success-live{
 	position:relative;
 }
-table .success-live:after{
+table .success .success-live:after{
 	content: "\f06e";
 	color:#6441A5;
 	display: inline-block;
