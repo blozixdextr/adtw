@@ -29,7 +29,7 @@
                 <p>$1.48</p>
             </div>
             <div class="booking-actions">
-                <p>Cancel order</p>
+                <p>Cancel order <i class="fa fa-times"></i></p>
             </div>
         </div>
         <div class="booking-table-row">
@@ -43,7 +43,7 @@
                 <p>$1.48</p>
             </div>
             <div class="booking-actions">
-                <p>Cancel order</p>
+                <p>Cancel order <i class="fa fa-times"></i></p>
             </div>
         </div>
         <div class="booking-table-row">
@@ -57,7 +57,7 @@
                 <p>$1.48</p>
             </div>
             <div class="booking-actions">
-                <p>Cancel order</p>
+                <p>Cancel order <i class="fa fa-times"></i></p>
             </div>
         </div>
         <div class="booking-table-row">
@@ -71,7 +71,7 @@
                 <p>$1.48</p>
             </div>
             <div class="booking-actions">
-                <p>Cancel order</p>
+                <p>Cancel order <i class="fa fa-times"></i></p>
             </div>
         </div>
     </div>
