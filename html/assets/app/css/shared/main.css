@@ -629,6 +629,7 @@ table .success .streamer-online-view{
     	width: 320px;
 	left: -87px;
 	top: -147px;
+	background-color:#E7E7E7;
 	position:absolute;
 	-ms-transition:all 1s ease-out;
 	-moz-transition:all 1s ease-out;
@@ -642,7 +643,7 @@ table .success .streamer-online-view{
 	z-index:99999;
 }
 .streamer-absolute img{
-	width:200px;
+	width:320px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
