@@ -641,16 +641,17 @@ table .success .streamer-online-view{
 	width:100%;
 }
 .booking-table-row{
+	display:flex;
+	justify-content:flex-start;
 	border-bottom:1px solid #DDDDDD;
 }
 .booking-table-row>div{
-	width:25%;
 	box-sizing:border-box;
 }
-.booking-table-row
-.booking-table-row
-.booking-table-row
-.booking-table-row
+.booking-table-row .booking-ban-size{width:30%;}
+.booking-table-row .booking-streamer{width:40%;}
+.booking-table-row .booking-cost-limit{width:10%;}
+.booking-table-row .booking-actions{width:20%;}
 
 
 
