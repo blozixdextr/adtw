@@ -48,6 +48,41 @@
         </div>
     </div>
 
+<center><h1>Why buy ads on adtw.ch?</h1></center>
+    <div class="about-us window-bg">
+        <ul>
+            <li><i class="fa fa-line-chart"></i><h2>Analyze Your<br />Campaigns</h2><p>Easy to use & powerful control panel gives you all information about your banner ads.</p></li>
+            <li><i class="fa fa-money"></i><h2>Pay per<br /> 1 viewer/hour</h2><p>Streamers control system make screenshots and ads buyer pay only for streaming hours.</p></li>
+            <li><i class="fa fa-twitch"></i><h2>Best Twitch<br /> Streamers</h2><p>Ads buyers can choose best & most trusted Twitch streamers to place banners.</p></li>
+            <li><i class="fa fa-gamepad"></i><h2>Relevant Streams<br /> for Your Ads</h2><p>Viewers want to try products or services that streamer promote and use your product.</p></li>
+        </ul>
+    </div>
+    
+    <center><h1>Create and Manage Ads with Best Streamers</h1></center>
+    <div class="window-bg bottom-info-one">
+        <div class="bottom-info-content left">
+            <div>
+                <h2>Single point of contact for hundreds of streamers</h2>
+                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
+            </div>
+            <ul>
+                <li>Real-time performance tracking</li>
+                <li>Simple streamers control</li>
+                <li>Target specific games & languages</li>
+                <li>Consolidated billing, reporting, and management</li>
+                <li>24x7 Technical Support</li>
+            </ul>
+            <div>
+                <a href="/" class="btn-white">Create Free Account</a>
+            </div>
+        </div>
+        <div class="bottom-info-img right">
+            <img src="https://cloud.githubusercontent.com/assets/2786905/9976042/9ba83148-5ed4-11e5-8c46-dc27ef27194f.gif" />
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
 
     <center><h1>Are you ready?</h1></center>
     <div class="text-center intro-main">
@@ -119,38 +154,7 @@
         <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
     @endif
 
-    <center><h1>Why buy ads on adtw.ch?</h1></center>
-    <div class="about-us window-bg">
-        <ul>
-            <li><i class="fa fa-line-chart"></i><h2>Analyze Your<br />Campaigns</h2><p>Easy to use & powerful control panel gives you all information about your banner ads.</p></li>
-            <li><i class="fa fa-money"></i><h2>Pay per<br /> 1 viewer/hour</h2><p>Streamers control system make screenshots and ads buyer pay only for streaming hours.</p></li>
-            <li><i class="fa fa-twitch"></i><h2>Best Twitch<br /> Streamers</h2><p>Ads buyers can choose best & most trusted Twitch streamers to place banners.</p></li>
-            <li><i class="fa fa-gamepad"></i><h2>Relevant Streams<br /> for Your Ads</h2><p>Viewers want to try products or services that streamer promote and use your product.</p></li>
-        </ul>
-    </div>
-    <center><h1>Why buy ads on adtw.ch?</h1></center>
-    <div class="window-bg bottom-info-one">
-        <div class="bottom-info-content left">
-            <div>
-                <h2>Lorem ipson</h2>
-                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
-            </div>
-            <ul>
-                <li>Lorem-ipson do</li>
-                <li>Lorem-ipson dolar</li>
-                <li>Lorem-ipson sit</li>
-                <li>Lorem-ipson amet</li>
-                <li>Lorem-ipson dolor amet</li>
-            </ul>
-            <div>
-                <a href="/" class="btn-white">Something</a>
-            </div>
-        </div>
-        <div class="bottom-info-img right">
-            <img src="https://cloud.githubusercontent.com/assets/2786905/9975850/80c9008a-5ecc-11e5-8247-e59577ab6fa2.gif" />
-        </div>
-        <div class="clear"></div>
-    </div>
+    
     <center><h1>Why buy ads on adtw.ch?</h1></center>
     <div class="window-bg bottom-info-two">
         <div class="bottom-info-img left">
