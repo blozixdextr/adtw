@@ -648,6 +648,10 @@ table .success .streamer-online-view{
 .booking-table-row>div{
 	box-sizing:border-box;
 }
+.booking-table p{
+	padding:10px;
+	margin-bottom:0px;
+}
 .booking-table-row .booking-ban-size{width:30%;}
 .booking-table-row .booking-streamer{width:40%;}
 .booking-table-row .booking-cost-limit{width:10%;}
