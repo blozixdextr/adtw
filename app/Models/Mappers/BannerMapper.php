@@ -86,6 +86,16 @@ class BannerMapper
         return $banners->get();
     }
 
+    public static function inactiveTwitcher(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereTwitcherId($user->id)->whereIsActive(0);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->get();
+    }
+
     public static function activeTwitcherCount(User $user, $bannerType = 0)
     {
         $banners = Banner::whereTwitcherId($user->id)->whereIsActive(1);
@@ -99,6 +109,16 @@ class BannerMapper
     public static function activeClient(User $user, $bannerType = 0)
     {
         $banners = Banner::whereClientId($user->id)->whereIsActive(1);
+        if ($bannerType > 0) {
+            $banners->whereTypeId($bannerType);
+        }
+
+        return $banners->get();
+    }
+
+    public static function inactiveClient(User $user, $bannerType = 0)
+    {
+        $banners = Banner::whereClientId($user->id)->whereIsActive(0);
         if ($bannerType > 0) {
             $banners->whereTypeId($bannerType);
         }

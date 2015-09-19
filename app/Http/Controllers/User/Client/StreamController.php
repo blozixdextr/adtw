@@ -21,8 +21,9 @@ class StreamController extends Controller
     {
         $streams = StreamMapper::byClient($this->user);
         $orders = BannerMapper::activeClient($this->user);
+        $inactiveBanners = BannerMapper::inactiveClient($this->user);
 
-        return view('app.pages.user.client.stream.index', compact('streams', 'orders'));
+        return view('app.pages.user.client.stream.index', compact('streams', 'orders', 'inactiveBanners'));
     }
 
     public function stream($streamId)

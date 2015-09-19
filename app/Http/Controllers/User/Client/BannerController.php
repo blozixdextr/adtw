@@ -90,4 +90,21 @@ class BannerController extends Controller
 
         return Redirect::back()->with(['success' => 'You canceled your order']);
     }
+
+    public function repeat($bannerId)
+    {
+        $banner = Banner::findOrFail($bannerId);
+        if ($banner->client_id != $this->user->id) {
+            return Redirect::back()->withErrors(['access' => 'You have no rights']);
+        }
+        if ($banner->status != 'finished') {
+            return Redirect::back()->withErrors(['access' => 'You have no rights']);
+        }
+        $banner->status = 'waiting';
+        $banner->is_active = 0;
+        $banner->save();
+        NotificationMapper::bannerAdd($banner);
+
+        return Redirect::back()->with(['success' => 'You repeated your order']);
+    }
 }

@@ -83,6 +83,40 @@
         <tr><td colspan="3"><em>no streams yet</em></td></tr>
     @endforelse
     </table>
+
+    <h1>Inactive banners</h1>
+    <table class="table">
+        <tr>
+            <th>Banner</th>
+            <th>Status</th>
+            <th>Streamer</th>
+            <th>Cost limit</th>
+            <th>Actions</th>
+
+        </tr>
+        @forelse($inactiveBanners as $b)
+            <tr>
+                <td>
+                    {{ $b->type->title }} <i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i>
+                </td>
+                <td>{{ $b->status }}</td>
+                <td><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></td>
+                <td>{{ $b->amount_limit }}USD</td>
+                <td>
+                    @if ($b->status == 'waiting')
+                        <a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a>
+                    @endif
+
+                    @if ($b->status == 'finished')
+                        <a href="/user/client/banner/{{ $b->id }}/repeat">Repeat order <i class="fa fa-repeat"></i></a>
+                    @endif
+                </td>
+            </tr>
+        @empty
+            <tr><td colspan="5"><em>no inactive banners</em></td></tr>
+        @endforelse
+    </table>
+
 @endsection
 
 
