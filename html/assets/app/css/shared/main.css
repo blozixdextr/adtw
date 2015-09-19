@@ -621,11 +621,11 @@ table .success .streamer-online-view{
 	left:0;
 	top:0;
 	position:absolute;
-	-ms-transition:all 1s ease-out 0.5s;
-	-moz-transition:all 1s ease-out 0.5s ;
-	-webkit-transition:all 1s ease-out 0.5s ;
-	-o-transition:all 1s ease-out 0.5s ;
-	transition: all 1s ease-out 0.5s;
+	-ms-transition:all 1s ease-out;
+	-moz-transition:all 1s ease-out;
+	-webkit-transition:all 1s ease-out;
+	-o-transition:all 1s ease-out;
+	transition: all 1s ease-out;
 }
 .streamer-online-view:hover .streamer-absolute{
 	display:block;
