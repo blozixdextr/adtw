@@ -610,6 +610,7 @@ table .success .streamer-online-view{
     	left: 50px;
     	cursor:pointer;
     	font-size: 24px;
+    	top:0;
 }
 
 /*            media         */
