@@ -23,7 +23,7 @@
                 <li>Pay per 1 viewer/hour</li>
             </ul>
             <div>
-                <a href="/" class="btn-white">Create Free Account</a>
+                <a href="#ready" class="btn-white">Create Free Account</a>
             </div>
         </div>
         <div class="bottom-info-img right">
@@ -85,7 +85,7 @@
 
 
 
-    <center><h1>Are you ready?</h1></center>
+    <center><h1 id="ready">Are you ready?</h1></center>
     <div class="text-center intro-main">
         @if (!$user)
         <div class="title-place-left window-bg-tiny">
