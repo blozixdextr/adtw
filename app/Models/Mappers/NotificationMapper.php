@@ -166,7 +166,7 @@ class NotificationMapper
     {
         $notifications = Notification::where('user_id', $user->id);
         $notifications->where('seen_at', null);
-        $notifications->orderBy('created_at', 'asc');
+        $notifications->orderBy('created_at', 'desc');
         $notifications = $notifications->paginate($limit);
 
         return $notifications;

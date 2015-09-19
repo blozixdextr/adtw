@@ -1,5 +1,26 @@
 @extends('app.layouts.client')
 
+@section('head-js')
+    <script>
+    $(function () {
+        $('[data-toggle="popover"]').popover({html: true, trigger: 'hover'});
+    })
+    </script>
+@endsection
+
+@section('head-style')
+    <style>
+        .popover {
+            width: auto;
+            max-width: 800px;
+        }
+
+        .second-page .page {
+            overflow: visible;
+        }
+    </style>
+@endsection
+
 @section('content')
 
     <h1>My Orders</h1>
@@ -22,8 +43,7 @@
             <div class="booking-table-row booking-name">
                 <div class="booking-ban-size">
                     <p>{{ $b->type->title }}</p>
-                    <div class="booking-online"><i class="fa fa-eye"></i>
-                        <div class="booking-online-img"><img src="{{ $b->file }}"></div></div>
+                    <div class="booking-online"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
                 </div>
                 <div class="booking-streamer">
                     <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>
