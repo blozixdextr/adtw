@@ -642,7 +642,7 @@ table .success .streamer-online-view{
 	opacity:0;
 	height: 180px;
     	width: 320px;
-	left: -137px;
+	left: -135px;
 	top: -184px;
 	background-color:#E7E7E7;
 	position:absolute;
@@ -659,6 +659,7 @@ table .success .streamer-online-view{
     	position:relative;
     	left: 20px;
     	cursor:pointer;
+    	text-align:center;
     	font-size: 24px;
     	top:3px;
     	width: 50px;
