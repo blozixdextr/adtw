@@ -603,7 +603,7 @@ table .success td a{
 table .success .success-live{
 	position:relative;
 }
-.success-live{
+.success .success-live{
 	padding-bottom:0;
 }
 table .success .streamer-online-view{
@@ -614,6 +614,8 @@ table .success .streamer-online-view{
     	cursor:pointer;
     	font-size: 24px;
     	top:3px;
+    	width: 50px;
+    	height: 35px;
     	-ms-transition:all 1s ease-out;
 	-moz-transition:all 1s ease-out;
 	-webkit-transition:all 1s ease-out;
