@@ -4,6 +4,38 @@
     <link rel="stylesheet" href="/assets/app/css/views/for-timeline.css">
 @endsection
 
+@section('head-js')
+    <script>
+        $(function(){
+            $(window).scroll(function() {
+                if ($('#timelineAutoload').hasClass('loading')) {
+                    return;
+                }
+                var hT = $('#timelineAutoload').offset().top,
+                        hH = $('#timelineAutoload').outerHeight(),
+                        wH = $(window).height(),
+                        wS = $(this).scrollTop();
+                if (wS > (hT + hH - wH)){
+                    var page = $('#timelinePage').val();
+                    if (page > 0) {
+                        $('#timelineAutoload').addClass('loading');
+                        $.getJSON('/user/client/timeline/', {page: page}, function(data) {
+                            $('#timelineAutoload').removeClass('loading');
+                            if (data.html) {
+                                $('.timeline').append(data.html);
+                                $('#timelinePage').val(page + 1);
+                            } else {
+                                $('#timelinePage').val(0);
+                            }
+                        });
+                    }
+                }
+            });
+
+        });
+    </script>
+@endsection
+
 @section('content')
     <h1>Client Dashboard</h1>
 
@@ -13,7 +45,7 @@
             <div class="timeline-item">
                 <div class="timeline-item-content">
                     <div class="timeline-content-in">
-                        <i class="fa fa-twitch"></i>
+                        <i class="fa fa-{{ getNotificationIcon($n->type) }}"></i>
                         <p>{!! $n->title !!}</p>
                     </div>
                 </div>
@@ -31,5 +63,9 @@
             <em>no timeline</em>
         @endforelse
     </div>
+    @if (count($notifications) > 0)
+        <div id="timelineAutoload"></div>
+        <input type="hidden" value="1" id="timelinePage" name="timelinePage">
+    @endif
 
 @endsection

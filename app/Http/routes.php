@@ -41,6 +41,8 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
     Route::get('profile', 'ProfileController@index');
     Route::post('profile/save', 'ProfileController@save');
 
+    Route::get('timeline', 'NotificationController@fresh');
+
     Route::get('billing', 'BillingController@index');
     Route::post('billing/withdraw', 'BillingController@withdraw');
 
@@ -77,6 +79,8 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
     Route::get('profile', 'ProfileController@index');
     Route::post('profile/save', 'ProfileController@save');
+
+    Route::get('timeline', 'NotificationController@fresh');
 
     Route::get('banner/{userId}', 'BannerController@index');
     Route::get('banners', 'BannerController@list');

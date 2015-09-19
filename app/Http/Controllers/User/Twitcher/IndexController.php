@@ -15,7 +15,7 @@ class IndexController extends Controller
         $this->updateStatistics();
         $banners = [];
         $bannerTypes = $this->user->bannerTypes;
-        $notifications = NotificationMapper::fresh($this->user);
+        $notifications = NotificationMapper::fresh($this->user, 10);
 
         foreach ($bannerTypes as $bt) {
             $banners[$bt->id] = BannerMapper::activeTwitcher($this->user, $bt->id);

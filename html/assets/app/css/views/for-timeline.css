@@ -113,3 +113,9 @@
 .timeline-content-in p{
     max-width: 180px;
 }
+#timelineAutoload {
+    height: 16px;
+}
+#timelineAutoload.loading {
+    background: transparent url('/assets/app/images/ho-spinner.gif') no-repeat center;
+}

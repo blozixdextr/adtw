@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User\Client;
+namespace App\Http\Controllers\User\Twitcher;
 
 use App\Models\Mappers\NotificationMapper;
 use App\Models\Notification;
@@ -39,10 +39,11 @@ class NotificationController extends Controller
         }
     }
 
+
     public function fresh()
     {
         $notifications = NotificationMapper::fresh($this->user, 5);
-        $html = view('app.pages.user.client.notification.ajax', compact('notifications'))->render();
+        $html = view('app.pages.user.twitcher.notification.ajax', compact('notifications'))->render();
 
         return ['html' => $html];
     }
