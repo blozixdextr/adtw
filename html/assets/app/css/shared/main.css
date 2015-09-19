@@ -684,7 +684,7 @@ table .success .streamer-online-view{
 .booking-table-row .booking-ban-size{width:20%;text-align:left;}
 .booking-table-row .booking-streamer{width:45%;}
 .booking-table-row .booking-cost-limit{width:15%;}
-.booking-table-row .booking-actions{width:20%;text-align:right;}
+.booking-table-row .booking-actions{width:20%;}
 
 .booking-actions i{
 	margin-left:15px;
