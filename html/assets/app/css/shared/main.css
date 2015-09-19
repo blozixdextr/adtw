@@ -606,11 +606,28 @@ table .success .success-live{
 table .success .streamer-online-view{
 	color:#6441A5;
 	display: inline-block;
-    	position:absolute;
-    	left: 50px;
+    	position:relative;
+    	left: 20px;
     	cursor:pointer;
     	font-size: 24px;
-    	top:0;
+    	top:3;
+}
+.streamer-absolute{
+	display:none;
+	opacity:1;
+	height:250px;
+	width:200px;
+	background-color:#ccc;
+	position:absolute;
+	-ms-transition:all 1s ease-out 0.5s;
+	-moz-transition:all 1s ease-out 0.5s ;
+	-webkit-transition:all 1s ease-out 0.5s ;
+	-o-transition:all 1s ease-out 0.5s ;
+	transition: all 1s ease-out 0.5s;
+}
+.streamer-online-view:hover .streamer-absolute{
+	display:block;
+	opacity:0;
 }
 
 /*            media         */
