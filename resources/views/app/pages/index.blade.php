@@ -22,6 +22,9 @@
                 <li>Huge effect</li>
                 <li>Pay per 1 viewer/hour</li>
             </ul>
+            <div>
+                <a href="/" class="btn-white">Create Free Account</a>
+            </div>
         </div>
         <div class="bottom-info-img right">
             <img src="https://cloud.githubusercontent.com/assets/2786905/9975849/7d07bb4e-5ecc-11e5-98fd-1d179372aa4a.gif" />
@@ -72,9 +75,7 @@
                 <li>Consolidated billing, reporting, and management</li>
                 <li>24x7 Technical Support</li>
             </ul>
-            <div>
-                <a href="/" class="btn-white">Create Free Account</a>
-            </div>
+
         </div>
         <div class="bottom-info-img right">
             <img src="https://cloud.githubusercontent.com/assets/2786905/9976042/9ba83148-5ed4-11e5-8c46-dc27ef27194f.gif" />
