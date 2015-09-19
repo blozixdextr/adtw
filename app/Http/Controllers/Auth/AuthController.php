@@ -148,7 +148,7 @@ class AuthController extends Controller
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);
                 LogMapper::log('twitch_register', $localUser->id);
-                NotificationMapper::notify($localUser, 'You register with <a href="'.url('/').'">Adtw.ch</a>');
+                NotificationMapper::registration($localUser);
 
                 return redirect('/user/twitcher/profile');
             }
@@ -224,7 +224,7 @@ class AuthController extends Controller
             $localUser->save();
             $isNew = true;
             LogMapper::log('client_register', $localUser->id);
-            NotificationMapper::notify($localUser, 'You register with <a href="'.url('/').'">Adtw.ch</a>');
+            NotificationMapper::registration($localUser);
         } else {
             $isNew = false;
             LogMapper::log('client_login', $localUser->id, 'try');

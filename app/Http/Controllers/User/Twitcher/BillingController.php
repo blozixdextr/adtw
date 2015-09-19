@@ -40,10 +40,8 @@ class BillingController extends Controller
             return redirect('/user/twitcher/billing')->withErrors(['amount' => 'You have no such money']);
         }
         $account = $request->get('account');
-
         PaymentMapper::withdrawPaypalPrepare($this->user, $account, $amount);
-
-        NotificationMapper::notify($this->user, 'You required withdrawal '.$amount);
+        NotificationMapper::withdraw($this->user, $amount, 'USD', 'paypal', $account);
         LogMapper::log('withdraw', $this->user->id, 'request', ['account' => $account, 'merchant' => 'paypal', 'amount' => $amount]);
 
         return redirect('/user/twitcher/billing')->with(['success' => 'You required withdrawal']);

@@ -44,3 +44,42 @@ function anonymizeEmail($value) {
     return $value;
 }
 
+function getNotificationIcon($type) {
+    switch ($type) {
+        case 'important':
+            $ico = 'check-square';
+            break;
+
+        case 'accept':
+            $ico = 'check-square';
+            break;
+
+        case 'paypal':
+            $ico = 'cc-paypal';
+            break;
+
+        case 'stripe':
+            $ico = 'credit-card';
+            break;
+
+        case 'transfer':
+        case 'balance':
+            $ico = 'money';
+            break;
+
+        case 'banner':
+            $ico = 'buysellads';
+            break;
+
+        case 'decline':
+            $ico = 'minus-square';
+            break;
+
+        default:
+            $ico = 'twitch';
+            break;
+    }
+
+    return $ico;
+}
+
