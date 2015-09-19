@@ -627,8 +627,8 @@ table .success .streamer-online-view{
 	opacity:0;
 	height: 150px;
     	width: 200px;
-	left:40px;
-	top:0;
+	left: -87px;
+	top: -147px;
 	position:absolute;
 	-ms-transition:all 1s ease-out;
 	-moz-transition:all 1s ease-out;
