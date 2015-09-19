@@ -18,62 +18,26 @@
                 <p>Actions</p>
             </div>
         </div>
-        <div class="booking-table-row">
-            <div class="booking-ban-size">
-                <p>300 * 250 </p><div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div>
+        @forelse($orders as $b)
+            <div class="booking-table-row booking-name">
+                <div class="booking-ban-size">
+                    <p>{{ $b->type->title }}</p>
+                    <div class="booking-online"><i class="fa fa-eye"></i>
+                        <div class="booking-online-img"><img src="{{ $b->file }}"></div></div>
+                </div>
+                <div class="booking-streamer">
+                    <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>
+                </div>
+                <div class="booking-cost-limit">
+                    <p>{{ $b->amount_limit }}USD</p>
+                </div>
+                <div class="booking-actions">
+                    <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></a></i></p>
+                </div>
             </div>
-            <div class="booking-streamer">
-                <p>ValdemarPrestigiue2</p>
-            </div>
-            <div class="booking-cost-limit">
-                <p>$1.48</p>
-            </div>
-            <div class="booking-actions">
-                <p>Cancel order <i class="fa fa-times"></i></p>
-            </div>
-        </div>
-        <div class="booking-table-row">
-            <div class="booking-ban-size">
-                <p>300 * 250 </p><div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div>
-            </div>
-            <div class="booking-streamer">
-                <p>ValdemarPrestigiue2</p>
-            </div>
-            <div class="booking-cost-limit">
-                <p>$1.48</p>
-            </div>
-            <div class="booking-actions">
-                <p>Cancel order <i class="fa fa-times"></i></p>
-            </div>
-        </div>
-        <div class="booking-table-row">
-            <div class="booking-ban-size">
-                <p>300 * 250 </p><div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div>
-            </div>
-            <div class="booking-streamer">
-                <p>ValdemarPrestigiue2</p>
-            </div>
-            <div class="booking-cost-limit">
-                <p>$1.48</p>
-            </div>
-            <div class="booking-actions">
-                <p>Cancel order <i class="fa fa-times"></i></p>
-            </div>
-        </div>
-        <div class="booking-table-row">
-            <div class="booking-ban-size">
-                <p>300 * 250 </p><div class="booking-online"><i class="fa fa-eye"></i><div class="booking-online-img"><img src="http://s3.postimg.org/7oissgeir/presentation3.gif"></div></div>
-            </div>
-            <div class="booking-streamer">
-                <p>ValdemarPrestigiue2</p>
-            </div>
-            <div class="booking-cost-limit">
-                <p>$1.48</p>
-            </div>
-            <div class="booking-actions">
-                <p>Cancel order <i class="fa fa-times"></i></p>
-            </div>
-        </div>
+        @empty
+            <em>no actual banners</em>
+        @endforelse
     </div>
 
     <h1>Streams</h1>

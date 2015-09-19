@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User\Client;
 
 use App\Models\Banner;
+use App\Models\Mappers\BannerMapper;
 use App\Models\UserPayment;
 use Illuminate\Http\Request;
 use App\Models\Mappers\LogMapper;
@@ -19,8 +20,9 @@ class StreamController extends Controller
     public function index()
     {
         $streams = StreamMapper::byClient($this->user);
+        $orders = BannerMapper::activeClient($this->user);
 
-        return view('app.pages.user.client.stream.index', compact('streams'));
+        return view('app.pages.user.client.stream.index', compact('streams', 'orders'));
     }
 
     public function stream($streamId)

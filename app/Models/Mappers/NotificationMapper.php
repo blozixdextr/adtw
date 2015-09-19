@@ -60,6 +60,22 @@ class NotificationMapper
         });
     }
 
+    public static function bannerCancel(Banner $banner)
+    {
+        $title = $banner->client->name.' canceled his order';
+        self::notify($banner->twitcher, $title, 'decline');
+
+        $title = 'You canceled order';
+        self::notify($banner->client, $title, 'decline');
+
+        Mail::send('app.emails.default', [
+            'title' => $banner->client->name.' canceled order',
+            'subtitle' => $banner->client->name.' canceled order banner to you',
+            'url' => '/user/twitcher'], function ($m) use ($banner) {
+                $m->to($banner->client->email)->subject($banner->client->name.' canceled order');
+        });
+    }
+
     public static function bannerAccept(Banner $banner)
     {
         $title = $banner->twitcher->name.' accepted your '.$banner->type->title.' banner';

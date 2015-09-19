@@ -81,6 +81,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
     Route::get('banner/{userId}', 'BannerController@index');
     Route::get('banners', 'BannerController@list');
     Route::post('banner/save', 'BannerController@save');
+    Route::get('banner/{bannerId}/cancel', 'BannerController@cancel');
 
     Route::group(['prefix' => 'billing'], function () {
         Route::get('/', 'BillingController@index');

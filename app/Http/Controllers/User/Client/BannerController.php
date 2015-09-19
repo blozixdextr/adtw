@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User\Client;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Mappers\LogMapper;
 use App\Models\Mappers\BannerMapper;
@@ -74,5 +75,19 @@ class BannerController extends Controller
         LogMapper::log('banner_add', $banner->id);
 
         return Redirect::to('/user/client')->with(['success' => 'We sent your banner for twitcher\'s review']);
+    }
+
+    public function cancel($bannerId)
+    {
+        $banner = Banner::findOrFail($bannerId);
+        if ($banner->client_id != $this->user->id) {
+            return Redirect::back()->withErrors(['access' => 'You have no rights']);
+        }
+        $banner->status = 'finished';
+        $banner->is_active = 0;
+        $banner->save();
+        NotificationMapper::bannerCancel($banner);
+
+        return Redirect::back()->with(['success' => 'You canceled your order']);
     }
 }
