@@ -154,30 +154,7 @@
         <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
     @endif
 
-    
-    <center><h1>Why buy ads on adtw.ch?</h1></center>
-    <div class="window-bg bottom-info-two">
-        <div class="bottom-info-img left">
-            <img src="https://cloud.githubusercontent.com/assets/14276761/9939950/8b2d85da-5d75-11e5-81da-1fe5c2c7cb1e.png" />
-        </div>
-        <div class="bottom-info-content right">
-            <div>
-                <h2>Lorem ipson</h2>
-                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
-            </div>
-            <ul>
-                <li>Lorem-ipson do</li>
-                <li>Lorem-ipson dolar</li>
-                <li>Lorem-ipson sit</li>
-                <li>Lorem-ipson amet</li>
-                <li>Lorem-ipson dolor amet</li>
-            </ul>
-            <div>
-                <a href="/" class="btn-white">Something</a>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
+
 @endsection
 
 @if ($user)
