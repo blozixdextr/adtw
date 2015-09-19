@@ -618,7 +618,7 @@ table .success .streamer-online-view{
 	height:250px;
 	width:200px;
 	background-color:#ccc;
-	right:0;
+	left:0;
 	top:0;
 	position:absolute;
 	-ms-transition:all 1s ease-out 0.5s;
@@ -637,6 +637,7 @@ table .success .streamer-online-view{
     .education-steps .step img {
         max-width: 250px;
         width: 100%;
+        z-index:99999;
     }
 }
 @media screen and (max-width:992px){
