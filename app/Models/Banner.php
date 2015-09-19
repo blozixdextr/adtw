@@ -3,12 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Banner extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'banners';
 
     protected $fillable = ['client_id', 'twitcher_id', 'type_id', 'title', 'description', 'file', 'is_active', 'status', 'amount_limit'];
+
+    protected $dates = ['deleted_at'];
 
     public function client()
     {

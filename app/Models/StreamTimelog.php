@@ -4,14 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Config;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class StreamTimelog extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'stream_timelogs';
 
     protected $fillable = ['stream_id', 'timeslot_start', 'timeslot_end', 'viewers', 'status', 'screenshot', 'response'];
 
-    protected $dates = ['timeslot_start', 'timeslot_end'];
+    protected $dates = ['timeslot_start', 'timeslot_end', 'deleted_at'];
 
     public function stream()
     {
