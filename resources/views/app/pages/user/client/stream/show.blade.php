@@ -65,7 +65,7 @@
                     <td>{{ $t->viewers }}</td>
                     <td class="success-live">
                         @if ($t->status == 'live' && $t->screenshot)
-                            <a href="{{ $t->screenshot }}">{{ $t->status }}</a><div class="preview-window></div>
+                            <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
                         @else
                             <em>{{ $t->status }}</em>
                         @endif
