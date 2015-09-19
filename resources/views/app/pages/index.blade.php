@@ -11,7 +11,7 @@
     <div class="window-bg bottom-info-one">
         <div class="bottom-info-content left">
             <div>
-                <h2>Start you advertising with<br> top Twitch.tv streamers</h2>
+                <h2>Start your advertising campaign<br> with top Twitch.tv streamers</h2>
                 <p>Control your ads with simple panel</p>
             </div>
             <ul>
@@ -24,7 +24,7 @@
             </ul>
         </div>
         <div class="bottom-info-img right">
-            <img src="http://s3.postimg.org/7oissgeir/presentation3.gif" />
+            <img src="https://cloud.githubusercontent.com/assets/2786905/9975849/7d07bb4e-5ecc-11e5-98fd-1d179372aa4a.gif" />
         </div>
         <div class="clear"></div>
     </div>
@@ -147,7 +147,7 @@
             </div>
         </div>
         <div class="bottom-info-img right">
-            <img src="http://s3.postimg.org/7oissgeir/presentation3.gif" />
+            <img src="https://cloud.githubusercontent.com/assets/2786905/9975850/80c9008a-5ecc-11e5-8247-e59577ab6fa2.gif" />
         </div>
         <div class="clear"></div>
     </div>
