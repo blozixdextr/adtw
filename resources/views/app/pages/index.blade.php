@@ -62,8 +62,8 @@
     <div class="window-bg bottom-info-one">
         <div class="bottom-info-content left">
             <div>
-                <h2>Single point of contact for hundreds of streamers</h2>
-                <p>Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolar Lorem ipson dolarLorem ipson dolarLorem ipson dolarLorem ipson dolar</p>
+                <h2>Single point of contact<br /> for hundreds of streamers</h2>
+                <p>User-friendly and powerful control panel offers easy to use ads management</p>
             </div>
             <ul>
                 <li>Real-time performance tracking</li>
