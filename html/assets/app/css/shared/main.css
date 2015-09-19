@@ -625,8 +625,8 @@ table .success .streamer-online-view{
 .streamer-absolute{
 	display:none;
 	opacity:0;
-	height: 150px;
-    	width: 200px;
+	height: 180px;
+    	width: 320px;
 	left: -87px;
 	top: -147px;
 	position:absolute;
