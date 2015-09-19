@@ -66,7 +66,7 @@
                     <td class="success-live">
                         @if ($t->status == 'live' && $t->screenshot)
                             <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
-                            <div class="streamer-online-view"><i class="fa fa-eye"></i></div>
+                            <div class="streamer-online-view"><i class="fa fa-eye"></i><div class="streamer-absolute"></div></div>
                         @else
                             <em>{{ $t->status }}</em>
                         @endif
