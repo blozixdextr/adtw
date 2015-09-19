@@ -29,32 +29,22 @@ class NotificationMapper
 
     public static function registration(User $user)
     {
-        $n = Notification::create([
-            'user_id' => $user->id,
-            'title' => 'You register with <a href="'.url('/').'">Adtw.ch</a>',
-            'subtitle' => '',
-            'type' => 'register'
-        ]);
-
-        return $n;
+        self::notify($user->id, 'You register with <a href="'.url('/').'">Adtw.ch</a>', 'register');
     }
 
     public static function withdraw(User $user, $amount, $currency, $merchant, $account)
     {
-        $n = Notification::create([
-            'user_id' => $user->id,
-            'title' => 'You withdraw '.$amount.$currency,' to '.$merchant,
-            'subtitle' => '',
-            'type' => $merchant
-        ]);
-
-        return $n;
+        self::notify($user->id, 'You withdraw '.$amount.$currency,' to '.$merchant, $merchant);
     }
 
     public static function bannerAdd(Banner $banner)
     {
         $title = $banner->client->name.' added <a href="/user/twitcher/banner/review/'.$banner->id.'">'.$banner->type->title.' banner</a>';
         self::notify($banner->twitcher, $title, 'banner');
+
+        $title = 'You added banner for <a href="/profile/'.$banner->twitcher_id.'">'.$banner->twitcher->name.'</a>';
+        self::notify($banner->client, $title, 'banner');
+
         Mail::send('app.emails.banner_add', ['banner' => $banner], function ($m) use ($banner) {
             $m->to($banner->twitcher->email)->subject('Someone order banner to you');
         });
@@ -80,6 +70,10 @@ class NotificationMapper
     {
         $title = $banner->twitcher->name.' accepted your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'accept');
+
+        $title = 'You accepted '.$banner->type->title.' banner from '.$banner->client->name;
+        self::notify($banner->twitcher, $title, 'accept');
+
         Mail::send('app.emails.banner_accept', ['banner' => $banner], function ($m) use ($banner) {
             $m->to($banner->client->email)->subject($banner->twitcher->name.' accepted your banner');
         });
@@ -89,6 +83,10 @@ class NotificationMapper
     {
         $title = $banner->twitcher->name.' declined your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'decline');
+
+        $title = 'You declined your '.$banner->type->title.' banner from '.$banner->client->name;
+        self::notify($banner->twitcher, $title, 'decline');
+
         Mail::send('app.emails.banner_decline', ['banner' => $banner], function ($m) use ($banner) {
             $m->to($banner->client->email)->subject($banner->twitcher->name.' declined your banner');
         });
@@ -98,6 +96,10 @@ class NotificationMapper
     {
         $title = $banner->twitcher->name.' started to stream your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'stream');
+
+        $title = 'You started to stream '.$banner->type->title.' banner from '.$banner->client->name;
+        self::notify($banner->twitcher, $title, 'stream');
+
         Mail::send('app.emails.banner_stream', ['banner' => $banner], function ($m) use ($banner) {
             $m->to($banner->client->email)->subject($banner->twitcher->name.' started to stream your banner');
         });
@@ -107,6 +109,10 @@ class NotificationMapper
     {
         $title = $banner->twitcher->name.' runs out of limit for your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'banner');
+
+        $title = 'You run out of limit for '.$banner->type->title.' banner from '.$banner->client->name;
+        self::notify($banner->twitcher, $title, 'banner');
+
         Mail::send('app.emails.banner_finished', ['banner' => $banner], function ($m) use ($banner, $title) {
             $m->to($banner->client->email)->subject($title);
         });
@@ -179,6 +185,7 @@ class NotificationMapper
     {
         NotificationMapper::notify($stream->user, $banner->client->name.' paid your '.$amount.'USD', 'transfer');
         NotificationMapper::notify($banner->client, 'You paid '.$amount.'USD to '.$stream->user->name, 'transfer');
+
         Mail::send('app.emails.default', [
             'title' => 'You got paid',
             'subtitle' => $banner->client->name.' paid your $'.$amount,
@@ -191,6 +198,7 @@ class NotificationMapper
     {
         NotificationMapper::notify($stream->user, $banner->client->name.' <a href="/user/twitcher/stream/'.$stream->id.'/'.$banner->id.'/declining">declined</a> your stream', 'decline');
         NotificationMapper::notify($banner->client, 'You declined to pay for stream of '.$stream->user->name, 'decline');
+
         Mail::send('app.emails.default', [
             'title' => 'Your stream was declined',
             'subtitle' => $banner->client->name.' declined your stream',
@@ -203,6 +211,7 @@ class NotificationMapper
     {
         NotificationMapper::notify($stream->user, 'You accepted to decline your stream', 'decline');
         NotificationMapper::notify($banner->client, $stream->user->name.' accepted to decline stream', 'decline');
+
         Mail::send('app.emails.default', [
             'title' => 'Stream was declined',
             'subtitle' => $stream->user->name.' accepted to decline stream',
@@ -215,6 +224,7 @@ class NotificationMapper
     {
         NotificationMapper::notify($stream->user, 'You complained about declining your stream', 'decline');
         NotificationMapper::notify($banner->client, $stream->user->name.' complained about declining stream', 'decline');
+
         Mail::send('app.emails.default', [
             'title' => 'Declining was complained',
             'subtitle' => 'The final decision will be made by site admin',
@@ -226,6 +236,7 @@ class NotificationMapper
     public static function withdrawDecline(Withdrawal $withdrawal)
     {
         NotificationMapper::notify($withdrawal->user, 'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>', $withdrawal->merchant);
+
         Mail::send('app.emails.default', [
             'title' => 'Withdrawal declined',
             'subtitle' => 'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>',
@@ -237,6 +248,7 @@ class NotificationMapper
     public static function withdrawAccept(Withdrawal $withdrawal)
     {
         NotificationMapper::notify($withdrawal->user, 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful', $withdrawal->merchant);
+
         Mail::send('app.emails.default', [
             'title' => 'Withdrawal finished',
             'subtitle' => 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful',
