@@ -85,7 +85,7 @@
 
 
 
-    <center><h1 name="ready">Are you ready?</h1></center>
+    <center><h1 id="ready">Are you ready?</h1></center>
     <div class="text-center intro-main">
         @if (!$user)
         <div class="title-place-left window-bg-tiny">
