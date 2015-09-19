@@ -677,6 +677,7 @@ table .success .streamer-online-view{
 	text-align:center;
 }
 .booking-table p{
+	display:inline-block;
 	padding:10px;
 	margin-bottom:0px;
 }
@@ -690,7 +691,7 @@ table .success .streamer-online-view{
 /*		booking table 	*/
 
 
-.streamer-absolute img{
+.booking-online-img img{
 	width:320px;
 }
 /*            media         */
