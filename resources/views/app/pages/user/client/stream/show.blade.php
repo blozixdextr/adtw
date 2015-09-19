@@ -63,7 +63,7 @@
                 @endif
                     <td>{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
                     <td>{{ $t->viewers }}</td>
-                    <td>
+                    <td class="success-live">
                         @if ($t->status == 'live' && $t->screenshot)
                             <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
                         @else
