@@ -635,6 +635,28 @@ table .success .streamer-online-view{
 	opacity:1;
 	z-index:99999;
 }
+
+/*		booking table 	*/
+.booking-table{
+	width:100%;
+}
+.booking-table-row{
+	border-bottom:1px solid #DDDDDD;
+}
+.booking-table-row>div{
+	width:25%;
+	box-sizing:border-box;
+}
+.booking-table-row
+.booking-table-row
+.booking-table-row
+.booking-table-row
+
+
+
+/*		booking table 	*/
+
+
 .streamer-absolute img{
 	width:320px;
 }
