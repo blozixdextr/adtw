@@ -153,8 +153,7 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
 
 });
 
-
+/*
 Route::get('test', 'TestController@index');
-
 Route::get('login-as/{userId}', 'TestController@loginAs');
-
+*/

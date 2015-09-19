@@ -68,7 +68,7 @@ function getNotificationIcon($type) {
             break;
 
         case 'banner':
-            $ico = 'buysellads';
+            $ico = 'bookmark';
             break;
 
         case 'decline':
