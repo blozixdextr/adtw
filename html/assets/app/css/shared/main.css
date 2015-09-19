@@ -628,11 +628,7 @@ table .success .streamer-online-view{
 	top: -184px;
 	background-color:#E7E7E7;
 	position:absolute;
-	-ms-transition:all 1s ease-out;
-	-moz-transition:all 1s ease-out;
-	-webkit-transition:all 1s ease-out;
-	-o-transition:all 1s ease-out;
-	transition: all 1s ease-out;
+	transition: opacity ease 1s 0s
 }
 .streamer-online-view:hover .streamer-absolute{
 	display:block;
