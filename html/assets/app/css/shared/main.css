@@ -627,7 +627,6 @@ table .success .streamer-online-view{
 	opacity:0;
 	height: 150px;
     	width: 200px;
-	background-color:#6441A5;
 	left:40px;
 	top:0;
 	position:absolute;
@@ -642,7 +641,9 @@ table .success .streamer-online-view{
 	opacity:1;
 	z-index:99999;
 }
-
+.streamer-absolute img{
+	width:200px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
