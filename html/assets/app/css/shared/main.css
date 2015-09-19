@@ -597,6 +597,20 @@ li.menu-hidden h2{
     padding: 10px 0;
     margin:0;
 }
+table .success td a{
+	position:relative;
+}
+table .success-live:after{
+	content: "\f06e";
+	color:#6441A5;
+	display: inline-block;
+    	font: normal normal normal 14px/1 FontAwesome;
+    	position:absolute;
+    	right: 0px;
+    	cursor:pointer;
+    	font-size: 24px;
+    	top: -2px;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
