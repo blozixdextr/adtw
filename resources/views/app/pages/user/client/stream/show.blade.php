@@ -3,7 +3,7 @@
 @section('head-js')
     <script>
         $(function () {
-            $('[data-toggle="popover"]').popover({html: true, trigger: 'click'});
+            $('[data-toggle="popover"]').popover({html: true, trigger: 'hover', placement: 'left'});
         })
     </script>
 @endsection
