@@ -5,6 +5,8 @@ use App\Models\UserProfile;
 use App\Models\User;
 use App\Models\Ref;
 use Faker\Factory as FakerFactory;
+use App\Models\Mappers\NotificationMapper;
+use App\Models\Mappers\LogMapper;
 
 class UserTableSeeder extends Seeder
 {
@@ -23,6 +25,11 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->truncate();
         DB::table('user_profiles')->truncate();
+        DB::table('user_auth_token')->truncate();
+        DB::table('user_transfers')->truncate();
+        DB::table('ref_user')->truncate();
+        DB::table('notifications')->truncate();
+        DB::table('logs')->truncate();
 
         $this->faker = FakerFactory::create();
 
@@ -33,8 +40,8 @@ class UserTableSeeder extends Seeder
         $this->data = $data;
 
         $this->admin();
-        $this->streamers();
-        $this->clients();
+        $this->streamers(50);
+        $this->clients(50);
 
 
     }
@@ -59,7 +66,9 @@ class UserTableSeeder extends Seeder
     {
         $faker = $this->faker;
 
-        for ($i = 2; $i < $limit; $i++) {
+        for ($i = 0; $i < $limit; $i++) {
+            $date = \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween('-1 year')->getTimestamp());
+            //$date = $faker->dateTimeBetween('-1 year')->getTimestamp();
             $user = User::create([
                 'name' => $faker->firstName,
                 'email' => $faker->freeEmail,
@@ -73,6 +82,7 @@ class UserTableSeeder extends Seeder
                 'twitch_videos' => rand(0, 20000),
                 'oauth_id' => rand(100000000, 2000000000),
                 'language_id' => $this->data['languages']->random()->id,
+                'created_at' => $date,
                 'balance' => rand(0, 100)
             ]);
             $profile = UserProfile::create([
@@ -80,7 +90,31 @@ class UserTableSeeder extends Seeder
                 'user_id' => $user->id,
                 'about' => $faker->sentence,
                 'avatar' => $faker->imageUrl(300, 300),
+                'created_at' => $date
             ]);
+            LogMapper::log('twitch_register', $user->id);
+            NotificationMapper::registration($user);
+
+            $bannersCount = rand(0, 3);
+            $bannersClean = [];
+            if ($bannersCount > 0) {
+                if ($bannersCount == 1) {
+                    $bannersClean = [$this->data['bannerTypes']->random()->id];
+                } else {
+                    $bannersClean = $this->data['bannerTypes']->random($bannersCount)->pluck('id')->toArray();
+                }
+            }
+            $gamesCount = rand(0, 6);
+            $gamesClean = [];
+            if ($gamesCount > 0) {
+                if ($gamesCount == 1) {
+                    $gamesClean = [$this->data['games']->random()->id];
+                } else {
+                    $gamesClean = $this->data['games']->random($gamesCount)->pluck('id')->toArray();
+                }
+            }
+
+            $user->refs()->sync(array_merge($bannersClean, $gamesClean));
         }
     }
 
@@ -88,7 +122,7 @@ class UserTableSeeder extends Seeder
     {
         $faker = $this->faker;
 
-        for ($i = 2; $i < $limit; $i++) {
+        for ($i = 0; $i < $limit; $i++) {
             $user = User::create([
                 'name' => $faker->firstName,
                 'email' => $faker->freeEmail,
@@ -104,6 +138,8 @@ class UserTableSeeder extends Seeder
                 'last_name' => $faker->lastName,
                 'user_id' => $user->id,
             ]);
+            LogMapper::log('client_register', $user->id);
+            NotificationMapper::registration($user);
         }
     }
 }

@@ -29,12 +29,12 @@ class NotificationMapper
 
     public static function registration(User $user)
     {
-        self::notify($user->id, 'You register with <a href="'.url('/').'">Adtw.ch</a>', 'register');
+        self::notify($user, 'You register with <a href="'.url('/').'">Adtw.ch</a>', 'register');
     }
 
     public static function withdraw(User $user, $amount, $currency, $merchant, $account)
     {
-        self::notify($user->id, 'You withdraw '.$amount.$currency,' to '.$merchant, $merchant);
+        self::notify($user, 'You withdraw '.$amount.$currency,' to '.$merchant, $merchant);
     }
 
     public static function bannerAdd(Banner $banner)

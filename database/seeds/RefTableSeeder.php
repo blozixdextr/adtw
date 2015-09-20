@@ -17,7 +17,6 @@ class RefTableSeeder extends Seeder
     public function run()
     {
         DB::table('refs')->truncate();
-        DB::table('ref_user')->truncate();
 
         $bannerTypes = ['728*90', '120*600', '300*250'];
         $this->addRefs($bannerTypes, 'banner_type');
