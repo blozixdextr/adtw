@@ -49,35 +49,38 @@ class BannerTableSeeder extends Seeder
         $faker = $this->faker;
         $i = 0;
         foreach ($clients as $c) {
-            $bannerCounts = rand(0, 4);
-            if ($i > $limit) {
-                continue;
-            }
-            for ($i = 0; $i < $bannerCounts; $i++) {
-                $bannerType = $bannerTypes->random();
-                $twitcher = $twitchers->random();
-                if (BannerMapper::twitcherFree($twitcher, $bannerType->id)) {
-                    $limit = rand(1, $c->balance);
-                    if ($limit <= 0) {
-                        continue;
-                    }
-                    $requiredSizes = explode('*', $bannerType->title);
-                    $w = $requiredSizes[0];
-                    $h = $requiredSizes[1];
-                    $uploadDir = '/assets/app/upload/b/';
-                    $file = $faker->image(public_path($uploadDir), $w, $h);
-                    $file = $uploadDir.basename($file);
-                    $banner = BannerMapper::addForTwitcher($twitcher, $c, $bannerType, $file, $limit);
-                    NotificationMapper::bannerAdd($banner);
-                    LogMapper::log('banner_add', $banner->id);
-                    $accept = rand(0, 2);
-                    $i++;
-                    if ($accept) {
-                        BannerMapper::acceptBanner($banner);
-                    } else {
-                        BannerMapper::declineBanner($banner);
+            try {
+                $bannerCounts = rand(0, 4);
+                if ($i > $limit) {
+                    //continue;
+                }
+                for ($i = 0; $i < $bannerCounts; $i++) {
+                    $bannerType = $bannerTypes->random();
+                    $twitcher = $twitchers->random();
+                    if (BannerMapper::twitcherFree($twitcher, $bannerType->id)) {
+                        $limit = rand(0, $c->balance);
+                        if ($limit > 0) {
+                            $requiredSizes = explode('*', $bannerType->title);
+                            $w = $requiredSizes[0];
+                            $h = $requiredSizes[1];
+                            $uploadDir = '/assets/app/upload/b/';
+                            $file = $faker->image(public_path($uploadDir), $w, $h);
+                            $file = $uploadDir.basename($file);
+                            $banner = BannerMapper::addForTwitcher($twitcher, $c, $bannerType, $file, $limit);
+                            NotificationMapper::bannerAdd($banner);
+                            LogMapper::log('banner_add', $banner->id);
+                            $accept = rand(0, 2);
+                            $i++;
+                            if ($accept) {
+                                BannerMapper::acceptBanner($banner);
+                            } else {
+                                BannerMapper::declineBanner($banner);
+                            }
+                        }
                     }
                 }
+            } catch (\Exception $e) {
+                dd($e->getTraceAsString());
             }
         }
     }

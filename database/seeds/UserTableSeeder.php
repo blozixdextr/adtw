@@ -40,8 +40,8 @@ class UserTableSeeder extends Seeder
         $this->data = $data;
 
         $this->admin();
-        $this->streamers(50);
-        $this->clients(50);
+        $this->streamers(500);
+        $this->clients(500);
 
 
     }
@@ -83,7 +83,7 @@ class UserTableSeeder extends Seeder
                 'oauth_id' => rand(100000000, 2000000000),
                 'language_id' => $this->data['languages']->random()->id,
                 'created_at' => $date,
-                'balance' => rand(0, 100)
+                'balance' => 0
             ]);
             $profile = UserProfile::create([
                 'first_name' => $user->name,

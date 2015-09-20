@@ -31,6 +31,8 @@ class StreamTableSeeder extends Seeder
     {
         DB::table('streams')->truncate();
         DB::table('stream_timelogs')->truncate();
+        DB::table('banner_stream')->truncate();
+        DB::table('user_transfers')->truncate();
 
         $this->faker = FakerFactory::create();
 
@@ -40,75 +42,91 @@ class StreamTableSeeder extends Seeder
         $data['bannerTypes'] = Ref::whereType('banner_type')->get();
         $this->data = $data;
 
-        $this->addStreams();
-        $this->addStreams();
+        for ($i = 0; $i <= 10; $i++) {
+            $this->addStreams();
+        }
+
         $this->payStreams();
     }
 
-    public function addStreams($limit = 1000)
+    public function addStreams()
     {
         $twitchers = User::whereType('twitcher')->get();
         $faker = $this->faker;
         $i = 0;
         foreach ($twitchers as $t) {
-            if ($i > $limit) {
-                continue;
-            }
-            $bannerType = $t->bannerTypes->random()->id;
-            $banners = BannerMapper::activeTwitcher($t, $bannerType->id);
-            $streamDate = \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween($t->created_at)->getTimestamp());
-            $stream = Stream::create([
-                'user_id' => $t->id,
-                'time_start' => $streamDate
-            ]);
-            BannerMapper::bannersToStream($stream, $banners);
-            LogMapper::log('stream_start', $stream->id);
-            foreach ($banners as $b) {
-                NotificationMapper::bannerStream($b);
-            }
-            $maxMinutes = rand(3, 30);
-            for ($m = 0; $m < $maxMinutes; $m++) {
-                $status = rand(0, 1);
-                if ($status == 1) {
-                    $uploadDir = '/assets/app/upload/t/';
-                    $screenshot = $faker->image(public_path($uploadDir), 640, 360);
-                    $screenshot = $uploadDir.basename($screenshot);
-                    $viewers = rand(0, 100);
-                    $response = (object)[
-                        'stream' => (object)[
-                            'viewers' => $viewers,
-                            'preview' => (object)[
-                                'medium' => $faker->imageUrl(640, 360)
-                            ]
-                        ]
-                    ];
-                    $streamTimelog = StreamTimelog::create([
-                        'stream_id' => $stream->id,
-                        'timeslot_start' => $streamDate,
-                        'timeslot_end' => $streamDate->addMinutes(10),
-                        'viewers' => $viewers,
-                        'status' => 'live',
-                        'screenshot' => $screenshot,
-                        'response' => $response
-                    ]);
-                    foreach ($banners as $b) {
-                        BannerMapper::trackBanner($b, $stream, $streamTimelog);
-                    }
-                } else {
-                    $streamTimelog = StreamTimelog::create([
-                        'stream_id' => $stream->id,
-                        'timeslot_start' => $streamDate,
-                        'timeslot_end' => $streamDate->addMinutes(10),
-                        'viewers' => 0,
-                        'status' => 'died',
-                        'screenshot' => '',
-                        'response' => (object)[]
-                    ]);
+            try {
+                $bannerTypes = $t->bannerTypes;
+                if (count($bannerTypes) == 0) {
+                    continue;
                 }
+                $bannerType = $bannerTypes->random();
+                $banners = BannerMapper::activeTwitcher($t, $bannerType->id);
+                if (count($banners) == 0) {
+                    continue;
+                }
+                $streamDate = \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween($t->created_at)->getTimestamp());
+                $stream = Stream::create([
+                    'user_id' => $t->id,
+                    'time_start' => $streamDate
+                ]);
+                BannerMapper::bannersToStream($stream, $banners);
+                LogMapper::log('stream_start', $stream->id);
+                foreach ($banners as $b) {
+                    NotificationMapper::bannerStream($b);
+                }
+                $maxMinutes = rand(3, 30);
+                for ($m = 0; $m < $maxMinutes; $m++) {
+                    $startTime = $streamDate->getTimestamp();
+                    $endTime = $streamDate->addMinutes(10)->getTimestamp();
+                    $startTime = \Carbon\Carbon::createFromTimestamp($startTime);
+                    $endTime = \Carbon\Carbon::createFromTimestamp($endTime);
+                    $streamDate = $endTime;
+
+                    $status = rand(0, 1);
+                    if ($status == 1) {
+                        $uploadDir = '/assets/app/upload/t/';
+                        $screenshot = $faker->image(public_path($uploadDir), 120, 90);
+                        $screenshot = $uploadDir.basename($screenshot);
+                        $viewers = rand(0, 100);
+                        $response = (object)[
+                            'stream' => (object)[
+                                'viewers' => $viewers,
+                                'preview' => (object)[
+                                    'medium' => $faker->imageUrl(640, 360)
+                                ]
+                            ]
+                        ];
+                        $streamTimelog = StreamTimelog::create([
+                            'stream_id' => $stream->id,
+                            'timeslot_start' => $startTime,
+                            'timeslot_end' => $endTime,
+                            'viewers' => $viewers,
+                            'status' => 'live',
+                            'screenshot' => $screenshot,
+                            'response' => $response
+                        ]);
+                        foreach ($banners as $b) {
+                            BannerMapper::trackBanner($b, $stream, $streamTimelog);
+                        }
+                    } else {
+                        $streamTimelog = StreamTimelog::create([
+                            'stream_id' => $stream->id,
+                            'timeslot_start' => $startTime,
+                            'timeslot_end' => $endTime,
+                            'viewers' => 0,
+                            'status' => 'died',
+                            'screenshot' => '',
+                            'response' => (object)[]
+                        ]);
+                    }
+                }
+                $stream->time_end = $streamDate;
+                $stream->save();
+                $i++;
+            } catch (\Exception $e) {
+                dd($e->getTraceAsString());
             }
-            $stream->time_end = $streamDate;
-            $stream->save();
-            $i++;
         }
     }
 
