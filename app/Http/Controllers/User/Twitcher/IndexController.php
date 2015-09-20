@@ -17,11 +17,13 @@ class IndexController extends Controller
         $bannerTypes = $this->user->bannerTypes;
         $notifications = NotificationMapper::fresh($this->user, 10);
 
+        $waitingBanners = BannerMapper::waitingTwitcher($this->user);
+
         foreach ($bannerTypes as $bt) {
             $banners[$bt->id] = BannerMapper::activeTwitcher($this->user, $bt->id);
         }
 
-        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes', 'notifications'));
+        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes', 'notifications', 'waitingBanners'));
     }
 
     public function updateStatistics() {

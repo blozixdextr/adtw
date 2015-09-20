@@ -86,6 +86,13 @@ class BannerMapper
         return $banners->get();
     }
 
+    public static function waitingTwitcher(User $user)
+    {
+        $banners = Banner::whereTwitcherId($user->id)->whereStatus('waiting');
+
+        return $banners->get();
+    }
+
     public static function inactiveTwitcher(User $user, $bannerType = 0)
     {
         $banners = Banner::whereTwitcherId($user->id)->whereIsActive(0);

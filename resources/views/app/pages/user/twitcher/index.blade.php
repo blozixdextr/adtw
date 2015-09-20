@@ -38,6 +38,33 @@
 
 @section('content')
     <h1>Dashboard</h1>
+
+    @if (count($waitingBanners) > 0)
+        <h2>Waiting banners</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>banner</th>
+                    <th>client</th>
+                    <th>limit</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach($waitingBanners as $b)
+            <tr>
+                <td>{{ $b->id }}</td>
+                <td>{{ $b->type->title }}</td>
+                <td>{{ $b->client->name }}</td>
+                <td>{{ $b->amount_limit }}USD</td>
+                <td><a href="/user/twitcher/banner/review/{{ $b->id }}" class="btn btn-primary btn-xs">review</a></td>
+            </tr>
+        @endforeach
+            </tbody>
+        </table>
+    @endif
+
     <h2>Banners ready to start</h2>
     @foreach($bannerTypes as $bt)
         <div class="row">
