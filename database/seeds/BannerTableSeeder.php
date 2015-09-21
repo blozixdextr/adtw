@@ -69,9 +69,9 @@ class BannerTableSeeder extends Seeder
                             $banner = BannerMapper::addForTwitcher($twitcher, $c, $bannerType, $file, $limit);
                             NotificationMapper::bannerAdd($banner);
                             LogMapper::log('banner_add', $banner->id);
-                            $accept = rand(0, 2);
+                            $accept = rand(0, 10);
                             $i++;
-                            if ($accept) {
+                            if ($accept != 0) {
                                 BannerMapper::acceptBanner($banner);
                             } else {
                                 BannerMapper::declineBanner($banner);

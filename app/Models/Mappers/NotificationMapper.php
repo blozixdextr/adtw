@@ -12,6 +12,7 @@ use App\Models\Withdrawal;
 use Request;
 use Auth;
 use Mail;
+use App\Models\UserPayment;
 
 class NotificationMapper
 {
@@ -254,6 +255,19 @@ class NotificationMapper
             'subtitle' => 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful',
             'url' => '/user/twitcher/billing'], function ($m) use ($withdrawal) {
             $m->to($withdrawal->user->email)->subject('Withdrawal finished');
+        });
+    }
+
+    public static function refilled(UserPayment $payment)
+    {
+        $title = 'Your refilled your account with '.$payment->amount.$payment->currency.' from '.$payment->merchant;
+        NotificationMapper::notify($payment->user, $title);
+
+        Mail::send('app.emails.default', [
+            'title' => 'Account refilled',
+            'subtitle' => $title,
+            'url' => '/user/client/billing'], function ($m) use ($payment) {
+            $m->to($payment->user->email)->subject('Account refilled');
         });
     }
 

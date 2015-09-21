@@ -11,6 +11,7 @@ use Input;
 use Session;
 use App\Models\Mappers\PaymentMapper;
 use App\Services\Payments\StripePaymentService;
+use App\Models\Mappers\NotificationMapper;
 
 class BillingController extends Controller
 {
@@ -77,6 +78,7 @@ class BillingController extends Controller
         }
         $payment = PaymentMapper::refillFromPaypal($this->user, $paypalService);
         LogMapper::log('payment', $amount, 'refilled', ['payment_id' => $payment->id, 'merchant' => 'paypal']);
+        NotificationMapper::refilled($payment);
 
         return Redirect::to('/user/client/billing')->with(['success' => 'We got your payment']);
     }
@@ -124,6 +126,7 @@ class BillingController extends Controller
         }
         $payment = PaymentMapper::refillFromStripe($this->user, $stripeService);
         LogMapper::log('payment', $amount, 'refilled', ['payment_id' => $payment->id, 'merchant' => 'stripe']);
+        NotificationMapper::refilled($payment);
 
         return Redirect::to('/user/client/billing')->with(['success' => 'We got your payment']);
     }

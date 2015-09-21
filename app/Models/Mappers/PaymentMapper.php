@@ -9,6 +9,7 @@ use App\Models\UserTransfer;
 use App\Services\Payments\PaypalPaymentService;
 use App\Services\Payments\StripePaymentService;
 use App\Models\Withdrawal;
+use App\Models\Mappers\NotificationMapper;
 
 
 class PaymentMapper
