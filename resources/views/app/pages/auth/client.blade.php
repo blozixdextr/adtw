@@ -3,6 +3,15 @@
 @section('head-style')
     <link rel="stylesheet" href="/assets/app/css/views/for-main.css">
     <link rel="stylesheet" href="/assets/app/css/shared/modal.css">
+    <style>
+        .intro-main {
+            font-size: 14px;
+        }
+
+        h1 {
+          margin: 25px 0;
+        }
+    </style>
 @endsection
 
 @section('content')
