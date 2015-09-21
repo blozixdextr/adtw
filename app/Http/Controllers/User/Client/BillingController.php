@@ -53,6 +53,7 @@ class BillingController extends Controller
         try {
             $url = $paypalService->getRefillUrl($amount, $this->user);
         } catch (\Exception $e) {
+            dd($e);
             try {
                 $errorData = $e->getData();
             } catch (\Exception $e) {
