@@ -93,6 +93,13 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                 </div>
                 
                         <div class="games-followers">
+
+                            <div class="form-group {!! ($errors && $errors->has('name')) ? ' has-error' : '' !!}">
+                                {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
+                                {!! Form::text('name', old('name', $filters['name']), ['class' => 'form-control', 'placeholder' => 'Streamer\'s name']) !!}
+                                {!! Form::errorMessage('name') !!}
+                            </div>
+
                             <div class="form-group {!! ($errors && $errors->has('followers')) ? ' has-error' : '' !!}">
                                 {!! Form::label('followers', 'Followers', ['class' => 'control-label']) !!}
                                 {!! Form::text('followers', old('followers', $filters['followers']), ['class' => 'form-control', 'placeholder' => 'Minimum followers']) !!}
@@ -156,7 +163,15 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         @endforelse
     </div>
 
-    {!! $twitchers->render() !!}
+    {!! $twitchers->appends([
+            'games' => $filters['games'],
+            'banner_types' => $filters['banner_types'],
+            'languages' => $filters['languages'],
+            'name' => $filters['name'],
+            'followers' => $filters['followers'],
+            'views' => $filters['views'],
+            'videos' => $filters['videos'],
+        ])->render() !!}
 
 @endsection
 

@@ -47,13 +47,16 @@ class UserMapper
         return $user;
     }
 
-    public static function findTwitchers($filters, $limit = 50)
+    public static function findTwitchers($filters, $limit = 30)
     {
         $user = User::whereType('twitcher');
         $user->distinct();
         $user->select(['users.*']);
         $user->leftJoin('ref_user', 'users.id', '=', 'ref_user.user_id');
         $refs = [];
+        if (isset($filters['name']) && $filters['name'] != '') {
+            $user->where('name', 'like', '%'.$filters['name'].'%');
+        }
         if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
             $banner_types = [];
             foreach ($filters['banner_types'] as $f) {

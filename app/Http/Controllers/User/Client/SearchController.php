@@ -18,6 +18,7 @@ class SearchController extends Controller
         $languages = Input::get('languages', []);
         $bannerTypes = Input::get('banner_types', []);
         $games = Input::get('games', []);
+        $name = Input::get('name', '');
 
         if (!is_array($bannerTypes)) {
             $bannerTypes = [$bannerTypes];
@@ -62,6 +63,11 @@ class SearchController extends Controller
             $filters['videos'] = $videos;
         } else {
             $filters['videos'] = '';
+        }
+        if ($name != '') {
+            $filters['name'] = $name;
+        } else {
+            $filters['name'] = '';
         }
         $twitchers = UserMapper::findTwitchers($filters);
 
