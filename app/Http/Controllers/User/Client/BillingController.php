@@ -53,12 +53,7 @@ class BillingController extends Controller
         try {
             $url = $paypalService->getRefillUrl($amount, $this->user);
         } catch (\Exception $e) {
-            dd($e);
-            try {
-                $errorData = $e->getData();
-            } catch (\Exception $e) {
-                $errorData = $e->getTraceAsString();
-            }
+            $errorData = $e->getData();
             LogMapper::log('paypal_error', $e->getMessage(), 'get_url', ['user' => $this->user->id, 'amount' => $amount, 'error_data' => $errorData]);
 
             return Redirect::back()->withErrors(['paypal' => 'Failed paypal']);
