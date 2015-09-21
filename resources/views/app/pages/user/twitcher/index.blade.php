@@ -16,14 +16,15 @@
                         wH = $(window).height(),
                         wS = $(this).scrollTop();
                 if (wS > (hT + hH - wH)){
-                    var page = $('#timelinePage').val();
+                    var page = parseInt($('#timelinePage').val());
                     if (page > 0) {
+                        page++;
                         $('#timelineAutoload').addClass('loading');
                         $.getJSON('/user/twitcher/timeline/', {page: page}, function(data) {
                             $('#timelineAutoload').removeClass('loading');
                             if (data.html) {
                                 $('.timeline').append(data.html);
-                                $('#timelinePage').val(page + 1);
+                                $('#timelinePage').val(page);
                             } else {
                                 $('#timelinePage').val(0);
                             }
