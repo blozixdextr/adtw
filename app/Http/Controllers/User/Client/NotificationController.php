@@ -41,7 +41,7 @@ class NotificationController extends Controller
 
     public function fresh()
     {
-        $notifications = NotificationMapper::fresh($this->user, 5);
+        $notifications = NotificationMapper::fresh($this->user, 10);
         $html = view('app.pages.user.client.notification.ajax', compact('notifications'))->render();
 
         return ['html' => $html];
