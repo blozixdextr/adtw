@@ -47,6 +47,10 @@ a:hover{
 .small{
     font-size: 12px;
 }
+i.fa {
+    width: 40px;
+    text-align: center;
+}
 
 /*                            fonts             */
 @font-face {
