@@ -236,7 +236,9 @@ class NotificationMapper
 
     public static function withdrawDecline(Withdrawal $withdrawal)
     {
-        NotificationMapper::notify($withdrawal->user, 'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>', $withdrawal->merchant);
+        NotificationMapper::notify($withdrawal->user,
+            'Your withdrawal to '.$withdrawal->merchant.' with '.$withdrawal->amount.$withdrawal->currency.' was declined with comment <em>'.$withdrawal->admin_comment.'</em>',
+            'decline');
 
         Mail::send('app.emails.default', [
             'title' => 'Withdrawal declined',
@@ -248,7 +250,9 @@ class NotificationMapper
 
     public static function withdrawAccept(Withdrawal $withdrawal)
     {
-        NotificationMapper::notify($withdrawal->user, 'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful', $withdrawal->merchant);
+        NotificationMapper::notify($withdrawal->user,
+            'Your withdrawal to '.$withdrawal->merchant.' '.$withdrawal->account.' with '.$withdrawal->amount.$withdrawal->currency.' was successful',
+            'accept');
 
         Mail::send('app.emails.default', [
             'title' => 'Withdrawal finished',
@@ -261,7 +265,7 @@ class NotificationMapper
     public static function refilled(UserPayment $payment)
     {
         $title = 'Your refilled your account with '.$payment->amount.$payment->currency.' from '.$payment->merchant;
-        NotificationMapper::notify($payment->user, $title);
+        NotificationMapper::notify($payment->user, $title, $payment->merchant);
 
         Mail::send('app.emails.default', [
             'title' => 'Account refilled',
