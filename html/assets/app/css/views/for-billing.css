@@ -32,6 +32,7 @@ section {
   padding: 10px 25px;
   text-align: center;
   color: #aaa;
+  cursor:pointer;
     font-size: 14px;
   border: 1px solid #ddd;
   background: #f1f1f1;
@@ -57,6 +58,7 @@ section {
   border-top: 2px solid #6441A5;
   border-bottom: 1px solid #fff;
   background: #fff;
+  cursor:pointer;
 }
 /* активация секций с помощью переключателя :checked */
 #tab1:checked ~ #content1,

@@ -95,6 +95,9 @@
     display: flex;
     align-items: center;
 }
+.timeline-content-in p{
+    margin-bottom:0;
+}
 .timeline-content-in::before, .timeline-content-in::after {
     content: '';
     position: absolute;

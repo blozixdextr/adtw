@@ -1,5 +1,5 @@
 <div class="nav-column">
-    <h2>Balance: $ {{ number_format($user->balance, 2) }}</h2>
+    <h2>Balance:<br> $ {{ number_format($user->balance, 2) }}</h2>
     <h1>Dashboard</h1>
     <div class="nav-settings">
         <p class="nav-column-item"><a href="/user/client">Timeline</a></p>
