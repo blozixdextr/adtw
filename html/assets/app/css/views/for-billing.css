@@ -32,6 +32,7 @@ section {
   padding: 10px 25px;
   text-align: center;
   color: #aaa;
+  cursor:pointer;
     font-size: 14px;
   border: 1px solid #ddd;
   background: #f1f1f1;
