@@ -176,7 +176,7 @@
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
                                                                 <div style="padding:10px;font-size:20px;color:#5F5F5F;">
-                                                                    <a href="{{ url('/user/client/banner/track/'.$banner->id) }}" style="font-size:24px;display:block;background-color:#6441A5;color:#fff;padding:10px;">Track your banner</a>
+                                                                    <a href="{{ url('/user/client/stream/'.$stream->id) }}" style="font-size:24px;display:block;background-color:#6441A5;color:#fff;padding:10px;">Track your banner</a>
                                                                 </div>
                                                             </td>
                                                         </tr>

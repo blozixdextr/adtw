@@ -27,7 +27,7 @@
     <p>Twitcher: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
     <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
     <p>Status:
-        @if ($stream->time_end == null)
+        @if (!$isFinished)
             <br>
             <iframe src="{{ $stream->user->twitch_channel->url }}/embed" frameborder="0" scrolling="no" height="378" width="640"></iframe>
             <a href="{{ $stream->user->twitch_channel->url }}?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from CauthonTV on www.twitch.tv</a>
@@ -54,9 +54,9 @@
                     <td>${{ $b->getOriginal('pivot_amount') }}</td>
                     <td>{{ $b->getOriginal('pivot_status') }}</td>
                     <td>
-                        @if ($b->getOriginal('pivot_status') == 'waiting')
-                        <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn btn-success">accept</a>
-                        <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn btn-danger">decline</a>
+                        @if ($b->getOriginal('pivot_status') == 'waiting' && $isFinished)
+                            <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn btn-success">accept</a>
+                            <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn btn-danger">decline</a>
                         @endif
                     </td>
                 </tr>

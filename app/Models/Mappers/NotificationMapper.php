@@ -93,7 +93,7 @@ class NotificationMapper
         });
     }
 
-    public static function bannerStream(Banner $banner)
+    public static function bannerStream(Banner $banner, Stream $stream)
     {
         $title = $banner->twitcher->name.' started to stream your '.$banner->type->title.' banner';
         self::notify($banner->client, $title, 'stream');
@@ -101,7 +101,7 @@ class NotificationMapper
         $title = 'You started to stream '.$banner->type->title.' banner from '.$banner->client->name;
         self::notify($banner->twitcher, $title, 'stream');
 
-        Mail::send('app.emails.banner_stream', ['banner' => $banner], function ($m) use ($banner) {
+        Mail::send('app.emails.banner_stream', ['banner' => $banner, 'stream' => $stream], function ($m) use ($banner) {
             $m->to($banner->client->email)->subject($banner->twitcher->name.' started to stream your banner');
         });
     }

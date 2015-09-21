@@ -169,7 +169,7 @@ class BannerMapper
             Session::set('stream_id', $stream->id);
             LogMapper::log('stream_start', $stream->id);
             foreach ($banners as $b) {
-                NotificationMapper::bannerStream($b);
+                NotificationMapper::bannerStream($b, $stream);
             }
 
         } else {

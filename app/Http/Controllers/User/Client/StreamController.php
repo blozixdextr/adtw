@@ -26,11 +26,23 @@ class StreamController extends Controller
         return view('app.pages.user.client.stream.index', compact('streams', 'orders', 'inactiveBanners'));
     }
 
+    public function isStreamFinished(Stream $stream)
+    {
+        try {
+            $isFinished = $stream->time_end->addMinutes(10)->isPast();
+        } catch (\Exception $e) {
+            $isFinished = false;
+        }
+
+        return $isFinished;
+    }
+
     public function stream($streamId)
     {
         $stream = Stream::findOrFail($streamId);
+        $isFinished = $this->isStreamFinished($stream);
 
-        return view('app.pages.user.client.stream.show', compact('stream'));
+        return view('app.pages.user.client.stream.show', compact('stream', 'isFinished'));
     }
 
     public function accept($streamId, $bannerId, Request $request)
@@ -46,6 +58,10 @@ class StreamController extends Controller
         $pivot = StreamMapper::getPivot($banner, $stream);
         if ($pivot->status != 'waiting') {
             return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
+        }
+        $isFinished = $this->isStreamFinished($stream);
+        if (!$isFinished) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still alive');
         }
         $transfer = StreamMapper::pay($this->user, $banner, $stream);
         $pivot->status = 'accepted';
@@ -71,6 +87,10 @@ class StreamController extends Controller
         if ($pivot->status != 'waiting') {
             return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
         }
+        $isFinished = $this->isStreamFinished($stream);
+        if (!$isFinished) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still alive');
+        }
 
         return view('app.pages.user.client.stream.decline', compact('stream', 'banner'));
     }
@@ -88,6 +108,10 @@ class StreamController extends Controller
         $pivot = StreamMapper::getPivot($banner, $stream);
         if ($pivot->status != 'waiting') {
             return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is not for paying');
+        }
+        $isFinished = $this->isStreamFinished($stream);
+        if (!$isFinished) {
+            return Redirect::to('/user/client/stream/'.$stream->id)->withErrors('Stream is still alive');
         }
 
         $this->validate($request, ['comment' => 'required|min:5']);
