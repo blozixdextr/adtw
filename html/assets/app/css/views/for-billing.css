@@ -8,7 +8,7 @@ label[for="billing-alert"]{
     text-align: center;
     padding-bottom: 30px;
 }
-.bil-control .btn-white{
+.bil-control .btn-white:last-child{
     position:relative;
     top:13px;
 }
