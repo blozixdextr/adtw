@@ -19,7 +19,7 @@ class CreateStreamBannersTable extends Migration
             $table->integer('transfer_id')->index('transfer_id')->unsigned()->nullable();
             $table->integer('viewers')->index('viewers')->unsigned()->default(0);
             $table->integer('minutes')->index('minutes')->unsigned()->default(0);
-            $table->double('amount', 6, 5)->index('amount')->unsigned()->default(0);
+            $table->double('amount', 12, 6)->index('amount')->unsigned()->default(0);
             $table->enum('status', ['waiting', 'accepted', 'declined', 'declining', 'complain'])->index('status')->default('waiting');
             $table->string('client_comment')->nullable();
             $table->string('twitcher_comment')->nullable();

@@ -41,10 +41,11 @@ class PaymentTableSeeder extends Seeder
         $data['games'] = Ref::whereType('game')->get();
         $data['bannerTypes'] = Ref::whereType('banner_type')->get();
         $this->data = $data;
-
+/*
         $this->paypal();
         $this->stripe();
         $this->withdraw();
+*/
     }
 
     public function paypal()
