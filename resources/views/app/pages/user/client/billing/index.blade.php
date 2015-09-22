@@ -30,6 +30,13 @@
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
     </div>
+    <div class="work-column-item bil-control">
+        <div><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
+        <div class="work-column-link">
+            <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
+        </div>
+        <div><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
+    </div>
     <div class="work-column-item" id="payments">
         <h3>Payment Methods</h3>
 
