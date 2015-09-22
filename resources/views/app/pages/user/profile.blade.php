@@ -9,10 +9,10 @@
 @section('content')
     <div class="streamer-page">
         <h1>User's Profile</h1>
+        <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
         @if ($userView->language_id)
             <p>Language: {{ $userView->language->title }}</p>
         @endif
-        <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
         <div class="streamer-page-reg">
             <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
             <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
