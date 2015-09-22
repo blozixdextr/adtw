@@ -672,10 +672,21 @@ table .success .streamer-online-view{
 }
 
 /*		booking table 	*/
-
-
 .booking-online-img img{
 	width:320px;
+}
+.streamer-page{
+	    margin-left: 40px;
+    margin-top: 31px;
+}
+.streamer-page>p{
+    margin-bottom: 25px;
+}
+.streamer-page-reg{
+	margin-bottom: 30px;
+}
+.streamer-page>div:last-child{
+	    margin-bottom: 40px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
