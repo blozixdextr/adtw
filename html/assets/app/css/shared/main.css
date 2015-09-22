@@ -688,6 +688,9 @@ table .success .streamer-online-view{
 .streamer-page>div:last-child{
 	    margin-bottom: 40px;
 }
+.ad-varient-row{
+    margin: 20px 0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
