@@ -22,9 +22,6 @@
     background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/halftone.png) repeat;
     padding: 0px 15px 220px;
     overflow:hidden;
-    box-sizing: border-box;
-    height: calc(100vh - 480px);
-    
 }
 .main-page .in-page{
 	width:1200px;
