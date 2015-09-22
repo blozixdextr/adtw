@@ -6,7 +6,7 @@
 }
 .welcome{
 	box-sizing: border-box;
-    height: calc(100vh - 480px);
+    height: calc(100vh - 550px);
 }
 #header {
     background-size: cover;
