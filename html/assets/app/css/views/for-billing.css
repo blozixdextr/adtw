@@ -13,7 +13,7 @@ label[for="billing-alert"]{
     box-sizing: border-box;
 }
 .bil-control>div span{
-    font-size:20px;
+    font-size:18px;
 }
 .tabs {
   max-width: 800px;
