@@ -17,11 +17,13 @@
             <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
             <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
         </div>
+        <div class="">
         @if ($userView->type == 'twitcher')
             <p>{{ $userView->twitch_followers }} followers</p>
             <p>{{ $userView->twitch_videos }} videos</p>
             <p>{{ $userView->twitch_views }} views</p>
-            <a href="/user/client/banner/{{ $userView->id }}" class="work-button">Order banner</a>
         @endif
+        </div>
+        <a href="/user/client/banner/{{ $userView->id }}" class="work-button">Order banner</a>
     </div>
 @endsection
