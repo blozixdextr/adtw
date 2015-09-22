@@ -2,6 +2,16 @@
 label[for="billing-alert"]{
     font-size: 14px;
 }
+.bil-control{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.bil-control>div {
+    width: 33%;
+    box-sizing: border-box;
+}
 .tabs {
   max-width: 800px;
   padding: 0px;
