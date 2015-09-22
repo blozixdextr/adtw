@@ -8,6 +8,7 @@
 @endsection
 @section('content')
     <h1>User's Profile</h1>
+    <img src="{{ $u->profile->avatar }}" alt="">
     <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
     <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
     <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
