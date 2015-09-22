@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <div class="text-center intro-main class="welcome">
+    <div class="text-center intro-main welcome">
         @if ($isNew)
             <h1>Finish your registration</h1>
         @else
