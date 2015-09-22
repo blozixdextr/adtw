@@ -122,7 +122,13 @@ class TestController extends Controller
         foreach ($bannerStreams as $bs) {
             $amount = $bs->amount;
             $recalcedAmount = StreamTimelog::whereStreamId($bs->stream_id)->sum('amount');
-            $diff = number_format(100 * $amount/$recalcedAmount, 2);
+            if ($recalcedAmount > 0) {
+                $diff = number_format(100 * $amount/$recalcedAmount, 2);
+            } else {
+                if ($amount > 0) {
+                    $diff = 'failed';
+                }
+            }
             if ($diff == '100.00') {
                 $diff = '';
                 echo '<tr>';
