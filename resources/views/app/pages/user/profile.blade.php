@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/assets/app/css/libs/flags/css/flag-icon.min.css">
 @endsection
 @section('content')
-    <h1>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h1>
-    <h2>User's Profile</h2>
+    <h1>User's Profile</h1>
+    <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
     <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
     <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
     @if ($userView->language_id)
