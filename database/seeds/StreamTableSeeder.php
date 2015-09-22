@@ -41,13 +41,13 @@ class StreamTableSeeder extends Seeder
         $data['games'] = Ref::whereType('game')->get();
         $data['bannerTypes'] = Ref::whereType('banner_type')->get();
         $this->data = $data;
-/*
+
         for ($i = 0; $i <= 10; $i++) {
             $this->addStreams();
         }
 
         $this->payStreams();
-*/
+
     }
 
     public function addStreams()

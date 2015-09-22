@@ -38,7 +38,7 @@ class BannerTableSeeder extends Seeder
         $data['bannerTypes'] = Ref::whereType('banner_type')->get();
         $this->data = $data;
 
-        //$this->addBanners();
+        $this->addBanners();
     }
 
     public function addBanners($limit = 2000)

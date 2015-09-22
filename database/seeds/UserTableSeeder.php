@@ -40,10 +40,10 @@ class UserTableSeeder extends Seeder
         $this->data = $data;
 
         $this->admin();
-        /*
-        $this->streamers(500);
-        $this->clients(500);
-        */
+
+        $this->streamers(10);
+        $this->clients(10);
+
     }
 
     public function admin()

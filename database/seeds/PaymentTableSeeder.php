@@ -41,16 +41,16 @@ class PaymentTableSeeder extends Seeder
         $data['games'] = Ref::whereType('game')->get();
         $data['bannerTypes'] = Ref::whereType('banner_type')->get();
         $this->data = $data;
-/*
+
         $this->paypal();
         $this->stripe();
         $this->withdraw();
-*/
+
     }
 
     public function paypal()
     {
-        $user = User::whereType('client')->get()->random(25);
+        $user = User::whereType('client')->get()->random(8);
         $faker = $this->faker;
         foreach ($user as $u) {
             try {
@@ -73,7 +73,7 @@ class PaymentTableSeeder extends Seeder
 
     public function stripe()
     {
-        $user = User::whereType('client')->get()->random(25);
+        $user = User::whereType('client')->get()->random(8);
         $faker = $this->faker;
         foreach ($user as $u) {
             try {
