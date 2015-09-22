@@ -136,9 +136,17 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
 .games-followers>div {
     margin-bottom: 24px;
 }
-.games-followers label{
+
+
+
+.games-followers .form-group label{
+    margin-bottom:10px;
+}
+.games-followers .form-group:first-child label{
     margin-bottom:20px;
 }
+
+
 .games .form-group label[for="games"]{
     margin-left: 90px;
 }
