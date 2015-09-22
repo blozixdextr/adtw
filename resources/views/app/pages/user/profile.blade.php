@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/assets/app/css/libs/flags/css/flag-icon.min.css">
 @endsection
 @section('content')
+    <h1>User's Profile</h1>
     <div class="streamer-page">
-        <h1>User's Profile</h1>
         <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
         @if ($userView->language_id)
             <p>Language: {{ $userView->language->title }}</p>
