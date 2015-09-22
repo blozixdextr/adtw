@@ -84,15 +84,17 @@ class StreamMapper
     {
         $pivot = self::getPivot($banner, $stream);
 
+        $amount = round($pivot->amount, 2);
+
         $twitcher = $stream->user;
-        $twitcher->balance = $twitcher->balance + $pivot->amount;
+        $twitcher->balance = $twitcher->balance + $amount;
         $twitcher->save();
 
-        $user->balance_blocked = $user->balance_blocked - $pivot->amount;
+        $user->balance_blocked = $user->balance_blocked - $amount;
         if ($user->balance_blocked < 0) {
             $user->balance_blocked = 0;
         }
-        $user->balance = $user->balance - $pivot->amount;
+        $user->balance = $user->balance - $amount;
         if ($user->balance < 0) {
             $user->balance = 0;
         }
@@ -101,7 +103,7 @@ class StreamMapper
             'buyer_id' => $user->id,
             'seller_id' => $twitcher->id,
             'title' => 'Paid banner#'.$banner->id,
-            'amount' => $pivot->amount,
+            'amount' => $amount,
             'currency' => 'USD',
         ]);
 
@@ -116,13 +118,15 @@ class StreamMapper
     {
         $pivot = self::getPivot($banner, $stream);
 
+        $amount = round($pivot->amount, 2);
+
         $twitcher = $stream->user;
-        $twitcher->balance = $twitcher->balance + $pivot->amount;
+        $twitcher->balance = $twitcher->balance + $amount;
         $twitcher->save();
 
         $client = $banner->client;
 
-        $client->balance_blocked = $client->balance_blocked - $pivot->amount;
+        $client->balance_blocked = $client->balance_blocked - $amount;
         if ($client->balance_blocked < 0) {
             $client->balance_blocked = 0;
         }
