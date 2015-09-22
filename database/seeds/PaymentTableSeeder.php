@@ -96,7 +96,7 @@ class PaymentTableSeeder extends Seeder
 
     public function withdraw()
     {
-        $user = User::whereType('twitcher')->where('balance', '>', 5)->get()->random(25);
+        $user = User::whereType('twitcher')->where('balance', '>', 5)->get()->random(2);
         $faker = $this->faker;
         foreach ($user as $u) {
             try {
