@@ -20,7 +20,7 @@
 }
 .main-page .page{
     background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/halftone.png) repeat;
-    padding: 0px 15px 40px;
+    padding: 0px 15px 220px;
     overflow:hidden;
 }
 .main-page .in-page{
@@ -201,6 +201,7 @@ footer{
     background: url(../../images/1.png) no-repeat 0px -700px;
     background-size: cover;
     height: 200px;
+    position: absolute;
 }
 footer .icons{
     padding-top:3em;
