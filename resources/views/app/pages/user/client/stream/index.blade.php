@@ -22,7 +22,56 @@
 @endsection
 
 @section('content')
-
+    <div class="booking-table">
+        <div class="booking-table-row booking-name">
+            <div class="booking-ban-size">
+                <p>Banner</p>
+            </div>
+            <div class="booking-streamer">
+                <p>Streamer</p>
+            </div>
+            <div class="booking-cost-limit">
+                <p>Cost limit</p>
+            </div>
+            <div class="booking-actions">
+                <p>Actions</p>
+            </div>
+            <div class="booking-actions">
+                <p>Actions</p>
+            </div>
+        </div>
+        <div class="booking-table-row booking-name">
+            <div class="booking-ban-size">
+                <p>Banner</p>
+            </div>
+            <div class="booking-streamer">
+                <p>Streamer</p>
+            </div>
+            <div class="booking-cost-limit">
+                <p>Cost limit</p>
+            </div>
+            <div class="booking-actions">
+                <p>Actions</p>
+            </div>
+            <div class="booking-actions">
+                <p>Actions</p>
+            </div>
+        </div>
+        <div class="booking-table-row booking-name">
+            <div class="booking-ban-size">
+                <p>Banner</p>
+            </div>
+            <div class="booking-streamer">
+                <p>Streamer</p>
+            </div>
+            <div class="booking-cost-limit">
+                <p>Cost limit</p>
+            </div>
+            <div class="booking-actions">
+                <p>Actions</p>
+            </div>
+        </div>
+    </div>
     <h1>My Orders</h1>
     <div class="booking-table">
         <div class="booking-table-row booking-name">
