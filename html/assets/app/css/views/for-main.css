@@ -24,6 +24,7 @@
     overflow:hidden;
     box-sizing: border-box;
     height: calc(100vh - 480px);
+    
 }
 .main-page .in-page{
 	width:1200px;
