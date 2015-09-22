@@ -689,7 +689,7 @@ table .success .streamer-online-view{
 	    margin-bottom: 40px;
 }
 .ad-varient-row{
-    margin: 20px 0;
+        margin: 20px 30px !important;
 }
 /*            media         */
 @media screen and (max-width:1366px){
