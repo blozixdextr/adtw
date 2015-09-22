@@ -63,9 +63,7 @@ class BannerTableSeeder extends Seeder
                             $requiredSizes = explode('*', $bannerType->title);
                             $w = $requiredSizes[0];
                             $h = $requiredSizes[1];
-                            $uploadDir = '/assets/app/upload/b/';
                             $file = $faker->imageUrl($w, $h);
-                            $file = $uploadDir.basename($file);
                             $banner = BannerMapper::addForTwitcher($twitcher, $c, $bannerType, $file, $limit);
                             NotificationMapper::bannerAdd($banner);
                             LogMapper::log('banner_add', $banner->id);
