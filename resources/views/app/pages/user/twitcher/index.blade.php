@@ -68,7 +68,7 @@
 
     <h2>Banners ready to start</h2>
     @foreach($bannerTypes as $bt)
-        <div class="row">
+        <div class="row ad-varient-row">
             <div class="col-xs-3">{{ $bt->title }}</div>
             @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                 <div class="col-xs-9"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
