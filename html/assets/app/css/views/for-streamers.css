@@ -125,16 +125,20 @@ background: linear-gradient(to bottom, rgba(255, 255, 255,1) 0%, rgba(191, 191, 
     display: inline-block;
 }
 .choose-strimer .checkbox{
-    margin-bottom:7px;
+    margin-bottom:11px;
 }
 .language-and-banner .checkbox{
-    margin-bottom:12px;
+    margin-bottom:13px;
+    margin-top:0;
+}
+.language-and-banner>div>label{
+    margin-bottom: 15px;
 }
 .language-and-banner .form-group:first-child{
   margin-bottom:52px;  
 }
 .games-followers>div {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 
