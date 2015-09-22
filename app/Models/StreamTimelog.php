@@ -12,7 +12,7 @@ class StreamTimelog extends Model
 
     protected $table = 'stream_timelogs';
 
-    protected $fillable = ['stream_id', 'timeslot_start', 'timeslot_end', 'viewers', 'status', 'screenshot', 'response'];
+    protected $fillable = ['stream_id', 'timeslot_start', 'timeslot_end', 'viewers', 'status', 'amount', 'screenshot', 'response'];
 
     protected $dates = ['timeslot_start', 'timeslot_end', 'deleted_at'];
 
@@ -39,11 +39,18 @@ class StreamTimelog extends Model
         }
     }
 
-    public function duration() {
+    public function duration()
+    {
         return $this->timeslot_start->diffInMinutes($this->timeslot_end);
     }
 
-    public function price() {
+    public function price()
+    {
+        return $this->amount;
+    }
+
+    public function calcAmount()
+    {
         $minutes = $this->duration();
         $language = '';
         if ($this->stream->user->language_id > 0) {
@@ -57,6 +64,9 @@ class StreamTimelog extends Model
         }
         $pricePerMinute = $price / 60;
         $price = $minutes * $this->viewers * $pricePerMinute;
+
+        $this->amount = $price;
+        $this->save();
 
         return $price;
     }

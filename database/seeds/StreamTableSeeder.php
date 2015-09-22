@@ -73,7 +73,7 @@ class StreamTableSeeder extends Seeder
                 BannerMapper::bannersToStream($stream, $banners);
                 LogMapper::log('stream_start', $stream->id);
                 foreach ($banners as $b) {
-                    NotificationMapper::bannerStream($b);
+                    NotificationMapper::bannerStream($b, $stream);
                 }
                 $maxMinutes = rand(3, 30);
                 for ($m = 0; $m < $maxMinutes; $m++) {
@@ -85,9 +85,9 @@ class StreamTableSeeder extends Seeder
 
                     $status = rand(0, 1);
                     if ($status == 1) {
-                        $uploadDir = '/assets/app/upload/t/';
-                        $screenshot = $faker->image(public_path($uploadDir), 120, 90);
-                        $screenshot = $uploadDir.basename($screenshot);
+                        //$uploadDir = '/assets/app/upload/t/';
+                        $screenshot = $faker->imageUrl(640, 360);
+                        //$screenshot = $uploadDir.basename($screenshot);
                         $viewers = rand(0, 100);
                         $response = (object)[
                             'stream' => (object)[
@@ -106,6 +106,7 @@ class StreamTableSeeder extends Seeder
                             'screenshot' => $screenshot,
                             'response' => $response
                         ]);
+                        $streamTimelog->calcAmount();
                         foreach ($banners as $b) {
                             BannerMapper::trackBanner($b, $stream, $streamTimelog);
                         }

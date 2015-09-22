@@ -19,6 +19,7 @@ class CreateStreamTimelogsTable extends Migration
             $table->dateTime('timeslot_end')->index('timeslot_end');
             $table->integer('viewers')->index('viewers')->unsigned();
             $table->enum('status', ['live', 'died'])->index('status');
+            $table->double('amount', 6, 5)->index('amount')->unsigned()->default(0);
             $table->string('screenshot')->nullable();
             $table->text('response');
             $table->softDeletes();

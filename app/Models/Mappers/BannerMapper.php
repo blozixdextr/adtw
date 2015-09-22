@@ -242,9 +242,11 @@ class BannerMapper
             'timeslot_end' => \Carbon\Carbon::now(),
             'viewers' => $viewers,
             'status' => $status,
+            'price' => $status,
             'screenshot' => $screenshot,
             'response' => $response
         ]);
+        $streamTimelog->calcAmount();
         Session::set('stream_lastPing', time());
 
         return $streamTimelog;
