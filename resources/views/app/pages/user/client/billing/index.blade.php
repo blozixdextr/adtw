@@ -23,9 +23,9 @@
         </div>
     </div>
     <div class="clear"></div>
-    <div class="work-column-item">
-        <h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
-        <h3>Usage</h3><span>${{ number_format(0, 2) }}</span>
+    <div class="work-column-item bil-control">
+        <div><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
+        <div><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
         <div class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
