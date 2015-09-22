@@ -50,7 +50,7 @@
                 <tr>
                     <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
                     <td>{{ $b->getOriginal('pivot_minutes') }}</td>
-                    <td>${{ $b->getOriginal('pivot_amount') }}</td>
+                    <td>${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
                     <td>{{ $b->getOriginal('pivot_status') }}</td>
                     <td>
                         @if ($b->getOriginal('pivot_status') == 'declining')
