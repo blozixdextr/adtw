@@ -4,6 +4,10 @@
     /*padding: 8em 0em 0 0;*/
     background-color: rgba(39,25,65 , 0.8);
 }
+.welcome{
+	box-sizing: border-box;
+    height: calc(100vh - 550px);
+}
 #header {
     background-size: cover;
     color: rgba(255, 255, 255, 0.5);
