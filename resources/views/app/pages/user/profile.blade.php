@@ -24,6 +24,6 @@
             <p>{{ $userView->twitch_views }} views</p>
         @endif
         </div>
-        <a href="/user/client/banner/{{ $userView->id }}" class="btn">Order banner</a>
+        <a href="/user/client/banner/{{ $userView->id }}" class="btn-white">Order banner</a>
     </div>
 @endsection
