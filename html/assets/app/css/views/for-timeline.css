@@ -22,9 +22,10 @@
 .timeline h1{
     text-align: center;
 }
-
-
-
+.timeline i.fa {
+    width: 40px;
+    text-align: center;
+}
 .timeline {
     width: 100%;
     margin: 15px 0;
