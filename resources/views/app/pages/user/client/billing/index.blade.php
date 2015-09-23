@@ -113,7 +113,7 @@
                         </div>
             </section>
             <section id="content2">
-                <div class="sect-content violet">
+                <div class="sect-content">
                     <div class="row">
                         {!! Form::open(['url' => '/user/client/billing/paypal', 'class' => 'form-horizontal']) !!}
                         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
