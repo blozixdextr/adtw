@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-default">
         <h2 class="panel-heading">Payments <a href="/user/client/billing/transfers">Transfers</a></h2>
-        <table class="table panel-body booking-table">
+        <table class="table panel-body booking-table-first booking-table">
                 <tr>
                     <th>#</th>
                     <th>date</th>
