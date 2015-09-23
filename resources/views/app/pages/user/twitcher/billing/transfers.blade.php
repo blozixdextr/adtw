@@ -1,8 +1,9 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1>Billing log</h1>
-    <table class="table table-striped">
+    <div class="panel panel-default">
+    <h1 class="panel-heading">Billing log</h1>
+    <table class="table table-striped panel-body">
         <thead>
             <tr>
                 <th>#</th>
@@ -34,6 +35,7 @@
         @endforelse
 
     </table>
+    </div>
 
     {!! $transfers->render() !!}
 
