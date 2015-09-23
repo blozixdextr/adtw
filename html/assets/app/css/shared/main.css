@@ -765,14 +765,14 @@ table .success .streamer-online-view{
 .danger-1 em{
 	display:inline;
 }
-.form-group-1>label{
+.work-column-inside .form-group-1>label{
 	padding-left:0;
 	margin-bottom:10px;
 }
-.form-group-1>div{
+.work-column-inside .form-group-1>div{
 	padding-left:0;
 } 
-.form-group-1{
+.work-column-inside .form-group-1{
 	text-align:left;
 	margin-bottom:20px;
 }
