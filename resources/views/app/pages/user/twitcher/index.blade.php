@@ -41,7 +41,7 @@
 
     @if (count($waitingBanners) > 0)
         <div class="panel panel-default booking-table-first">
-            <h2 class="panel-heading">Waiting banners</h2>
+            <h2 class="panel-heading"><i class="fa fa-clock-o"></i> Waiting banners</h2>
             <table class="table booking-table panel-body">
                     <tr>
                         <th>#</th>
