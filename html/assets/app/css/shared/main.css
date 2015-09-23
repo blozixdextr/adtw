@@ -725,6 +725,9 @@ table .success .streamer-online-view{
     font-size: 20px;
     margin-left: 10px;
 }
+.booking-table-first{
+	margin-top:23px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
