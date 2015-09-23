@@ -3,7 +3,7 @@
 @section('content')
     <h1><i class="fa fa-twitch"></i> Streams</h1>
     <div class="panel panel-default">
-        <h3 class="panel-heading">Need a Title here.</h3>
+        <h3 class="panel-heading"><i class="fa fa-tag"></i> Need a Title here.</h3>
         <table class="table booking-table panel-body">
             <tr>
                 <th>Stream Date</th>
