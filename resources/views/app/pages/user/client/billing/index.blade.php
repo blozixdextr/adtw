@@ -103,7 +103,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-default">Pay now</button>
+                                    <button type="submit" class="btn-white">Pay now</button>
                                 </div>
                             </div>
                             {!! Form::close() !!}
