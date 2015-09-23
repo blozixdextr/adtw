@@ -16,22 +16,22 @@
         @endif
     </p>
     <img src="{{ $bannerStream->banner->file }}">
-    <table class="table">Timelogs
-        <thead>
-        <tr>
-            <th>Banner size</th>
-            <th>Minutes</th>
-            <th>Costs</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="panel panel-default">
+        <table class="table booking-table panel-body">Timelogs
             <tr>
-                <td>{{ $bannerStream->banner->type->title }}</td>
-                <td>{{ $bannerStream->minutes }}</td>
-                <td>{{ $bannerStream->amount }}USD</td>
+                <th>Banner size</th>
+                <th>Minutes</th>
+                <th>Costs</th>
             </tr>
-        </tbody>
-    </table>
+            <tbody>
+                <tr>
+                    <td>{{ $bannerStream->banner->type->title }}</td>
+                    <td>{{ $bannerStream->minutes }}</td>
+                    <td>{{ $bannerStream->amount }}USD</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="panel panel-default">
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
