@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="panel panel-default booking-table-first">
-        <h2 class="panel-heading">Payments <a href="/user/client/billing/transfers">Transfers</a></h2>
+        <h2 class="panel-heading"><i class="fa fa-exchange"></i> Payments <a href="/user/client/billing/transfers">Transfers</a></h2>
         <table class="table panel-body booking-table">
                 <tr>
                     <th>#</th>
