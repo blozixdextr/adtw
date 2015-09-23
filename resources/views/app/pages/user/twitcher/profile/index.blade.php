@@ -23,7 +23,7 @@
 
 @section('content')
     <h1><i class="fa fa-user"></i> Profile</h1>
-    <div class="panel panel-deafault">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <h3><i class="fa fa-tag"></i> Filter</h3>
         </div>
