@@ -36,9 +36,9 @@
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
             <tr class="success-1">
-                <th>Time</th>
-                <th>Viewers</th>
-                <th>Screenshot</th>
+                <td>Time</td>
+                <td>Viewers</td>
+                <td>Screenshot</td>
             </tr>
             <tbody>
             @forelse($stream->timelogs as $t)
