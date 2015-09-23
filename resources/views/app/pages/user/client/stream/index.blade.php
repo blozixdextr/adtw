@@ -93,21 +93,21 @@
     <h3 class="panel-heading"><i class="fa fa-minus-circle"></i> Inactive banners</h3>
     <table class="table panel-body booking-table">
             <tr>
-                <th>Banner</th>
-                <th>Status</th>
-                <th>Streamer</th>
-                <th>Cost limit</th>
-                <th>Actions</th>
+                <th class="col-xs-3">Banner</th>
+                <th class="col-xs-2">Status</th>
+                <th class="col-xs-2">Streamer</th>
+                <th class="col-xs-2">Cost limit</th>
+                <th class="col-xs-3">Actions</th>
             </tr>
             @forelse($inactiveBanners as $b)
                 <tr>
-                    <td>
+                    <td class="col-xs-3">
                         {{ $b->type->title }} <i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i>
                     </td>
-                    <td>{{ $b->status }}</td>
-                    <td><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></td>
-                    <td>{{ $b->amount_limit }}USD</td>
-                    <td>
+                    <td class="col-xs-2">{{ $b->status }}</td>
+                    <td class="col-xs-2"><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></td>
+                    <td class="col-xs-2">{{ $b->amount_limit }}USD</td>
+                    <td class="col-xs-3">
                         @if ($b->status == 'waiting')
                             <a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a>
                         @endif
