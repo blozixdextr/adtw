@@ -34,9 +34,9 @@
             finished
         @endif
     </p>
-    <div class="panel booking-table panel-default">
+    <div class="panel panel-default">
         <h2 class="panel-heading">Banners in stream</h2>
-        <table class="table panel-body">
+        <table class="table booking-table panel-body">
                 <tr>
                     <th>Banner size</th>
                     <th>Minutes</th>
