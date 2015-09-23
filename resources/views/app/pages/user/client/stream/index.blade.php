@@ -67,15 +67,15 @@
     <h3 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h3>
     <table class="table panel-body booking-table">
             <tr>
-                <th col-xs-5>Stream Date</th>
-                <th col-xs-4>Twitcher</th>
-                <th col-xs-3>Status</th>
+                <th class="col-xs-5">Stream Date</th>
+                <th class="col-xs-4">Twitcher</th>
+                <th class="col-xs-3 text-center">Status</th>
             </tr>
         @forelse($streams as $s)
             <tr>
-                <td col-xs-5><a href="/user/client/stream/{{ $s->id }}">{{ $s->time_start->format('d.m.Y') }}</a></td>
-                <td col-xs-4><a href="/profile/{{ $s->user_id }}">{{ $s->user->name }}</a></td>
-                <td col-xs-3>
+                <td class="col-xs-5"><a href="/user/client/stream/{{ $s->id }}">{{ $s->time_start->format('d.m.Y') }}</a></td>
+                <td class="col-xs-4"><a href="/profile/{{ $s->user_id }}">{{ $s->user->name }}</a></td>
+                <td class="col-xs-3 text-center">
                     @if ($s->time_end == null)
                         active
                         @else
