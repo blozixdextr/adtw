@@ -68,8 +68,8 @@
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
             <tr class="success-1">
-                <td class="col-xs-5">Time</td>
-                <td class="col-xs-4">Viewers</td>
+                <td class="col-xs-4">Time</td>
+                <td class="col-xs-5">Viewers</td>
                 <td class="col-xs-3">Screenshot</td>
             </tr>
             <tbody>
@@ -79,8 +79,8 @@
                     @else
                         <tr class="danger-1">
                     @endif
-                        <td class="col-xs-5">{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
-                        <td class="col-xs-4">{{ $t->viewers }}</td>
+                        <td class="col-xs-4">{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
+                        <td class="col-xs-5">{{ $t->viewers }}</td>
                         <td class="col-xs-3" class="success-live">
                             @if ($t->status == 'live' && $t->screenshot)
                                 <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
