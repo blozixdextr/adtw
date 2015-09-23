@@ -663,10 +663,6 @@ table .success .streamer-online-view{
 	display:inline-block;
 	margin-bottom:0px;
 }
-.booking-table-row .booking-ban-size{width:20%;text-align:left;}
-.booking-table-row .booking-streamer{width:45%;}
-.booking-table-row .booking-cost-limit{width:15%;}
-.booking-table-row .booking-actions{width:20%;}
 
 .booking-actions i{
 	margin-left:15px;
@@ -680,7 +676,7 @@ table .success .streamer-online-view{
 	color:#828282;
 }
 .work-column-inside h3>i.fa{
-	font-size:15px;
+	font-size:20px;
 	color:#828282;
 }
 .booking-online-img img{
