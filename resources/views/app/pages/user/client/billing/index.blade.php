@@ -37,9 +37,8 @@
         </div>
         <div><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
     </div>
+    <h3><i class="fa fa-money"></i> Payment Methods</h3>
     <div class="work-column-item" id="payments">
-        <h3>Payment Methods</h3>
-
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" class="tab" checked="">
             <label for="tab1" title="Credit Cards" class="tab">Credit Cards</label>
