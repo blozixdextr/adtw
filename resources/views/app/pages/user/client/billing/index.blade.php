@@ -46,7 +46,7 @@
             <input id="tab2" type="radio" name="tabs" class="tab">
             <label for="tab2" title="Paypal" class="tab">Paypal</label>
             <section id="content1">
-                <div class="sect-content violet">
+                <div class="sect-content">
                         <div class="row-wrap">
                             {!! Form::open(['url' => '/user/client/billing/card', 'class' => 'form-horizontal']) !!}
                             <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
