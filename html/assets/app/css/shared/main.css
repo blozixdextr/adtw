@@ -446,6 +446,10 @@ wrapper {
     color:#fff;
     border:2px solid #6441A5;
 }
+.btn-white:visited,
+.btn-white:focus{
+	text-decoration:none !important;
+}
 .btn-violet{
     cursor: pointer;
     background-color: #6441A5;
