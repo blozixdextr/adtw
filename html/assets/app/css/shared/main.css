@@ -731,6 +731,13 @@ table .success .streamer-online-view{
 .booking-table-first{
 	margin-top:11px;
 }
+
+.h1-timeline{
+    margin-left:41px;
+}
+.label-pad{
+	max-width:150px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
