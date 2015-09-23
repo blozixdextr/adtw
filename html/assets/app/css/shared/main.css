@@ -694,6 +694,10 @@ table .success .streamer-online-view{
 .ad-varient-row{
         margin: 20px 30px !important;
 }
+.work-column-inside>div>h1{
+	margin-bottom:40px;
+	text-align:center;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
