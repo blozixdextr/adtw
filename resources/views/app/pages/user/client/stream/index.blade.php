@@ -60,7 +60,7 @@
     </div>
 
     <h1>Streams</h1>
-    <table class="table">
+    <table class="table panel panel-default">
         <tr>
             <th>Stream Date</th>
             <th>Twitcher</th>
@@ -84,7 +84,7 @@
     </table>
 
     <h1>Inactive banners</h1>
-    <table class="table">
+    <table class="table panel panel-default">
         <tr>
             <th>Banner</th>
             <th>Status</th>
