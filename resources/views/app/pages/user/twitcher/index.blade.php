@@ -57,7 +57,7 @@
                     <td>{{ $b->type->title }}</td>
                     <td>{{ $b->client->name }}</td>
                     <td>{{ $b->amount_limit }}USD</td>
-                    <td><a href="/user/twitcher/banner/review/{{ $b->id }}" class="btn btn-primary btn-xs">review</a></td>
+                    <td><a href="/user/twitcher/banner/review/{{ $b->id }}" class="btn-white" style="font-size:12px;padding:1px">review</a></td>
                 </tr>
             @endforeach
                 </tbody>
