@@ -49,7 +49,7 @@
     </div>
 
     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
-        {!! Form::label('games', 'Choose games you stream', ['class' => 'col-sm-3 control-label']) !!}
+        {!! Form::label('games', 'Choose games you stream', ['class' => 'control-label']) !!}
         <div class="games">
             {!! Form::errorMessage('games') !!}
             @foreach($games as $g)
