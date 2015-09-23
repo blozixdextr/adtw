@@ -670,7 +670,9 @@ table .success .streamer-online-view{
 .booking-actions i{
 	margin-left:15px;
 }
-
+.work-column-inside>div>h1>i.fa{
+	font-size:20px;
+}
 /*		booking table 	*/
 .booking-online-img img{
 	width:320px;
