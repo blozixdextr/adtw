@@ -1,7 +1,7 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1 class="panel-heading">Streams</h1>
+    <h1 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h1>
     <div class="panel panel-default">
         <table class="table booking-table panel-body">
             <tr>
