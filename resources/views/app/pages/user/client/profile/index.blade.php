@@ -4,17 +4,17 @@
     <h1><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/client/profile/save', 'class' => 'form-horizontal']) !!}
 
-    <div class="form-group {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
-        {!! Form::label('first_name', 'First Name', ['class' => 'col-sm-2 control-label']) !!}
-        <div class="col-sm-6">
+    <div class="form-group-1 {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
+        {!! Form::label('first_name', 'First Name', ['class' => 'col-sm-2  control-label']) !!}
+        <div class="col-sm-7">
             {!! Form::text('first_name', old('first_name', $profile->first_name), ['class' => 'form-control', 'placeholder' => 'First Name', 'required' => 'required']) !!}
             {!! Form::errorMessage('first_name') !!}
         </div>
     </div>
 
     <div class="form-group {!! ($errors && $errors->has('last_name')) ? ' has-error' : '' !!}">
-        {!! Form::label('last_name', 'Last Name', ['class' => 'col-sm-2 control-label']) !!}
-        <div class="col-sm-6">
+        {!! Form::label('last_name', 'Last Name', ['class' => 'col-sm-2  control-label']) !!}
+        <div class="col-sm-7">
             {!! Form::text('last_name', old('last_name', $profile->last_name), ['class' => 'form-control', 'placeholder' => 'Last Name', 'required' => 'required']) !!}
             {!! Form::errorMessage('last_name') !!}
         </div>
