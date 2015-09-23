@@ -748,6 +748,9 @@ table .success .streamer-online-view{
 .label-pad{
 	max-width:150px;
 }
+.streamer-online-view {
+    display: inline-block;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
