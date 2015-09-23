@@ -37,7 +37,6 @@
     <div class="panel booking-table panel-default">
         <h2 class="panel-heading">Banners in stream</h2>
         <table class="table panel-body">
-            <thead>
                 <tr>
                     <th>Banner size</th>
                     <th>Minutes</th>
@@ -45,7 +44,6 @@
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
-            </thead>
             <tbody>
                 @forelse($stream->banners as $b)
                     <tr>
