@@ -65,7 +65,7 @@
         </table>
     </div>
     <div class="panel panel-default">
-        <h3 class="panel-heading"><i class="fa fa-calendar-check-o"></i> Timelogs</h3>
+        <h3 class="panel-heading"><i class="fa fa-newspaper-o"></i> Timelogs</h3>
         <table class="table booking-table panel-body">
             <tr class="success-1">
                 <td>Time</td>
