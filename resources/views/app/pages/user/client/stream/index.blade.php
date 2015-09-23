@@ -63,12 +63,9 @@
         </div>
     </div>
 
-    <h2><i class="fa fa-twitch"></i> Streams</h2>
-    <table class="table booking-table panel panel-default">
-        <tr class="panel-heading">
-            <h2><i class="fa fa-twitch"></i> Streams</h2>
-        </tr>
-        <div class="panel-body">
+    <div class="panel panel-default"
+    <h2 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h2>
+    <table class="table panel-body booking-table">
             <tr>
                 <th>Stream Date</th>
                 <th>Twitcher</th>
@@ -89,8 +86,8 @@
         @empty
             <tr><td colspan="3"><em>no streams yet</em></td></tr>
         @endforelse
-        </div>
     </table>
+    </div>
 
     
     <table class="table booking-table panel panel-default">
