@@ -67,7 +67,7 @@
     <div class="panel panel-default">
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
-            <tr>
+            <tr class="success-1">
                 <th>Time</th>
                 <th>Viewers</th>
                 <th>Screenshot</th>
