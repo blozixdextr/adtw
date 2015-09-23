@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <h1>Billing</h1>
+    <h1><i class="fa fa-university"></i> Billing</h1>
     <div class="work-column-floats">
         <div class="left">
             <h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
