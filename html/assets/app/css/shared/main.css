@@ -801,6 +801,7 @@ table .success .streamer-online-view{
 }
 .form-inline div label{
 	display:block;
+	text-align:center;
 }
 
 /*            media         */
