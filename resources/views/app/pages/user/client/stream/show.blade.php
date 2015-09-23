@@ -68,10 +68,10 @@
     <div class="panel panel-default">
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
-            <t class="success-1"r>
-                <th>Time</th>
-                <th>Viewers</th>
-                <th>Screenshot</th>
+            <tr class="success-1">
+                <td>Time</td>
+                <td>Viewers</td>
+                <td>Screenshot</td>
             </tr>
             <tbody>
                 @forelse($stream->timelogs as $t)
