@@ -751,13 +751,13 @@ table .success .streamer-online-view{
 .streamer-online-view {
     display: inline-block;
 }
-.success-1, .danger-1{
+.success-1 td, .danger-1 td{
 	text-align:center;
 }
-.success-1:first-child, .danger-1:first-child{
+.success-1 td:first-child, .danger-1 td:first-child{
 	text-align:left;
 }
-.success-1:last-child, .danger-1:last-child{
+.success-1 td:last-child, .danger-1 td:last-child{
 	text-align:right;
 }
 /*            media         */
