@@ -672,10 +672,11 @@ table .success .streamer-online-view{
 }
 .work-column-inside>div>h1>i.fa{
 	font-size:30px;
-    color: rgb(138, 144, 145);
+	color:#828282;
 }
 .work-column-inside>div>h2>i.fa{
 	font-size:20px;
+	color:#828282;
 }
 /*		booking table 	*/
 .booking-online-img img{
