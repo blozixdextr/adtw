@@ -45,7 +45,6 @@
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
-            <tbody>
                 @forelse($stream->clientsBanners($user)->get() as $b)
                     <tr>
                         <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
@@ -62,7 +61,6 @@
                 @empty
                     <tr><td colspan="5"><em>no your banners here</em></td></tr>
                 @endforelse
-            </tbody>
         </table>
     </div>
     <div class="panel panel-default">
