@@ -23,18 +23,19 @@
 
 @section('content')
     <h1>Stream #{{ $stream->id }}</h1>
-
-    <p>Twitcher: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
-    <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
-    <p>Status:
-        @if (!$isFinished)
-            <br>
-            <iframe src="{{ $stream->user->twitch_channel->url }}/embed" frameborder="0" scrolling="no" height="378" width="640"></iframe>
-            <a href="{{ $stream->user->twitch_channel->url }}?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from CauthonTV on www.twitch.tv</a>
-        @else
-            finished
-        @endif
-    </p>
+    <div class="in-inline">
+        <p>Twitcher: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
+        <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
+        <p>Status:
+            @if (!$isFinished)
+                <br>
+                <iframe src="{{ $stream->user->twitch_channel->url }}/embed" frameborder="0" scrolling="no" height="378" width="640"></iframe>
+                <a href="{{ $stream->user->twitch_channel->url }}?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from CauthonTV on www.twitch.tv</a>
+            @else
+                finished
+            @endif
+        </p>
+    </div>
     <div class="panel panel-default">
         <h2 class="panel-heading">Your banners in stream</h2>
         <table class="table  booking-table  panel-body">
