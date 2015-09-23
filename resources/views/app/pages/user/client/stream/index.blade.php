@@ -94,8 +94,8 @@
     <table class="table panel-body booking-table">
             <tr>
                 <th class="col-xs-3">Banner</th>
-                <th class="col-xs-2">Status</th>
                 <th class="col-xs-2">Streamer</th>
+                <th class="col-xs-2">Status</th>
                 <th class="col-xs-2">Cost limit</th>
                 <th class="col-xs-3 text-center">Actions</th>
             </tr>
@@ -104,8 +104,8 @@
                     <td class="col-xs-3">
                         {{ $b->type->title }} <i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i>
                     </td>
-                    <td class="col-xs-2">{{ $b->status }}</td>
                     <td class="col-xs-2"><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></td>
+                    <td class="col-xs-2">{{ $b->status }}</td>
                     <td class="col-xs-2">{{ $b->amount_limit }}USD</td>
                     <td class="col-xs-3 text-center">
                         @if ($b->status == 'waiting')
