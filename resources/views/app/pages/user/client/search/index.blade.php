@@ -19,7 +19,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     <link rel="stylesheet" href="/assets/app/css/views/for-streamers.css">
 @endsection
 @section('content')
-    <h1>Streamers Filter</h1>
+    <h1><i class="fa fa-filter"></i> Streamers Filter</h1>
     <div class="panel panel-default choose-strimer">
         <div class="panel-heading">Filter</div>
         <div class="panel-body">
