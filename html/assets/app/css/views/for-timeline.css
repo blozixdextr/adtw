@@ -5,6 +5,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.h1-timeline{
+    margin-bottom:30px;
+    text-align:center;
+}
 .timeline a{
     text-decoration: none;
     color:#6441A5;
