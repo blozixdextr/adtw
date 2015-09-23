@@ -670,15 +670,15 @@ table .success .streamer-online-view{
 .booking-actions i{
 	margin-left:15px;
 }
-.work-column-inside>div>h1>i.fa{
+.work-column-inside h1>i.fa{
 	font-size:30px;
 	color:#828282;
 }
-.work-column-inside>div>h2>i.fa{
+.work-column-inside h2>i.fa{
 	font-size:20px;
 	color:#828282;
 }
-.work-column-inside>div>h3>i.fa{
+.work-column-inside h3>i.fa{
 	font-size:15px;
 	color:#828282;
 }
