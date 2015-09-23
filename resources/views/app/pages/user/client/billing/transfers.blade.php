@@ -3,7 +3,7 @@
 @section('content')
     <h1>Billing log</h1>
     <h2>Transfers <a href="/user/client/billing/log">Payments</a></h2>
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
