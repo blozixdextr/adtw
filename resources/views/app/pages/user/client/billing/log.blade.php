@@ -1,9 +1,9 @@
 @extends('app.layouts.client')
 
 @section('content')
-    <div class="panel panel-default">
+    <div class="panel panel-default booking-table-first">
         <h2 class="panel-heading">Payments <a href="/user/client/billing/transfers">Transfers</a></h2>
-        <table class="table panel-body booking-table-first booking-table">
+        <table class="table panel-body booking-table">
                 <tr>
                     <th>#</th>
                     <th>date</th>
