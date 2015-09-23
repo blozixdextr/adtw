@@ -20,6 +20,9 @@ a:hover{
     text-decoration: none !important;
     color:#6441A5;
 }
+.no-border{
+	border:0 !important;
+}
 .right{
     float: right;
 }
