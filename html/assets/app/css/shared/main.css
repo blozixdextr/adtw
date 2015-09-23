@@ -757,8 +757,13 @@ table .success .streamer-online-view{
 .success-1 td:first-child, .danger-1 td:first-child{
 	text-align:left;
 }
-.success-1 td:last-child, .danger-1 td:last-child{
-	text-align:right;
+
+.in-inline{
+	display:flex;
+	justify-content:space-between;
+}
+.in-inline p{
+	font-size:30px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
