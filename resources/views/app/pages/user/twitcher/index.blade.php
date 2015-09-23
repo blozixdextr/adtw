@@ -38,45 +38,50 @@
 @endsection
 
 @section('content')
-    <h1>Dashboard</h1>
 
     @if (count($waitingBanners) > 0)
-        <h2>Waiting banners</h2>
-        <table class="table">
-            <thead>
+        <div class="panel panel-default booking-table-first">
+            <h2 class="panel-heading">Waiting banners</h2>
+            <table class="table panel-body">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>banner</th>
+                        <th>client</th>
+                        <th>limit</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach($waitingBanners as $b)
                 <tr>
-                    <th>#</th>
-                    <th>banner</th>
-                    <th>client</th>
-                    <th>limit</th>
-                    <th>actions</th>
+                    <td>{{ $b->id }}</td>
+                    <td>{{ $b->type->title }}</td>
+                    <td>{{ $b->client->name }}</td>
+                    <td>{{ $b->amount_limit }}USD</td>
+                    <td><a href="/user/twitcher/banner/review/{{ $b->id }}" class="btn btn-primary btn-xs">review</a></td>
                 </tr>
-            </thead>
-            <tbody>
-        @foreach($waitingBanners as $b)
-            <tr>
-                <td>{{ $b->id }}</td>
-                <td>{{ $b->type->title }}</td>
-                <td>{{ $b->client->name }}</td>
-                <td>{{ $b->amount_limit }}USD</td>
-                <td><a href="/user/twitcher/banner/review/{{ $b->id }}" class="btn btn-primary btn-xs">review</a></td>
-            </tr>
-        @endforeach
-            </tbody>
-        </table>
+            @endforeach
+                </tbody>
+            </table>
+        </div>
     @endif
 
-    <h2>Banners ready to start</h2>
-    @foreach($bannerTypes as $bt)
-        <div class="row ad-varient-row">
-            <div class="col-xs-3">{{ $bt->title }}</div>
-            @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                <div class="col-xs-9"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
-            @else
-                <div class="col-xs-9"><em>no orders yet :(</em></div>
-            @endif
+    <div class="panel panel-default">
+        <h2 class="panel-heading">Banners ready to start</h2>
+        <div class="panel-body">
+        @foreach($bannerTypes as $bt)
+            <div class="row ad-varient-row">
+                <div class="col-xs-3">{{ $bt->title }}</div>
+                @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                    <div class="col-xs-9"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                @else
+                    <div class="col-xs-9"><em>no orders yet :(</em></div>
+                @endif
+            </div>
+        @endforeach
         </div>
-    @endforeach
+    </div>
 
     <h2>Timeline</h2>
     <div class="timeline">
