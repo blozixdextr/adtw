@@ -23,7 +23,7 @@
 
 @section('content')
     <h1>My Orders</h1>
-    <div class="booking-table">
+    <div class="booking-table panel panel-default">
         <div class="booking-table-row booking-name">
             <div class="booking-ban-size">
                 <p>Banner</p>
