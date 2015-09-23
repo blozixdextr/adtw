@@ -25,7 +25,7 @@
     <h1><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-horizontal']) !!}
 
-    <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
+    <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
         {!! Form::label('language', 'I stream in language', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-9">
             {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control', 'required' => 'required']) !!}
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="form-group {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
+    <div class="form-group-1 {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
         {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-9">
             {!! Form::errorMessage('banner_types') !!}
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
+    <div class="form-group-1 {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
         {!! Form::label('games', 'Choose games you stream', ['class' => 'control-label']) !!}
         <div class="games">
             {!! Form::errorMessage('games') !!}
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group-1">
         <div class="col-sm-offset-3 col-sm-9">
             <button type="submit" class="btn-white">Save</button>
         </div>
