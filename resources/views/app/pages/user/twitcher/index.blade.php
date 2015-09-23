@@ -65,7 +65,7 @@
         </div>
     @endif
 
-    <div class="panel panel-default">
+    <div class="panel panel-default width-50">
         <h2 class="panel-heading">Banners ready to start</h2>
         <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
