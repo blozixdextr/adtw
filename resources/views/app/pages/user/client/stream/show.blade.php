@@ -48,7 +48,7 @@
                 </tr>
                 @forelse($stream->clientsBanners($user)->get() as $b)
                     <tr>
-                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a> <i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></td>
+                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a> <i class="fa fa-eye"></i></td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_minutes') }}</td>
                         <td class="col-xs-2">${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_status') }}</td>
