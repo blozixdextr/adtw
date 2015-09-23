@@ -766,6 +766,9 @@ table .success .streamer-online-view{
 .in-inline p{
 	font-size:22px;
 }
+.danger-1 em{
+	display:inline;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
