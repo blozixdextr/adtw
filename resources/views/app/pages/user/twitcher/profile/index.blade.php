@@ -22,7 +22,7 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1>Profile</h1>
+    <h1 class="h1-timeline"><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
