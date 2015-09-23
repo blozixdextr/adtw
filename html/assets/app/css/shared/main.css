@@ -775,9 +775,6 @@ table .success .streamer-online-view{
 }
 .work-column-inside .form-group-1>div{
 	padding-left:0;
-} 
-.work-column-inside .form-group-1{
-	margin-bottom:20px;
 }
 .form-group-1 button{
 	text-align:center;
@@ -785,7 +782,7 @@ table .success .streamer-online-view{
 	margin-top: 35px;
 }
 .form-group-1.width-50{
-	margin:0 auto;
+	margin:0 auto 20px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
