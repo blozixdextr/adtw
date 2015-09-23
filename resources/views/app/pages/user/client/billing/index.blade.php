@@ -8,7 +8,7 @@
 
 @section('content')
     <h1><i class="fa fa-university"></i> Billing</h1>
-    <div class="work-column-floats">
+    <!--<div class="work-column-floats">
         <div class="left">
             <h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
             <div class="work-column-link">
@@ -29,7 +29,7 @@
         <div class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
-    </div>
+    </div>-->
     <div class="work-column-item bil-control">
         <div><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
         <div class="work-column-link">
