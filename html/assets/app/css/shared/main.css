@@ -685,6 +685,12 @@ table .success .streamer-online-view{
 	padding:10px;
 	display:block;
 }
+.booking-table{
+    border-collapse: separate !important;
+}
+.booking-table th{
+	border-top:0 !important;
+}
 /*		booking table 	*/
 
 .streamer-page{
