@@ -34,36 +34,38 @@
             finished
         @endif
     </p>
-    <p>Banners in stream</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Banner size</th>
-                <th>Minutes</th>
-                <th>Costs</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($stream->banners as $b)
+    <div class="panel booking-table panel-default">
+        <h2 class="panel-heading">Banners in stream</h2>
+        <table class="table panel-body">
+            <thead>
                 <tr>
-                    <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
-                    <td>{{ $b->getOriginal('pivot_minutes') }}</td>
-                    <td>${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
-                    <td>{{ $b->getOriginal('pivot_status') }}</td>
-                    <td>
-                        @if ($b->getOriginal('pivot_status') == 'declining')
-                            <a href="/user/twitcher/stream/{{ $stream->id }}/{{ $b->id }}/accept-decline" class="btn btn-success">accept decline</a>
-                            <a href="/user/twitcher/stream/{{ $stream->id }}/{{ $b->id }}/complain-decline" class="btn btn-danger">complain decline</a>
-                        @endif
-                    </td>
+                    <th>Banner size</th>
+                    <th>Minutes</th>
+                    <th>Costs</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
-            @empty
-                <tr><td colspan="5"><em>no banners here</em></td></tr>
-            @endforelse
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @forelse($stream->banners as $b)
+                    <tr>
+                        <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
+                        <td>{{ $b->getOriginal('pivot_minutes') }}</td>
+                        <td>${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
+                        <td>{{ $b->getOriginal('pivot_status') }}</td>
+                        <td>
+                            @if ($b->getOriginal('pivot_status') == 'declining')
+                                <a href="/user/twitcher/stream/{{ $stream->id }}/{{ $b->id }}/accept-decline" class="btn btn-success">accept decline</a>
+                                <a href="/user/twitcher/stream/{{ $stream->id }}/{{ $b->id }}/complain-decline" class="btn btn-danger">complain decline</a>
+                            @endif
+                        </td>
+                    </tr>
+                @empty
+                    <tr><td colspan="5"><em>no banners here</em></td></tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
     <div class="panel panel-default">
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
