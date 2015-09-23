@@ -678,6 +678,10 @@ table .success .streamer-online-view{
 	font-size:20px;
 	color:#828282;
 }
+.work-column-inside>div>h3>i.fa{
+	font-size:15px;
+	color:#828282;
+}
 .booking-online-img img{
 	width:320px;
 }
@@ -716,7 +720,7 @@ table .success .streamer-online-view{
 	margin-bottom:20px;
 }
 
-.panel h2{
+.panel h2, .panel h4, .panel h3, .panel h1{
 	margin:0;
 }
 /*            media         */
