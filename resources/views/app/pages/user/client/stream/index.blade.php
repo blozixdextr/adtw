@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    <h1><i class="fa fa-calendar"></i> My Orders</h1>
+    <h2><i class="fa fa-calendar"></i> My Orders</h21>
     <div class="booking-table panel panel-default">
         <div class="booking-table-row booking-name">
             <div class="booking-ban-size">
@@ -59,7 +59,7 @@
         @endforelse
     </div>
 
-    <h1><i class="fa fa-twitch"></i> Streams</h1>
+    <h2><i class="fa fa-twitch"></i> Streams</h2>
     <table class="table booking-table panel panel-default">
         <tr>
             <th>Stream Date</th>
@@ -83,7 +83,7 @@
     @endforelse
     </table>
 
-    <h1><i class="fa fa-minus-circle"></i> Inactive banners</h1>
+    <h2><i class="fa fa-minus-circle"></i> Inactive banners</h2>
     <table class="table booking-table panel panel-default">
         <tr>
             <th>Banner</th>
