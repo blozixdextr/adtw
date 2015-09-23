@@ -683,11 +683,11 @@ table .success .streamer-online-view{
 .booking-actions i{
 	margin-left:15px;
 }
-.work-column-inside h1>i.fa{
+.work-column h1>i.fa{
 	font-size:30px;
 	color:#828282;
 }
-.work-column-inside h2>i.fa{
+.work-column h2>i.fa{
 	font-size:20px;
 	color:#828282;
 }
