@@ -1,7 +1,7 @@
 @extends('app.layouts.client')
 
 @section('content')
-    <h1>Profile</h1>
+    <h1><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/client/profile/save', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
