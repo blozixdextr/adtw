@@ -26,16 +26,16 @@
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
-        {!! Form::label('language', 'I stream in language', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
+        {!! Form::label('language', 'I stream in language', ['class' => 'control-label']) !!}
+        <div>
             {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control', 'required' => 'required']) !!}
             {!! Form::errorMessage('language') !!}
         </div>
     </div>
 
     <div class="form-group-1 {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
-        {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
+        {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'control-label']) !!}
+        <div>
             {!! Form::errorMessage('banner_types') !!}
             @foreach($bannerTypes as $b)
                 <div class="checkbox">
