@@ -68,9 +68,9 @@
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
             <tr class="success-1">
-                <td>Time</td>
-                <td>Viewers</td>
-                <td>Screenshot</td>
+                <td class="col-xs-5">Time</td>
+                <td class="col-xs-4">Viewers</td>
+                <td class="col-xs-3">Screenshot</td>
             </tr>
             <tbody>
                 @forelse($stream->timelogs as $t)
@@ -79,9 +79,9 @@
                     @else
                         <tr class="danger-1">
                     @endif
-                        <td>{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
-                        <td>{{ $t->viewers }}</td>
-                        <td class="success-live">
+                        <td class="col-xs-5">{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
+                        <td class="col-xs-4">{{ $t->viewers }}</td>
+                        <td class="col-xs-3" class="success-live">
                             @if ($t->status == 'live' && $t->screenshot)
                                 <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
                                 <div class="streamer-online-view"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $t->screenshot }}'>"></i></div>
