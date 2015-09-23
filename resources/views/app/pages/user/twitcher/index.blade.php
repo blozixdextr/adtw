@@ -69,12 +69,12 @@
         <h2 class="panel-heading">Banners ready to start</h2>
         <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
-            <div class="row ad-varient-row">
-                <div class="col-xs-3">{{ $bt->title }}</div>
+            <div class="row">
+                <div class="col-xs-6">{{ $bt->title }}</div>
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="col-xs-9"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                    <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
                 @else
-                    <div class="col-xs-9"><em>no orders yet :(</em></div>
+                    <div class="col-xs-6"><em>no orders yet :(</em></div>
                 @endif
             </div>
         @endforeach
