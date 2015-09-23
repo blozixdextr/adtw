@@ -448,6 +448,10 @@ wrapper {
     color:#fff;
     border:2px solid #6441A5;
 }
+.btn-white-little{
+	font-size:12px;
+	padding:1px 5px;
+}
 .btn-white:visited,
 .btn-white:focus{
 	text-decoration:none !important;
