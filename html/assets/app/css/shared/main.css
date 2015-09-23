@@ -799,7 +799,7 @@ table .success .streamer-online-view{
 .form-inline div{
 	display:inline-block;
 }
-.form-inline div label{
+.form-inline div label.control-label{
 	display:block;
 	text-align:center;
 }
