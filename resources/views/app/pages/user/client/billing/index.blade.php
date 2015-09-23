@@ -123,7 +123,7 @@
                                 {!! Form::errorMessage('amount') !!}
                             </div>
                             <div class="col-sm-3">
-                                <button type="submit" class="btn btn-default">Pay with Paypal</button>
+                                <button type="submit" class="btn-white">Pay with Paypal</button>
                             </div>
                         </div>
                         {!! Form::close() !!}
