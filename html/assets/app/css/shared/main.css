@@ -682,7 +682,8 @@ table .success .streamer-online-view{
 	width:320px;
 }
 .booking-table em{
-	padding:10px 0 0 20px;
+	padding:10px;
+	display:block;
 }
 /*		booking table 	*/
 
