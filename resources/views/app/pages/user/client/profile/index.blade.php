@@ -20,8 +20,8 @@
         </div>
     </div>
 
-    <div class="form-group-1">
-        <div class="col-sm-offset-3 col-sm-9">
+    <div class="form-group-1 width-50 text-center">
+        <div>
             <button type="submit" class="btn-white">Save</button>
         </div>
     </div>
