@@ -42,8 +42,7 @@
     @if (count($waitingBanners) > 0)
         <div class="panel panel-default booking-table-first">
             <h2 class="panel-heading">Waiting banners</h2>
-            <table class="table panel-body">
-                <thead>
+            <table class="table booking-table panel-body">
                     <tr>
                         <th>#</th>
                         <th>banner</th>
@@ -51,7 +50,6 @@
                         <th>limit</th>
                         <th>actions</th>
                     </tr>
-                </thead>
                 <tbody>
             @foreach($waitingBanners as $b)
                 <tr>
@@ -69,7 +67,7 @@
 
     <div class="panel panel-default">
         <h2 class="panel-heading">Banners ready to start</h2>
-        <div class="panel-body">
+        <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
             <div class="row ad-varient-row">
                 <div class="col-xs-3">{{ $bt->title }}</div>
