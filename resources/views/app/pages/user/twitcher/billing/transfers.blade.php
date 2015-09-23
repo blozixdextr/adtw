@@ -4,16 +4,14 @@
     <div class="panel panel-default">
     <h1 class="panel-heading">Billing log</h1>
     <table class="table panel-body">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>date</th>
-                <th>stream date</th>
-                <th>client</th>
-                <th>banner</th>
-                <th>amount</th>
-            </tr>
-        </thead>
+        <tr>
+            <th>#</th>
+            <th>date</th>
+            <th>stream date</th>
+            <th>client</th>
+            <th>banner</th>
+            <th>amount</th>
+        </tr>
 
         @forelse ($transfers as $p)
             <tr>
