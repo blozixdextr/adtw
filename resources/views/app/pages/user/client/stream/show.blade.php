@@ -39,19 +39,19 @@
         <h2 class="panel-heading">Your banners in stream</h2>
         <table class="table  booking-table  panel-body">
                 <tr>
-                    <th>Banner size</th>
-                    <th>Minutes</th>
-                    <th>Costs</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th class="col-xs-3">Banner size</th>
+                    <th class="col-xs-2">Minutes</th>
+                    <th class="col-xs-2">Costs</th>
+                    <th class="col-xs-2">Status</th>
+                    <th class="col-xs-3 text-center">Actions</th>
                 </tr>
                 @forelse($stream->clientsBanners($user)->get() as $b)
                     <tr>
-                        <td><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
-                        <td>{{ $b->getOriginal('pivot_minutes') }}</td>
-                        <td>${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
-                        <td>{{ $b->getOriginal('pivot_status') }}</td>
-                        <td>
+                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
+                        <td class="col-xs-2">{{ $b->getOriginal('pivot_minutes') }}</td>
+                        <td class="col-xs-2">${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
+                        <td class="col-xs-2">{{ $b->getOriginal('pivot_status') }}</td>
+                        <td class="col-xs-3 text-center">
                             @if ($b->getOriginal('pivot_status') == 'waiting' && $isFinished)
                                 <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn btn-success">accept</a>
                                 <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn btn-danger">decline</a>
