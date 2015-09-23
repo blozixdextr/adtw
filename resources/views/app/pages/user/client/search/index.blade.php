@@ -128,7 +128,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         </div>
     </div>
 
-    <h2>Search results</h2>
+    <h2><i class="fa fa-search"></i> Search results</h2>
     
     <div class="streamers-list-new">
         @forelse($twitchers as $u)
