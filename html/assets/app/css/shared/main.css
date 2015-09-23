@@ -715,6 +715,10 @@ table .success .streamer-online-view{
 .work-column-inside>div>h2{
 	margin-bottom:20px;
 }
+
+.panel h2{
+	margin:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
