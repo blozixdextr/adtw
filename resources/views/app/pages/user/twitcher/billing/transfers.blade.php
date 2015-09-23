@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-default">
     <h1 class="panel-heading">Billing log</h1>
-    <table class="table table-striped panel-body">
+    <table class="table panel-body">
         <thead>
             <tr>
                 <th>#</th>
