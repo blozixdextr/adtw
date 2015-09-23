@@ -23,6 +23,7 @@
 
 @section('content')
     <h1><i class="fa fa-user"></i> Profile</h1>
+    <div class="panel panel-deafault">
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
@@ -87,6 +88,6 @@
     </div>
 
     {!! Form::close() !!}
-
+</div>
 @endsection
 
