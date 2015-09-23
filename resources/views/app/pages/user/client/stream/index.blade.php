@@ -67,15 +67,15 @@
     <h3 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h3>
     <table class="table panel-body booking-table">
             <tr>
-                <th>Stream Date</th>
-                <th>Twitcher</th>
-                <th>Status</th>
+                <th col-xs-4>Stream Date</th>
+                <th col-xs-4>Twitcher</th>
+                <th col-xs-4>Status</th>
             </tr>
         @forelse($streams as $s)
             <tr>
-                <td><a href="/user/client/stream/{{ $s->id }}">{{ $s->time_start->format('d.m.Y') }}</a></td>
-                <td><a href="/profile/{{ $s->user_id }}">{{ $s->user->name }}</a></td>
-                <td>
+                <td col-xs-4><a href="/user/client/stream/{{ $s->id }}">{{ $s->time_start->format('d.m.Y') }}</a></td>
+                <td col-xs-4><a href="/profile/{{ $s->user_id }}">{{ $s->user->name }}</a></td>
+                <td col-xs-4>
                     @if ($s->time_end == null)
                         active
                         @else
@@ -97,7 +97,7 @@
                 <th class="col-xs-2">Status</th>
                 <th class="col-xs-2">Streamer</th>
                 <th class="col-xs-2">Cost limit</th>
-                <th class="col-xs-3">Actions</th>
+                <th class="col-xs-3 right">Actions</th>
             </tr>
             @forelse($inactiveBanners as $b)
                 <tr>
@@ -107,7 +107,7 @@
                     <td class="col-xs-2">{{ $b->status }}</td>
                     <td class="col-xs-2"><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></td>
                     <td class="col-xs-2">{{ $b->amount_limit }}USD</td>
-                    <td class="col-xs-3">
+                    <td class="col-xs-3 right">
                         @if ($b->status == 'waiting')
                             <a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a>
                         @endif
