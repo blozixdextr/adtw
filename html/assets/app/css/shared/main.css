@@ -26,6 +26,9 @@ a:hover{
     text-decoration: none !important;
     color:#6441A5;
 }
+.form-inline div{
+	display:inline-block;
+}
 .no-border{
 	border:0 !important;
 }
