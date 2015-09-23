@@ -765,6 +765,17 @@ table .success .streamer-online-view{
 .danger-1 em{
 	display:inline;
 }
+.form-group-1>label{
+	text-align:left;
+	padding-left:0;
+	margin-bottom:10px;
+}
+.form-group-1>div{
+	padding-left:0;
+}
+.form-group-1{
+	margin-bottom:20px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
