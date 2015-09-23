@@ -36,7 +36,7 @@
         @endif
     </p>
     <div class="panel booking-table panel-default">
-        <h2 class="panel-heading">Your banners in stream</2>
+        <h2 class="panel-heading">Your banners in stream</h2>
         <table class="table panel-body">
                 <tr>
                     <th>Banner size</th>
