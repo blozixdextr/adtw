@@ -28,16 +28,16 @@
         </div>
         <div class="panel-body">
             <div class="booking-table-row booking-name">
-                <div class="booking-ban-size">
+                <div class="col-xs-4">
                     <p>Banner</p>
                 </div>
-                <div class="booking-streamer">
+                <div class="col-xs-4">
                     <p>Streamer</p>
                 </div>
-                <div class="booking-cost-limit">
+                <div class="col-xs-2">
                     <p>Cost limit</p>
                 </div>
-                <div class="booking-actions">
+                <div class="col-xs-2">
                     <p>Actions</p>
                 </div>
             </div>
@@ -45,15 +45,15 @@
             <div class="booking-table-row booking-name">
                 <div class="booking-ban-size">
                     <p>{{ $b->type->title }}</p>
-                    <div class="booking-online"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
+                    <div class="col-xs-4"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
                 </div>
-                <div class="booking-streamer">
+                <div class="col-xs-4">
                     <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>
                 </div>
-                <div class="booking-cost-limit">
+                <div class="col-xs-2">
                     <p>{{ $b->amount_limit }}USD</p>
                 </div>
-                <div class="booking-actions">
+                <div class="col-xs-2">
                     <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a></p>
                 </div>
             </div>
