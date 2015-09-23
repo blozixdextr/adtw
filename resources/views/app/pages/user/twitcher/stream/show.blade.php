@@ -67,13 +67,11 @@
     <div class="panel panel-default">
         <h2 class="panel-heading">Timelogs</h2>
         <table class="table booking-table panel-body">
-            <thead>
             <tr>
                 <th>Time</th>
                 <th>Viewers</th>
                 <th>Screenshot</th>
             </tr>
-            </thead>
             <tbody>
                 @forelse($stream->timelogs as $t)
                     @if ($t->status == 'live')
