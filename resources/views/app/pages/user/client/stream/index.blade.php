@@ -28,13 +28,13 @@
         </div>
         <div class="panel-body">
             <div class="booking-table-row booking-name">
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <p>Banner</p>
                 </div>
                 <div class="col-xs-4">
                     <p>Streamer</p>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <p>Cost limit</p>
                 </div>
                 <div class="col-xs-2">
@@ -45,12 +45,12 @@
             <div class="booking-table-row booking-name">
                 <div class="booking-ban-size">
                     <p>{{ $b->type->title }}</p>
-                    <div class="col-xs-4"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
+                    <div class="col-xs-3"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
                 </div>
                 <div class="col-xs-4">
                     <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <p>{{ $b->amount_limit }}USD</p>
                 </div>
                 <div class="col-xs-2">
