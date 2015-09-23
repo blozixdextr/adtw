@@ -766,7 +766,6 @@ table .success .streamer-online-view{
 	display:inline;
 }
 .form-group-1>label{
-	text-align:left;
 	padding-left:0;
 	margin-bottom:10px;
 }
@@ -774,6 +773,7 @@ table .success .streamer-online-view{
 	padding-left:0;
 }
 .form-group-1{
+	text-align:left;
 	margin-bottom:20px;
 }
 /*            media         */
