@@ -661,7 +661,6 @@ table .success .streamer-online-view{
 }
 .booking-table p{
 	display:inline-block;
-	padding:10px;
 	margin-bottom:0px;
 }
 .booking-table-row .booking-ban-size{width:20%;text-align:left;}
@@ -688,7 +687,7 @@ table .success .streamer-online-view{
 	width:320px;
 }
 .booking-table em{
-	padding:10px 0;
+	padding:10px;
 	display:block;
 }
 .booking-table{
