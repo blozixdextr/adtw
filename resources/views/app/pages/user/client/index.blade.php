@@ -38,7 +38,7 @@
 @endsection
 
 @section('content')
-    <h1><i class="fa fa-area-chart"></i> Client Timeline</h1>
+    <h1 class="h1-timeline"><i class="fa fa-area-chart"></i> Client Timeline</h1>
     <div class="timeline">
         @forelse($notifications as $n)
             <div class="timeline-item">
