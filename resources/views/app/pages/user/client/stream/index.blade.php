@@ -60,7 +60,7 @@
     </div>
 
     <h1><i class="fa fa-twitch"></i> Streams</h1>
-    <table class="table panel panel-default">
+    <table class="table booking-table panel panel-default">
         <tr>
             <th>Stream Date</th>
             <th>Twitcher</th>
@@ -84,7 +84,7 @@
     </table>
 
     <h1><i class="fa fa-minus-circle"></i> Inactive banners</h1>
-    <table class="table panel panel-default">
+    <table class="table booking-table panel panel-default">
         <tr>
             <th>Banner</th>
             <th>Status</th>
