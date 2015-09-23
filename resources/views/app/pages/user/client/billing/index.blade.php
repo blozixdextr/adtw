@@ -122,7 +122,7 @@
                                 {!! Form::text('amount', old('amount', 10), ['class' => 'form-control', 'placeholder' => 'Amount', 'required' => 'required', 'style' => 'width:120px;display:inline-block']) !!} USD
                                 {!! Form::errorMessage('amount') !!}
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-5">
                                 <button type="submit" class="btn-white">Pay with Paypal</button>
                             </div>
                         </div>
