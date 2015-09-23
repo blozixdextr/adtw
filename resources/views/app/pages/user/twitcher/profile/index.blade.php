@@ -81,7 +81,7 @@
     </div>
 
     <div class="form-group-1">
-        <div class="col-sm-offset-3 col-sm-9">
+        <div>
             <button type="submit" class="btn-white">Save</button>
         </div>
     </div>
