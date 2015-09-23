@@ -28,7 +28,7 @@
     <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
         {!! Form::label('language', 'I stream in language', ['class' => 'control-label']) !!}
         <div>
-            {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control width-50', 'required' => 'required']) !!}
             {!! Form::errorMessage('language') !!}
         </div>
     </div>
