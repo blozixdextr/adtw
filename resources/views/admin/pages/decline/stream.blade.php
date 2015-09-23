@@ -23,13 +23,11 @@
                 <th>Minutes</th>
                 <th>Costs</th>
             </tr>
-            <tbody>
                 <tr>
                     <td>{{ $bannerStream->banner->type->title }}</td>
                     <td>{{ $bannerStream->minutes }}</td>
                     <td>{{ $bannerStream->amount }}USD</td>
                 </tr>
-            </tbody>
         </table>
     </div>
     <div class="panel panel-default">
