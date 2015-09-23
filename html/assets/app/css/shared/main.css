@@ -678,10 +678,14 @@ table .success .streamer-online-view{
 	font-size:20px;
 	color:#828282;
 }
-/*		booking table 	*/
 .booking-online-img img{
 	width:320px;
 }
+.booking-table em{
+	padding:10px 0 0 20px;
+}
+/*		booking table 	*/
+
 .streamer-page{
 	    margin-left: 40px;
     margin-top: 31px;
