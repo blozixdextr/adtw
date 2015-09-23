@@ -784,6 +784,16 @@ table .success .streamer-online-view{
 .form-group-1.width-50{
 	margin:0 auto 20px;
 }
+.games{
+    width:48%;
+}
+.games-followers{
+    width:25%;
+}
+.games .checkbox{
+    width: 48%;
+    display: inline-block;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
