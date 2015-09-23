@@ -784,6 +784,9 @@ table .success .streamer-online-view{
 	padding: 2px 20px;
 	margin-top: 35px;
 }
+.form-group-1.width-50{
+	margin:0 auto;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
