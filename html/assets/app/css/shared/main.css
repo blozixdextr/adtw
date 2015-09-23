@@ -751,6 +751,15 @@ table .success .streamer-online-view{
 .streamer-online-view {
     display: inline-block;
 }
+.success-1,.danger-1{
+	text-align:center;
+}
+.success-1:first-child,.danger-1:first-child{
+	text-align:left;
+}
+.success-1:last-child,.danger-1:last-child{
+	text-align:right;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
