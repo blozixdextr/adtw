@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    <h1>My Orders</h1>
+    <h1><i class="fa fa-hourglass-start"></i> My Orders</h1>
     <div class="booking-table panel panel-default">
         <div class="booking-table-row booking-name">
             <div class="booking-ban-size">
@@ -59,7 +59,7 @@
         @endforelse
     </div>
 
-    <h1>Streams</h1>
+    <h1><i class="fa fa-twitch"></i> Streams</h1>
     <table class="table panel panel-default">
         <tr>
             <th>Stream Date</th>
@@ -83,7 +83,7 @@
     @endforelse
     </table>
 
-    <h1>Inactive banners</h1>
+    <h1><i class="fa fa-minus-circle"></i> Inactive banners</h1>
     <table class="table panel panel-default">
         <tr>
             <th>Banner</th>
@@ -91,7 +91,6 @@
             <th>Streamer</th>
             <th>Cost limit</th>
             <th>Actions</th>
-
         </tr>
         @forelse($inactiveBanners as $b)
             <tr>
