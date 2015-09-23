@@ -65,39 +65,38 @@
             @endforelse
         </tbody>
     </table>
-
-    <h2>Timelogs</h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Time</th>
-            <th>Viewers</th>
-            <th>Screenshot</th>
-        </tr>
-        </thead>
-        <tbody>
-            @forelse($stream->timelogs as $t)
-                @if ($t->status == 'live')
-                    <tr class="success">
-                @else
-                    <tr class="danger">
-                @endif
-                    <td>{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
-                    <td>{{ $t->viewers }}</td>
-                    <td class="success-live">
-                        @if ($t->status == 'live' && $t->screenshot)
-                            <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
-                            <div class="streamer-online-view"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $t->screenshot }}'>"></i></div>
-                        @else
-                            <em>{{ $t->status }}</em>
-                        @endif
-                    </td>
-                </tr>
-            @empty
-                <tr><td colspan="3"><em>no timelogs yet</em></td></tr>
-            @endforelse
-        </tbody>
-    </table>
+    <div class="panel panel-default">
+        <h2 class="panel-heading">Timelogs</h2>
+        <table class="table booking-table panel-body">
+            <tr>
+                <th>Time</th>
+                <th>Viewers</th>
+                <th>Screenshot</th>
+            </tr>
+            <tbody>
+                @forelse($stream->timelogs as $t)
+                    @if ($t->status == 'live')
+                        <tr class="success-1">
+                    @else
+                        <tr class="danger-1">
+                    @endif
+                        <td>{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
+                        <td>{{ $t->viewers }}</td>
+                        <td class="success-live">
+                            @if ($t->status == 'live' && $t->screenshot)
+                                <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
+                                <div class="streamer-online-view"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $t->screenshot }}'>"></i></div>
+                            @else
+                                <em>{{ $t->status }}</em>
+                            @endif
+                        </td>
+                    </tr>
+                @empty
+                    <tr><td colspan="3"><em>no timelogs yet</em></td></tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 
 @endsection
 
