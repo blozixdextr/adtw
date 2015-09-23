@@ -15,7 +15,7 @@ ul,ol{
 .clear{
     clear: both;
 }
-a{
+html a{
     text-decoration: none;
     color:#6441A5;
 }
