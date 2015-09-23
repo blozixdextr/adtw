@@ -38,7 +38,7 @@
 @endsection
 
 @section('content')
-    <h1>Client Dashboard</h1>
+    <h1><i class="fa fa-tachometer"></i> Client Dashboard</h1>
 
     <h2>Timeline</h2>
     <div class="timeline">
