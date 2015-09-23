@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    <div class="booking-table panel panel-default">
+    <div class="booking-table booking-table-first panel panel-default">
         <div class="panel-heading">
             <h3><i class="fa fa-calendar"></i> My Orders</h3>
         </div>
