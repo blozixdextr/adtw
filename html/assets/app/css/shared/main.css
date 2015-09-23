@@ -720,6 +720,11 @@ table .success .streamer-online-view{
 .panel h2, .panel h4, .panel h3, .panel h1{
 	margin:0;
 }
+.booking-table i.fa {
+    color: #6441A5;
+    font-size: 20px;
+    margin-left: 10px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
