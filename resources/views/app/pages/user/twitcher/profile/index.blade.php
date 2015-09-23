@@ -50,7 +50,7 @@
 
     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
         {!! Form::label('games', 'Choose games you stream', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
+        <div class="games">
             {!! Form::errorMessage('games') !!}
             @foreach($games as $g)
                 @if (count($g->children) > 0)
