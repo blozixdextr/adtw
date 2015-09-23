@@ -654,8 +654,8 @@ table .success .streamer-online-view{
 	border-bottom:1px solid #DDDDDD;
 }
 .booking-table-row>div{
-	box-sizing:border-box;
-	text-align:center;
+	padding:0;
+}
 }
 .booking-table p{
 	display:inline-block;
