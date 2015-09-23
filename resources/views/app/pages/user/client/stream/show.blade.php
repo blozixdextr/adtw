@@ -81,7 +81,7 @@
                     @endif
                         <td class="col-xs-4">{{ $t->timeslot_start->format('H:i') }} - {{ $t->timeslot_end->format('H:i') }}</td>
                         <td class="col-xs-5">{{ $t->viewers }}</td>
-                        <td class="col-xs-3" class="success-live">
+                        <td class="col-xs-3 success-live">
                             @if ($t->status == 'live' && $t->screenshot)
                                 <a href="{{ $t->screenshot }}">{{ $t->status }}</a>
                                 <div class="streamer-online-view"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $t->screenshot }}'>"></i></div>
