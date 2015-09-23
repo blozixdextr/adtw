@@ -6,7 +6,7 @@
 
     <div class="form-group-1 {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
         {!! Form::label('first_name', 'First Name', ['class' => 'control-label']) !!}
-        <div">
+        <div>
             {!! Form::text('first_name', old('first_name', $profile->first_name), ['class' => 'form-control', 'placeholder' => 'First Name', 'required' => 'required']) !!}
             {!! Form::errorMessage('first_name') !!}
         </div>
