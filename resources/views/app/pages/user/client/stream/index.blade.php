@@ -89,12 +89,9 @@
     </table>
     </div>
 
-    
-    <table class="table booking-table panel panel-default">
-        <tr class="panel-heading">
-            <h2><i class="fa fa-minus-circle"></i> Inactive banners</h2>
-        </tr>
-        <div class="panel-body">
+    <div class="panel panel-default">
+    <h2 class="panel-heading"><i class="fa fa-minus-circle"></i> Inactive banners</h2>
+    <table class="table panel-body booking-table">
             <tr>
                 <th>Banner</th>
                 <th>Status</th>
@@ -123,8 +120,8 @@
             @empty
                 <tr><td colspan="5"><em>no inactive banners</em></td></tr>
             @endforelse
-        </div>
     </table>
+    </div>
 
 @endsection
 
