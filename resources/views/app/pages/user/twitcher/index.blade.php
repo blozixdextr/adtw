@@ -66,7 +66,7 @@
     @endif
 
     <div class="panel panel-default width-80">
-        <h2 class="panel-heading">Banners ready to start</h2>
+        <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
             <div class="row">
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <h2>Timeline</h2>
+    <h2><i class="fa fa-area-chart"></i> Timeline</h2>
     <div class="timeline">
         @forelse($notifications as $n)
             <div class="timeline-item">
