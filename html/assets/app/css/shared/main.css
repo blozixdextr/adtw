@@ -12,6 +12,9 @@ ul,ol{
 .width-80{
 	width:80%;
 }
+.width-50{
+	width:50%;
+}
 .clear{
     clear: both;
 }
@@ -776,6 +779,12 @@ table .success .streamer-online-view{
 .work-column-inside .form-group-1{
 	text-align:left;
 	margin-bottom:20px;
+}
+.form-group-1 input{
+	width:50%;
+}
+.form-group-1 button{
+	text-align:center;
 }
 /*            media         */
 @media screen and (max-width:1366px){
