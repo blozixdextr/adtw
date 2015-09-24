@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="panel panel-default">
-    <h1 class="panel-heading">Billing log</h1>
+    <h1 class="panel-heading"><i class="fa fa-bank"></i> Billing log</h1>
     <table class="table panel-body booking-table">
         <tr>
             <th>#</th>
