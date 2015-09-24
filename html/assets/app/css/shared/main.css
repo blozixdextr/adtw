@@ -334,6 +334,7 @@ wrapper {
 background-color: rgba(100,65,165, 0.03);
 padding: 10px;
     margin-bottom: 20px;
+    margin-top: -8px;
 }
 .second-page .nav-settings h4,
 .second-page .nav-user h4{
@@ -354,7 +355,7 @@ padding: 10px;
 .second-page .nav-column h2{
 	font-size:20px;
 	margin-bottom:15px;
-	margin-top:13px;
+	margin-top:2px;
 }
 .second-page .work-column-floats>div{
     padding: 10px 20px 20px;
