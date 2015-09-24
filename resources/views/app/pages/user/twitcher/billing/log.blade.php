@@ -1,8 +1,9 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1>Withdraw log</h1>
-    <table class="table table-striped">
+    <div class="panel panel-default booking-table-first">
+    <h1 class="panel-heading">Withdraw log</h1>
+    <table class="table panel-body booking-table">
         <thead>
             <tr>
                 <th>#</th>
@@ -43,6 +44,7 @@
         @endforelse
 
     </table>
+    </div>
 
     {!! $withdrawals->render() !!}
 
