@@ -746,7 +746,7 @@ table .success .streamer-online-view{
 .ad-varient-row{
         margin: 20px 30px !important;
 }
-.work-column-inside>div>h1{
+.work-column-inside>div>h1:first-child{
 	margin-bottom:25px;
 	margin-top:9px;
 }
