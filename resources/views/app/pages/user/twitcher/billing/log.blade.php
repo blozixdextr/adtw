@@ -4,7 +4,6 @@
     <div class="panel panel-default booking-table-first">
     <h1 class="panel-heading">Withdraw log</h1>
     <table class="table panel-body booking-table">
-        <thead>
             <tr>
                 <th>#</th>
                 <th>date</th>
@@ -15,7 +14,6 @@
                 <th>transaction number</th>
                 <th>comment</th>
             </tr>
-        </thead>
 
         @forelse ($withdrawals as $w)
             @if ($w->status == 'done')
