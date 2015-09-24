@@ -336,6 +336,10 @@ background-color: rgba(100,65,165, 0.03);
 padding: 10px;
     margin-bottom: 20px;
 }
+.second-page .nav-settings h4,
+.second-page .nav-user h4{
+    margin: 0px 0 20px;
+}
 
 .second-page  .nav-column h1{
     font-family: Roboto Slab;
