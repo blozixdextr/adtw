@@ -37,7 +37,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="7"><em>no withdrawals yet</em></td>
+                <td colspan="8"><em>no withdrawals yet</em></td>
             </tr>
         @endforelse
 
