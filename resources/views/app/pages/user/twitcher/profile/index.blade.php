@@ -28,7 +28,7 @@
             <h3><i class="fa fa-tag"></i> Filter</h3>
         </div>
         <div class="panel-body">
-    {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline']) !!}
+    {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline form-horizontal']) !!}
 
     <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
         {!! Form::label('language', 'I stream in language', ['class' => 'control-label']) !!}
