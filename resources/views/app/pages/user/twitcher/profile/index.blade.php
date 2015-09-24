@@ -29,7 +29,8 @@
         </div>
         <div class="panel-body">
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline form-horizontal']) !!}
-
+    <div class="new-flex">
+        <div class="flex-left-side">
     <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
         {!! Form::label('language', 'I stream in language', ['class' => 'control-label']) !!}
         <div>
@@ -52,7 +53,8 @@
             @endforeach
         </div>
     </div>
-
+    </div>
+    <div class="flex-right-side">
     <div class="form-group-1 {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
         {!! Form::label('games', 'Choose games you stream', ['class' => 'control-label']) !!}
         <div class="games">
@@ -84,7 +86,8 @@
             @endforeach
         </div>
     </div>
-
+    </div>
+    </div>
     <div class="form-group-1">
         <div>
             <button type="submit" class="btn-white">Save</button>
