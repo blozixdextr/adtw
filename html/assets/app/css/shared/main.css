@@ -1031,4 +1031,7 @@ table .success .streamer-online-view{
     .second-page .work-column-item{
         padding: 10px 5px;
     }
+    .second-page .second-nav{
+    	padding:10px 0;
+    }
 }
