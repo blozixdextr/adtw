@@ -25,7 +25,7 @@
     <div class="clear"></div>
     <div id="withdraw">
         <div class="panel panel-default">
-        <h2 class="panel-heading">Withdraw to PayPal</h2>
+        <h3 class="panel-heading">Withdraw to PayPal</h3>
         <div class="panel-body">
         {!! Form::open(['url' => '/user/twitcher/billing/withdraw']) !!}
         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
