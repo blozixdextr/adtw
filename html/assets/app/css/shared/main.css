@@ -788,9 +788,12 @@ table .success .streamer-online-view{
 .games-followers{
     width:25%;
 }
-.games .checkbox{
+.page .work-column .games .checkbox{
     width: 48%;
     display: inline-block;
+}
+.page .work-column .form-group-2 label{
+	display:block;
 }
 
 .form-inline div{
