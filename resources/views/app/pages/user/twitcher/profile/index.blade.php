@@ -88,7 +88,7 @@
     </div>
     </div>
     </div>
-    <div class="form-group-1">
+    <div class="form-group-1 text-center">
         <div>
             <button type="submit" class="btn-white">Save</button>
         </div>
