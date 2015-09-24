@@ -825,6 +825,9 @@ table .success .streamer-online-view{
 .work-column .new-flex .control-label{
 	margin-bottom:10px;
 }
+.flex-right-side .checkbox{
+	padding-top:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
