@@ -105,15 +105,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
     display: inline-block;
     vertical-align: top;
 }
-.language-and-banner{
-    width:25%;
-}
-.games{
-    width:48%;
-}
-.games-followers{
-    width:25%;
-}
 .games .checkbox{
     width: 48%;
     display: inline-block;
