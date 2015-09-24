@@ -819,7 +819,7 @@ table .success .streamer-online-view{
 }
 .new-flex .flex-left-side{
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	justify-content:space-between;
 }
 .work-column .new-flex .control-label{
