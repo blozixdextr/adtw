@@ -817,10 +817,9 @@ table .success .streamer-online-view{
 .new-flex .flex-left-side{
 	margin-left:10%;
 }
-.new-flex .flex-right-side>div{
-	margin-left:30%;
+.new-flex .control-label{
+	margin-bottom:10px;
 }
-
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
