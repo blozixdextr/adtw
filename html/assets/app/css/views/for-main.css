@@ -344,7 +344,7 @@ footer .fa:before {
     background-size: cover;
 	}
 	.bottom-info-img img {
-		width:85%;
+		width:100%;
 		margin:0 auto;
 	}
 }
