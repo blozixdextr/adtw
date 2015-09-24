@@ -262,7 +262,7 @@ footer .fa:before {
     }
     footer{
     	height: 140px;
-    	background-size: 1;
+    	background-size: inherit;
     }
 }
 @media screen and (max-width:992px){
