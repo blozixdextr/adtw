@@ -80,7 +80,7 @@
         @endforeach
         </div>
     </div>
-    <div class="panel panel-default>
+    <div class="panel panel-default">
         <h3 class="panel-heading"><i class="fa fa-area-chart"></i> Timeline</h3>
         <div class="timeline panel-body">
             @forelse($notifications as $n)
