@@ -41,7 +41,7 @@
 
     @if (count($waitingBanners) > 0)
         <div class="panel panel-default booking-table-first">
-            <h3 class="panel-heading"><i class="fa fa-clock-o"></i> Waiting banners</h3>
+            <h2 class="panel-heading"><i class="fa fa-clock-o"></i> Waiting banners</h2>
             <table class="table booking-table panel-body">
                     <tr>
                         <th>#</th>
@@ -65,8 +65,8 @@
         </div>
     @endif
 
-    <div class="panel panel-default">
-        <h3 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h3>
+    <div class="panel booking-table-first panel-default">
+        <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
             <div class="row">
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="panel panel-default">
-        <h3 class="panel-heading"><i class="fa fa-area-chart"></i> Timeline</h3>
+        <h2 class="panel-heading"><i class="fa fa-area-chart"></i> Timeline</h2>
         <div class="timeline panel-body">
             @forelse($notifications as $n)
                 <div class="timeline-item">
