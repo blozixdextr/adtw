@@ -246,8 +246,8 @@ html {
 wrapper {
  padding-bottom: 170px;
 }
-..work-column>div>h1 {
-	margin:25px 0 0px;
+.work-column>h1 {
+	margin:25px 0 9px;
 }
 .second-nav .head-nav{
     margin-bottom:0;
