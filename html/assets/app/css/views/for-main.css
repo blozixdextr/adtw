@@ -28,7 +28,7 @@
     overflow:hidden;
 }
 .main-page .in-page{
-	width:1200px;
+	width:1152px;
 	margin:0 auto;
 }
 .main-page .page center{
@@ -233,7 +233,8 @@ footer .fa:before {
 
 @media screen and (max-width:1152px){
     .main-page .page{
-        padding: 15px 0px 20px;
+        padding: 15px 0px 220px;
+        width:950px;
     }
     .step h3 span{
         display: block;
