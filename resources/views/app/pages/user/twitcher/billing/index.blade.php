@@ -23,6 +23,7 @@
         </div>
     </div>
     <div class="clear"></div>
+    <div class="height50"></div>
     <div id="withdraw">
         <div class="panel panel-default">
         <h2 class="panel-heading"><i class="fa fa-cc-paypal"></i> Withdraw to PayPal</h2>
