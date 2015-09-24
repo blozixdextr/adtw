@@ -339,4 +339,8 @@ footer .fa:before {
     .education-steps .step p {
         padding: 0 8%;
     }
+    footer {
+    height: auto;
+    background-size: cover;
+	}
 }
