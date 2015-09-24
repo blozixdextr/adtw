@@ -37,7 +37,7 @@
         </p>
     </div>
     <div class="panel panel-default">
-        <h3 class="panel-heading"><i class="fa fa-upload"></i> Your banners in stream</h3>
+        <h2 class="panel-heading"><i class="fa fa-upload"></i> Your banners in stream</h2>
         <table class="table  booking-table  panel-body">
                 <tr>
                     <th class="col-xs-3">Banner size</th>
@@ -65,7 +65,7 @@
         </table>
     </div>
     <div class="panel panel-default">
-        <h3 class="panel-heading"><i class="fa fa-newspaper-o"></i> Timelogs</h3>
+        <h2 class="panel-heading"><i class="fa fa-newspaper-o"></i> Timelogs</h2>
         <table class="table booking-table panel-body">
             <tr class="success-1">
                 <td>Time</td>
