@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <h1>Billing</h1>
+    <h1><i class="fa fa-bank"></i>Billing</h1>
     <div class="work-column-floats">
         <div class="left">
             <h3>Available</h3><span>${{ number_format($user->availableBalance(), 2) }}</span>
@@ -24,7 +24,9 @@
     </div>
     <div class="clear"></div>
     <div id="withdraw">
-        <h2>Withdraw to PayPal</h2>
+        <div class="panel panel-default">
+        <h2 class="panel-heading">Withdraw to PayPal</h2>
+        <div class="panel-body">
         {!! Form::open(['url' => '/user/twitcher/billing/withdraw']) !!}
         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
             {!! Form::label('amount', 'Add to your account', ['class' => 'col-sm-3 control-label']) !!}
@@ -58,6 +60,8 @@
             </div>
         </div>
         {!! Form::close() !!}
+        </div>
+        </div>
     </div>
 
 
