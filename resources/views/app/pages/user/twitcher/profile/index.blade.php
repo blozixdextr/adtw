@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="form-group-1 {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
+    <div class="form-group-1 form-group-2 {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
         {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'control-label']) !!}
         <div>
             {!! Form::errorMessage('banner_types') !!}
