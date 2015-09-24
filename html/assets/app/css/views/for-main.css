@@ -241,6 +241,13 @@ footer .fa:before {
     .step h3 span{
         display: block;
     }
+    .bottom-info-content,
+    .bottom-info-img{
+    	margin:0 10px;
+    }
+    .bottom-info-img{
+    	width:400px;
+    }
     .about-us li{
         width: 49%;
         padding: 20px 0;
