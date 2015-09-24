@@ -332,7 +332,9 @@ wrapper {
 
 .second-page .nav-settings,
 .second-page .nav-user{
-	background-color: rgba(100,65,165, 0.03);
+background-color: rgba(100,65,165, 0.03);
+padding: 10px;
+    margin-bottom: 20px;
 }
 
 .second-page  .nav-column h1{
