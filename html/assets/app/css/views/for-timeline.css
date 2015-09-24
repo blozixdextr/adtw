@@ -159,4 +159,8 @@
     .timeline-item-date-in hgroup>*{
         display:inline-block;
     }
+    .timeline-item-date-in hgroup{
+       position: relative;
+       top: -20px;
+    }
 }
