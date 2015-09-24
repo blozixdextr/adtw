@@ -300,6 +300,7 @@ footer .fa:before {
         margin-left: 0;
         width: 100%;
         padding: 0;
+        padding: 15px 0px 70px;
     }
     .main-nav{
         text-align: center;
@@ -316,7 +317,6 @@ footer .fa:before {
         position: static;
         width: 100%;
         background-color: #6441A5;
-        padding: 20px 0;
     }
 }
 @media screen and (max-width:750px){
