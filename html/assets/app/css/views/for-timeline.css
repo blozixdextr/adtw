@@ -131,7 +131,7 @@
     	height:200%;
     }
     .timeline-item-date:before {
-    	content:0 ;
+    	content:none ;
     }
 	    .timeline-item-date:after {
 	    display: block;
