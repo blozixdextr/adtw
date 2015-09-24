@@ -309,7 +309,8 @@ footer .fa:before {
         width: 180px;
     }
     .main-page .in-page {
-    max-width: 950px;
+    	max-width: 950px;
+        width: 96%;
 	}
     footer{
         position: static;
