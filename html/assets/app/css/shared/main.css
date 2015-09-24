@@ -999,16 +999,6 @@ table .success .streamer-online-view{
     .nav-column div{
     	display:block;
     }
-    .timeline-item-content:after{
-    	    height: 200%;
-    }
-    .timeline-item-date:before{
-    	content:0;
-    }
-    .timeline-item-date:after{
-    	content:" ";
-    	
-    }
 }
 @media screen and (max-width:450px){
     .icons{
