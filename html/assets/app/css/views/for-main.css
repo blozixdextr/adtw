@@ -276,6 +276,9 @@ footer .fa:before {
     .education-steps .step p {
         padding: 0 20px;
     }
+    .about-us.window-bg p{
+    	padding:0 10px;
+    }
     .education-steps{
     	height:auto;
     }
