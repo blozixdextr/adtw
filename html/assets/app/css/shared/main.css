@@ -244,7 +244,7 @@ wrapper {
  padding-bottom: 170px;
 }
 .work-column>h1 {
-	margin:13px 0 25px;
+	margin:3px 0 25px;
 }
 .second-nav .head-nav{
     margin-bottom:0;
@@ -355,7 +355,7 @@ padding: 10px;
 .second-page .nav-column h2{
 	font-size:20px;
 	margin-bottom:15px;
-	margin-top:2px;
+	margin-top:6px;
 }
 .second-page .work-column-floats>div{
     padding: 10px 20px 20px;
@@ -761,9 +761,6 @@ table .success .streamer-online-view{
     color: #6441A5;
     font-size: 20px;
     margin-left: 10px;
-}
-.booking-table-first{
-	margin-top:11px;
 }
 .label-pad{
 	max-width:150px;
