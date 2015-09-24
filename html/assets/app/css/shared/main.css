@@ -711,6 +711,13 @@ table .success .streamer-online-view{
 .booking-table th{
 	border-top:0 !important;
 }
+.nav-column-item a{
+    	color:#6441A5 !important;
+    }
+    .nav-column-item a:hover{
+    	color:#523588 !important;
+    	text-decoration:none;
+    }
 /*		booking table 	*/
 
 .streamer-page{
@@ -876,13 +883,6 @@ table .success .streamer-online-view{
     }
     .second-page .second-nav #header{
     	margin-bottom:10px;
-    }
-    .nav-column-item a{
-    	color:#6441A5 !important;
-    }
-    .nav-column-item a:hover{
-    	color:#523588 !important;
-    	text-decoration:none;
     }
     .work-column-inside h2{
     	text-align:center;
