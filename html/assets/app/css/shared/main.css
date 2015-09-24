@@ -795,11 +795,12 @@ table .success .streamer-online-view{
 .page .work-column .form-group-2 .checkbox{
 	display:block;
 }
-
+.form-group-1{
+	margin-bottom:25px;
+}
 .form-inline div{
 }
 .form-inline div label.control-label{
-	display:block;
 	text-align:center;
 }
 .form-inline .games{
