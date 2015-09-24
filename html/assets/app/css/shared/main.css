@@ -246,7 +246,9 @@ html {
 wrapper {
  padding-bottom: 170px;
 }
-
+..work-column>div>h1 {
+	margin:25px 0 0px;
+}
 .second-nav .head-nav{
     margin-bottom:0;
     vertical-align: top;
