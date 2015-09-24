@@ -882,6 +882,9 @@ table .success .streamer-online-view{
     .streamers-list{
         text-align: center;
     }
+    .second-page .nav-settings, .second-page .nav-user{
+    	margin-top:0;
+    }
 }
 @media screen and (max-width:750px){
     .handle{
@@ -945,9 +948,6 @@ table .success .streamer-online-view{
     .nav-column div{
         text-align: left;
         display: inline-block;
-    }
-    .nav-settings{
-        margin-right: 40px;
     }
     .second-page .work-column{
         width: 100%;
