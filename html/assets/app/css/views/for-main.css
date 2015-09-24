@@ -245,13 +245,20 @@ footer .fa:before {
     .bottom-info-img{
     	margin:0 10px;
     }
-    .bottom-info-img{
-    	width:400px;
+    .bottom-info-img img{
+    	width:450px;
+    }
+    .about-us ul{
+    	height:auto;
     }
     .about-us li{
         width: 49%;
-        padding: 20px 0;
+        padding: 20px 50px;
         box-sizing: border-box;
+    }
+    .bottom-info-one{
+        padding-left: 30px;
+    	padding-right: 30px;
     }
 }
 @media screen and (max-width:992px){
