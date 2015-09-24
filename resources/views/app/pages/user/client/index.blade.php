@@ -38,8 +38,9 @@
 @endsection
 
 @section('content')
-    <h1 class="h1-timeline"><i class="fa fa-area-chart"></i> Client Timeline</h1>
-    <div class="timeline">
+    <div class="panel panel-default">
+    <h1 class="h1-timeline panel-heading"><i class="fa fa-area-chart"></i> Client Timeline</h1>
+    <div class="timeline panel-body">
         @forelse($notifications as $n)
             <div class="timeline-item">
                 <div class="timeline-item-content">
@@ -62,9 +63,11 @@
             <em>no timeline</em>
         @endforelse
     </div>
+    </div>
     @if (count($notifications) > 0)
         <div id="timelineAutoload"></div>
         <input type="hidden" value="1" id="timelinePage" name="timelinePage">
     @endif
+    
 
 @endsection
