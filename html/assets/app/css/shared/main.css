@@ -812,7 +812,10 @@ table .success .streamer-online-view{
 	display:flex;
 }
 .new-flex .flex-right-side{
-	padding-right:30px;
+	margin-left:10%;
+}
+.new-flex .flex-left-side{
+	margin-left:10%;
 }
 .new-flex .flex-right-side>div{
 	margin-left:30%;
