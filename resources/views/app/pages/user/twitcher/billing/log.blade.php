@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="panel panel-default booking-table-first">
-    <h1 class="panel-heading">Withdraw log</h1>
+    <h1 class="panel-heading"><i class="fa fa-reply"></i> Withdraw log</h1>
     <table class="table panel-body booking-table">
             <tr>
                 <th>#</th>
