@@ -308,6 +308,9 @@ footer .fa:before {
     .main-page header img{
         width: 180px;
     }
+    .main-page .in-page {
+    max-width: 950px;
+	}
     footer{
         position: static;
         width: 100%;
