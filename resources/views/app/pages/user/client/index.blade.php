@@ -39,7 +39,7 @@
 
 @section('content')
     <div class="panel panel-default">
-    <h1 class="h1-timeline panel-heading"><i class="fa fa-area-chart"></i> Client Timeline</h1>
+    <h2 class="h1-timeline panel-heading"><i class="fa fa-area-chart"></i> Client Timeline</h2>
     <div class="timeline panel-body">
         @forelse($notifications as $n)
             <div class="timeline-item">
