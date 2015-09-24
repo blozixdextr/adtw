@@ -279,6 +279,12 @@ footer .fa:before {
     .shadow-fon{
         padding: 2em 0 1em 0;
     }
+    .education-steps{
+    	height:auto;
+    }
+    .education-steps{
+    	max-width:400px;
+    }
     #header{
         position: static;
         width: 100%;
