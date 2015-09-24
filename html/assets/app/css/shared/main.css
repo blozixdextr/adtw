@@ -801,7 +801,7 @@ table .success .streamer-online-view{
 .form-inline div{
 }
 .form-inline div label.control-label{
-	text-align:center;
+	text-align:left;
 }
 .form-inline .games{
 	width:100%;
