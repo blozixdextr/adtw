@@ -811,6 +811,12 @@ table .success .streamer-online-view{
 .new-flex{
 	display:flex;
 }
+.new-flex .flex-right-side{
+	padding-right:30px;
+}
+.new-flex .flex-right-side>div{
+	margin-left:30%;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
