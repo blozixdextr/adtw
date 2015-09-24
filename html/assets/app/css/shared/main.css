@@ -807,6 +807,11 @@ table .success .streamer-online-view{
 	width:100%;
 }
 
+
+.new-flex{
+	display:flex;
+}
+
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
