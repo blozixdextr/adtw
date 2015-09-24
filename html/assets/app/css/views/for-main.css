@@ -276,14 +276,22 @@ footer .fa:before {
     .education-steps .step p {
         padding: 0 20%;
     }
-    .shadow-fon{
-        padding: 2em 0 1em 0;
-    }
     .education-steps{
     	height:auto;
     }
     .bottom-info-img img{
     	max-width:400px;
+    }
+    .bottom-info-one{
+    	flex-direction:column-reverse;
+    }
+    .bottom-info-content{
+    	margin-top:25px;
+    }
+    .intro-main .title-place-left,.intro-main .title-place-right{
+    	display:block;
+    	margin:15px auto;
+    	
     }
     #header{
         position: static;
