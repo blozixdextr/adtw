@@ -826,7 +826,10 @@ table .success .streamer-online-view{
 	margin-bottom:10px;
 }
 .page .new-flex .flex-right-side .checkbox{
-	padding-top:0;
+	padding-top:8px;
+}
+.page .new-flex .flex-left-side select{
+	margin-top:8px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
