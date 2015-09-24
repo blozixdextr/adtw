@@ -2,16 +2,15 @@
     <h2>Balance:<br> $ {{ number_format($user->balance, 2) }}</h2>
     <h1>Dashboard</h1>
     <div class="nav-settings">
-        <p class="nav-column-item"><a href="/user/client">Timeline</a></p>
+        <p class="nav-column-item"><i class="fa fa-area-chart"></i> <a href="/user/client">Timeline</a></p>
         <p class="nav-column-item"><a href="/user/client/search">Search & Buy</a></p>
         <p class="nav-column-item"><a href="/user/client/ads">My Ads</a></p>
 
     </div>
     <div class="nav-user">
         <h4 class="nav-column-title">User</h4>
-        <p class="nav-column-item"><a href="/user/client/billing">Billing</a></p>
-        <p class="nav-column-item"><a href="/user/client/profile">My Profile</a></p>
-        <p class="nav-column-item"><a href="/user/client/notification">Notifications</a></p>
-        <p class="nav-column-item"><a href="/auth/logout">Logout</a></p>
+        <p class="nav-column-item"><i class="fa fa-money"></i> <a href="/user/client/billing">Billing</a></p>
+        <p class="nav-column-item"><i class="fa fa-user"></i> <a href="/user/client/profile">My Profile</a></p>
+        <p class="nav-column-item"><i class="fa fa-sign-out"></i> <a href="/auth/logout">Logout</a></p>
     </div>
 </div>
