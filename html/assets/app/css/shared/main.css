@@ -54,7 +54,9 @@ a:hover{
 .small{
     font-size: 12px;
 }
-
+.width-50{
+	width:50%;
+}
 /*                            fonts             */
 @font-face {
 font-family: FippsRegular;
