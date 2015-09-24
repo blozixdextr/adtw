@@ -792,7 +792,7 @@ table .success .streamer-online-view{
     width: 48%;
     display: inline-block;
 }
-.page .work-column .form-group-2 label{
+.page .work-column .form-group-2 .checkbox{
 	display:block;
 }
 
