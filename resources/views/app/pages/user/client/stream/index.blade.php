@@ -24,7 +24,7 @@
 @section('content')
     <div class="booking-table booking-table-first panel panel-default">
         <div class="panel-heading">
-            <h3><i class="fa fa-calendar"></i> My Orders</h3>
+            <h2><i class="fa fa-calendar"></i> My Orders</h2>
         </div>
         <div class="panel-body">
             <div class="booking-table-row booking-name">
@@ -64,7 +64,7 @@
     </div>
 
     <div class="panel panel-default">
-    <h3 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h3>
+    <h2 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h2>
     <table class="table panel-body booking-table">
             <tr>
                 <th class="col-xs-3">Stream Date</th>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="panel panel-default">
-    <h3 class="panel-heading"><i class="fa fa-minus-circle"></i> Inactive banners</h3>
+    <h2 class="panel-heading"><i class="fa fa-minus-circle"></i> Inactive banners</h2>
     <table class="table panel-body booking-table">
             <tr>
                 <th class="col-xs-3">Banner</th>
