@@ -244,7 +244,10 @@ wrapper {
  padding-bottom: 170px;
 }
 .work-column>h1 {
-	margin:2px 0 25px;
+	margin:12px 0 11px;
+}
+.panel-h2{
+	margin-top:4px;
 }
 .second-nav .head-nav{
     margin-bottom:0;
