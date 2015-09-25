@@ -22,7 +22,9 @@
                     <div class="work-column-inside">
                         @include('app.includes.alerts')
                         @include('app.includes.errors')
-                        @yield('content')
+                        <div class="row">
+                            @yield('content')
+                        </div>
                     </div>
                 </div>
                 <div class="clear"></div>
