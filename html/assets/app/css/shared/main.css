@@ -1037,6 +1037,9 @@ table .success .streamer-online-view{
     .second-page .second-nav{
     	padding:10px 0;
     }
+    .nav-user{
+    	margin-bottom:0;
+    }
 }
 @media screen and (max-width:750px){
 	.need-scroll{
