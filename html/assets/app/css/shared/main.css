@@ -1066,4 +1066,7 @@ table .success .streamer-online-view{
 	.page .bil-control{
 		flex-direction:column;
 	}
+	.bil-control>div:first-child{
+		margin-bottom:30px;
+	}
 }
