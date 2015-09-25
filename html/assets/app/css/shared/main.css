@@ -1077,6 +1077,13 @@ table .success .streamer-online-view{
     	margin-bottom:0;
     }
     .profile-table .form-group-1.width-50{
-		width:100%;
+	width:100%;
 	}
+    p.nav-column-item {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .second-page .nav-column h4{
+        font-size:26px;
+    }
 }
