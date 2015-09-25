@@ -1037,7 +1037,7 @@ table .success .streamer-online-view{
     .second-page .second-nav{
     	padding:10px 0;
     }
-    .nav-user{
+    ..second-page .nav-user{
     	margin-bottom:0;
     }
 }
