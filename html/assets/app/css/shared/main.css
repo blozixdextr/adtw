@@ -505,7 +505,7 @@ padding: 10px;
 }
 /*                    footer             */
 
-footer{
+.second-page footer{
     padding: 20px 0;
     left: 0px;
  position: absolute;
@@ -514,27 +514,27 @@ footer{
     width: 100%;
     background-color: #6441A5;
 }
-footer .icons li{
+.second-page footer .icons li{
     display: inline-block;
     padding: 0px 1em 0px 0px;
 }
-#footer .icons li:last-child{
+.second-page #footer .icons li:last-child{
 	padding:0;
 }
-#footer .icons li a{
+.second-page #footer .icons li a{
     color: #fff;
     font-size:100% !important;
 }
-#footer .copyright{
+.second-page #footer .copyright{
     color: #fff;
     font-size: 0.8em;
     margin: 1em 0px 0px;
     padding: 0px;
 }
-#footer .fa:before {
+.second-page #footer .fa:before {
     font-size: 16px;
 }
-#footer .copyright li a{
+.second-page #footer .copyright li a{
     color:#fff;
     text-decoration: underline;
 }
