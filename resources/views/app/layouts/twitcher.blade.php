@@ -19,9 +19,11 @@
             <div class="page">
                 @include('app.includes.head.menu.twitcher.left')
                 <div class="work-column">
-                    @include('app.includes.alerts')
-                    @include('app.includes.errors')
-                    @yield('content')
+                    <div class="work-column-inside">
+                        @include('app.includes.alerts')
+                        @include('app.includes.errors')
+                        @yield('content')
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
