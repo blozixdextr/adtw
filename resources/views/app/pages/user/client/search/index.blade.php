@@ -39,7 +39,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 </div>
                             @endforeach
                         </div>
-                    
+                    </div>
                 
 
                 
