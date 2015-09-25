@@ -22,8 +22,8 @@
 @endsection
 
 @section('content')
-    <div class="booking-table booking-table-first panel panel-default">
-        <div class="panel-heading">
+    <div class="booking-table-first panel panel-default need-scroll">
+        <div class="panel-heading booking-table">
             <h2><i class="fa fa-calendar"></i> My Orders</h2>
         </div>
         <div class="panel-body">
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default need-scroll">
+    <div class="panel panel-default">
     <h2 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h2>
     <table class="table panel-body booking-table">
             <tr>
@@ -89,7 +89,7 @@
     </table>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default need-scroll">
     <h2 class="panel-heading"><i class="fa fa-minus-circle"></i> Inactive banners</h2>
     <table class="table panel-body booking-table">
             <tr>
