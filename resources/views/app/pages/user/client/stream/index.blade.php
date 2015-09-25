@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default need-scroll">
     <h2 class="panel-heading"><i class="fa fa-twitch"></i> Streams</h2>
     <table class="table panel-body booking-table">
             <tr>
