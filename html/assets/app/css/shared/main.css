@@ -835,6 +835,9 @@ table .success .streamer-online-view{
 .need-scroll{
 	overflow:auto;
 }
+.need-scroll-little{
+	overflow:auto;
+}
 
 .new-flex{
 	display:flex;
@@ -1049,6 +1052,15 @@ table .success .streamer-online-view{
 		width:700px;
 	}
 	.need-scroll .panel-heading{
+		width:700px;
+	}
+	.need-scroll-little{
+		overflow:auto;
+	}
+	.need-scroll-little .panel-body{
+		width:700px;
+	}
+	.need-scroll-little .panel-heading{
 		width:700px;
 	}
 }
