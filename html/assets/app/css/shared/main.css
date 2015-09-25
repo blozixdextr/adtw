@@ -1039,7 +1039,7 @@ table .success .streamer-online-view{
 	.need-scroll{
 		overflow:auto;
 	}
-	.need-scroll .booking-table{
+	.need-scroll .panel-body{
 		width:700px;
 	}
 	.need-scroll .panel-heading{
