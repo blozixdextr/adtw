@@ -9,9 +9,9 @@
 @section('content')
     <h1><i class="fa fa-university"></i> Billing</h1>
     <div class="work-column-item bil-control">
-        <div class="col-md-3 col-sm-3 col-xs-3"><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
-        <div class="col-md-3 col-sm-3 col-xs-3"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
-        <div class="col-md-6 col-sm-6 col-xs-6" class="work-column-link">
+        <div class="col-md-3 col-sm-3 col-xs-12"><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
+        <div class="col-md-3 col-sm-3 col-xs-12"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
+        <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
     </div>
