@@ -65,7 +65,7 @@
             </tbody>
         </table>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default need-scroll-little">
         <h2 class="panel-heading"><i class="fa fa-newspaper-o"></i> Timelogs</h2>
         <table class="table booking-table panel-body">
             <tr class="success-1">
