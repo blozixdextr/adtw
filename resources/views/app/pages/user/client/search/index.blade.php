@@ -128,7 +128,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
             {!! Form::close() !!}
         </div>
     </div>
-
+    <div class="height30"></div>
     <h2><i class="fa fa-search"></i> Search results</h2>
     
     <div class="streamers-list-new">
