@@ -1063,4 +1063,7 @@ table .success .streamer-online-view{
 	.need-scroll-little .panel-heading{
 		width:400px;
 	}
+	.page .bil-control{
+		flex-direction:column;
+	}
 }
