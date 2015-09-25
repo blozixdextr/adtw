@@ -13,7 +13,6 @@ label[for="billing-alert"]{
     top:13px;
 }
 .bil-control>div {
-    width: 33%;
     box-sizing: border-box;
 }
 .bil-control>div span{
