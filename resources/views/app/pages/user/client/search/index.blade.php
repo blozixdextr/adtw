@@ -39,7 +39,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 </div>
                             @endforeach
                         </div>
-                    </div>
+                    
                 
 
                 
@@ -57,7 +57,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                             @endforeach
                         </div>
                     </div>
-                
+                </div>
                 <div class="games col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
                     {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
