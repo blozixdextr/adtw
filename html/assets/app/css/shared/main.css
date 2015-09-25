@@ -999,6 +999,9 @@ table .success .streamer-online-view{
     .nav-column div{
     	display:block;
     }
+    .in-inline{
+    	flex-direction:column;
+    }
 }
 @media screen and (max-width:450px){
     .icons{
