@@ -25,7 +25,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
 
-                <div class="language-and-banner col-lg-3">
+                <div class="language-and-banner col-lg-3 col-md-3 col-sm-3 col-xs-3>
                     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
                         {!! Form::label('language', 'Languages', ['class' => 'control-label']) !!}
                         <div class="">
@@ -58,7 +58,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                 </div>
-                <div class="games col-lg-6">
+                <div class="games col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
                     {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
                         <div class="">
@@ -92,7 +92,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                     </div>
                 </div>
                 
-                        <div class="games-followers col-lg-3">
+                        <div class="games-followers col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                             <div class="form-group {!! ($errors && $errors->has('name')) ? ' has-error' : '' !!}">
                                 {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
