@@ -1094,4 +1094,8 @@ table .success .streamer-online-view{
     .second-page .nav-column h4{
         font-size:26px;
     }
+    .new-flex .flex-right-side,
+    .new-flex .flex-left-side{
+    	margin-left:0;
+    }
 }
