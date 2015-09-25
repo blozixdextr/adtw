@@ -832,6 +832,9 @@ table .success .streamer-online-view{
 .booking-table-first{
 	margin-top:3px;
 }
+.need-scroll{
+	overflow:auto;
+}
 
 .new-flex{
 	display:flex;
@@ -899,9 +902,6 @@ table .success .streamer-online-view{
     }
     .second-page .second-nav #header{
     	margin-bottom:10px;
-    }
-    .work-column-inside h2{
-    	text-align:center;
     }
     .head-nav{
         display: block;
@@ -1012,7 +1012,7 @@ table .success .streamer-online-view{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 2px 120px;
+        padding: 7px 2px 140px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;
@@ -1034,4 +1034,15 @@ table .success .streamer-online-view{
     .second-page .second-nav{
     	padding:10px 0;
     }
+}
+@media screen and (max-width:750px){
+	.need-scroll{
+		overflow:auto;
+	}
+	.need-scroll .booking-table{
+		width:700px;
+	}
+	.need-scroll .panel-heading{
+		width:700px;
+	}
 }
