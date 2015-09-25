@@ -518,23 +518,23 @@ padding: 10px;
     display: inline-block;
     padding: 0px 1em 0px 0px;
 }
-.second-page footer .icons li:last-child{
+#footer .icons li:last-child{
 	padding:0;
 }
-.second-page footer .icons li a{
+#footer .icons li a{
     color: #fff;
     font-size:100% !important;
 }
-.second-page footer .copyright{
+#footer .copyright{
     color: #fff;
     font-size: 0.8em;
     margin: 1em 0px 0px;
     padding: 0px;
 }
-.second-page footer .fa:before {
+#footer .fa:before {
     font-size: 16px;
 }
-.second-page footer .copyright li a{
+#footer .copyright li a{
     color:#fff;
     text-decoration: underline;
 }
