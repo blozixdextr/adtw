@@ -1043,6 +1043,9 @@ table .success .streamer-online-view{
 	.profile-table .form-group-1.width-50{
 		width:75%;
 	}
+	.new-flex{
+	    flex-direction: column;
+	}
 }
 @media screen and (max-width:450px){
     .icons{
