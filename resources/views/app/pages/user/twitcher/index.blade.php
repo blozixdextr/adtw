@@ -69,7 +69,7 @@
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
         @foreach($bannerTypes as $bt)
-            <div class="row">
+            <div class="row ready-banner">
                 <div class="col-xs-6">{{ $bt->title }}</div>
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                     <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
