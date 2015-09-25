@@ -1,7 +1,7 @@
 @extends('app.layouts.client')
 
 @section('content')
-    <div class="panel panel-default booking-table-first">
+    <div class="panel panel-default booking-table-first need-scroll">
         <h2 class="panel-heading"><i class="fa fa-credit-card"></i> Transfers <a href="/user/client/billing/log">Payments</a></h2>
         <table class="table panel-body booking-table">
             
