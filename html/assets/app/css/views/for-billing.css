@@ -99,7 +99,7 @@ section {
 .second-page .work-column-floats h3 {
     margin-top: 0;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .tabs label {
     padding: 4px 0;
   }
