@@ -36,7 +36,7 @@
             @endif
         </p>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default need-scroll">
         <h2 class="panel-heading"><i class="fa fa-upload"></i> Your banners in stream</h2>
         <table class="table  booking-table  panel-body">
                 <tr>
