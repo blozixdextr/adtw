@@ -164,6 +164,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 @media screen and (max-width:450px){
     .streamer-id{
         width:98%;
+        margin-bottom: 40px;
     }
     .streamers-list-new{
         justify-content:center;
