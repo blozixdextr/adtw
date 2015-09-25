@@ -14,7 +14,7 @@ padding: 0 6px;
 .streamer-id{
     color:#4A4A4A;
     width: 32%;
-    margin: 30px 11px 30px 0;
+    margin-top: 30px;
 }
 .streamer-id:nth-child(3n){
     margin-right:0;
