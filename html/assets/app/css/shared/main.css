@@ -1049,6 +1049,9 @@ table .success .streamer-online-view{
     .second-page .nav-user{
     	margin-bottom:0;
     }
+    .profile-table .form-group-1.width-50{
+		width:100%;
+	}
 }
 @media screen and (max-width:750px){
 	.need-scroll{
@@ -1074,5 +1077,8 @@ table .success .streamer-online-view{
 	}
 	.bil-control>div:first-child{
 		margin-bottom:30px;
+	}
+	.profile-table .form-group-1.width-50{
+		width:75%;
 	}
 }
