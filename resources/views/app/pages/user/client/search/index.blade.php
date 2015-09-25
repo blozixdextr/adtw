@@ -25,7 +25,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
 
-                <div class="language-and-banner col-lg-3 col-md-3 col-sm-3 col-xs-3>
+                <div class="language-and-banner col-lg-3 col-md-3 col-sm-3 col-xs-3">
                     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
                         {!! Form::label('language', 'Languages', ['class' => 'control-label']) !!}
                         <div class="">
