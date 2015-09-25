@@ -1058,9 +1058,9 @@ table .success .streamer-online-view{
 		overflow:auto;
 	}
 	.need-scroll-little .panel-body{
-		width:700px;
+		width:400px;
 	}
 	.need-scroll-little .panel-heading{
-		width:700px;
+		width:400px;
 	}
 }
