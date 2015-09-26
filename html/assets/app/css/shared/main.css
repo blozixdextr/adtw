@@ -9,6 +9,9 @@
 ul,ol{
     list-style: none;
 }
+body .second-page .width-80{
+	width:80%;
+}
 .clear{
     clear: both;
 }
@@ -19,6 +22,10 @@ a{
 a:hover{
     text-decoration: none !important;
     color:#6441A5;
+}
+
+.no-border{
+	border:0 !important;
 }
 .right{
     float: right;
@@ -47,7 +54,9 @@ a:hover{
 .small{
     font-size: 12px;
 }
-
+.width-50{
+	width:50%;
+}
 /*                            fonts             */
 @font-face {
 font-family: FippsRegular;
@@ -234,7 +243,12 @@ html {
 wrapper {
  padding-bottom: 170px;
 }
-
+.work-column>h1 {
+	margin: 14px 0 8px;
+}
+.panel-h2{
+	margin-top:4px;
+}
 .second-nav .head-nav{
     margin-bottom:0;
     vertical-align: top;
@@ -308,7 +322,6 @@ wrapper {
     width: 80%;
     padding: 10px;
 }
-
 .second-page .work-column .work-column-inside {
     margin: 0 20px;
 }
@@ -317,8 +330,20 @@ wrapper {
     margin-top: 10px;
     padding: 10px;
     width: 20%;
-    background-color: rgba(100,65,165, 0.03);
 }
+
+.second-page .nav-settings,
+.second-page .nav-user{
+background-color: rgba(100,65,165, 0.03);
+padding: 10px;
+    margin-bottom: 20px;
+    margin-top: -8px;
+}
+.second-page .nav-settings h4,
+.second-page .nav-user h4{
+    margin: 0px 0 20px;
+}
+
 .second-page  .nav-column h1{
     font-family: Roboto Slab;
     font-size: 24px;
@@ -327,14 +352,13 @@ wrapper {
     font-size: 18px;
 }
 .second-page  .nav-column h4{
-    margin: 20px 0 10px;
     font-family: Roboto Slab;
     font-size: 20px;
 }
 .second-page .nav-column h2{
 	font-size:20px;
-	margin-bottom:5px;
-	margin-top:24px;
+	margin-bottom:15px;
+	margin-top:0px;
 }
 .second-page .work-column-floats>div{
     padding: 10px 20px 20px;
@@ -446,6 +470,14 @@ wrapper {
     color:#fff;
     border:2px solid #6441A5;
 }
+.btn-white.little{
+	font-size:12px;
+	padding:1px 5px;
+}
+.btn-white:visited,
+.btn-white:focus{
+	text-decoration:none !important;
+}
 .btn-violet{
     cursor: pointer;
     background-color: #6441A5;
@@ -473,7 +505,7 @@ wrapper {
 }
 /*                    footer             */
 
-.second-page footer{
+footer{
     padding: 20px 0;
     left: 0px;
  position: absolute;
@@ -482,27 +514,27 @@ wrapper {
     width: 100%;
     background-color: #6441A5;
 }
-.second-page footer .icons li{
+footer .icons li{
     display: inline-block;
     padding: 0px 1em 0px 0px;
 }
-.second-page footer .icons li:last-child{
+footer .icons li:last-child{
 	padding:0;
 }
-.second-page footer .icons li a{
+footer .icons li a{
     color: #fff;
     font-size:100% !important;
 }
-.second-page footer .copyright{
+footer .copyright{
     color: #fff;
     font-size: 0.8em;
     margin: 1em 0px 0px;
     padding: 0px;
 }
-.second-page footer .fa:before {
+footer .fa:before {
     font-size: 16px;
 }
-.second-page footer .copyright li a{
+footer .copyright li a{
     color:#fff;
     text-decoration: underline;
 }
@@ -654,28 +686,192 @@ table .success .streamer-online-view{
 	border-bottom:1px solid #DDDDDD;
 }
 .booking-table-row>div{
-	box-sizing:border-box;
-	text-align:center;
+	padding:10px;
+}
+.booking-table-row>div>p{
+	margin-bottom:0;
 }
 .booking-table p{
 	display:inline-block;
-	padding:10px;
 	margin-bottom:0px;
 }
-.booking-table-row .booking-ban-size{width:20%;text-align:left;}
-.booking-table-row .booking-streamer{width:45%;}
-.booking-table-row .booking-cost-limit{width:15%;}
-.booking-table-row .booking-actions{width:20%;}
 
 .booking-actions i{
 	margin-left:15px;
 }
-
-/*		booking table 	*/
-
-
+.work-column h1>i.fa{
+	font-size:30px;
+	color:#828282;
+}
+.work-column h2>i.fa{
+	font-size:20px;
+	color:#828282;
+}
+.work-column h3>i.fa{
+	font-size:20px;
+	color:#828282;
+}
 .booking-online-img img{
 	width:320px;
+}
+.booking-table em{
+	padding:10px;
+	display:block;
+}
+.booking-table{
+    border-collapse: separate !important;
+}
+.booking-table th{
+	border-top:0 !important;
+}
+.nav-column-item a{
+    	color:#6441A5 !important;
+    }
+    .nav-column-item a:hover{
+    	color:#523588 !important;
+    	text-decoration:none;
+    }
+/*		booking table 	*/
+
+.streamer-page{
+	    margin-left: 40px;
+    margin-top: 31px;
+}
+.streamer-page>p{
+    margin-bottom: 25px;
+}
+.streamer-page-reg{
+	margin-bottom: 30px;
+}
+.streamer-page>div:last-child{
+	    margin-bottom: 40px;
+}
+.ad-varient-row{
+        margin: 20px 30px !important;
+}
+.work-column-inside>div>h1:first-child{
+	margin:14px 0 8px;
+}
+.work-column-inside>div>h2{
+	margin-bottom:20px;
+}
+
+.panel h2, .panel h4, .panel h3, .panel h1{
+	margin:0;
+}
+.booking-table i.fa {
+    color: #6441A5;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.label-pad{
+	max-width:150px;
+}
+.streamer-online-view {
+    display: inline-block;
+}
+.success-1 td, .danger-1 td{
+	text-align:center;
+}
+.success-1 td:first-child, .danger-1 td:first-child{
+	text-align:left;
+}
+
+.in-inline{
+	display:flex;
+	margin:30px 0 10px;
+	justify-content:space-between;
+}
+.in-inline p{
+	font-size:22px;
+}
+.danger-1 em{
+	display:inline;
+}
+.work-column-inside .form-group-1>label{
+	padding-left:0;
+	margin-bottom:10px;
+	text-align:left;
+}
+.work-column-inside .form-group-1>div{
+	padding-left:0;
+}
+.form-group-1 button{
+	text-align:center;
+	padding: 2px 20px;
+	margin-top: 35px;
+}
+.form-group-1.width-50{
+	margin:0 auto 20px;
+}
+.games{
+    width:48%;
+}
+.games-followers{
+    width:25%;
+}
+.page .work-column .games .checkbox{
+    width: 48%;
+    display: inline-block;
+}
+.page .work-column .form-group-2 .checkbox{
+	display:block;
+}
+.form-group-1{
+	margin-bottom:25px;
+}
+.form-inline div{
+}
+.form-inline div label.control-label{
+	text-align:left;
+}
+.form-inline .games{
+	width:100%;
+}
+
+.booking-table-first{
+	margin-top:3px;
+}
+.need-scroll{
+	overflow:auto;
+}
+.need-scroll-little{
+	overflow:auto;
+}
+
+.new-flex{
+	display:flex;
+}
+.new-flex .flex-right-side{
+	margin-left:10%;
+}
+.new-flex .flex-left-side{
+	margin-left:10%;
+}
+.new-flex .flex-left-side{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+.work-column .new-flex .control-label{
+	margin-bottom:10px;
+}
+.page .new-flex .flex-right-side .checkbox{
+	padding-top:8px;
+}
+.page .new-flex .flex-left-side select{
+	margin-top:8px;
+}
+.need-mt-30{
+	margin-top:30px;
+}
+.profile-table{
+	margin-top:30px;
+}
+.ready-banner{
+	display:flex;
+	display: flex;
+    align-items: center;
 }
 /*            media         */
 @media screen and (max-width:1366px){
@@ -703,6 +899,9 @@ table .success .streamer-online-view{
     .streamers-list{
         text-align: center;
     }
+    .second-page .nav-settings, .second-page .nav-user{
+    	margin-top:0;
+    }
 }
 @media screen and (max-width:750px){
     .handle{
@@ -717,12 +916,6 @@ table .success .streamer-online-view{
     }
     .second-page .second-nav #header{
     	margin-bottom:10px;
-    }
-    .nav-column{
-    	
-    }
-    .work-column-inside h2{
-    	text-align:center;
     }
     .head-nav{
         display: block;
@@ -769,9 +962,6 @@ table .success .streamer-online-view{
     .nav-column div{
         text-align: left;
         display: inline-block;
-    }
-    .nav-settings{
-        margin-right: 40px;
     }
     .second-page .work-column{
         width: 100%;
@@ -820,6 +1010,42 @@ table .success .streamer-online-view{
     .work-column .work-column-item.stream-add{
         padding: 0;
     }
+    .nav-column div{
+    	display:block;
+    }
+    .in-inline{
+    	flex-direction:column;
+    }
+    .need-scroll{
+		overflow:auto;
+	}
+	.need-scroll .panel-body{
+		width:700px;
+	}
+	.need-scroll .panel-heading{
+		width:700px;
+	}
+	.need-scroll-little{
+		overflow:auto;
+	}
+	.need-scroll-little .panel-body{
+		width:400px;
+	}
+	.need-scroll-little .panel-heading{
+		width:400px;
+	}
+	.page .bil-control{
+		flex-direction:column;
+	}
+	.bil-control>div:first-child{
+		margin-bottom:30px;
+	}
+	.profile-table .form-group-1.width-50{
+		width:75%;
+	}
+	.new-flex{
+	    flex-direction: column;
+	}
 }
 @media screen and (max-width:450px){
     .icons{
@@ -833,7 +1059,7 @@ table .success .streamer-online-view{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 2px 100px;
+        padding: 7px 2px 140px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;
@@ -851,5 +1077,25 @@ table .success .streamer-online-view{
     }
     .second-page .work-column-item{
         padding: 10px 5px;
+    }
+    .second-page .second-nav{
+    	padding:10px 0;
+    }
+    .second-page .nav-user{
+    	margin-bottom:0;
+    }
+    .profile-table .form-group-1.width-50{
+	width:100%;
+	}
+    p.nav-column-item {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .second-page .nav-column h4{
+        font-size:26px;
+    }
+    .new-flex .flex-right-side,
+    .new-flex .flex-left-side{
+    	margin-left:0;
     }
 }

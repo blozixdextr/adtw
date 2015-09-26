@@ -28,7 +28,7 @@
     overflow:hidden;
 }
 .main-page .in-page{
-	width:1200px;
+	width:1152px;
 	margin:0 auto;
 }
 .main-page .page center{
@@ -198,50 +198,72 @@ header .title-descr{
     color:#6441A5;
     margin-bottom: 10px;
 }
-footer{
+#footer{
     bottom: 0px;
     left: 0px;
     width:100%;
+    padding:0;
     text-align: center;
     background: url(../../images/1.png) no-repeat 0px -700px;
     background-size: cover;
     height: 180px;
     position: absolute;
 }
-footer .icons{
+#footer .icons{
     padding-top:3em;
 }
-footer .icons li{
+#footer .icons li{
     display: inline-block;
     padding: 0px 1em 0px 0px;
 }
-footer .icons li a,
+#footer .icons li a,
 .copyright li{
     color: #fff;
     text-shadow: 0px 0px 6px #6441A5;
 }
-footer .copyright{
+#footer .copyright{
     color: rgb(255, 255, 255);
     font-size: 0.8em;
     list-style: none;
     margin: 1em 0px 0px;
     padding: 0px;
 }
-footer .fa:before {
+#footer .fa:before {
     font-size: 20px;
 }
 
 @media screen and (max-width:1152px){
     .main-page .page{
-        padding: 15px 0px 20px;
+        padding: 15px 0px 220px;
+    }
+    .main-page .in-page{
+    	width:950px;
     }
     .step h3 span{
         display: block;
     }
+    .bottom-info-content,
+    .bottom-info-img{
+    	margin:0 10px;
+    }
+    .bottom-info-img img{
+    	width:400px;
+    }
+    .about-us ul{
+    	height:auto;
+    }
     .about-us li{
         width: 49%;
-        padding: 20px 0;
+        padding: 20px 50px;
         box-sizing: border-box;
+    }
+    .bottom-info-one{
+        padding-left: 30px;
+    	padding-right: 30px;
+    }
+    #footer{
+    	height: 140px;
+    	background-size: inherit;
     }
 }
 @media screen and (max-width:992px){
@@ -253,10 +275,27 @@ footer .fa:before {
         margin-bottom: 0;
     }
     .education-steps .step p {
-        padding: 0 20%;
+        padding: 0 20px;
     }
-    .shadow-fon{
-        padding: 2em 0 1em 0;
+    .about-up ul li p{
+    	padding:0 10px;
+    }
+    .education-steps{
+    	height:auto;
+    }
+    .bottom-info-img img{
+    	max-width:400px;
+    }
+    .bottom-info-one{
+    	flex-direction:column-reverse;
+    }
+    .bottom-info-content{
+    	margin-top:25px;
+    }
+    .intro-main .title-place-left,.intro-main .title-place-right{
+    	display:block;
+    	margin:15px auto;
+    	
     }
     #header{
         position: static;
@@ -273,6 +312,7 @@ footer .fa:before {
         margin-left: 0;
         width: 100%;
         padding: 0;
+        padding: 15px 0px 70px;
     }
     .main-nav{
         text-align: center;
@@ -281,11 +321,14 @@ footer .fa:before {
     .main-page header img{
         width: 180px;
     }
-    footer{
+    .main-page .in-page {
+    	max-width: 950px;
+        width: 96%;
+	}
+    #footer{
         position: static;
         width: 100%;
         background-color: #6441A5;
-        padding: 20px 0;
     }
 }
 @media screen and (max-width:750px){
@@ -295,9 +338,30 @@ footer .fa:before {
     .about-us li{
         width: 98%;
     }
+    .bottom-info-one .bottom-info-content div:last-child a{
+    	margin-left:0;
+    	padding:3px 5px;
+    }
+    .title-place-right>img, .title-place-left>img{
+    	margin-right:0;
+    }
 }
 @media screen and (max-width:450px){
     .education-steps .step p {
         padding: 0 8%;
     }
+    .bottom-info-content div h2{
+    	font-size:20px;
+    }
+    .title-place-left .choose-link-descr{
+    	top:0;
+    }
+    #footer {
+    height: auto;
+    background-size: cover;
+	}
+	.bottom-info-img img {
+		width:100%;
+		margin:0 auto;
+	}
 }

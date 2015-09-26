@@ -7,25 +7,18 @@
 
 
 @section('content')
-    <h1>Billing</h1>
-    <div class="work-column-floats">
-        <div class="left">
-            <h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
-            <div class="work-column-link">
-                <a class="btn-white" href="#payments">Refill your account</a>
-            </div>
+    <h1><i class="fa fa-university"></i> Billing</h1>
+    <div class="work-column-item bil-control">
+        <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
+            <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
-        <div class="right">
-            <h3>Usage</h3><span>${{ number_format(0, 2) }}</span>
-            <div class="work-column-link">
-                <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
-            </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6"><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
+            <div class="col-md-6 col-sm-6 col-xs-6"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
         </div>
     </div>
-    <div class="clear"></div>
+    <h1><i class="fa fa-money"></i> Payment Methods</h1>
     <div class="work-column-item" id="payments">
-        <h3>Payment Methods</h3>
-
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" class="tab" checked="">
             <label for="tab1" title="Credit Cards" class="tab">Credit Cards</label>
@@ -33,7 +26,7 @@
             <input id="tab2" type="radio" name="tabs" class="tab">
             <label for="tab2" title="Paypal" class="tab">Paypal</label>
             <section id="content1">
-                <div class="sect-content violet">
+                <div class="sect-content">
                         <div class="row-wrap">
                             {!! Form::open(['url' => '/user/client/billing/card', 'class' => 'form-horizontal']) !!}
                             <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
@@ -90,7 +83,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-default">Pay now</button>
+                                    <button type="submit" class="btn-white">Pay now</button>
                                 </div>
                             </div>
                             {!! Form::close() !!}
@@ -100,7 +93,7 @@
                         </div>
             </section>
             <section id="content2">
-                <div class="sect-content violet">
+                <div class="sect-content">
                     <div class="row">
                         {!! Form::open(['url' => '/user/client/billing/paypal', 'class' => 'form-horizontal']) !!}
                         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
@@ -109,8 +102,8 @@
                                 {!! Form::text('amount', old('amount', 10), ['class' => 'form-control', 'placeholder' => 'Amount', 'required' => 'required', 'style' => 'width:120px;display:inline-block']) !!} USD
                                 {!! Form::errorMessage('amount') !!}
                             </div>
-                            <div class="col-sm-3">
-                                <button type="submit" class="btn btn-default">Pay with Paypal</button>
+                            <div class="col-sm-5">
+                                <button type="submit" class="need-mt-20 btn-white">Pay with Paypal</button>
                             </div>
                         </div>
                         {!! Form::close() !!}

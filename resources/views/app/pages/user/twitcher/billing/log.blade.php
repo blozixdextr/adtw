@@ -1,9 +1,9 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1>Withdraw log</h1>
-    <table class="table table-striped">
-        <thead>
+    <div class="panel panel-default booking-table-first">
+    <h1 class="panel-heading"><i class="fa fa-reply"></i> Withdraw log</h1>
+    <table class="table panel-body booking-table">
             <tr>
                 <th>#</th>
                 <th>date</th>
@@ -14,7 +14,6 @@
                 <th>transaction number</th>
                 <th>comment</th>
             </tr>
-        </thead>
 
         @forelse ($withdrawals as $w)
             @if ($w->status == 'done')
@@ -38,11 +37,12 @@
             </tr>
         @empty
             <tr>
-                <td colspan="7"><em>no withdrawals yet</em></td>
+                <td colspan="8"><em>no withdrawals yet</em></td>
             </tr>
         @endforelse
 
     </table>
+    </div>
 
     {!! $withdrawals->render() !!}
 

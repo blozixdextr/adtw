@@ -2,6 +2,22 @@
 label[for="billing-alert"]{
     font-size: 14px;
 }
+.page .bil-control{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.bil-control .btn-white{
+    position:relative;
+    top:13px;
+}
+.bil-control>div {
+    box-sizing: border-box;
+}
+.bil-control>div span{
+    font-size:18px;
+}
 .tabs {
   max-width: 800px;
   padding: 0px;
@@ -55,7 +71,6 @@ section {
 .tabs input:checked + label {
   color: #000;
   border: 1px solid #ddd;
-  border-top: 2px solid #6441A5;
   border-bottom: 1px solid #fff;
   background: #fff;
   cursor:pointer;
@@ -84,9 +99,9 @@ section {
 .second-page .work-column-floats h3 {
     margin-top: 0;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .tabs label {
-    padding: 15px;
+    padding: 4px 0;
   }
 }
 @media screen and (max-width: 992px) {
@@ -118,6 +133,9 @@ section {
     .tabs label:before {
       margin: 0;
       font-size: 18px;
+    }
+    .need-mt-20{
+        margin-top:20px;
     }
     
 }

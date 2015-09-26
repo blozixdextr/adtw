@@ -22,20 +22,26 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1>Profile</h1>
-    {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-horizontal']) !!}
-
-    <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
-        {!! Form::label('language', 'I stream in language', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
-            {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control', 'required' => 'required']) !!}
+    <h1><i class="fa fa-user"></i> Profile</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3><i class="fa fa-tag"></i> Filter</h3>
+        </div>
+        <div class="panel-body">
+    {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline form-horizontal']) !!}
+    <div class="new-flex">
+        <div class="flex-left-side">
+    <div class="form-group-1 {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
+        {!! Form::label('language', 'I stream in language', ['class' => 'control-label']) !!}
+        <div>
+            {!! Form::select('language', $languagesClean, old('language', $user->language_id), ['class' => 'form-control width-50', 'required' => 'required']) !!}
             {!! Form::errorMessage('language') !!}
         </div>
     </div>
 
-    <div class="form-group {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
-        {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
+    <div class="form-group-1 form-group-2 {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
+        {!! Form::label('banner_types', 'Choose banner sizes you accept', ['class' => 'control-label']) !!}
+        <div>
             {!! Form::errorMessage('banner_types') !!}
             @foreach($bannerTypes as $b)
                 <div class="checkbox">
@@ -47,10 +53,11 @@
             @endforeach
         </div>
     </div>
-
-    <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
-        {!! Form::label('games', 'Choose games you stream', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-9">
+    </div>
+    <div class="flex-right-side">
+    <div class="form-group-1 {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
+        {!! Form::label('games', 'Choose games you stream', ['class' => 'control-label']) !!}
+        <div class="games">
             {!! Form::errorMessage('games') !!}
             @foreach($games as $g)
                 @if (count($g->children) > 0)
@@ -79,14 +86,16 @@
             @endforeach
         </div>
     </div>
-
-    <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-9">
+    </div>
+    </div>
+    <div class="form-group-1 text-center">
+        <div>
             <button type="submit" class="btn-white">Save</button>
         </div>
     </div>
 
     {!! Form::close() !!}
-
+    </div>
+</div>
 @endsection
 

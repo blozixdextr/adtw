@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="/assets/app/css/libs/flags/css/flag-icon.min.css">
 @endsection
 @section('content')
-    <h1>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h1>
-    <h2>User's Profile</h2>
-    <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
-    <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
-    @if ($userView->language_id)
-        <p>Language: {{ $userView->language->title }}</p>
-    @endif
-    @if ($userView->type == 'twitcher')
-        <p>{{ $userView->twitch_followers }} followers</p>
-        <p>{{ $userView->twitch_videos }} videos</p>
-        <p>{{ $userView->twitch_views }} views</p>
-        <a href="/user/client/banner/{{ $userView->id }}" class="work-button">Order banner</a>
-    @endif
+    <h1>User's Profile</h1>
+    <div class="streamer-page">
+        <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
+        @if ($userView->language_id)
+            <p>Language: {{ $userView->language->title }}</p>
+        @endif
+        <div class="streamer-page-reg">
+            <p>Registered: {{ $userView->created_at->format('Y-m-d') }}</p>
+            <p>Last visit: {{ $userView->last_activity->format('Y-m-d') }}</p>
+        </div>
+        <div class="">
+        @if ($userView->type == 'twitcher')
+            <p>{{ $userView->twitch_followers }} followers</p>
+            <p>{{ $userView->twitch_videos }} videos</p>
+            <p>{{ $userView->twitch_views }} views</p>
+        @endif
+        </div>
+        <a href="/user/client/banner/{{ $userView->id }}" class="btn-white">Order banner</a>
+    </div>
 @endsection

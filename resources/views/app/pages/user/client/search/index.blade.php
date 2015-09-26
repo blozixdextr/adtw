@@ -19,13 +19,13 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
     <link rel="stylesheet" href="/assets/app/css/views/for-streamers.css">
 @endsection
 @section('content')
-    <h1>Streamers Filter</h1>
+    
     <div class="panel panel-default choose-strimer">
-        <div class="panel-heading">Filter</div>
+        <div class="panel-heading"><h2><i class="fa fa-filter"></i> Streamers Filter</h2></div>
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
 
-                <div class="language-and-banner">
+                <div class="language-and-banner col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="form-group {!! ($errors && $errors->has('language')) ? ' has-error' : '' !!}">
                         {!! Form::label('language', 'Languages', ['class' => 'control-label']) !!}
                         <div class="">
@@ -58,7 +58,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                 </div>
-                <div class="games">
+                <div class="games col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group {!! ($errors && $errors->has('games')) ? ' has-error' : '' !!}">
                     {!! Form::label('games', 'Games', ['class' => 'control-label']) !!}
                         <div class="">
@@ -92,7 +92,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                     </div>
                 </div>
                 
-                        <div class="games-followers">
+                        <div class="games-followers col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
                             <div class="form-group {!! ($errors && $errors->has('name')) ? ' has-error' : '' !!}">
                                 {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
@@ -118,6 +118,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 {!! Form::errorMessage('videos') !!}
                             </div>
                         </div>
+                    </div>
                         <div class="games-button">
                             <div class="form-group" style="margin-top:40px">
                                 <button type="submit" class="btn-white">Find</button>
@@ -127,8 +128,8 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
             {!! Form::close() !!}
         </div>
     </div>
-
-    <h2>Search results</h2>
+    <div class="height30"></div>
+    <h2><i class="fa fa-search"></i> Search results</h2>
     
     <div class="streamers-list-new">
         @forelse($twitchers as $u)
