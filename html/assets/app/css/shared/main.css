@@ -880,7 +880,9 @@ table .success .streamer-online-view{
 }
 .help-window a{
 	width:150px;
-	margin:0 auto 20px;
+	text-align:center;
+	display:inline-block;
+	margin:0 auto 20px !important;
 }
 /*            media         */
 @media screen and (max-width:1366px){
