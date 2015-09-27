@@ -886,6 +886,10 @@ table .success .streamer-online-view{
 	margin-top:20px;
     background-color:rgba(100,65,165, 0.03);
 }
+
+#foo{
+	display:none;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
