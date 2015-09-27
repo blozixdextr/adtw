@@ -34,7 +34,7 @@
         <img src="{{ $b->file }}">
     @endforeach
     <div class="clearfix"></div>
-    <h2>Start the stream</h2>
+    <h2><i class="fa fa-play"></i> Start the stream</h2>
     <div class="stream-color">
         <div class="input-group col-xs-3" id="bgColorPicker">
             <input type="text" value="#00ff00" class="form-control"  id="bgColor" />
