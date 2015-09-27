@@ -49,5 +49,8 @@
         <span class="input-group-addon"><i></i></span>
     </div>
     <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white" id="startPopup">start show now</a>
+    
+    <a href="#" onclick="toggle_visibility('foo');">Click here to toggle visibility of element #foo</a>
+    <div id="foo">This is foo</div>
 @endsection
 
