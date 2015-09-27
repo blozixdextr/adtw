@@ -26,15 +26,6 @@
             });
         });
     </script>
-    <script type="text/javascript">
-        function toggle_visibility(id) {
-           var e = document.getElementById(id);
-           if(e.style.display == 'block')
-              e.style.display = 'none';
-           else
-              e.style.display = 'block';
-        }
-    </script>
 @endsection
 
 @section('content')
@@ -49,8 +40,5 @@
         <span class="input-group-addon"><i></i></span>
     </div>
     <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white" id="startPopup">start show now</a>
-    
-    <a href="#" onclick="toggle_visibility('foo');">Click here to toggle visibility of element #foo</a>
-    <div id="foo">This is foo</div>
 @endsection
 
