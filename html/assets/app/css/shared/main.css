@@ -876,13 +876,14 @@ table .success .streamer-online-view{
 
 .help-window{
     padding:0 !important;
-    background-color:rgba(100,65,165, 0.03);
 }
 .help-window a{
 	width:150px;
 	text-align:center;
 	display:inline-block;
-	margin:0 auto 20px !important;
+}
+.help-window #foo{
+    background-color:rgba(100,65,165, 0.03);
 }
 /*            media         */
 @media screen and (max-width:1366px){
