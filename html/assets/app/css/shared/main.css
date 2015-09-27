@@ -875,7 +875,8 @@ table .success .streamer-online-view{
 }
 
 .help-window{
-	padding:0;
+    padding:0 !important;
+    background-color:rgba(100,65,165, 0.03);
 }
 /*            media         */
 @media screen and (max-width:1366px){
