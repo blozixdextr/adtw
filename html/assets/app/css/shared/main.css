@@ -884,9 +884,11 @@ table .success .streamer-online-view{
 }
 .help-window a:visited{
 	color:#000;
+	text-decoration:none;
 }
 .help-window a:focus{
 	color:#000;
+	text-decoration:none;
 }
 .help-window #foo{
 	margin-top:20px;
