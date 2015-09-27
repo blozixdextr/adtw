@@ -36,8 +36,8 @@
     <div class="clearfix"></div>
     <h2>Start the stream</h2>
     <div class="stream-color">
-        <div class="input-group" id="bgColorPicker">
-            <input type="text" value="#00ff00" class="form-control col-xs-3"  id="bgColor" />
+        <div class="input-group col-xs-3" id="bgColorPicker">
+            <input type="text" value="#00ff00" class="form-control"  id="bgColor" />
             <span class="input-group-addon"><i></i></span>
         </div>
         <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white col-xs-3" id="startPopup">start show now</a>
