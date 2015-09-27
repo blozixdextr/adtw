@@ -912,6 +912,10 @@ table .success .streamer-online-view{
 #bgColorPicker span{
 	padding: 6px 6px;
 }
+#startPopup{
+	height:34px;
+	padding:0;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
