@@ -878,9 +878,15 @@ table .success .streamer-online-view{
     padding:0 !important;
 }
 .help-window a{
-	width:150px;
-	text-align:center;
+	color:#000;
+	font-weight: 100;
 	display:inline-block;
+}
+.help-window a:visited{
+	color:#000;
+}
+.help-window a:focus{
+	color:#000;
 }
 .help-window #foo{
 	margin-top:20px;
@@ -890,6 +896,7 @@ table .success .streamer-online-view{
 #foo{
 	display:none;
 }
+
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
