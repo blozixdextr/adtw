@@ -904,7 +904,10 @@ table .success .streamer-online-view{
 .stream-color{
 	display:flex;
 	justify-content:space-between;
-	align-items:center;
+	flex-direction:column;
+}
+#bgColorPicker span{
+	padding: 6px 6px;
 }
 
 /*            media         */
