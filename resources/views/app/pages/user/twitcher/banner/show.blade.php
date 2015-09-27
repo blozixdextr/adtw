@@ -35,7 +35,7 @@
     @endforeach
     <div class="clearfix"></div>
     <h2>Start the stream</h2>
-    <div class="input-group" id="bgColorPicker" class="col-xs-8">
+    <div class="input-group col-xs-8" id="bgColorPicker">
         <input type="text" value="#00ff00" class="form-control"  id="bgColor" />
         <span class="input-group-addon"><i></i></span>
     </div>
