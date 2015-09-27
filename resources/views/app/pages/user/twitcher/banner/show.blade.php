@@ -29,7 +29,7 @@
 @endsection
 
 @section('content')
-    <h1>Banner {{ $bannerType->title }}</h1>
+    <h1><i class="fa fa-map-o"></i> Banner {{ $bannerType->title }}</h1>
     @foreach($banners as $b)
         <img src="{{ $b->file }}">
     @endforeach
