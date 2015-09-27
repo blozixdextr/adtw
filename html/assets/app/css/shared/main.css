@@ -906,6 +906,9 @@ table .success .streamer-online-view{
 	justify-content:space-between;
 	flex-direction:column;
 }
+#bgColorPicker{
+	margin-bottom:15px;
+}
 #bgColorPicker span{
 	padding: 6px 6px;
 }
