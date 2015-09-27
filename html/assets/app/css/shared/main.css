@@ -873,6 +873,10 @@ table .success .streamer-online-view{
 	display: flex;
     align-items: center;
 }
+
+.help-window{
+	padding:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
