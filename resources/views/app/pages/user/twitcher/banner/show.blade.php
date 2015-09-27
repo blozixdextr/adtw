@@ -35,11 +35,11 @@
     @endforeach
     <div class="clearfix"></div>
     <h2>Start the stream</h2>
-    <div class="input-group" id="bgColorPicker">
+    <div class="input-group" id="bgColorPicker" class="col-xs-8">
         <input type="text" value="#00ff00" class="form-control"  id="bgColor" />
         <span class="input-group-addon"><i></i></span>
     </div>
-    <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white" id="startPopup">start show now</a>
+    <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white col-xs-3" id="startPopup">start show now</a>
     <div class="height100"></div>
     <div class="col-xs-6 help-window">
         <a href="#" class="btn-white" onclick="toggle_visibility('foo');">Help</a>
