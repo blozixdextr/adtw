@@ -883,6 +883,7 @@ table .success .streamer-online-view{
 	display:inline-block;
 }
 .help-window #foo{
+	margin-top:20px;
     background-color:rgba(100,65,165, 0.03);
 }
 /*            media         */
