@@ -42,7 +42,7 @@
     <a href="/user/twitcher/banner/popup/{{ $bannerType->id }}" class="btn-white col-xs-3" id="startPopup">start show now</a>
     <div class="height100"></div>
     <div class="col-xs-6 help-window">
-        <a href="#" class="btn-white" onclick="toggle_visibility('foo');">Help</a>
+        <a href="#" onclick="toggle_visibility('foo');">Help class="fa fa-question-circle"</a>
         <div id="foo">This is foo This is foo  This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo</div>
     </div>
 @endsection
