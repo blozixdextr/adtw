@@ -6,6 +6,7 @@
 /html-old
 /html/Test
 /html/adminer.php
+/html/.htaccess
 Homestead.yaml
 Homestead.json
 .env
