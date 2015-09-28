@@ -48,7 +48,7 @@
                 </tr>
                 @forelse($stream->clientsBanners($user)->get() as $b)
                     <tr>
-                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a> <i class="fa fa-eye"></i></td>
+                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_minutes') }}</td>
                         <td class="col-xs-2">${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_status') }}</td>
@@ -60,7 +60,7 @@
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="5"><em>no your banners here</em></td></tr>
+                    <tr><td colspan="5"><em>No one banners here</em></td></tr>
                 @endforelse
         </table>
     </div>
