@@ -54,8 +54,8 @@
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_status') }}</td>
                         <td class="col-xs-3 text-center">
                             @if ($b->getOriginal('pivot_status') == 'waiting' && $isFinished)
-                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn-white little"> accept</a>
-                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn-white little"> decline</a>
+                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn-white little">Accept & Pay</a>
+                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn-white little">Decline</a>
                             @endif
                         </td>
                     </tr>
