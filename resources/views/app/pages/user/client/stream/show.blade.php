@@ -24,7 +24,7 @@
 @section('content')
     <h1>Stream #{{ $stream->id }}</h1>
     <div class="in-inline">
-        <p>Twitcher: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
+        <p>Streamer: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
         <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
         <p>Status:
             @if (!$isFinished)
@@ -48,19 +48,19 @@
                 </tr>
                 @forelse($stream->clientsBanners($user)->get() as $b)
                     <tr>
-                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a> <i class="fa fa-eye"></i></td>
+                        <td class="col-xs-3"><a href="{{ $b->file }}">{{ $b->type->title }}</a></td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_minutes') }}</td>
                         <td class="col-xs-2">${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
                         <td class="col-xs-2">{{ $b->getOriginal('pivot_status') }}</td>
                         <td class="col-xs-3 text-center">
                             @if ($b->getOriginal('pivot_status') == 'waiting' && $isFinished)
-                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn-white little"> accept</a>
-                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn-white little"> decline</a>
+                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/accept" class="btn-white little">Accept & Pay</a>
+                                <a href="/user/client/stream/{{ $stream->id }}/{{ $b->id }}/decline" class="btn-white little">Decline</a>
                             @endif
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="5"><em>no your banners here</em></td></tr>
+                    <tr><td colspan="5"><em>No one banners here</em></td></tr>
                 @endforelse
         </table>
     </div>

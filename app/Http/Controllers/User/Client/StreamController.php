@@ -70,7 +70,7 @@ class StreamController extends Controller
         LogMapper::log('banner_paid', $banner->id, $stream->id);
         NotificationMapper::bannerPayAccept($banner, $stream, $pivot->amount);
 
-        return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You accepted and payed the banner in this stream']);
+        return Redirect::to('/user/client/stream/'.$stream->id)->with(['success' => 'You accepte and pay for ads in this stream']);
     }
 
     public function decline($streamId, $bannerId)

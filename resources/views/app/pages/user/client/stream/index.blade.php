@@ -43,9 +43,9 @@
             </div>
         @forelse($orders as $b)
             <div class="booking-table-row booking-name">
-                <div class="booking-ban-size">
+                <div class="booking-ban-size col-xs-3">
                     <p>{{ $b->type->title }}</p>
-                    <div class="col-xs-3"><i class="fa fa-eye" data-toggle="popover" data-content="<img src='{{ $b->file }}'>"></i></div>
+                    <div class="col-xs-3"></div>
                 </div>
                 <div class="col-xs-4">
                     <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>

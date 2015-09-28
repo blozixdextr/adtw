@@ -83,7 +83,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn-white">Pay now</button>
+                                    <button type="submit" class="btn-white">Process my order</button>
                                 </div>
                             </div>
                             {!! Form::close() !!}
@@ -103,7 +103,7 @@
                                 {!! Form::errorMessage('amount') !!}
                             </div>
                             <div class="col-sm-5">
-                                <button type="submit" class="need-mt-20 btn-white">Pay with Paypal</button>
+                                <button type="submit" class="need-mt-20 btn-white">Process my order</button>
                             </div>
                         </div>
                         {!! Form::close() !!}

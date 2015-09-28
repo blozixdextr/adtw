@@ -301,7 +301,7 @@ wrapper {
     align-items: center;
     max-width:1000px;
     margin:0 auto;
-    padding: 0px 20px 0 107px;
+    padding:0px 20px 0 226px;
 }
 .second-page .second-nav #header{
 	display:flex;
@@ -778,9 +778,7 @@ table .success .streamer-online-view{
 }
 
 .in-inline{
-	display:flex;
 	margin:30px 0 10px;
-	justify-content:space-between;
 }
 .in-inline p{
 	font-size:22px;
@@ -873,6 +871,51 @@ table .success .streamer-online-view{
 	display: flex;
     align-items: center;
 }
+
+.help-window{
+    padding:0 !important;
+}
+.help-window a{
+	color:#000;
+	font-weight: 100;
+	display:inline-block;
+	border-bottom:1px dashed #000;
+}
+.help-window a:visited{
+	color:#000;
+	text-decoration:none;
+	border-bottom:1px dashed #000;
+}
+.help-window a:focus{
+	color:#000;
+	text-decoration:none;
+	border-bottom:1px dashed #000;
+}
+.help-window #foo{
+	margin-top:20px;
+    background-color:rgba(100,65,165, 0.03);
+}
+
+#foo{
+	display:none;
+}
+.stream-color{
+	display:flex;
+	justify-content:space-between;
+	flex-direction:column;
+}
+#bgColorPicker{
+	margin-bottom:15px;
+}
+#bgColorPicker span{
+	padding: 6px 6px;
+}
+#startPopup{
+	height:34px;
+	padding:0;
+	text-align:center;
+}
+
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
