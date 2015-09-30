@@ -43,8 +43,9 @@ class PasswordController extends Controller
     public function postEmail(Request $request)
     {
         $this->validate($request, ['email' => 'required|email']);
+        $email = $request->get('email');
 
-        $response = Password::sendResetLink($request->only('email'), function (Message $message) {
+        $response = Password::sendResetLink(['email' => $email, 'type' => 'client'], function (Message $message) {
             $message->subject($this->getEmailSubject());
         });
 
