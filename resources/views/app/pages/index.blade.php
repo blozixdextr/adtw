@@ -7,6 +7,13 @@
 
 @section('content')
 
+    @if ($user)
+        <div style="text-align: center">
+            <h1>Hello {{ $user->name }}.</h1>
+            <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
+        </div>
+    @endif
+
     <center><h1>Simple & Powerful Banner Ads Platform </h1></center>
     <div class="window-bg bottom-info-one">
         <div class="bottom-info-content left">
@@ -150,9 +157,6 @@
             </div>
         </div>
     </div>
-    @else
-        <h1>Hello {{ $user->name }}.</h1>
-        <p>You will be redirected to <a href="{{ url('/user/'.$user->type) }}">profile</a> in 10 seconds</p>
     @endif
 
 
