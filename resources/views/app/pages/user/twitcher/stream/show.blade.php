@@ -50,7 +50,7 @@
                     <tr>
                         <td><a href="{{ $b->file }}">{{ $b->type->title }}</a><i class="fa fa-eye"></i></td>
                         <td>{{ $b->getOriginal('pivot_minutes') }}</td>
-                        <td>${{ number_format($b->getOriginal('pivot_amount'), 2) }}</td>
+                        <td>${{ number_format($b->getOriginal('pivot_amount') * $twitcherShare, 2) }}</td>
                         <td>{{ $b->getOriginal('pivot_status') }}</td>
                         <td>
                             @if ($b->getOriginal('pivot_status') == 'declining')

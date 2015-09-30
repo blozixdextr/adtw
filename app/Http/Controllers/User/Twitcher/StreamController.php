@@ -13,6 +13,7 @@ use App\Models\Mappers\PaymentMapper;
 use App\Models\Mappers\NotificationMapper;
 use App\Models\Mappers\StreamMapper;
 use App\Models\Stream;
+use Config;
 
 class StreamController extends Controller
 {
@@ -27,8 +28,10 @@ class StreamController extends Controller
     public function stream($streamId)
     {
         $stream = Stream::findOrFail($streamId);
+        $share = Config::get('banner.withdrawal_share');
+        $twitcherShare = (100 - $share)/100;
 
-        return view('app.pages.user.twitcher.stream.show', compact('stream'));
+        return view('app.pages.user.twitcher.stream.show', compact('stream', 'twitcherShare'));
     }
 
     public function acceptDecline($streamId, $bannerId, Request $request)
