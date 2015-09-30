@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User\Client;
 
+use App\Models\Mappers\NotificationMapper;
 use Illuminate\Http\Request;
 use Hash;
 
@@ -29,6 +30,8 @@ class ProfileController extends Controller
         $profile->last_name = $lastName;
         $profile->save();
 
+        NotificationMapper::notify($this->user, 'You updated your profile');
+
         return redirect('/user/client/profile');
     }
 
@@ -47,6 +50,7 @@ class ProfileController extends Controller
         }
         $this->user->password = bcrypt($newPassword);
         $this->user->save();
+        NotificationMapper::notify($this->user, 'You changed your password');
 
 
         return redirect('/user/client/profile')->with('success', 'Your password was changed');
