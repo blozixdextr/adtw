@@ -101,6 +101,8 @@ class PasswordController extends Controller
             'email', 'password', 'password_confirmation', 'token'
         );
 
+        $credentials['type'] = 'client';
+
         $response = Password::reset($credentials, function ($user, $password) {
             $this->resetPassword($user, $password);
         });
