@@ -16,13 +16,7 @@
 
 @section('content')
     <div class="text-center intro-main welcome">
-        @if ($isNew)
-            <h1>Finish your registration</h1>
-        @else
-            <h1>
-                Welcome back, {{ $user->name }}
-            </h1>
-        @endif
-        <p>We sent you a email to {{ $user->email }}. Use link in email for authentication!</p>
+        <h1>Finish your registration</h1>
+        <p>We sent you a email to {{ $user->email }}. Use link in email to finish your registration</p>
     </div>
 @endsection

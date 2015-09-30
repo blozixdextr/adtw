@@ -15,37 +15,28 @@ use Faker\Factory as FakerFactory;
 
 class TestController extends Controller
 {
+
+    public function index()
+    {
+        $user = User::findOrFail(23);
+        $user->authToken()->delete();
+    }
     /*
-    public function index() {
+        public function loginAs($userId) {
+            $user = User::findOrFail($userId);
+            Auth::loginUsingId($user->id, true);
 
-        Mail::raw('test mailgun', function ($message) {
-            $message->to('info@ifrond.com', 'Ravil')->subject('Test subject');
-        });
+            return redirect('/profile');
+        }
 
-        $user = User::create([
-            'name' => 'admin',
-            'email' => 'admin@adtw.ch',
-            'password' => bcrypt('dextr12345'),
-            'last_activity' => \Carbon\Carbon::now(),
-        ]);
+        public function createAdmin() {
 
-    }
+            Auth::loginUsingId($user->id, true);
 
-    public function loginAs($userId) {
-        $user = User::findOrFail($userId);
-        Auth::loginUsingId($user->id, true);
+            return redirect('/admin');
+        }
 
-        return redirect('/profile');
-    }
-
-    public function createAdmin() {
-
-        Auth::loginUsingId($user->id, true);
-
-        return redirect('/admin');
-    }
-
-*/
+    */
 
     public function stream($userId)
     {

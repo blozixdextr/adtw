@@ -186,16 +186,18 @@ class AuthController extends Controller
         $user = User::findOrFail($userId);
         $result = UserMapper::checkAuthToken($user, $token);
         if ($result) {
-            if ($user->is_active == 0) {
-                LogMapper::log('client_login', $user->id, 'banned');
-                return Redirect::back()->withErrors(['login' => 'Your account is deactivated. Please contact admin ASAP']);
+            if ($user->is_active == 1) {
+                return Redirect::to('/')->withErrors(['client' => 'You already confirmed your email']);
             }
+            $user->is_active = 1;
+            $user->save();
+            $user->authToken()->delete();
             Auth::loginUsingId($user->id, true);
             LogMapper::log('client_login', $user->id, 'finish');
             return redirect('/user/client');
         } else {
             LogMapper::log('client_login_failed', $user->id, 'token_mismatch');
-            return Redirect::to('/')->withErrors(['client' => 'Wrong authentication token']);
+            return Redirect::to('/')->withErrors(['client' => 'Wrong confirmation token']);
         }
     }
 
@@ -228,6 +230,7 @@ class AuthController extends Controller
             'password' => $password
         ];
         $localUser = $this->create($data);
+        $localUser->is_active = 0;
         $localUser->role = 'user';
         $localUser->type = 'client';
         $localUser->save();
@@ -237,7 +240,7 @@ class AuthController extends Controller
 
         $user = $localUser;
 
-        return view('app.pages.auth.client', compact('user', 'isNew'));
+        return view('app.pages.auth.client', compact('user'));
     }
 
     public function admin()
