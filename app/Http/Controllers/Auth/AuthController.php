@@ -257,7 +257,7 @@ class AuthController extends Controller
         $this->validate($request, $rules);
         $email = $request->get('email');
         $password = $request->get('password');
-        if (Auth::attempt(['email' => $email, 'password' => $password], false, false)) {
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'type' => 'client'], false, false)) {
             $user = Auth::getLastAttempted();
             if ($user->is_active == 0) {
                 LogMapper::log('client_login_unactive', $user->id);
