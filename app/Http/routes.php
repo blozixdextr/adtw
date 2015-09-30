@@ -12,27 +12,36 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get('profile', 'User\ProfileController@index');
+Route::get('profile/{userId}', 'User\ProfileController@user');
 
-Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function () {
+Route::group(['middleware' => 'guest', 'namespace' => 'Auth', 'prefix' => 'auth'], function () {
 
     Route::get('login', 'AuthController@getLogin');
     Route::post('login', 'AuthController@postLogin');
-    Route::get('logout', 'AuthController@getLogout');
 
     Route::get('twitch', 'AuthController@twitch');
     Route::get('twitch/callback', 'AuthController@twitchCallback');
 
-    Route::post('client', 'AuthController@client');
-    Route::get('client/{userId}/{token}', 'AuthController@clientConfirm');
+
+    Route::group(['prefix' => 'client'], function () {
+        Route::get('confirm/{userId}/{token}', 'AuthController@clientConfirm');
+        Route::get('sign-up', 'AuthController@clientSignUp');
+        Route::get('login', 'AuthController@clientLogin');
+        Route::post('sign-up', 'AuthController@postClientSignUp');
+        Route::post('login', 'AuthController@postClientLogin');
+    });
 
     Route::get('admin', 'AuthController@admin');
     Route::post('admin', 'AuthController@postAdmin');
 
-
 });
 
-Route::get('profile', 'User\ProfileController@index');
-Route::get('profile/{userId}', 'User\ProfileController@user');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('contact-us', 'IndexController@contactUs');
+    Route::post('contact-us', 'IndexController@contactUsPost');
+    Route::get('logout', 'Auth\AuthController@getLogout');
+});
 
 Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
 
@@ -154,10 +163,7 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
 
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('contact-us', 'IndexController@contactUs');
-    Route::post('contact-us', 'IndexController@contactUsPost');
-});
+
 
 /*
 Route::get('test', 'TestController@index');

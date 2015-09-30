@@ -131,7 +131,11 @@
 
                         {!! Form::open(['url' => '/auth/client', 'class' => 'enter-email']) !!}
                             <input type="email" placeholder="your@email.com" name="email">
-                            <button type="submit">Accept</button>
+                            <div class="clear"></div>
+                            <input type="password" placeholder="Your password" name="password">
+                            <div class="clear"></div>
+                            <button type="submit" name="operation" value="register">Register</button>
+                            <button type="submit" name="operation" value="login">Login</button>
                             <div class="clear"></div>
                         {!! Form::close() !!}
 

@@ -56,7 +56,7 @@
     width: 80%;
     max-width: 700px;
     left: 50%;
-    max-height: 200px;
+    max-height: 300px;
     top: -100%;
     -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
     -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
@@ -146,20 +146,23 @@
     font-size:0px;
 }
 .enter-email input[type="email"],
+.enter-email input[type="password"],
 .enter-email button{
     font-size: 24px;
     height: 50px;
     box-sizing: border-box;
 }
-.enter-email input[type="email"]{
+.enter-email input[type="email"],
+.enter-email input[type="password"] {
     width: 70%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-left: 10px;
-    float: left;
     border:2px solid #6441A5;
+    margin-bottom: 20px;
 }
+
 .enter-email button{
     background-color: #6441A5;
     color: #fff;
@@ -171,7 +174,7 @@
     border-left: 0;
     outline: 0;
     cursor: pointer;
-    float: right;
+    margin: 0 10px;
 }
 .enter-email{
     margin: 0 auto;
