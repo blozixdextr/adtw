@@ -203,12 +203,12 @@ class AuthController extends Controller
 
     public function clientSignUp()
     {
-        return view('app.pages.user.client.sign_up');
+        return view('app.pages.user.client.auth.sign_up');
     }
 
     public function clientLogin()
     {
-        return view('app.pages.user.client.login');
+        return view('app.pages.user.client.auth.login');
     }
 
     public function postClientSignUp(Request $request)
@@ -245,7 +245,7 @@ class AuthController extends Controller
 
         $user = $localUser;
 
-        return view('app.pages.auth.client', compact('user'));
+        return view('app.pages.user.client.auth.post_register', compact('user'));
     }
 
     public function postClientLogin(Request $request)

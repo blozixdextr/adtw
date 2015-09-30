@@ -21,7 +21,7 @@
     </div>
 
     {!! Form::submit('Sign In', ['class' => 'btn']) !!} or <a href="/auth/client/sign-up">Register</a>
-    <br><a href="/auth/client/reset">Forgot password?</a>
+    <br><a href="/auth/client/password/email">Forgot password?</a>
 
     {!! Form::close() !!}
 

@@ -15,6 +15,8 @@ Route::get('/', 'IndexController@index');
 Route::get('profile', 'User\ProfileController@index');
 Route::get('profile/{userId}', 'User\ProfileController@user');
 
+
+
 Route::group(['middleware' => 'guest', 'namespace' => 'Auth', 'prefix' => 'auth'], function () {
 
     Route::get('login', 'AuthController@getLogin');
@@ -29,6 +31,13 @@ Route::group(['middleware' => 'guest', 'namespace' => 'Auth', 'prefix' => 'auth'
         Route::get('login', 'AuthController@clientLogin');
         Route::post('sign-up', 'AuthController@postClientSignUp');
         Route::post('login', 'AuthController@postClientLogin');
+
+        Route::group(['prefix' => 'password'], function () {
+            Route::get('email', 'PasswordController@getEmail');
+            Route::post('email', 'PasswordController@postEmail');
+            Route::get('reset/{token}', 'PasswordController@getReset');
+            Route::post('reset', 'PasswordController@postReset');
+        });
     });
 
     Route::get('admin', 'AuthController@admin');
