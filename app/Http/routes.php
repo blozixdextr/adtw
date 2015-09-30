@@ -96,6 +96,7 @@ Route::group(['middleware' => 'role:client', 'namespace' => 'User\Client', 'pref
 
     Route::get('profile', 'ProfileController@index');
     Route::post('profile/save', 'ProfileController@save');
+    Route::post('profile/password', 'ProfileController@password');
 
     Route::get('timeline', 'NotificationController@fresh');
 

@@ -28,5 +28,41 @@
 
     {!! Form::close() !!}
 
+
+    <h2><i class="fa fa-key"></i> Change Password</h2>
+    {!! Form::open(['url' => '/user/client/profile/password', 'class' => 'form-horizontal profile-table']) !!}
+
+    <div class="form-group-1 width-50 {!! ($errors && $errors->has('password')) ? ' has-error' : '' !!}">
+        {!! Form::label('password', 'Current Password', ['class' => 'control-label']) !!}
+        <div>
+            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Current Password', 'required' => 'required']) !!}
+            {!! Form::errorMessage('password') !!}
+        </div>
+    </div>
+
+    <div class="form-group-1 width-50 {!! ($errors && $errors->has('new_password')) ? ' has-error' : '' !!}">
+        {!! Form::label('new_password', 'New Password', ['class' => 'control-label']) !!}
+        <div>
+            {!! Form::password('new_password', ['class' => 'form-control', 'placeholder' => 'New Password', 'required' => 'required']) !!}
+            {!! Form::errorMessage('new_password') !!}
+        </div>
+    </div>
+
+    <div class="form-group-1 width-50 {!! ($errors && $errors->has('new_password2')) ? ' has-error' : '' !!}">
+        {!! Form::label('new_password2', 'Confirm New Password', ['class' => 'control-label']) !!}
+        <div>
+            {!! Form::password('new_password2', ['class' => 'form-control', 'placeholder' => 'Confirm New Password', 'required' => 'required']) !!}
+            {!! Form::errorMessage('new_password2') !!}
+        </div>
+    </div>
+
+    <div class="form-group-1 width-50 text-center">
+        <div>
+            <button type="submit" class="btn-white">Save</button>
+        </div>
+    </div>
+
+    {!! Form::close() !!}
+
 @endsection
 

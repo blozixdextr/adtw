@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\User\Client;
 
 use Illuminate\Http\Request;
+use Hash;
 
 class ProfileController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('app.pages.user.client.profile.index');
     }
 
-    public function save(Request $request) {
-
+    public function save(Request $request)
+    {
         $rules = [
             'first_name' => 'required|min:2|max:100',
             'last_name' => 'required|min:2|max:100',
@@ -29,4 +31,25 @@ class ProfileController extends Controller
 
         return redirect('/user/client/profile');
     }
+
+    public function password(Request $request)
+    {
+        $rules = [
+            'password' => 'required|min:6|max:20',
+            'new_password' => 'required|min:6|max:20|different:password',
+            'new_password2' => 'required|same:new_password',
+        ];
+        $this->validate($request, $rules);
+        $password = $request->get('password');
+        $newPassword = $request->get('new_password');
+        if (!Hash::check($password, $this->user->password)) {
+            return redirect('/user/client/profile')->withErrors(['password' => 'Wrong current password']);
+        }
+        $this->user->password = bcrypt($newPassword);
+        $this->user->save();
+
+
+        return redirect('/user/client/profile')->with('success', 'Your password was changed');
+    }
+
 }
