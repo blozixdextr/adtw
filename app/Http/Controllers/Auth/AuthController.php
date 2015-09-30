@@ -260,9 +260,13 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password], false, false)) {
             $user = Auth::getLastAttempted();
             if ($user->is_active == 0) {
+                LogMapper::log('client_login_unactive', $user->id);
+
                 return Redirect::to('/auth/client/login')->withErrors(['email' => 'Your account is not active']);
             }
             Auth::login($user, true);
+            LogMapper::log('client_login', $user->id);
+
             return Redirect::to('/user/client');
         }
         LogMapper::log('client_login_failed', $email);
