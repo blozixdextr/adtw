@@ -56,7 +56,6 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-                <p><em>{{ $withdrawalShare }}% will be hold as ADTW.ch fee</em></p>
                 <button type="submit" class="btn-white">Withdraw</button>
             </div>
         </div>

@@ -11,25 +11,27 @@ use Config;
 
 class BillingController extends Controller
 {
-    public function index() {
-        $withdrawalShare = Config::get('banner.withdrawal_share');
-
-        return view('app.pages.user.twitcher.billing.index', compact('withdrawalShare'));
+    public function index()
+    {
+        return view('app.pages.user.twitcher.billing.index');
     }
 
-    public function log() {
+    public function log()
+    {
         $withdrawals = PaymentMapper::withdrawal($this->user);
 
         return view('app.pages.user.twitcher.billing.log', compact('withdrawals'));
     }
 
-    public function transfers() {
+    public function transfers()
+    {
         $transfers = PaymentMapper::transfersTwitcher($this->user);
 
         return view('app.pages.user.twitcher.billing.transfers', compact('transfers'));
     }
 
-    public function withdraw(Request $request) {
+    public function withdraw(Request $request)
+    {
         $rules = [
             'amount' => 'required|numeric|min:1|max:1000',
             'account' => 'required|email'

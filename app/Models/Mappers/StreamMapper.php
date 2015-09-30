@@ -9,6 +9,7 @@ use App\Models\UserProfile ;
 use App\Models\UserPayment;
 use App\Models\UserTransfer;
 use App\Models\Stream;
+use Config;
 
 
 class StreamMapper
@@ -86,8 +87,12 @@ class StreamMapper
 
         $amount = round($pivot->amount, 2);
 
+        $share = Config::get('banner.withdrawal_share');
+        $twitcherShare = (100 - $share)/100;
+        $paymentForTwitcher = $pivot->amount * $twitcherShare;
+
         $twitcher = $stream->user;
-        $twitcher->balance = $twitcher->balance + $amount;
+        $twitcher->balance = $twitcher->balance + $paymentForTwitcher;
         $twitcher->save();
 
         $user->balance_blocked = $user->balance_blocked - $amount;
@@ -103,7 +108,7 @@ class StreamMapper
             'buyer_id' => $user->id,
             'seller_id' => $twitcher->id,
             'title' => 'Paid banner#'.$banner->id,
-            'amount' => $amount,
+            'amount' => $paymentForTwitcher,
             'currency' => 'USD',
         ]);
 

@@ -38,8 +38,7 @@ class WithdrawController extends Controller
         $withdrawal = Withdrawal::findOrFail($withdrawId);
         $paypal = new PaypalPaymentService;
         try {
-            $withdrawShare = (100 - Config::get('banner.withdrawal_share'))/100;
-            $amount = $withdrawal->amount * $withdrawShare;
+            $amount = $withdrawal->amount;
             $result = $paypal->payout($withdrawal->user, $amount, $withdrawal->currency, $withdrawal->account, $withdrawal->id);
         } catch (\PayPal\Exception\PayPalConnectionException $e) {
             LogMapper::log('withdraw_error', $withdrawal->id, 'paypal', ['error' => json_decode($e->getData())]);
