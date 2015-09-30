@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use Mail;
+use Redirect;
 
 class IndexController extends Controller
 {
@@ -23,7 +24,7 @@ class IndexController extends Controller
             $username = $user->name;
         }
 
-        return view('app.pages.contact-us', compact('username'));
+        return view('app.pages.contact-us.index', compact('username'));
     }
 
     public function contactUsPost(Request $request)
@@ -33,17 +34,20 @@ class IndexController extends Controller
             'message' => 'required|min:5',
         ];
         $this->validate($request, $rules);
-        $message = nl2br(filter_var($request->get('message'), FILTER_SANITIZE_STRING));
+        $text = nl2br(filter_var($request->get('message'), FILTER_SANITIZE_STRING));
         $title = filter_var($request->get('title'), FILTER_SANITIZE_STRING);
         $user = Auth::user();
 
         $email = 'blozixdextr@gmail.com';
         $email = 'info@ifrond.com';
 
-        Mail::send('app.emails.admin.contact_us', compact('message', 'title', 'user'), function ($m) use ($email) {
+        //dd(compact('message', 'title', 'user'));
+
+        Mail::send('app.emails.admin.contact_us', compact('text', 'title', 'user'), function ($m) use ($email) {
             $m->to($email)->subject('Contact from ADTW.CH');
         });
 
+        return view('app.pages.contact-us.send');
 
     }
 }

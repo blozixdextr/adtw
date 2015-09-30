@@ -165,7 +165,7 @@
                             <p>Hi there,</p>
                             <p>You got a message from adtw.ch</p>
                             <h1>Contact Us</h1>
-                            <p>{{ $message }}</p>
+                            <p>{{ $text }}</p>
                             <h2>User info</h2>
                             @if ($user)
                                 <!-- button -->
