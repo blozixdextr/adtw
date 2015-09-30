@@ -196,7 +196,7 @@ class AuthController extends Controller
             LogMapper::log('client_login', $user->id, 'finish');
             return redirect('/user/client');
         } else {
-            LogMapper::log('client_login_failed', $user->id, 'token_mismatch');
+            LogMapper::log('client_confirm_failed', $user->id, 'token_mismatch');
             return Redirect::to('/')->withErrors(['client' => 'Wrong confirmation token']);
         }
     }
@@ -204,6 +204,11 @@ class AuthController extends Controller
     public function clientSignUp()
     {
         return view('app.pages.user.client.sign_up');
+    }
+
+    public function clientLogin()
+    {
+        return view('app.pages.user.client.login');
     }
 
     public function postClientSignUp(Request $request)
@@ -241,6 +246,28 @@ class AuthController extends Controller
         $user = $localUser;
 
         return view('app.pages.auth.client', compact('user'));
+    }
+
+    public function postClientLogin(Request $request)
+    {
+        $rules = [
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:20'
+        ];
+        $this->validate($request, $rules);
+        $email = $request->get('email');
+        $password = $request->get('password');
+        if (Auth::attempt(['email' => $email, 'password' => $password], false, false)) {
+            $user = Auth::getLastAttempted();
+            if ($user->is_active == 0) {
+                return Redirect::to('/auth/client/login')->withErrors(['email' => 'Your account is not active']);
+            }
+            Auth::login($user, true);
+            return Redirect::to('/user/client');
+        }
+        LogMapper::log('client_login_failed', $email);
+
+        return Redirect::to('/auth/client/login')->withErrors(['email' => 'Wrong email or password']);
     }
 
     public function admin()

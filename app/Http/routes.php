@@ -39,7 +39,7 @@ Route::group(['middleware' => 'guest', 'namespace' => 'Auth', 'prefix' => 'auth'
 Route::group(['middleware' => 'auth'], function () {
     Route::get('contact-us', 'IndexController@contactUs');
     Route::post('contact-us', 'IndexController@contactUsPost');
-    Route::get('logout', 'Auth\AuthController@getLogout');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
 });
 
 Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', 'prefix' => 'user/twitcher'], function () {
