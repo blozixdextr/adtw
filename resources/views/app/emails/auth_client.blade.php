@@ -127,11 +127,7 @@
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
                                                                 <h1 style="color:#5F5F5F;line-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:normal;margin-bottom:5px;text-align:center;padding-top:20px;">
-                                                                    @if ($isNew)
-                                                                        Registration
-                                                                    @else
-                                                                        Welcome back,<br/> {{ $user->name }}
-                                                                    @endif
+                                                                    Finish your registration,<br/> {{ $user->name }}
                                                                 </h1>
                                                             </td>
                                                         </tr>
@@ -157,11 +153,7 @@
                                                             <td align="center" valign="top" class="textContent">
                                                                 <div style="padding:10px;font-size:20px;color:#5F5F5F;">
                                                                     Thanks for visiting <a href="{{ url('/') }}" style="color:#6441A5">adtw.ch</a>!
-                                                                    @if ($isNew)
-                                                                        <p>If you want register in our service, please click on the button.</p>
-                                                                    @else
-                                                                        <p>Click on the button for authentication</p>
-                                                                    @endif
+                                                                    <p>If you want register in our service, please click on the button.</p>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -186,7 +178,7 @@
                                                         <tr>
                                                             <td align="center" valign="top" class="textContent">
                                                                 <div style="padding:10px;font-size:20px;color:#5F5F5F;">
-                                                                    <a href="{{ url('/auth/client/confirm/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;text-decoration:none;background-color:#6441A5;color:#fff;padding:10px;">Go to the Adtw.ch</a>
+                                                                    <a href="{{ url('/auth/client/confirm/'.$user->id.'/'.$token->token) }}" style="font-size:24px;display:block;text-decoration:none;background-color:#6441A5;color:#fff;padding:10px;">Confirm your email</a>
                                                                 </div>
                                                             </td>
                                                         </tr>

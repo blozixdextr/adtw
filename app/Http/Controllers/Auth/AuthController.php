@@ -171,17 +171,12 @@ class AuthController extends Controller
         return implode($pass); //turn the array into a string
     }
 
-    public function sendClientWelcome($user, $isNew, $password = '')
+    public function sendClientWelcome($user, $password)
     {
         $token = UserMapper::generateAuthToken($user);
 
-        Mail::send('app.emails.auth_client', ['user' => $user, 'token' => $token, 'password' => $password, 'isNew' => $isNew], function ($m) use ($user, $isNew) {
-            if ($isNew) {
-                $subject = 'Your registration link';
-            } else {
-                $subject = 'Your authentication link';
-            }
-            $m->to($user->email)->subject($subject);
+        Mail::send('app.emails.auth_client', ['user' => $user, 'token' => $token, 'password' => $password], function ($m) use ($user) {
+            $m->to($user->email)->subject('Confirm your email address');
         });
 
     }
@@ -204,37 +199,41 @@ class AuthController extends Controller
         }
     }
 
-    public function client(Request $request)
+    public function clientSignUp()
     {
-        $this->validate($request, ['email' => 'required|email']);
+        return view('app.pages.user.client.sign_up');
+    }
+
+    public function postClientSignUp(Request $request)
+    {
+        $rules = [
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:20',
+            'password2' => 'required|same:password'
+        ];
+        $this->validate($request, $rules);
+        $name = $request->get('name', '');
         $email = $request->get('email');
-        $password = '';
-
+        $password = $request->get('password');
         $localUser = UserMapper::getByEmail($email);
-        if ($localUser == false) {
-            //$password = $this->randomPassword();
-            $data = [
-                'name' => anonymizeEmail($email),
-                'email' => $email,
-                'password' => $password
-            ];
-            $localUser = $this->create($data);
-            $localUser->role = 'user';
-            $localUser->type = 'client';
-            $localUser->save();
-            $isNew = true;
-            LogMapper::log('client_register', $localUser->id);
-            NotificationMapper::registration($localUser);
-        } else {
-            $isNew = false;
-            LogMapper::log('client_login', $localUser->id, 'try');
-            if ($localUser->is_active == 0) {
-                LogMapper::log('client_login', $localUser->id, 'banned');
-                return Redirect::back()->withErrors(['login' => 'Your account is deactivated. Please contact admin ASAP']);
-            }
+        if ($localUser && $localUser->type == 'client') {
+            return Redirect::back()->withErrors(['email' => 'Client with this email already exists'])->withInput($request->all());
         }
-
-        $this->sendClientWelcome($localUser, $isNew, $password);
+        if ($name == '') {
+            $name = anonymizeEmail($email);
+        }
+        $data = [
+            'name' => $name,
+            'email' => $email,
+            'password' => $password
+        ];
+        $localUser = $this->create($data);
+        $localUser->role = 'user';
+        $localUser->type = 'client';
+        $localUser->save();
+        LogMapper::log('client_register', $localUser->id);
+        NotificationMapper::registration($localUser);
+        $this->sendClientWelcome($localUser, $password);
 
         $user = $localUser;
 

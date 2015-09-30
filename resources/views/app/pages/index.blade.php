@@ -102,7 +102,7 @@
                 <p> Reach your audience</p><p> Superior Ad Formats</p>
                 <div class="choose-link">
                     <p>I am advertizer</p>
-                    <label class="btn-white" for="modal-1">Buy Ads</label>
+                    <a href="/auth/client/sign-up" class="btn-white">Buy Ads</a>
                 </div>
             </div>
         </div>
@@ -115,31 +115,6 @@
                 <div class="choose-link">
                     <p>I am streamer</p>
                     <label class="btn-white" for="modal-2">Earn Money</label>
-                </div>
-            </div>
-        </div>
-        <div class="modal">
-            <input class="modal-open" id="modal-1" type="checkbox" hidden>
-            <div class="modal-wrap" aria-hidden="true" role="dialog">
-                <label class="modal-overlay" for="modal-1"></label>
-                <div class="modal-dialog">
-                    <div class="modal-header">
-                        <h2>Please enter your e-mail</h2>
-                        <label class="btn-close" for="modal-1" aria-hidden="true">×</label>
-                    </div>
-                    <div class="modal-body">
-
-                        {!! Form::open(['url' => '/auth/client', 'class' => 'enter-email']) !!}
-                            <input type="email" placeholder="your@email.com" name="email">
-                            <div class="clear"></div>
-                            <input type="password" placeholder="Your password" name="password">
-                            <div class="clear"></div>
-                            <button type="submit" name="operation" value="register">Register</button>
-                            <button type="submit" name="operation" value="login">Login</button>
-                            <div class="clear"></div>
-                        {!! Form::close() !!}
-
-                    </div>
                 </div>
             </div>
         </div>

@@ -23,7 +23,6 @@ Route::group(['middleware' => 'guest', 'namespace' => 'Auth', 'prefix' => 'auth'
     Route::get('twitch', 'AuthController@twitch');
     Route::get('twitch/callback', 'AuthController@twitchCallback');
 
-
     Route::group(['prefix' => 'client'], function () {
         Route::get('confirm/{userId}/{token}', 'AuthController@clientConfirm');
         Route::get('sign-up', 'AuthController@clientSignUp');

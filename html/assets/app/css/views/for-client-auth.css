@@ -1,0 +1,47 @@
+.client-auth h1 {
+    color: #6441A5;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 39px;
+    text-shadow: 0 0 6px #9E9696;
+    margin: 35px 0 20px 0;
+}
+
+.client-auth .form-group {
+    margin: 25px 0;
+}
+
+.client-auth label {
+    display: block;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.client-auth .form-control {
+    font-size: 24px;
+    width: 70%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid #6441A5;
+
+}
+
+.client-auth .btn{
+    background-color: #6441A5;
+    color: #fff;
+    border: 2px solid #6441A5;
+    width: 30%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    cursor: pointer;
+    font-size: 21px;
+    padding: 10px;
+}
+
+.client-auth .error-message {
+    color: red;
+    font-weight: bold;
+}
