@@ -154,8 +154,10 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
 
 });
 
-Route::get('contact-us', 'IndexController@contactUs');
-Route::post('contact-us', 'IndexController@contactUsPost');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('contact-us', 'IndexController@contactUs');
+    Route::post('contact-us', 'IndexController@contactUsPost');
+});
 
 /*
 Route::get('test', 'TestController@index');

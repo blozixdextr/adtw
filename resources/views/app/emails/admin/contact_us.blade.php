@@ -14,7 +14,7 @@
 <blockquote>{!! $text !!}</blockquote>
 <h2>User info</h2>
 @if ($user)
-    <a href="{{ url('/admin/user/'.$user->id) }}">{{ $title }}</a>
+    <a href="{{ url('/admin/user/'.$user->id) }}">{{ $title }}</a> mail: {{ $user->email }}
 @else
     {{ $title }}
 @endif
