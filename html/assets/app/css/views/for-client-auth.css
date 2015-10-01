@@ -1,9 +1,10 @@
 .client-auth{
-    width:600px;
+    width:500px;
     margin:0 auto;
 }
 .client-auth h1 {
     color: #6441A5;
+    text-align:center;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 39px;
     text-shadow: 0 0 6px #9E9696;
@@ -20,14 +21,22 @@
     margin-bottom: 5px;
 }
 
-.client-auth .form-control {
-    font-size: 24px;
+ .client-auth .form-control {
+    font-size: 18px;
+    height:34px;
+    width:100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 10px;
-    border: 2px solid #6441A5;
-
+    padding: 5px 10px;
+    border: 1px solid #CDB9F1;
+    color: #4917A5;
+    outline:none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.client-auth .form-control:focus {
+    outline: 2px solid #4917A5;
 }
 
 .client-auth .btn{
