@@ -5,9 +5,13 @@
     text-shadow: 0 0 6px #9E9696;
     margin: 35px 0 20px 0;
 }
-
+#contactUs{
+	width:800px;
+	margin:0 auto;
+}
 #contactUs .form-group {
     margin: 25px 0;
+    width:100%;
 }
 
 #contactUs label {
