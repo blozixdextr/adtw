@@ -27,7 +27,7 @@
         {!! Form::errorMessage('password_confirmation') !!}
     </div>
 
-    {!! Form::submit('Reset Password', ['class' => 'btn']) !!}
+    {!! Form::submit('Reset Password', ['class' => 'btn-white']) !!}
 
     {!! Form::close() !!}
 
