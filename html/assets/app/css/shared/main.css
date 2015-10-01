@@ -919,6 +919,13 @@ p.nav-column-item i{
     width: 25px;
     text-align: center;
 }
+.in-page .alert{
+	text-align:center;
+	margin-top:10px;
+}
+.in-page .alert .close.btn-white{
+	
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
