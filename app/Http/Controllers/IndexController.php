@@ -39,7 +39,6 @@ class IndexController extends Controller
         $user = Auth::user();
 
         $email = 'blozixdextr@gmail.com';
-        $email = 'info@ifrond.com';
 
         //dd(compact('message', 'title', 'user'));
 
