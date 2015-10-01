@@ -8,6 +8,7 @@
 @section('content')
 
     {!! Form::open(['url' => '/auth/client/sign-up', 'class' => 'client-auth']) !!}
+    <div class="sign-up">
     <h1>Sign Up as Client</h1>
 
     <div class="form-group">
@@ -31,7 +32,7 @@
     </div>
 
     {!! Form::submit('Register', ['class' => 'btn-white']) !!}<br/> Already have an account? <a href="/auth/client/login">Sign in</a>
-
+    </div>
     {!! Form::close() !!}
 
 @endsection
