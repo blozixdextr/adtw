@@ -7,7 +7,8 @@
 
 @section('content')
 
-    {!! Form::open(['url' => '/auth/client/sign-up', 'class' => 'client-auth']) !!}
+    {!! Form::open(['url' => '/auth/client/sign-up', 'class' => 'client-auth sign-up']) !!}
+    
     <h1>Sign Up as Client</h1>
 
     <div class="form-group">
@@ -30,8 +31,8 @@
         {!! Form::errorMessage('password2') !!}
     </div>
 
-    {!! Form::submit('Register', ['class' => 'btn']) !!} Already have an account? <a href="/auth/client/login">Sign in</a>
-
+    {!! Form::submit('Register', ['class' => 'btn-white']) !!}<br/> Already have an account? <a href="/auth/client/login">Sign in</a>
+    
     {!! Form::close() !!}
 
 @endsection

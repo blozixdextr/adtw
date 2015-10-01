@@ -915,6 +915,10 @@ table .success .streamer-online-view{
 	padding:0;
 	text-align:center;
 }
+p.nav-column-item i{
+    width: 25px;
+    text-align: center;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){

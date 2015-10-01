@@ -20,7 +20,7 @@
         {!! Form::errorMessage('password') !!}
     </div>
 
-    {!! Form::submit('Sign In', ['class' => 'btn']) !!} or <a href="/auth/client/sign-up">Register</a>
+    {!! Form::submit('Sign In', ['class' => 'btn-white']) !!} <br>or<br> <a href="/auth/client/sign-up">Register</a>
     <br><a href="/auth/client/password/email">Forgot password?</a>
 
     {!! Form::close() !!}

@@ -15,7 +15,7 @@
         {!! Form::errorMessage('email') !!}
     </div>
 
-    {!! Form::submit('Send Password Reset Link', ['class' => 'btn']) !!}
+    {!! Form::submit('Send Password Reset Link', ['class' => 'btn-white']) !!}
 
     {!! Form::close() !!}
 
