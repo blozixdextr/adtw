@@ -7,14 +7,15 @@ padding: 0 6px;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: center;
     flex-wrap: wrap;
 }
 .streamer-id{
     color:#4A4A4A;
     width: 32%;
-    margin-top: 30px;
+    margin-right:2%;
+    margin-top: 100px;
 }
 .streamer-id:nth-child(3n){
     margin-right:0;
