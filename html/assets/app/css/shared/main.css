@@ -797,10 +797,10 @@ table .success .streamer-online-view{
 .form-group-1 button{
 	text-align:center;
 	padding: 2px 20px;
-	margin-top: 35px;
+	margin: 10px 0 35px;
 }
 .form-group-1.width-50{
-	margin:0 auto 20px;
+	margin: 10px 0 20px;
 }
 .games{
     width:48%;
