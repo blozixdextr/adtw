@@ -28,7 +28,10 @@
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #CDB9F1;
-
+	outline:none;
+}
+#contactUs .form-control:focus{
+	outline:none;
 }
 
 #contactUs .btn{
