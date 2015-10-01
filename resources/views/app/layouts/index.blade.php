@@ -11,16 +11,18 @@
 </head>
 <body style="zoom: 1;">
 <div class="main-page">
-    <wrapper>
-        @include('app.includes.head.menu.guest.top')
-        <div class="page">
-            <div class="in-page">
-                @include('app.includes.alerts')
-                @include('app.includes.errors')
-                @yield('content')
+    <div class="main-back">
+        <wrapper>
+            @include('app.includes.head.menu.guest.top')
+            <div class="page">
+                <div class="in-page">
+                    @include('app.includes.alerts')
+                    @include('app.includes.errors')
+                    @yield('content')
+                </div>
             </div>
-        </div>
-    </wrapper>
+        </wrapper>
+    </div>
     @include('app.includes.footer')
 </div>
 @yield('body-js')
