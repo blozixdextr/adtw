@@ -1,6 +1,7 @@
 .client-auth{
     width:500px;
     margin:0 auto;
+    text-align:center;
 }
 .client-auth h1 {
     color: #6441A5;
@@ -11,6 +12,9 @@
     margin: 35px 0 20px 0;
 }
 
+.client-auth .btn-white{
+    margin: 0px 0 20px
+}
 .client-auth .form-group {
     margin: 25px 0;
 }
