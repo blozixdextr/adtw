@@ -915,13 +915,7 @@ table .success .streamer-online-view{
 	padding:0;
 	text-align:center;
 }
-#contactUs{
-	width:800px;
-	margin:0 auto;
-}
-#contuctUs .form-group{
-	width:100%;
-}
+
 
 /*            media         */
 @media screen and (max-width:1366px){
