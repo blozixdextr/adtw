@@ -1,3 +1,7 @@
+.client-auth{
+    width:600px;
+    margin:0 auto;
+}
 .client-auth h1 {
     color: #6441A5;
     font-family: 'Roboto Slab', sans-serif;
@@ -18,7 +22,6 @@
 
 .client-auth .form-control {
     font-size: 24px;
-    width: 70%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
