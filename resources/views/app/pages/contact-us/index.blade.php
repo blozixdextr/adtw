@@ -23,7 +23,7 @@
     </div>
 
 
-    {!! Form::submit('Send', ['class' => 'btn']) !!}
+    {!! Form::submit('Send', ['class' => 'btn-white']) !!}
 
     {!! Form::close() !!}
 
