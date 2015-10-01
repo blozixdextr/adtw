@@ -187,6 +187,8 @@ header .title-descr{
 .about-us li{
     width: 25%;
     text-align: center;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 .about-us li i{
     display: block;
@@ -337,6 +339,7 @@ header .title-descr{
     }
     .about-us li{
         width: 98%;
+        padding:0;
     }
     .bottom-info-one .bottom-info-content div:last-child a{
     	margin-left:0;
