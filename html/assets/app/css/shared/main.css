@@ -469,7 +469,7 @@ padding: 10px;
     color:#6441A5;
 }
 
-.btn-white{
+.page .btn-white{
     background-color: #fff !important;
     color:#6441A5 !important;
     cursor: pointer !important;
@@ -478,7 +478,7 @@ padding: 10px;
     padding:5px 10px !important;
     border:2px solid #6441A5 !important;
 }
-.btn-white:hover{
+.page .btn-white:hover{
     background-color: #6441A5 !important;
     color:#fff !important;
     border:2px solid #6441A5 !important;
