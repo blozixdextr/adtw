@@ -8,7 +8,7 @@
 
 @section('content')
     <h1><i class="fa fa-university"></i> Billing</h1>
-    <div class="work-column-item bil-control">
+    <div class="work-column-item bil-control fields-border">
         <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
