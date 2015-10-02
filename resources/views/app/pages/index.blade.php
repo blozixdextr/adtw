@@ -124,7 +124,7 @@
                 <label class="modal-overlay" for="modal-2"></label>
                 <div class="modal-dialog">
                     <div class="modal-header">
-                        <h2>Login by your Twitch account</h2>
+                        <h2>Sign in with Twitch account</h2>
                         <label class="btn-close" for="modal-2" aria-hidden="true">×</label>
                     </div>
                     <div class="modal-body">
