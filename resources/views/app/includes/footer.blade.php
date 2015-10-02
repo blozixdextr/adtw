@@ -2,7 +2,7 @@
     <div class="shadow-fon">
         <ul class="icons">
 
-            <li><i class="fa fa-envelope-o"></i> <span> Email Us Now: blozixdextr@gmail.com</span></a></li>
+            <li><a><i class="fa fa-envelope-o"></i> <span> Email Us Now: blozixdextr@gmail.com</span></a></li>
         </ul>
         <ul class="copyright">
             <li>&copy; https://adtw.ch</li>
