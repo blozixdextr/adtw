@@ -883,6 +883,7 @@ table .success .streamer-online-view{
 	display:flex;
 	display: flex;
     align-items: center;
+    margin-bottom:20px;
 }
 
 .help-window{
