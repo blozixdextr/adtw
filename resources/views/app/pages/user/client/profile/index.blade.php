@@ -3,7 +3,7 @@
 @section('content')
     <h1><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/client/profile/save', 'class' => 'form-horizontal profile-table']) !!}
-
+    <div class="fields-border">
     <div class="form-group-1 width-50 {!! ($errors && $errors->has('first_name')) ? ' has-error' : '' !!}">
         {!! Form::label('first_name', 'First Name', ['class' => 'control-label']) !!}
         <div>
@@ -25,13 +25,13 @@
             <button type="submit" class="btn-white">Save</button>
         </div>
     </div>
-
+    </div>
     {!! Form::close() !!}
 
 
     <h2><i class="fa fa-key"></i> Change Password</h2>
     {!! Form::open(['url' => '/user/client/profile/password', 'class' => 'form-horizontal profile-table']) !!}
-
+    <div class="fields-border">
     <div class="form-group-1 width-50 {!! ($errors && $errors->has('password')) ? ' has-error' : '' !!}">
         {!! Form::label('password', 'Current Password', ['class' => 'control-label']) !!}
         <div>
@@ -61,7 +61,7 @@
             <button type="submit" class="btn-white">Save</button>
         </div>
     </div>
-
+    </div>
     {!! Form::close() !!}
 
 @endsection
