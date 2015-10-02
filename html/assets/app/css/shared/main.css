@@ -60,6 +60,9 @@ a:hover{
 .fields-border input{
 	border: 1px solid #CDB9F1 !important;	
 }
+.fields-border input:focus{
+    outline: 2px solid #4917A5 !important;
+}
 
 
 
