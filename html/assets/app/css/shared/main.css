@@ -59,14 +59,12 @@ a:hover{
 }
 .fields-border input,
 .fields-border select,
-.fields-border textarea,
-.fields-border input:not([type="submit"]){
+.fields-border textarea{
 	border: 1px solid #CDB9F1 !important;	
 }
 .fields-border input:focus,
 .fields-border select:focus,
-.fields-border textarea:focus,
-.fields-border input:not([type="submit"]){
+.fields-border textarea:focus{
     outline: 2px solid #4917A5 !important;
 }
 
@@ -472,18 +470,18 @@ padding: 10px;
 }
 
 .btn-white{
-    background-color: #fff;
-    color:#6441A5;
-    cursor: pointer;
-    transition: all ease 0.3s;
-    font-size: 20px;
-    padding:5px 10px;
-    border:2px solid #6441A5;
+    background-color: #fff !important;
+    color:#6441A5 !important;
+    cursor: pointer !important;
+    transition: all ease 0.3s !important;
+    font-size: 20px !important;
+    padding:5px 10px !important;
+    border:2px solid #6441A5 !important;
 }
 .btn-white:hover{
-    background-color: #6441A5;
-    color:#fff;
-    border:2px solid #6441A5;
+    background-color: #6441A5 !important;
+    color:#fff !important;
+    border:2px solid #6441A5 !important;
 }
 .btn-white.little{
 	font-size:12px;
