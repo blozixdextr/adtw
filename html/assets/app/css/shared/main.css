@@ -59,12 +59,14 @@ a:hover{
 }
 .fields-border input,
 .fields-border select,
-.fields-border textarea{
+.fields-border textarea,
+.fields-border input:not([class="btn-white"]){
 	border: 1px solid #CDB9F1 !important;	
 }
 .fields-border input:focus,
 .fields-border select:focus,
-.fields-border textarea:focus{
+.fields-border textarea:focus,
+.fields-border input:not([class="btn-white"]){
     outline: 2px solid #4917A5 !important;
 }
 
