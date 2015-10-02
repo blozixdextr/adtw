@@ -60,13 +60,15 @@ a:hover{
 .fields-border input,
 .fields-border select,
 .fields-border textarea,
-.fields-border button{
+.fields-border button,
+.fields-border .btn-white{
 	border: 1px solid #CDB9F1 !important;	
 }
 .fields-border input:focus,
 .fields-border select:focus,
 .fields-border textarea:focus,
-.fields-border button:focus{
+.fields-border button:focus,
+.fields-border .btn-white:focus{
     outline: 2px solid #4917A5 !important;
 }
 
