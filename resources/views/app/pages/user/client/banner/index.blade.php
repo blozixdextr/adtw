@@ -17,7 +17,7 @@
     {!! Form::open(['url' => '/user/client/banner/save', 'class' => 'form-horizontal', 'files' => true]) !!}
 
     {!! Form::hidden('user_id', $userView->id) !!}
-
+    <div class="fields-border">
     <div class="form-group {!! ($errors && $errors->has('limit')) ? ' has-error' : '' !!}">
         {!! Form::label('limit', 'Limit', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-2">
@@ -47,6 +47,7 @@
         <div class="col-sm-offset-3 col-sm-9">
             <button type="submit" class="btn-white">Order</button>
         </div>
+    </div>
     </div>
 
     {!! Form::close() !!}
