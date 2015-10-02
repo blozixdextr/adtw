@@ -24,7 +24,7 @@ class IndexController extends Controller
             $username = $user->name;
         }
 
-        return view('app.pages.contact-us.index', compact('username'));
+        return view('app.pages.contact-us.index', compact('username', 'user'));
     }
 
     public function contactUsPost(Request $request)
@@ -46,7 +46,7 @@ class IndexController extends Controller
             $m->to($email)->subject('Contact from ADTW.CH');
         });
 
-        return view('app.pages.contact-us.send');
+        return view('app.pages.contact-us.send', compact('user'));
 
     }
 }
