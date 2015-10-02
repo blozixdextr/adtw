@@ -52,12 +52,10 @@
 .modal-dialog {
     background: #fefefe;
     border: none;
-    /*background-image:url(https://cloud.githubusercontent.com/assets/14276761/10242317/a842b710-68f8-11e5-9c50-155ab099694a.png);
-    */
     background-image:url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
     background-repeat:no-repeat;
-    background-position: 145px 62px;
-    background-size: 125px 61px;
+        background-position: 217px 62px;
+    background-size: 47px 61px;
     position: fixed;
     width: 80%;
     max-width: 700px;
