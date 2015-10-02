@@ -52,6 +52,9 @@
 .modal-dialog {
     background: #fefefe;
     border: none;
+    background-image:url(https://cloud.githubusercontent.com/assets/14276761/10242317/a842b710-68f8-11e5-9c50-155ab099694a.png);
+    background-repeat:no-repeat;
+    
     position: fixed;
     width: 80%;
     max-width: 700px;
