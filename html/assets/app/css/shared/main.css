@@ -58,11 +58,13 @@ a:hover{
 	width:50%;
 }
 .fields-border input,
-.fields-border select{
+.fields-border select,
+.fields-border textarea{
 	border: 1px solid #CDB9F1 !important;	
 }
 .fields-border input:focus,
-.fields-border select:focus{
+.fields-border select:focus,
+.fields-border textarea:focus{
     outline: 2px solid #4917A5 !important;
 }
 
