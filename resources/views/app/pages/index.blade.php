@@ -129,7 +129,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="twitch-login">
-                            <a href="/auth/twitch" class="btn-white" id="twitchLoginBtn">Login</a>
+                            <a href="/auth/twitch" class="btn-twitch" id="twitchLoginBtn">Login</a>
                         </div>
                     </div>
                 </div>
