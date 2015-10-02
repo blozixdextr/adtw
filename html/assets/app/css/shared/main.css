@@ -57,10 +57,12 @@ a:hover{
 .width-50{
 	width:50%;
 }
-.fields-border input{
+.fields-border input,
+.fields-border select{
 	border: 1px solid #CDB9F1 !important;	
 }
-.fields-border input:focus{
+.fields-border input:focus,
+.fields-border select:focus{
     outline: 2px solid #4917A5 !important;
 }
 
