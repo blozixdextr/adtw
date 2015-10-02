@@ -57,6 +57,12 @@ a:hover{
 .width-50{
 	width:50%;
 }
+.fields-border input{
+	border: 1px solid #CDB9F1;	
+}
+
+
+
 /*                            fonts             */
 @font-face {
 font-family: FippsRegular;
