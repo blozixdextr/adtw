@@ -923,8 +923,11 @@ p.nav-column-item i{
 	text-align:center;
 	margin-top:10px;
 }
-.in-page .alert .close.btn-white{
-	
+.btn-twitch{
+	height:29px;
+	width:168px;
+	display:inline-block;
+	background:url(http://4.bp.blogspot.com/-7_9LefYEmyI/UziY-VgAaYI/AAAAAAAAAV8/FPND--_JVEI/s1600/Connect.png) no-repeat center center;
 }
 
 /*            media         */
