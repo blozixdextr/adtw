@@ -2,9 +2,9 @@
 
 return [
     'prices' => [ // pay for viewer per hour
-        'default' => 0.05,
-        'english' => 0.075,
-        'russian' => 0.025
+        'default' => 0.001,
+        'english' => 0.001,
+        'russian' => 0.0005
     ],
     'twitcher_limit' => 5, // max banner of 1 type for 1 user
     'track_minutes' => 10, // track every X minutes
