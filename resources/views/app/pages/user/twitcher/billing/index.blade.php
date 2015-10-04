@@ -7,21 +7,25 @@
 
 
 @section('content')
-    <h1><i class="fa fa-bank"></i>Billing</h1>
-    <div class="work-column-floats">
-        <div class="left">
-            <h3>Available</h3><span>${{ number_format($user->availableBalance(), 2) }}</span>
-            <div class="work-column-link">
-                <a class="btn-white" href="/user/twitcher/billing/log">Withdrawal history</a>
+    <div class="panel panel-default">
+        <h1 class="panel-heading"><i class="fa fa-bank"></i>Billing</h1>
+        <div class="work-column-floats panel-body">
+            <div class="left">
+                <h3>Available</h3><span>${{ number_format($user->availableBalance(), 2) }}</span>
+                <div class="work-column-link">
+                    <a class="btn-white" href="/user/twitcher/billing/log">Withdrawal history</a>
+                </div>
             </div>
-        </div>
-        <div class="right">
-            <h3>On Hold</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
-            <div class="work-column-link">
-                <a class="btn-white" href="/user/twitcher/billing/transfers">Payments history</a>
+            <div class="right">
+                <h3>On Hold</h3><span>${{ number_format($user->balance_blocked, 2) }}</span>
+                <div class="work-column-link">
+                    <a class="btn-white" href="/user/twitcher/billing/transfers">Payments history</a>
+                </div>
             </div>
         </div>
     </div>
+    
+    
     <div class="clear"></div>
     <div class="height50"></div>
     <div id="withdraw" class="fields-border">
