@@ -2,8 +2,8 @@
 
 @section('content')
     
-    <div class="panel panel-default width-50 left">
-    <h1 class="panel-heading"><i class="fa fa-key"></i> Change Password</h1>
+    <div class="panel panel-default width-49 left">
+    <h2 class="panel-heading"><i class="fa fa-key"></i> Change Password</h2>
     <div class="panel-body">
     {!! Form::open(['url' => '/user/client/profile/password', 'class' => 'form-horizontal profile-table']) !!}
     <div class="fields-border">
@@ -41,8 +41,8 @@
     </div>
     </div>
 
-    <div class="panel panel-default width-50 right">
-    <h1 class="panel-heading"><i class="fa fa-user"></i> Profile</h1>
+    <div class="panel panel-default width-49 right">
+    <h2 class="panel-heading"><i class="fa fa-user"></i> Profile</h2>
     <div class="panel-body">
     {!! Form::open(['url' => '/user/client/profile/save', 'class' => 'form-horizontal profile-table']) !!}
     <div class="fields-border">
