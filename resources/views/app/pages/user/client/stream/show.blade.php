@@ -24,7 +24,7 @@
 @section('content')
     <h2><i class="fa fa-desktop"></i> Stream #{{ $stream->id }}</h2>
     <div class="in-inline">
-        <p>Streamer: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
+        <p><i class="fa fa-twitch"></i> Streamer: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
         <p><i class="fa fa-clock-o"></i> Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
         <p><i class="fa fa-cog"></i> Status: 
             @if (!$isFinished)
