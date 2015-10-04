@@ -128,6 +128,10 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
             {!! Form::close() !!}
         </div>
     </div>
+    <div class="col-xs-6 help-window">
+        <a href="#" onclick="toggle_visibility('foo');">Read help <i class="fa fa-question-circle"></i></a>
+        <div class="panel panel-default panel-body" id="foo">This is foo This is foo  This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo</div>
+    </div>
     <div class="height30"></div>
     <h2><i class="fa fa-search"></i> Search results</h2>
     
