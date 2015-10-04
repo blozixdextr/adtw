@@ -22,10 +22,9 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h2><i class="fa fa-user"></i> Profile</h2>
     <div class="panel panel-default fields-border">
         <div class="panel-heading">
-            <h3><i class="fa fa-tag"></i> Filter</h3>
+            <h3><i class="fa fa-user"></i> Profile filter</h3>
         </div>
         <div class="panel-body">
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline form-horizontal']) !!}
