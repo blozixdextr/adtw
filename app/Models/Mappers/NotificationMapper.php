@@ -63,7 +63,7 @@ class NotificationMapper
             'title' => $banner->client->name.' canceled order',
             'subtitle' => $banner->client->name.' canceled order banner to you',
             'url' => '/user/twitcher'], function ($m) use ($banner) {
-                $m->to($banner->client->email)->subject($banner->client->name.' canceled order');
+                $m->to($banner->twitcher->email)->subject($banner->client->name.' canceled order');
         });
     }
 
