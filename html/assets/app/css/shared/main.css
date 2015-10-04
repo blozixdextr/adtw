@@ -1015,6 +1015,9 @@ p.nav-column-item i{
     .second-page .work-column-floats .work-column-link{
     margin: 5px auto 0;
     }
+    .flex-left-side{
+    	margin-bottom:15px;
+    }
     .second-page .second-nav>div{
     	display:block;
     	padding:0;
