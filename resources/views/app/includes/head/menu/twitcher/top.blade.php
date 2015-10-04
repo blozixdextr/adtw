@@ -3,7 +3,7 @@
         <header id="header">
             <a href=""><img src="/assets/app/images/gold.gif"></a>
             <hgroup>
-                <h1><a href="/user/twitcher"></h1>
+                <h1><a href="/user/twitcher"></a></h1>
             </hgroup>
         </header>
     </div>
