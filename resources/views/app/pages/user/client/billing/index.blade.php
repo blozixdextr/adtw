@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <h1><i class="fa fa-university"></i> Billing</h1>
+    <h2><i class="fa fa-university"></i> Billing</h2>
     <div class="work-column-item bil-control fields-border">
         <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
@@ -17,7 +17,7 @@
             <div class="col-md-6 col-sm-6 col-xs-6"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
         </div>
     </div>
-    <h1><i class="fa fa-money"></i> Payment Methods</h1>
+    <h2><i class="fa fa-money"></i> Payment Methods</h2>
     <div class="work-column-item fields-border" id="payments">
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" class="tab" checked="">
