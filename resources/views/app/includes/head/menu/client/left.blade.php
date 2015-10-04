@@ -3,7 +3,7 @@
     <div class="nav-settings">
         <h4>Dashboard</h4>
         <p class="nav-column-item"><i class="fa fa-area-chart"></i> <a href="/user/client">Timeline</a></p>
-        <p class="nav-column-item"><i class="fa fa-search"></i> <a href="/user/client/search">Search & Buy</a></p>
+        <p class="nav-column-item"><i class="fa fa-search"></i> <a href="/user/client/search" class="search-and-buy">Search & Buy</a></p>
         <p class="nav-column-item"><i class="fa fa-list-alt"></i> <a href="/user/client/ads">My Ads</a></p>
         <p class="nav-column-item"><i class="fa fa-envelope-o"></i> <a href="/contact-us">Contact Us</a></p>
     </div>
