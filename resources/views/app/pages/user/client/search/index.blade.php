@@ -129,8 +129,13 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
         </div>
     </div>
     <div class="col-xs-12 help-window">
-        <a href="#" onclick="toggle_visibility('foo');">Read help <i class="fa fa-question-circle"></i></a>
-        <div class="panel panel-default panel-body" id="foo">This is foo This is foo  This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo This is foo</div>
+        <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-question-circle"></i> Click to read help</a>
+        <div class="panel panel-default panel-body" id="foo">
+            1) Apply your language, games and other filters
+            2) Choose best streamers and click "Order Now"
+            3) Then upload your banner and setup $ limit
+            4) Control streams and pay only for results
+        </div>
     </div>
     <div class="height30"></div>
     <h2><i class="fa fa-search"></i> Search results</h2>
