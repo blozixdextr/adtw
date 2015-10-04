@@ -20,7 +20,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
 @endsection
 @section('content')
     
-    <div class="panel panel-default choose-strimer fields-border">
+    <div class="panel panel-default choose-strimer">
         <div class="panel-heading"><h2><i class="fa fa-filter"></i> Streamers Filter</h2></div>
         <div class="panel-body">
             {!! Form::open(['url' => '/user/client/search', 'class' => '', 'method' => 'get']) !!}
@@ -92,7 +92,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                     </div>
                 </div>
                 
-                        <div class="games-followers col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="games-followers col-lg-3 col-md-3 col-sm-3 col-xs-12  fields-border">
 
                             <div class="form-group {!! ($errors && $errors->has('name')) ? ' has-error' : '' !!}">
                                 {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
