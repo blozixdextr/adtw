@@ -9,7 +9,7 @@
 @section('content')
     <h2>User's Profile</h2>
     <div class="streamer-page">
-        <h2>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h2>
+        <h3>{{ $userView->name }}  <small>/ {{ $userView->type }}</small></h3>
         @if ($userView->language_id)
             <p>Language: {{ $userView->language->title }}</p>
         @endif
