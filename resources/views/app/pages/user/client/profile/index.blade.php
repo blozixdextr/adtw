@@ -1,8 +1,10 @@
 @extends('app.layouts.client')
 
 @section('content')
-
-    <h1><i class="fa fa-key"></i> Change Password</h1>
+    
+    <div class="panel panel-deafult">
+    <h1 class="panel-heading"><i class="fa fa-key"></i> Change Password</h1>
+    <div class="panel-body">
     {!! Form::open(['url' => '/user/client/profile/password', 'class' => 'form-horizontal profile-table']) !!}
     <div class="fields-border">
     <div class="form-group-1 width-50 {!! ($errors && $errors->has('password')) ? ' has-error' : '' !!}">
@@ -36,6 +38,8 @@
     </div>
     </div>
     {!! Form::close() !!}
+    </div>
+    </div>
 
     <h1><i class="fa fa-user"></i> Profile</h1>
     {!! Form::open(['url' => '/user/client/profile/save', 'class' => 'form-horizontal profile-table']) !!}
