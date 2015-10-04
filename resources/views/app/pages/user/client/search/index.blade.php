@@ -41,8 +41,6 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                 
-
-                
                     <div class="form-group {!! ($errors && $errors->has('banner_types')) ? ' has-error' : '' !!}">
                         {!! Form::label('banner_types', 'Banner sizes', ['class' => 'control-label']) !!}
                         <div class="">
@@ -118,13 +116,13 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 {!! Form::errorMessage('videos') !!}
                             </div>
                         </div>
-                    </div>
+                    
                         <div class="games-button">
                             <div class="form-group">
                                 <button type="submit" class="btn-white">Find</button>
                             </div>
                         </div>
-                
+                </div>
             {!! Form::close() !!}
         </div>
     </div>
