@@ -348,7 +348,7 @@ wrapper {
     	align-items: center;
 }
 .second-page .page{
-    padding: 15px 15px 100px 15px;
+    padding: 15px 15px 87px 15px;
     margin:0px auto 0;
     overflow: hidden;
     width: 1000px;
@@ -426,7 +426,6 @@ padding: 10px;
 .work-column-item h3{
     font-size: 24px;
     font-family: Roboto Slab;
-    margin-bottom: 15px;
 }
 .second-page .work-column-floats h3{
     display: inline-block;
@@ -987,7 +986,7 @@ p.nav-column-item i{
 @media screen and (max-width:992px){
     .second-page .page{
         width: auto;
-        padding: 7px 7px 100px;
+        padding: 7px 7px 87px;
     }
     .streamer-item{
         width: 348px;
@@ -1162,7 +1161,7 @@ p.nav-column-item i{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 2px 140px;
+        padding: 7px 2px 87px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;
