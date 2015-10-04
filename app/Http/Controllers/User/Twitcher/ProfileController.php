@@ -12,12 +12,34 @@ use Redirect;
 
 class ProfileController extends Controller
 {
-    public function index() {
+
+    public function index(Request $request) {
         $languages = RefMapper::type('language');
         $bannerTypes = RefMapper::type('banner_type');
         $games = RefMapper::type('game');
 
-        return view('app.pages.user.twitcher.profile.index', compact('languages', 'bannerTypes', 'games'));
+        $user = $this->user;
+
+        if ($user->language_id == 0) {
+            $userAgentLanguage = $request->server('HTTP_ACCEPT_LANGUAGE');
+            $user->language_id = 4;
+            if (strpos($userAgentLanguage, 'ru') === 0) {
+                $user->language_id = 5;
+            }
+            if (strpos($userAgentLanguage, 'es') === 0) {
+                $user->language_id = 6;
+            }
+            $user->save();
+        }
+
+        if (count($user->bannerTypes()->get()) == 0) {
+            foreach ($bannerTypes as $bannerType) {
+                $user->refs()->attach($bannerType->id);
+            }
+            $user->save();
+        }
+
+        return view('app.pages.user.twitcher.profile.index', compact('languages', 'bannerTypes', 'games', 'user'));
     }
 
     public function save(Request $request) {
