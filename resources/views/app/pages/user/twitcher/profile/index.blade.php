@@ -90,7 +90,7 @@
     </div>
     <div class="form-group-1 text-center">
         <div>
-            <button type="submit" class="btn-white need-mt-30">Save</button>
+            <button type="submit" class="btn-white need-mt-15">Save</button>
         </div>
     </div>
 
