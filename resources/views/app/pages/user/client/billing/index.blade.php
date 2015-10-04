@@ -20,7 +20,7 @@
     </div>
     </div>
     
-    <div class="panel panel-body">
+    <div class="panel panel-default">
     <h2 class="panel-heading"><i class="fa fa-money"></i> Payment Methods</h2>
     <div class="work-column-item panel-body fields-border" id="payments">
         <div class="tabs">
