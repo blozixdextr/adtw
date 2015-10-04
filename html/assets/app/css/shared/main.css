@@ -484,8 +484,8 @@ padding: 10px;
     border:2px solid #6441A5 !important;
 }
 .btn-white.little{
-	font-size:12px;
-	padding:1px 5px;
+	font-size:12px !important;
+	padding:1px 5px !important;
 }
 .btn-white:visited,
 .btn-white:focus{
