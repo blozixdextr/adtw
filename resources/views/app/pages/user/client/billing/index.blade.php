@@ -7,8 +7,9 @@
 
 
 @section('content')
-    <h2><i class="fa fa-university"></i> Billing</h2>
-    <div class="work-column-item bil-control fields-border">
+    <div class="panel panel-default">
+    <h2 class="panel-heading"><i class="fa fa-university"></i> Billing</h2>
+    <div class="work-column-item panel-body bil-control fields-border">
         <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
@@ -17,8 +18,11 @@
             <div class="col-md-6 col-sm-6 col-xs-6"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
         </div>
     </div>
-    <h2><i class="fa fa-money"></i> Payment Methods</h2>
-    <div class="work-column-item fields-border" id="payments">
+    </div>
+    
+    <div class="panel panel-body">
+    <h2 class="panel-heading"><i class="fa fa-money"></i> Payment Methods</h2>
+    <div class="work-column-item panel-body fields-border" id="payments">
         <div class="tabs">
             <input id="tab1" type="radio" name="tabs" class="tab" checked="">
             <label for="tab1" title="Credit Cards" class="tab">Credit Cards</label>
@@ -114,6 +118,8 @@
                 </div>
             </section>
         </div>
+    </div>
+    </div>
     </div>
 
 @endsection
