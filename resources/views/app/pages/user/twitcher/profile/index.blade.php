@@ -24,7 +24,7 @@
 @section('content')
     <div class="panel panel-default fields-border">
         <div class="panel-heading">
-            <h3><i class="fa fa-user"></i> Profile filter</h3>
+            <h2><i class="fa fa-user"></i> Profile filter</h2>
         </div>
         <div class="panel-body">
     {!! Form::open(['url' => '/user/twitcher/profile/save', 'class' => 'form-inline form-horizontal']) !!}
