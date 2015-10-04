@@ -120,7 +120,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                         </div>
                     </div>
                         <div class="games-button">
-                            <div class="form-group" style="margin-top:40px">
+                            <div class="form-group">
                                 <button type="submit" class="btn-white">Find</button>
                             </div>
                         </div>
