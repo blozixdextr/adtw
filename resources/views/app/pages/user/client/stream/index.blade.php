@@ -37,7 +37,7 @@
                 <div class="col-xs-3">
                     <p>Cost limit</p>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-3 text-center">
                     <p>Actions</p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="col-xs-3">
                     <p>{{ $b->amount_limit }}USD</p>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-3 text-center">
                     <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a></p>
                 </div>
             </div>
