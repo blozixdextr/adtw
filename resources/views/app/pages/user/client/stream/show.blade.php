@@ -26,7 +26,7 @@
     <div class="in-inline">
         <p>Streamer: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
         <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
-        <p>Status:
+        <p>Status: 
             @if (!$isFinished)
                 <br>
                 <iframe src="{{ $stream->user->twitch_channel->url }}/embed" frameborder="0" scrolling="no" height="378" width="640"></iframe>
