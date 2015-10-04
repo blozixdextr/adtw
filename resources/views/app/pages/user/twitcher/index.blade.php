@@ -80,6 +80,18 @@
         @endforeach
         </div>
     </div>
+    
+    <div class="col-xs-12 help-window">
+        <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-question-circle"></i> Click to read help</a>
+        <div class="panel panel-default panel-body" id="foo">
+            <p>1) Apply your language, games and other filters</p>
+            <p>2) Choose best streamers and click "Order Now"</p>
+            <p>3) Then upload your banner and setup $ limit</p>
+            <p>4) Control streams and pay only for results</p>
+        </div>
+    </div>
+    
+    
     <div class="panel panel-default">
         <h2 class="panel-heading"><i class="fa fa-area-chart"></i> Timeline</h2>
         <div class="timeline panel-body">
