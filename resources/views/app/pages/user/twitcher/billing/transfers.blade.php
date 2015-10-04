@@ -1,7 +1,7 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <div class="panel panel-default">
+    <div class="panel panel-default need-scroll">
     <h2 class="panel-heading"><i class="fa fa-bank"></i> Billing log</h2>
     <table class="table panel-body booking-table">
         <tr>

@@ -1,7 +1,7 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <div class="panel panel-default booking-table-first">
+    <div class="panel panel-default booking-table-first need-scroll">
     <h2 class="panel-heading"><i class="fa fa-reply"></i> Withdraw log</h2>
     <table class="table panel-body booking-table">
             <tr>

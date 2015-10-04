@@ -1009,6 +1009,15 @@ p.nav-column-item i{
     .handle{
         display: block;
     }
+    .second-page .nav-column h2 {
+    font-size: 26px;
+    }
+    .second-page .work-column-floats .work-column-link{
+    margin: 5px auto 0;
+    }
+    .flex-left-side{
+    	margin-bottom:15px;
+    }
     .second-page .second-nav>div{
     	display:block;
     	padding:0;
