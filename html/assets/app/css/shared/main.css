@@ -912,6 +912,7 @@ table .success .streamer-online-view{
 
 .help-window{
     padding:0 !important;
+    margin:10px 0;
 }
 .help-window a{
 	color:#000;
