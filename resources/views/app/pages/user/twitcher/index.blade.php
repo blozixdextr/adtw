@@ -72,7 +72,7 @@
             <div class="row ready-banner">
                 <div class="col-xs-6">{{ $bt->title }}</div>
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                    <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                 @else
                     <div class="col-xs-6"><em>no orders yet :(</em></div>
                 @endif
@@ -82,12 +82,14 @@
     </div>
     
     <div class="help-window">
-        <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-question-circle"></i> Click to read help</a>
+        <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-exclamation-triangle"></i> Attention: Click to read how it works</a>
         <div class="panel panel-default panel-body" id="foo">
-            <p>1) Apply your language, games and other filters</p>
-            <p>2) Choose best streamers and click "Order Now"</p>
-            <p>3) Then upload your banner and setup $ limit</p>
-            <p>4) Control streams and pay only for results</p>
+            <p>1) Attention: You will get payment only if you show banners on your stream</p>
+            <p>2) Click "Start show with N banners". Start all banners.</p>
+            <p>3) Choose your chroma key color and capture banners</p>
+            <p>4) Place banners where you want and start streaming</p>
+            <p>5) Our system calculate viewers and duration of your stream</p>
+            <p>Have questions or advices to us? <i class="fa fa-envelope-o"></i> <a href="https://adtw.ch/contact-us">Contact now.</a></p>
         </div>
     </div>
     
