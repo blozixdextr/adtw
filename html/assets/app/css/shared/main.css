@@ -1009,6 +1009,12 @@ p.nav-column-item i{
     .handle{
         display: block;
     }
+    .client-profile,
+    .client-password{
+    	width:90%;
+    	margin:0 auto;
+    	float:none;
+    }
     .second-page .nav-column h2 {
     font-size: 26px;
     }
