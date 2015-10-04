@@ -819,6 +819,8 @@ table .success .streamer-online-view{
 
 .in-inline{
 	margin:30px 0 10px;
+	justify-content:space-around;
+	display:flex;
 }
 .in-inline p{
 	font-size:22px;
