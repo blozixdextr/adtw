@@ -44,7 +44,7 @@
         @forelse($orders as $b)
             <div class="booking-table-row booking-name">
                 <div class="booking-ban-size col-xs-3">
-                    <p>{{ $b->type->title }}</p>
+                    <p><a href="{{ $b->file }}" target="_blank">{{ $b->type->title }}</a></p>
                     <div class="col-xs-3"></div>
                 </div>
                 <div class="col-xs-3">
