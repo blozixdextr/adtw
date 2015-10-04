@@ -22,10 +22,10 @@
 @endsection
 
 @section('content')
-    <h2><i class="fa fa-television"></i> Stream #{{ $stream->id }}</h2>
+    <h2><i class="fa fa-desktop"></i> Stream #{{ $stream->id }}</h2>
     <div class="in-inline">
         <p>Streamer: <a href="/profile/{{ $stream->user_id }}">{{ $stream->user->name }}</a></p>
-        <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
+        <p><i class="fa fa-calendar"></i> Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
         <p>Status: 
             @if (!$isFinished)
                 <br>
