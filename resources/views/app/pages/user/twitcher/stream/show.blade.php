@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    <h1><i class="fa fa-twitch"></i> Stream #{{ $stream->id }}</h1>
+    <h2><i class="fa fa-twitch"></i> Stream #{{ $stream->id }}</h2>
     <div class="in-inline">
         <p>Date: {{ $stream->time_start->format('d.m.y H:i') }}</p>
         <p>Status:
