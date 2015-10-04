@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Models\Mappers\UserMapper;
+use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use Auth;
@@ -74,5 +75,21 @@ class UserController extends Controller
         $user->save();
 
         return Redirect::back()->with(['success' => 'User '.$user->name.' successfully unbanned']);
+    }
+
+    public function edit($userId)
+    {
+        $user = User::findOrFail($userId);
+
+        return view('admin.pages.user.edit', compact('user'));
+    }
+
+    public function update($userId, Request $request)
+    {
+        $user = User::findOrFail($userId);
+        $user->fill($request->all());
+        $user->save();
+
+        return Redirect::back()->with(['success' => 'User '.$user->name.' was changed']);
     }
 }

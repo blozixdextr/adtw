@@ -136,6 +136,8 @@ Route::group(['middleware' => 'admin', 'namespace' => 'Admin', 'prefix' => 'admi
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'UserController@index');
         Route::get('{userId}', 'UserController@show');
+        Route::get('{userId}/edit', 'UserController@edit');
+        Route::post('{userId}/update', 'UserController@update');
         Route::get('{userId}/ban', 'UserController@ban');
         Route::get('{userId}/unban', 'UserController@unban');
         Route::get('{userId}/login-as', 'UserController@loginAs');

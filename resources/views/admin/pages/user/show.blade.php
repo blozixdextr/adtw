@@ -39,6 +39,7 @@
                         <a class="btn btn-success btn-lg" href="/admin/user/{{ $user->id }}/unban">unban</a>
                     @endif
                     <a class="btn btn-primary btn-lg" href="/admin/user/{{ $user->id }}/login-as">login</a>
+                    <a class="btn btn-info btn-lg" href="/admin/user/{{ $user->id }}/edit">edit</a>
 
                 </div>
             </div>
