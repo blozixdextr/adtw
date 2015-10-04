@@ -31,13 +31,13 @@
                 <div class="col-xs-3">
                     <p>Banner</p>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <p>Streamer</p>
                 </div>
                 <div class="col-xs-3">
                     <p>Cost limit</p>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <p>Actions</p>
                 </div>
             </div>
@@ -47,13 +47,13 @@
                     <p>{{ $b->type->title }}</p>
                     <div class="col-xs-3"></div>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <p><a href="/profile/{{ $b->twitcher_id }}">{{ $b->twitcher->name }}</a></p>
                 </div>
                 <div class="col-xs-3">
                     <p>{{ $b->amount_limit }}USD</p>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     <p><a href="/user/client/banner/{{ $b->id }}/cancel">Cancel order <i class="fa fa-times"></i></a></p>
                 </div>
             </div>
