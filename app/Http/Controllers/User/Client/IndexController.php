@@ -11,6 +11,13 @@ class IndexController extends Controller
     {
         $notifications = NotificationMapper::fresh($this->user, 10);
 
-        return view('app.pages.user.client.index', compact('notifications'));
+        $showWelcome = $this->user->is_welcomed == 0;
+
+        if ($showWelcome) {
+            $this->user->is_welcomed = 1;
+            $this->user->save();
+        }
+
+        return view('app.pages.user.client.index', compact('notifications', 'showWelcome'));
     }
 }

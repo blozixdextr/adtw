@@ -1,0 +1,43 @@
+.nav-column > * {
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    opacity: 0.3;
+    pointer-events: none;
+}
+body:not(.shepherd-active) .nav-column > * {
+    opacity: 1;
+    pointer-events: auto;
+}
+.nav-column .shepherd-target.shepherd-enabled {
+    opacity: 1;
+    pointer-events: auto;
+    border: 1px solid red;
+}
+
+
+.work-column-inside .row > * {
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    opacity: 0.3;
+    pointer-events: none;
+}
+body:not(.shepherd-active) .work-column-inside .row > * {
+    opacity: 1;
+    pointer-events: auto;
+}
+.work-column-inside .row .shepherd-target.shepherd-enabled {
+    opacity: 1;
+    pointer-events: auto;
+    border: 1px solid red;
+}
+
+
+.shepherd-step footer {
+    padding: 0;
+    left: auto;
+    position: relative;
+    bottom: auto;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+}

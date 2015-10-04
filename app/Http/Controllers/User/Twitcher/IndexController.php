@@ -25,7 +25,14 @@ class IndexController extends Controller
 
         $activeBanners = BannerMapper::activeTwitcher($this->user);
 
-        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes', 'notifications', 'waitingBanners', 'activeBanners'));
+        $showWelcome = $this->user->is_welcomed == 0;
+
+        if ($showWelcome) {
+            $this->user->is_welcomed = 1;
+            $this->user->save();
+        }
+
+        return view('app.pages.user.twitcher.index', compact('banners', 'bannerTypes', 'notifications', 'waitingBanners', 'activeBanners', 'showWelcome'));
     }
 
     public function updateStatistics() {

@@ -1,10 +1,19 @@
 @extends('app.layouts.client')
 
 @section('head-style')
+    @if ($showWelcome)
+        <link rel="stylesheet" href="/assets/app/libs/shepherd/css/shepherd-theme-arrows.css">
+        <link rel="stylesheet" href="/assets/app/css/shared/welcome-client.css">
+    @endif
     <link rel="stylesheet" href="/assets/app/css/views/for-timeline.css">
 @endsection
 
 @section('head-js')
+    @if ($showWelcome)
+        <script src="/assets/app/libs/tether/js/tether.min.js"></script>
+        <script src="/assets/app/libs/shepherd/js/shepherd.min.js"></script>
+        <script src="/assets/app/js/welcome-client.js"></script>
+    @endif
     <script>
         $(function(){
             $(window).scroll(function() {
