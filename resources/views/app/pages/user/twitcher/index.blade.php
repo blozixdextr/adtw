@@ -81,7 +81,7 @@
         </div>
     </div>
     
-    <div class="col-xs-12 help-window">
+    <div class="help-window">
         <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-question-circle"></i> Click to read help</a>
         <div class="panel panel-default panel-body" id="foo">
             <p>1) Apply your language, games and other filters</p>
