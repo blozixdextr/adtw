@@ -68,16 +68,22 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
-        @foreach($bannerTypes as $bt)
-            <div class="row ready-banner">
-                <div class="col-xs-6">{{ $bt->title }}</div>
-                @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
-                @else
-                    <div class="col-xs-6"><em>no orders yet :(</em></div>
-                @endif
-            </div>
-        @endforeach
+        @if (count($activeBanners) > 0)
+            @forelse($bannerTypes as $bt)
+                <div class="row ready-banner">
+                    <div class="col-xs-6">{{ $bt->title }}</div>
+                    @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                        <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                    @else
+                        <div class="col-xs-6"><em>no orders yet :(</em></div>
+                    @endif
+                </div>
+            @empty
+                <em>There are no orders yet</em>
+            @endforelse
+        @else
+            <em>There are no orders yet</em>
+        @endif
         </div>
     </div>
     
