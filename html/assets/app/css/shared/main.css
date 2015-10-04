@@ -910,6 +910,9 @@ table .success .streamer-online-view{
     align-items: center;
     margin-bottom:20px;
 }
+.ready-banner:last-child{
+	margin-bottom:0;
+}
 
 .help-window{
     padding:0 !important;
