@@ -5,7 +5,7 @@
         <p class="nav-column-item"><i class="fa fa-area-chart"></i> <a href="/user/twitcher">Timeline</a></p>
         <p class="nav-column-item"><i class="fa fa-list-alt"></i> <a href="/user/twitcher/ads">My Ads</a></p>
         <p class="nav-column-item"><i class="fa fa-money"></i> <a href="/user/twitcher/billing">Billing</a></p>
-        <p class="nav-column-item"><i class="fa fa-question"></i> <a href="/contact-us">Contact Us</a></p>
+        <p class="nav-column-item"><i class="fa fa-envelope-o"></i> <a href="/contact-us">Contact Us</a></p>
     </div>
     <div class="nav-user">
         <h4 class="nav-column-title">User</h4>
