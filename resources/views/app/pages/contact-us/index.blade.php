@@ -8,7 +8,7 @@
 
 
     <div class="panel panel-default">
-        <div class="panel-heading"><h2><i class="fa fa-question"></i> Contact Us</h2></div>
+        <div class="panel-heading"><h2><i class="fa fa-envelope-o"></i> Contact Us</h2></div>
         <div class="panel-body fields-border">
 
             {!! Form::open(['url' => '/contact-us', 'id' => 'contactUs']) !!}
