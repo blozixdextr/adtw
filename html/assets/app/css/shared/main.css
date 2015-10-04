@@ -768,9 +768,9 @@ table .success .streamer-online-view{
 .work-column-inside>div>h1:first-child{
 	margin:14px 0 8px;
 }
-.work-column-inside>div>h2{
+/*.work-column-inside>div>h2{
 	margin-bottom:20px;
-}
+}*/
 
 .panel h2, .panel h4, .panel h3, .panel h1{
 	margin:0;
