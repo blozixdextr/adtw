@@ -65,9 +65,14 @@
     margin-bottom: 0;
 }
 .timeline-item >div{
-    width: 50%;
     min-height: 105px;
     padding: 15px 40px;
+}
+.timeline-item >div:first-child{
+    width: 65%;
+}
+.timeline-item >div:last-child{
+    width: 35%;
 }
 .timeline-item-date:before{
     display: block;
