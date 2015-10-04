@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->float('balance_blocked')->index('balance_blocked')->default(0)->unsigned();
             $table->string('currency', 5)->nullable()->default('USD');
             $table->integer('language_id')->nullable()->unsigned()->index('language_id');
+            $table->boolean('is_welcomed')->nullable()->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

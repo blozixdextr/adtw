@@ -346,6 +346,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `balance_blocked` double(8,2) unsigned NOT NULL DEFAULT '0.00',
   `currency` varchar(5) COLLATE utf8_unicode_ci DEFAULT 'USD',
   `language_id` int(10) DEFAULT NULL,
+  `is_welcomed` tinyint(1) DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
