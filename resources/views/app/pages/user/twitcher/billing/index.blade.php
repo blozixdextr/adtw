@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="panel panel-default">
-        <h1 class="panel-heading"><i class="fa fa-bank"></i>Billing</h1>
+        <h2 class="panel-heading"><i class="fa fa-bank"></i>Billing</h2>
         <div class="work-column-floats panel-body">
             <div class="left">
                 <h3>Available</h3><span>${{ number_format($user->availableBalance(), 2) }}</span>
