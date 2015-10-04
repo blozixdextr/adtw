@@ -22,7 +22,7 @@
 @extends('app.layouts.twitcher')
 
 @section('content')
-    <h1><i class="fa fa-user"></i> Profile</h1>
+    <h2><i class="fa fa-user"></i> Profile</h2>
     <div class="panel panel-default fields-border">
         <div class="panel-heading">
             <h3><i class="fa fa-tag"></i> Filter</h3>
