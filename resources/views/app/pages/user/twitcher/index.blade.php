@@ -82,14 +82,14 @@
     </div>
     
     <div class="help-window">
-        <a href="#" onclick="toggle_visibility('foo');"><i class="fa fa-exclamation-triangle"></i> Attention: Click to read how it works</a>
+        <i class="fa fa-exclamation-triangle"></i> <a href="#" onclick="toggle_visibility('foo');">Attention: Click to read how it works & rules</a>
         <div class="panel panel-default panel-body" id="foo">
-            <p>1) Attention: You will get payment only if you show banners on your stream</p>
+            <p>1) You will get payment only if you show banners on your stream.</p>
             <p>2) Click "Start show with N banners". Start all banners.</p>
-            <p>3) Choose your chroma key color and capture banners</p>
-            <p>4) Place banners where you want and start streaming</p>
-            <p>5) Our system calculate viewers and duration of your stream</p>
-            <p>Have questions or advices to us? <i class="fa fa-envelope-o"></i> <a href="https://adtw.ch/contact-us">Contact now.</a></p>
+            <p>3) Choose your chroma key color and capture banners.</p>
+            <p>4) Place banners where you want and start streaming.</p>
+            <p>5) Our system calculate viewers and duration of your stream.</p>
+            <p>Have questions or advices to us? <i class="fa fa-envelope-o"></i> <a href="https://adtw.ch/contact-us">Contact now</a></p>
         </div>
     </div>
     
