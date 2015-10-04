@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <div class="panel panel-deafult">
+    <div class="panel panel-default">
     <h1 class="panel-heading"><i class="fa fa-key"></i> Change Password</h1>
     <div class="panel-body">
     {!! Form::open(['url' => '/user/client/profile/password', 'class' => 'form-horizontal profile-table']) !!}
