@@ -87,6 +87,10 @@ a:hover{
 	    border: 1px dashed #000;
     padding:3px 6px;
 }
+.panel-heading h2 i{
+	width:20px;
+	text-align:center;
+}
 
 
 /*                            fonts             */
