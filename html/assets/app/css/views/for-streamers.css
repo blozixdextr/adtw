@@ -152,7 +152,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 }
 .choose-strimer .games-button{
     display: block;
-    margin: 30px auto;
+    margin: 15px auto;
     width:200px;
 }
 .choose-strimer .games-button button{
