@@ -98,7 +98,7 @@
             </section>
             <section id="content2">
                 <div class="sect-content">
-                    <div class="row">
+                    <div class="row paypal-flex">
                         {!! Form::open(['url' => '/user/client/billing/paypal', 'class' => 'form-horizontal']) !!}
                         <div class="form-group {!! ($errors && $errors->has('amount')) ? ' has-error' : '' !!}">
                             {!! Form::label('amount', 'Add to your account', ['class' => 'col-sm-3 control-label']) !!}
