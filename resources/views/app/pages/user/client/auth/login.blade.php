@@ -8,7 +8,7 @@
 @section('content')
 
     {!! Form::open(['url' => '/auth/client/login', 'class' => 'client-auth']) !!}
-    <h1>Sign In as Client</h1>
+    <center><h1>Sign In as Client</h1></center>
 
     <div class="form-group">
         {!! Form::input('email', 'email', old('email', ''), ['required' => 'required', 'placeholder' => 'your@email.com', 'class' => 'form-control']) !!}
@@ -24,7 +24,5 @@
     <br><a href="/auth/client/password/email">Forgot password?</a>
 
     {!! Form::close() !!}
-    <div class="height100 lower992 up450"></div>
-    <div class="height100 lower992 up450"></div>
 
 @endsection
