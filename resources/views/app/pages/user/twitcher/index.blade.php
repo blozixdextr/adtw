@@ -97,7 +97,7 @@
     </div>
     
     <div class="help-window">
-        <i class="fa fa-exclamation-triangle"></i> <a href="#" onclick="toggle_visibility('foo');">Attention: Click to read how it works & rules</a>
+        <i class="fa fa-exclamation-triangle"></i> <a href="#" onclick="toggle_visibility('foo');">Click to read how it works & rules</a>
         <div class="panel panel-default panel-body" id="foo">
             <p>1) You will get payment only if you show banners on your stream.</p>
             <p>2) Click "Start show with N banners". Start all banners.</p>
