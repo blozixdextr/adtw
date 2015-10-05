@@ -9,10 +9,7 @@
     font-family: 'Roboto Slab', sans-serif;
     font-size: 39px;
     text-shadow: 0 0 6px #9E9696;
-    margin: 35px 0 20px 0;
-}
-.client-auth h1:first-child{
-    margin-top:10px;
+    
 }
 
 .client-auth .btn-white{
