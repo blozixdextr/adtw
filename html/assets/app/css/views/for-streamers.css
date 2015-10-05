@@ -17,10 +17,6 @@ padding: 0 6px;
     margin-right:2%;
     margin-top: 100px;
 }
-
-.games-button{
-    margin:30px 0;
-}
 .streamer-id:nth-child(1){
     margin-top:20px;
 }
@@ -156,7 +152,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 }
 .choose-strimer .games-button{
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     width:200px;
 }
 .choose-strimer .games-button button{
