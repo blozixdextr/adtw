@@ -1030,9 +1030,6 @@ p.nav-column-item i{
     	margin:0 auto;
     	float:none;
     }
-    .client-auth{
-    	width:auto;
-    }
     .form-group textarea[name="message"]{
     	height:100px;
     }
