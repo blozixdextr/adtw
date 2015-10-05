@@ -374,4 +374,7 @@ header .title-descr{
 	.main-page .page center{
 		    margin: 10px 0;
 	}
+	.about-us li{
+		padding-bottom:75px;
+	}
 }
