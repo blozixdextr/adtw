@@ -15,7 +15,7 @@ class IndexController extends Controller
 
         if ($showWelcome) {
             $this->user->is_welcomed = 1;
-            //$this->user->save();
+            $this->user->save();
         }
 
         return view('app.pages.user.client.index', compact('notifications', 'showWelcome'));

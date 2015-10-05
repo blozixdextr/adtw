@@ -16,6 +16,7 @@ use App\Models\Mappers\UserMapper;
 use App\Models\Mappers\LogMapper;
 use App\Models\User;
 use App\Models\UserProfile;
+use Session;
 
 
 class AuthController extends Controller
@@ -44,6 +45,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+        Session::remove('fake-auth');
     }
 
     /**

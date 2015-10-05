@@ -8,6 +8,7 @@ use App\Models\Mappers\LogMapper;
 use App\Apis\Twitch;
 use App\Models\Mappers\NotificationMapper;
 use App\Models\Notification;
+use Session;
 
 class IndexController extends Controller
 {
@@ -36,6 +37,9 @@ class IndexController extends Controller
     }
 
     public function updateStatistics() {
+        if (Session::get('fake-auth', 0) == 1) {
+            return false;
+        }
         $user = $this->user;
         $now = \Carbon\Carbon::now();
         if ($user->twitch_updated == null || $now->diffInDays($user->twitch_updated, false) < 0) {
@@ -52,7 +56,10 @@ class IndexController extends Controller
                 $user->twitch_channel = $channel;
                 $user->twitch_updated = $now;
                 $user->save();
+                return true;
             }
         }
+
+        return false;
     }
 }

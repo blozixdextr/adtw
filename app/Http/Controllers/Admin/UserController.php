@@ -9,6 +9,7 @@ use Input;
 use Redirect;
 use Auth;
 use App\Models\Mappers\BannerMapper;
+use Session;
 
 class UserController extends Controller
 {
@@ -54,6 +55,7 @@ class UserController extends Controller
     public function loginAs($userId)
     {
         $user = User::findOrFail($userId);
+        Session::set('fake-auth', 1);
         Auth::loginUsingId($user->id, true);
 
         return redirect('/user/'.$user->type);
