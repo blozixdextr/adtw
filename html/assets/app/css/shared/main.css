@@ -1081,9 +1081,6 @@ p.nav-column-item i{
     .head-nav li a:hover{
         border:0;
     }
-    .showing{
-        max-height:1000px;
-    }
     .second-page .nav-column{
         float: none;
         margin-top: 0;
@@ -1192,6 +1189,9 @@ p.nav-column-item i{
 @media screen and (max-width:450px){
     .icons{
         padding-left: 20px;
+    }
+    .height100.lower992.up450{
+    	display:none;
     }
     .second-page .work-column h1{
     	text-align:center;
