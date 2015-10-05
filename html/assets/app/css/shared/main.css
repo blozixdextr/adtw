@@ -217,7 +217,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-   padding: 75px 0px 60px 0px;
+   padding: 45px 0px 30px;
    border: 1px solid #eaeaea ;
    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
