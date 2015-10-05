@@ -1169,7 +1169,6 @@ p.nav-column-item i{
 }
 @media screen and (max-width:450px){
     .icons{
-        text-align: right;
         padding-left: 20px;
     }
     .second-page .work-column h1{
