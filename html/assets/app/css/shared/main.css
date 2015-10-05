@@ -986,6 +986,9 @@ p.nav-column-item i{
     z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
 }
+.paypal-flex .form-group{
+	margin-left:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
