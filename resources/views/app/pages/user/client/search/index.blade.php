@@ -116,7 +116,7 @@ if (isset($filters['banner_types']) && count($filters['banner_types']) > 0) {
                                 {!! Form::errorMessage('videos') !!}
                             </div>
                         </div>
-                    
+                    <div class="clear"></div>
                         <div class="games-button">
                             <div class="form-group">
                                 <button type="submit" class="btn-white">Find</button>
