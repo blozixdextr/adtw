@@ -339,7 +339,10 @@ header .title-descr{
     }
     .about-us li{
         width: 98%;
-        padding:0;
+        padding: 0 15px 50px;
+    }
+    .about-us li:last-child{
+    	padding-bottom:0;
     }
     .bottom-info-one .bottom-info-content div:last-child a{
     	margin-left:0;
