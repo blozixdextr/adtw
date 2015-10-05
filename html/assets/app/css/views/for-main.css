@@ -4,6 +4,9 @@
     /*padding: 8em 0em 0 0;*/
     background-color: rgba(39,25,65 , 0.8);
 }
+html{
+    background:url(https://cloud.githubusercontent.com/assets/14276761/10119519/2626bbb0-64a1-11e5-9767-5f40bf72e2fc.png) repeat;
+}
 .welcome{
 	box-sizing: border-box;
     height: calc(100vh - 550px);
@@ -21,10 +24,6 @@
 .main-nav {
     background-color: #6441A5;
     padding: 15px 0px 15px 36%;
-}
-.main-page .main-back{
-    background:url(https://cloud.githubusercontent.com/assets/14276761/10119519/2626bbb0-64a1-11e5-9767-5f40bf72e2fc.png) repeat;
-    overflow:hidden;
 }
 .main-page .in-page{
 	width:1152px;
