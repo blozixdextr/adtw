@@ -177,7 +177,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 }
 @media screen and (max-width:750px){
     .games-followers{
-        width:50%;
+        width:100%;
     }
     .language-and-banner .form-group:first-child{
         margin-bottom:15px;
