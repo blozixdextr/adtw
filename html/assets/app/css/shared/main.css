@@ -999,6 +999,9 @@ p.nav-column-item i{
         width: auto;
         padding: 7px 7px 87px;
     }
+    .second-page .nav-column h2{
+    	margin-left:3px;
+    }
     .streamer-item{
         width: 348px;
         margin: 0 auto 25px;
@@ -1028,6 +1031,9 @@ p.nav-column-item i{
 @media screen and (max-width:750px){
     .handle{
         display: block;
+    }
+    .second-page .nav-column h2{
+    	margin-left:10px;
     }
     .second-page .nav-settings, .second-page .nav-user{
     	padding:10px;
