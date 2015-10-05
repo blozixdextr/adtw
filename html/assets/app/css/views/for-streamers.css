@@ -18,6 +18,9 @@ padding: 0 6px;
     margin-top: 100px;
 }
 
+.games-button{
+    margin:30px 0;
+}
 .streamer-id:nth-child(1){
     margin-top:20px;
 }
@@ -161,9 +164,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 }
 .choose-strimer input[type="checkbox"]{
     top:0px;
-}
-.games-button{
-    margin:30px 0;
 }
 @media screen and (max-width:992px){
     .streamer-id{
