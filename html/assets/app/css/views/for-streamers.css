@@ -17,6 +17,21 @@ padding: 0 6px;
     margin-right:2%;
     margin-top: 100px;
 }
+.games-followers:after{
+    clear:both;
+    content:'';
+    display:block;
+}
+.streamer-id:nth-child(1){
+    margin-top:20px;
+}
+.streamer-id:nth-child(2){
+    margin-top:20px;
+}
+.streamer-id:nth-child(3){
+    margin-top:20px;
+}
+
 .streamer-id:nth-child(3n){
     margin-right:0;
 }
@@ -142,7 +157,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 }
 .choose-strimer .games-button{
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 15px;
     width:200px;
 }
 .choose-strimer .games-button button{
@@ -151,12 +166,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 .choose-strimer input[type="checkbox"]{
     top:0px;
 }
-@media screen and (max-width:750px){
+
+@media screen and (max-width:992px){
     .streamer-id{
         width:48%;
     }
+    .streamer-id:nth-child(3n) {
+        margin-right: 2%;
+        margin-top:100px;
+    }
+}
+@media screen and (max-width:750px){
     .games-followers{
-        width:50%;
+        width:100%;
     }
     .language-and-banner .form-group:first-child{
         margin-bottom:15px;

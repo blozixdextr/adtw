@@ -9,7 +9,7 @@
 
     {!! Form::open(['url' => '/auth/client/sign-up', 'class' => 'client-auth sign-up']) !!}
     
-    <h1>Sign Up as Client</h1>
+    <center><h1>Sign Up as Client</h1></center>
 
     <div class="form-group">
         {!! Form::text('name', old('name', ''), ['placeholder' => 'First and last name', 'class' => 'form-control']) !!}

@@ -8,7 +8,7 @@
 @section('content')
 
     {!! Form::open(['url' => '/auth/client/password/email', 'class' => 'client-auth']) !!}
-    <h1>Restore your password</h1>
+    <center><h1>Restore your password</h1></center>
 
     <div class="form-group">
         {!! Form::input('email', 'email', old('email'), ['required' => 'required', 'placeholder' => 'your@email.com', 'class' => 'form-control']) !!}

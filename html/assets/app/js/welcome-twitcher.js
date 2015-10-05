@@ -14,7 +14,8 @@
             }
         });
         shepherd.addStep('welcome', {
-            text: ['Shepherd is a javascript library for guiding users through your app. It uses <a href="http://github.hubspot.com/tether/">Tether</a>, another open source library, to position all of its steps.', 'Tether makes sure your steps never end up off screen or cropped by an overflow. Try resizing your browser to see what we mean.'],
+            title: 'We glad to see you!',
+            text: ['Welcome. Glad you are here! This is your main menu. "My Ads" shows your ordered banners.<br> "Timeline" shows all events connecter with you. Have questions ? <i class="fa fa-envelope-o"></i> <a href="https://adtw.ch/contact-us">Contact us now</a>'],
             attachTo: '.nav-settings right',
             classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
             buttons: [
@@ -30,8 +31,8 @@
             ]
         });
         shepherd.addStep('including', {
-            title: 'Including',
-            text: 'Including Shepherd is easy! Just include shepherd.js, and a Shepherd theme file.',
+            title: 'Your Profile',
+            text: 'Fill information about your stream here. It`s help advertisers to find your stream in search.',
             attachTo: '.nav-user right',
             buttons: [
                 {
@@ -45,8 +46,8 @@
             ]
         });
         shepherd.addStep('followup', {
-            title: 'Learn more',
-            text: 'Star Shepherd on Github so you remember it for your next project',
+            title: 'Ordered banners',
+            text: 'Here you can see all banners. Click to review its and accept or decline banners.',
             attachTo: '.booking-table-first bottom',
             buttons: [
                 {

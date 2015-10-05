@@ -115,7 +115,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
     display: inline-block;
     width: 47.5%;
     box-sizing:border-box;
-    height: 330px;
+    height: 275px;
 }
 .title-place-left{
 	margin-right:5%;
@@ -217,7 +217,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-   padding: 75px 0px 60px 0px;
+   padding: 45px 0px 30px;
    border: 1px solid #eaeaea ;
    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
@@ -225,7 +225,7 @@ src: url("../../fonts/Fipps-Regular.otf") format("opentype");
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-   padding: 45px 0px 30px 0px;;
+   padding: 25px 0px;
    border: 1px solid #eaeaea ;
    background-image:url(https://cloud.githubusercontent.com/assets/14276761/9932551/813bc29e-5d4d-11e5-9156-a4d66a66c6b5.jpg);
 }
@@ -348,7 +348,7 @@ wrapper {
     	align-items: center;
 }
 .second-page .page{
-    padding: 15px 15px 87px 15px;
+    padding: 15px 15px 100px 15px;
     margin:0px auto 0;
     overflow: hidden;
     width: 1000px;
@@ -974,7 +974,21 @@ p.nav-column-item i{
 	display:inline-block;
 	background:url(https://cloud.githubusercontent.com/assets/14276761/10242838/8ea487ee-68fc-11e5-864d-627aeb301020.png) no-repeat center center;
 }
-
+.btn-twitch:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -46px;
+    top: -40px;
+    height: 65px;
+    background-size: 46px 65px;
+    width: 47px;
+    z-index: 9000000;
+    background-image: url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
+}
+.sect-content .paypal-flex .form-group{
+	margin-left:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
@@ -986,11 +1000,20 @@ p.nav-column-item i{
 @media screen and (max-width:992px){
     .second-page .page{
         width: auto;
-        padding: 7px 7px 87px;
+        padding: 7px 7px 100px;
+    }
+    .second-page .nav-column h2{
+    	margin-left:3px;
     }
     .streamer-item{
         width: 348px;
         margin: 0 auto 25px;
+    }
+    .second-page .nav-settings, .second-page .nav-user{
+    	padding:3px;
+    }
+    .search-and-buy{
+    	padding:2px 3px;
     }
     .streamers-column.left{
         float: none;
@@ -1004,16 +1027,31 @@ p.nav-column-item i{
     .second-page .nav-settings, .second-page .nav-user{
     	margin-top:0;
     }
+    .title-place-left, .title-place-right{
+    	width:70%;
+    }
 }
 @media screen and (max-width:750px){
     .handle{
         display: block;
+    }
+    .second-page .nav-column h2{
+    	margin-left:10px;
+    }
+    .second-page .nav-settings, .second-page .nav-user{
+    	padding:10px;
+    }
+    .search-and-buy{
+    	padding:3px 6px;
     }
     .client-profile,
     .client-password{
     	width:90%;
     	margin:0 auto;
     	float:none;
+    }
+    .form-group textarea[name="message"]{
+    	height:100px;
     }
     .second-page .nav-column h2 {
     font-size: 26px;
@@ -1055,9 +1093,6 @@ p.nav-column-item i{
     }
     .head-nav li a:hover{
         border:0;
-    }
-    .showing{
-        max-height:1000px;
     }
     .second-page .nav-column{
         float: none;
@@ -1166,7 +1201,6 @@ p.nav-column-item i{
 }
 @media screen and (max-width:450px){
     .icons{
-        text-align: right;
         padding-left: 20px;
     }
     .second-page .work-column h1{
@@ -1176,7 +1210,7 @@ p.nav-column-item i{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 2px 87px;
+        padding: 7px 2px 100px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;

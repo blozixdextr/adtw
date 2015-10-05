@@ -52,10 +52,6 @@
 .modal-dialog {
     background: #fefefe;
     border: none;
-    background-image:url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
-    background-repeat:no-repeat;
-        background-position: 217px 62px;
-    background-size: 47px 61px;
     position: fixed;
     width: 80%;
     max-width: 700px;
@@ -182,6 +178,8 @@
 }
 .twitch-login{
     text-align: center;
+    display:inline-block;
+    position:relative;
 }
 .twitch-login button{
     margin-top: 10px;
