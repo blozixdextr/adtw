@@ -1003,6 +1003,12 @@ p.nav-column-item i{
         width: 348px;
         margin: 0 auto 25px;
     }
+    .second-page .nav-settings, .second-page .nav-user{
+    	padding:3px;
+    }
+    .search-and-buy{
+    	padding:2px 3px;
+    }
     .streamers-column.left{
         float: none;
     }
@@ -1023,7 +1029,12 @@ p.nav-column-item i{
     .handle{
         display: block;
     }
-    
+    .second-page .nav-settings, .second-page .nav-user{
+    	padding:10px;
+    }
+    .search-and-buy{
+    	padding:3px 6px;
+    }
     .client-profile,
     .client-password{
     	width:90%;
