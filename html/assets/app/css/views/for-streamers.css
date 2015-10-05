@@ -162,10 +162,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
 .choose-strimer input[type="checkbox"]{
     top:0px;
 }
-@media screen and (max-width:750px){
+@media screen and (max-width:992px){
     .streamer-id{
         width:48%;
     }
+}
+@media screen and (max-width:750px){
     .games-followers{
         width:50%;
     }
