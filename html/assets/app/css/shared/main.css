@@ -1016,6 +1016,9 @@ p.nav-column-item i{
     .second-page .nav-settings, .second-page .nav-user{
     	margin-top:0;
     }
+    .title-place-left, .title-place-right{
+    	width:70%;
+    }
 }
 @media screen and (max-width:750px){
     .handle{
