@@ -997,7 +997,7 @@ p.nav-column-item i{
 @media screen and (max-width:992px){
     .second-page .page{
         width: auto;
-        padding: 7px 7px 87px;
+        padding: 7px 7px 100px;
     }
     .second-page .nav-column h2{
     	margin-left:3px;
@@ -1207,7 +1207,7 @@ p.nav-column-item i{
         height: auto;
     }
     .second-page .page{
-        padding: 7px 2px 87px;
+        padding: 7px 2px 100px;
     }
     footer#footer .icons li:last-child{
     	padding-right:1em;
