@@ -1015,6 +1015,9 @@ p.nav-column-item i{
     	margin:0 auto;
     	float:none;
     }
+    textarea[name="message"]{
+    	height:100px;
+    }
     .second-page .nav-column h2 {
     font-size: 26px;
     }
