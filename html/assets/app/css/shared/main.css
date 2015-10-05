@@ -986,10 +986,6 @@ p.nav-column-item i{
     z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
 }
-.height100.lower992{
-	display:none;
-}
-
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
@@ -1022,9 +1018,6 @@ p.nav-column-item i{
     .title-place-left, .title-place-right{
     	width:70%;
     }
-    .height100.lower992{
-	display:block;
-	}
 }
 @media screen and (max-width:750px){
     .handle{
@@ -1189,9 +1182,6 @@ p.nav-column-item i{
 @media screen and (max-width:450px){
     .icons{
         padding-left: 20px;
-    }
-    .height100.lower992.up450{
-    	display:none;
     }
     .second-page .work-column h1{
     	text-align:center;
