@@ -974,6 +974,13 @@ p.nav-column-item i{
 	display:inline-block;
 	background:url(https://cloud.githubusercontent.com/assets/14276761/10242838/8ea487ee-68fc-11e5-864d-627aeb301020.png) no-repeat center center;
 }
+.btn-twitch:before{
+	content:'';
+	display:block;
+	position:absolute;
+	left:-100px;
+	top:-30px;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
