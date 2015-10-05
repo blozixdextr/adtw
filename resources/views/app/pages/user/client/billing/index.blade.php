@@ -10,10 +10,10 @@
     <div class="panel panel-default">
     <h2 class="panel-heading"><i class="fa fa-university"></i> Billing</h2>
     <div class="work-column-item panel-body bil-control fields-border">
-        <div class="col-md-6 col-sm-6 col-xs-12" class="work-column-link">
+        <div class="col-md-5 col-sm-5 col-xs-12" class="work-column-link">
             <a class="btn-white" href="/user/client/billing/log">View Usage Details</a>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="col-md-6 col-sm-6 col-xs-6"><h3>You Owe</h3><span>${{ number_format($user->balance_blocked, 2) }}</span></div>
             <div class="col-md-6 col-sm-6 col-xs-6"><h3>Usage</h3><span>${{ number_format(0, 2) }}</span></div>
         </div>
