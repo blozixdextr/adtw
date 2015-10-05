@@ -237,7 +237,9 @@ header .title-descr{
     }
 
 @media screen and (max-width:1152px){
-    
+    .main-page .page{
+        padding: 15px 0px 180px;
+    }
     .main-page .in-page{
     	width:950px;
     }
@@ -328,7 +330,6 @@ header .title-descr{
         width: 96%;
 	}
     #footer{
-        position: static;
         width: 100%;
         background-color: #6441A5;
     }
