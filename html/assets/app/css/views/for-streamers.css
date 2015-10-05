@@ -17,7 +17,9 @@ padding: 0 6px;
     margin-right:2%;
     margin-top: 100px;
 }
-
+.games-button .form-group{
+    margin-bottom:0;
+}
 .streamer-id:nth-child(1){
     margin-top:20px;
 }
