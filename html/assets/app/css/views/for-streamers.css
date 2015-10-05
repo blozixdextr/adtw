@@ -182,6 +182,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6441a5', end
     .language-and-banner .form-group:first-child{
         margin-bottom:15px;
     }
+    .choose-strimer .games-button{
+        display: block;
+        margin: 0 auto 15px;
+    }
 }
 @media screen and (max-width:450px){
     .streamer-id{
