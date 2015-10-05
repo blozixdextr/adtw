@@ -24,7 +24,7 @@
     <br><a href="/auth/client/password/email">Forgot password?</a>
 
     {!! Form::close() !!}
-    <div class="height100 lower992"></div>
-    <div class="height100 lower992"></div>
+    <div class="height100 lower992 up450"></div>
+    <div class="height100 lower992 up450"></div>
 
 @endsection
