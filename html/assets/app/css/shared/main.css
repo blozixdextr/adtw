@@ -1034,10 +1034,9 @@ p.nav-column-item i{
     top: 76px;
 }
 .together_color{
-	margin: 5px 0;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 200px !important;
+    min-height: 240px !important;
     height: 100%;
 }
 .together_color .btn-white:after:hover{
@@ -1046,10 +1045,15 @@ p.nav-column-item i{
 .order-banner{
 	display: flex;
     	flex-direction: column;
-    	min-height: 200px !important;
+    	min-height: 240px !important;
     	justify-content: space-around;
 }
-
+.ready-for-stream .panel-body{
+	padding:0;
+}
+.ready-for-stream .panel-body>div>div{
+	padding:20px;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
