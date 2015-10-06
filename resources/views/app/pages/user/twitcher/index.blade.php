@@ -58,23 +58,23 @@
                 @else
                     <div class="row ready-banner">
                 @endif
-                    <div class="col-xs-4">
+                    <div class="col-xs-3">
                         {{ $bt->title }}<br>
                         @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                             <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
                         @endif
                     </div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-8 text-center"><a class="btn-white middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                        <div class="col-xs-3 text-center"><a class="btn-white middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                     @else
-                        <div class="col-xs-8 text-center"><em>no orders yet :(</em></div>
+                        <div class="col-xs-3 text-center"><em>no orders yet :(</em></div>
                     @endif
                 </div>
             @empty
                 <em>There are no orders yet</em>
             @endforelse
             </div>
-            <div class="col-xs-5 col-xs-offset-1 together_color">
+            <div class="col-xs-6 col-xs-offset-1 together_color">
                 <div>
                     <p><strong>If you want to start with all banners, click here</strong></p>
                     <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
