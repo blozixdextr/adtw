@@ -1066,6 +1066,7 @@ p.nav-column-item i{
 }
 .ready-for-stream .warning-popup p{
 	margin-bottom:0;
+	text-align:justify;
 }
 /*            media         */
 @media screen and (max-width:1366px){
