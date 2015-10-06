@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-xs-12 new-flex">
                     <div class="col-xs-5 input-group" id="bgColorPicker">
-                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
+                        <input type="text" value="#000000" class="form-control thin-border"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
                     <p class="col-xs-7"><i>Set up background color for banners</i></p>
@@ -77,7 +77,7 @@
                         @endif
                     </div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-8 text-center"><a class="btn-white middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Stream only this size</a></div>
+                        <div class="col-xs-8 text-center"><a class="btn-white thin-border middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Stream only this size</a></div>
                     @else
                         <div class="col-xs-8 text-center"><strong>no orders yet</strong></div>
                     @endif
