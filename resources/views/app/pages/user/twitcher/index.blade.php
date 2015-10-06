@@ -74,7 +74,7 @@
                 <em>There are no orders yet</em>
             @endforelse
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 together_color">
                 <div>
                     <p><strong>If you want to start with all banners, click here</strong></p>
                     <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
