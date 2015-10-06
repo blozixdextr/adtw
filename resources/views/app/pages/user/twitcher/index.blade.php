@@ -54,9 +54,9 @@
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="row ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
+                    <div class="row col-xs-6 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
                 @else
-                    <div class="row ready-banner">
+                    <div class="row col-xs-6 ready-banner">
                 @endif
                     <div class="col-xs-3">
                         {{ $bt->title }}<br>
@@ -81,18 +81,18 @@
         </div>
     </div>
     <div class="col-xs-12 together_color">
-                <div>
-                    <p><strong>If you want to start with all banners, click here</strong></p>
-                    <div class="text-center"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
-                </div>
-                <div>
-                    <p><strong>Background color for banners</strong></p>
-                    <div class="input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
-                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
-                        <span class="input-group-addon"><i></i></span>
-                    </div>
-                </div>
+        <div>
+            <p><strong>If you want to start with all banners, click here</strong></p>
+            <div class="text-center"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
+        </div>
+        <div>
+            <p><strong>Background color for banners</strong></p>
+            <div class="input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
+                <input type="text" value="#000000" class="form-control"  id="bgColor" />
+                <span class="input-group-addon"><i></i></span>
             </div>
+        </div>
+    </div>
     
     <div class="help-window">
         <i class="fa fa-exclamation-triangle"></i> <a href="#" onclick="toggle_visibility('foo');">Click to read how it works & rules</a>
