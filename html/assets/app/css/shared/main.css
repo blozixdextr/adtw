@@ -1063,6 +1063,9 @@ p.nav-column-item i{
 .ready-for-stream .warning-popup{
 	padding:15px;
 }
+.ready-for-stream .warning-popup p{
+	margin-bottom:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
