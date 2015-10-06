@@ -50,7 +50,7 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
-            <div class="col-xs-6">
+            <div class="col-xs-5">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
