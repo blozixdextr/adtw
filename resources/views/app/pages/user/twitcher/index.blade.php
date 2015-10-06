@@ -77,11 +77,11 @@
             <div class="col-xs-6 together_color">
                 <div>
                     <p><strong>If you want to start with all banners, click here</strong></p>
-                    <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
+                    <div class="text-center"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
                 </div>
                 <div>
                     <p><strong>Background color for banners</strong></p>
-                    <div class="input-group" id="bgColorPicker" style="width:120px;">
+                    <div class="input-group text-center" id="bgColorPicker" style="width:120px;">
                         <input type="text" value="#000000" class="form-control"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
