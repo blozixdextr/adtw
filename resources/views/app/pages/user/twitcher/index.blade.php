@@ -66,9 +66,9 @@
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="row col-xs-12 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
+                    <div class="col-xs-12 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
                 @else
-                    <div class="row col-xs-12 ready-banner">
+                    <div class="col-xs-12 ready-banner">
                 @endif
                     <div class="col-xs-4">
                         {{ $bt->title }}<br>
