@@ -117,8 +117,13 @@
             @empty
                 <em>There are no orders yet</em>
             @endforelse
-            <div class="row">
-                <a href="#" id="startPopups" class="btn-white">Start all together</a>
+            <div class="row class="start-all-banners>
+                <div class="col-xs-6">
+                    <p>If you want to start with all banners, click here</p>
+                </div>
+                <div class="col-xs-6">
+                    <a href="#" id="startPopups" class="btn-white">Start all together</a>
+                </div>
             </div>
         @else
             <em>There are no orders yet</em>
