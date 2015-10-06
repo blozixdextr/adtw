@@ -51,10 +51,10 @@
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
             <div class="panel-body booking-table">
             <div class="col-xs-6 together_color">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
                 </div>
-                <div class="col-xs-6 new-flex">
+                <div class="col-xs-12 new-flex">
                     <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
                         <input type="text" value="#000000" class="form-control"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
