@@ -47,7 +47,7 @@
         </div>
     @endif
 
-    <div class="panel booking-table-first panel-default">
+    <div class="panel booking-table-first panel-default ready-for-stream">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
             <div class="panel-body booking-table">
             <div class="col-xs-6 new-flex together_color">
