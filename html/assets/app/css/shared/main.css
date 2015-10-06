@@ -989,6 +989,10 @@ p.nav-column-item i{
 .sect-content .paypal-flex .form-group{
 	margin-left:0;
 }
+.colorpicker.colorpicker-visible {
+    bottom: auto;
+}
+
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {

@@ -1,6 +1,7 @@
 @extends('app.layouts.twitcher')
 
 @section('head-style')
+    <link rel="stylesheet" href="/assets/app/libs/color-picker/css/bootstrap-colorpicker.min.css" />
     @if ($showWelcome)
         <link rel="stylesheet" href="/assets/app/libs/shepherd/css/shepherd-theme-arrows.css">
         <link rel="stylesheet" href="/assets/app/css/shared/welcome-twitcher.css">
@@ -14,59 +15,8 @@
         <script src="/assets/app/libs/shepherd/js/shepherd.min.js"></script>
         <script src="/assets/app/js/welcome-twitcher.js"></script>
     @endif
-    <script>
-        $(function(){
-            $(window).scroll(function() {
-                if ($('#timelineAutoload').hasClass('loading')) {
-                    return;
-                }
-                var hT = $('#timelineAutoload').offset().top,
-                        hH = $('#timelineAutoload').outerHeight(),
-                        wH = $(window).height(),
-                        wS = $(this).scrollTop();
-                if (wS > (hT + hH - wH)){
-                    var page = parseInt($('#timelinePage').val());
-                    if (page > 0) {
-                        page++;
-                        $('#timelineAutoload').addClass('loading');
-                        $.getJSON('/user/twitcher/timeline/', {page: page}, function(data) {
-                            $('#timelineAutoload').removeClass('loading');
-                            if (data.html) {
-                                $('.timeline').append(data.html);
-                                $('#timelinePage').val(page);
-                            } else {
-                                $('#timelinePage').val(0);
-                            }
-                        });
-                    }
-                }
-            });
-
-        });
-    </script>
-
-    <script>
-        $(function(){
-            function openBannerPopUp(bannerTypeId, width, height) {
-                var url = '/user/twitcher/banner/popup/' + bannerTypeId + '?color=fffff';
-                window.open(url, 'name_' + bannerTypeId, 'width=' + width + ',height=' + height);
-            }
-            $('#startPopups').click(function(e){
-                e.preventDefault();
-                $('.booking-table .ready-banner.active').each(function(i, el){
-                    el = $(el);
-                    var d = el.data('title');
-                    var dimensions = d.split('*');
-                    setTimeout(function(){
-                        openBannerPopUp(el.data('id'), dimensions[0], dimensions[1]);
-                    }, i*500);
-
-                });
-
-            });
-        });
-    </script>
-
+    <script src="/assets/app/libs/color-picker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="/assets/app/js/views/twitcher-index.js"></script>
 @endsection
 
 @section('content')
@@ -109,7 +59,7 @@
                 @endif
                     <div class="col-xs-6">{{ $bt->title }}</div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                        <div class="col-xs-6"><a class="btn-white popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                     @else
                         <div class="col-xs-6"><em>no orders yet :(</em></div>
                     @endif
@@ -118,7 +68,17 @@
                 <em>There are no orders yet</em>
             @endforelse
             <div class="row">
-                <a href="#" id="startPopups" class="btn-white">Start all together</a>
+                <div class="col-md-6">
+                    <p><strong>Background color for banners</strong></p>
+                    <div class="input-group" id="bgColorPicker" style="width:120px;">
+                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>If you want to start with all banners, click here</strong></p>
+                    <a href="#" id="startPopups" class="btn-white">Start all together</a>
+                </div>
             </div>
         @else
             <em>There are no orders yet</em>

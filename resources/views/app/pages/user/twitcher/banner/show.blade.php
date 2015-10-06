@@ -2,11 +2,6 @@
 
 @section('head-style')
     <link rel="stylesheet" href="/assets/app/libs/color-picker/css/bootstrap-colorpicker.min.css" />
-    <style>
-        .colorpicker.colorpicker-visible {
-            bottom: auto;
-        }
-    </style>
 @endsection
 
 @section('head-js')
