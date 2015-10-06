@@ -42,11 +42,23 @@
                 bannerRotation();
             })
         }
+
+        function fitPopupWindowToBanner() {
+            var w = {{ $requiredSizes[0] }};
+            var h = {{ $requiredSizes[1] }};
+            var ah = $(window).height();
+            var aw = $(window).width();
+            this.resizeBy(0, h - ah);
+        }
+
         $(function(){
             bannerRotation();
             bannersRefresh();
             setInterval(bannerRotation, {{ $rotationPeriod }});
             setInterval(bannersRefresh, {{ $trackPeriod }});
+
+            fitPopupWindowToBanner();
+
         });
     </script>
 
