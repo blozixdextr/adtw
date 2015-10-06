@@ -61,28 +61,28 @@
                     <div class="col-xs-3">
                         {{ $bt->title }}<br>
                         @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                            <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
+                            <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}"><i class="fa fa-eye"></i>review</a>
                         @endif
                     </div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                         <div class="col-xs-9 text-center"><a class="btn-white middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                     @else
-                        <div class="col-xs-9 text-center"><em>no orders yet :(</em></div>
+                        <div class="col-xs-9 text-center"><strong>no orders yet</strong></div>
                     @endif
                 </div>
             @empty
-                <em>There are no orders yet</em>
+                <strong>There are no orders yet</strong>
             @endforelse
             </div>
             
         @else
-            <em>There are no orders yet</em>
+            <strong>There are no orders yet</strong>
         @endif
         </div>
     </div>
     <div class="col-xs-12 together_color">
         <div class="col-xs-6">
-            <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
+            <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
         </div>
         <div class="col-xs-6 new-flex">
             <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
