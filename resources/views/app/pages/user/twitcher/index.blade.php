@@ -89,7 +89,7 @@
                 <input type="text" value="#000000" class="form-control"  id="bgColor" />
                 <span class="input-group-addon"><i></i></span>
             </div>
-            <p class="col-xs-6"><strong>Background color for banners</strong></p>
+            <p class="col-xs-6"><i>Set up background color for banners</i></p>
             
         </div>
     </div>
