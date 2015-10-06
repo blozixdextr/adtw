@@ -59,7 +59,9 @@
                 @endif
                     <div class="col-xs-6">
                         {{ $bt->title }}<br>
-                        <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
+                        @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                            <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
+                        @endif
                     </div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                         <div class="col-xs-6"><a class="btn-white popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
