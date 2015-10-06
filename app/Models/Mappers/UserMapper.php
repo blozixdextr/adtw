@@ -107,7 +107,7 @@ class UserMapper
 
     public static function findTwitchers2($filters, $limit = 30)
     {
-        $user = User::whereType('twitcher');
+        $user = User::whereType('twitcher')->whereIsActive(true);
         $user->select(['users.*']);
         $user->groupBy('users.id');
         if (isset($filters['name']) && $filters['name'] != '') {

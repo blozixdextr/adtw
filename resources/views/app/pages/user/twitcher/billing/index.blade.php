@@ -62,6 +62,7 @@
                 <button type="submit" class="need-mt-30 btn-white">Withdraw</button>
             </div>
         </div>
+            <!-- // todo: warning about coupon -->
         {!! Form::close() !!}
         </div>
         </div>

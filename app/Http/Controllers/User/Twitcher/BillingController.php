@@ -32,7 +32,7 @@ class BillingController extends Controller
 
     public function withdraw(Request $request)
     {
-
+        // todo: check for coupons and change min
         $rules = [
             'amount' => 'required|numeric|min:50|max:1000',
             'account' => 'required|email'
@@ -43,6 +43,7 @@ class BillingController extends Controller
             return redirect('/user/twitcher/billing')->withErrors(['amount' => 'You have no such money']);
         }
         $account = $request->get('account');
+        // todo: set coupon as used and canceled
         PaymentMapper::withdrawPaypalPrepare($this->user, $account, $amount);
         NotificationMapper::withdraw($this->user, $amount, 'USD', 'paypal', $account);
         LogMapper::log('withdraw', $this->user->id, 'request', ['account' => $account, 'merchant' => 'paypal', 'amount' => $amount]);
