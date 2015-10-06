@@ -2,20 +2,19 @@
 <html>
 <head>
     <title>@yield('title', 'ADTW')</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <style>
         body {
             background-color: #{{ $bgColor }};
+            padding: 0;
+            margin: 0;
         }
         .wrapper {
-            /*line-height: {{ $requiredSizes[1] }}px;*/
             text-align: center;
         }
         img {
             display: block;
-            /*line-height: {{ $requiredSizes[1] }}px;*/
-            /*vertical-align: middle;*/
             margin: 0 auto;
+            padding: 0;
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
