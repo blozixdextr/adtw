@@ -44,6 +44,29 @@
 
         });
     </script>
+
+    <script>
+        $(function(){
+            function openBannerPopUp(bannerTypeId, width, height) {
+                var url = '/user/twitcher/banner/popup/' + bannerTypeId + '?color=fffff';
+                window.open(url, 'name_' + bannerTypeId, 'width=' + width + ',height=' + height);
+            }
+            $('#startPopups').click(function(e){
+                e.preventDefault();
+                $('.booking-table .ready-banner.active').each(function(i, el){
+                    el = $(el);
+                    var d = el.data('title');
+                    var dimensions = d.split('*');
+                    setTimeout(function(){
+                        openBannerPopUp(el.data('id'), dimensions[0], dimensions[1]);
+                    }, i*500);
+
+                });
+
+            });
+        });
+    </script>
+
 @endsection
 
 @section('content')
@@ -79,7 +102,11 @@
         <div class="panel-body booking-table">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
-                <div class="row ready-banner">
+                @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                    <div class="row ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
+                @else
+                    <div class="row ready-banner">
+                @endif
                     <div class="col-xs-6">{{ $bt->title }}</div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                         <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
@@ -90,6 +117,9 @@
             @empty
                 <em>There are no orders yet</em>
             @endforelse
+            <div class="row">
+                <a href="#" id="startPopups" class="btn-white">Start all together</a>
+            </div>
         @else
             <em>There are no orders yet</em>
         @endif
