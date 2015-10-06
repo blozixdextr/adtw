@@ -1027,7 +1027,13 @@ p.nav-column-item i{
 .together_color .btn-white:after{
 	content:'If you want to start with all banners, click here';
 	display:block;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
 	position:absolute;
+}
+.together_color .btn-white:after:hover{
+	color:#000;
 }
 
 /*            media         */
