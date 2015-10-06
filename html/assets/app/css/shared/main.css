@@ -12,6 +12,9 @@ ul,ol{
 body .second-page .width-80{
 	width:80%;
 }
+.font-bold{
+	font-weight:bold;
+}
 .clear{
     clear: both;
 }
@@ -95,7 +98,9 @@ a:hover{
 	margin-top:15px;
 }
 
-
+.start-all-banners{
+	margin-top:40px;
+}
 /*                            fonts             */
 @font-face {
 font-family: FippsRegular;
