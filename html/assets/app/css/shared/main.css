@@ -1013,12 +1013,13 @@ p.nav-column-item i{
 .together_color .start-together{
 	position:relative;
 	top:-12px;
+	text-align:center;
 }
 .together_color .start-together:before{
     content: '';
     display: block;
     position: absolute;
-    left: 5px;
+    left: 75px;
     top: -75px;
     height: 65px;
         background-size: 80px 65px;
@@ -1033,9 +1034,9 @@ p.nav-column-item i{
     font-weight: bold;
     color: #000;
     position: absolute;
-    right: 0px;
-    width: 220px;
-    top: -82px;
+    right: -5px;
+    width: 185px;
+    top: -83px;
 }
 .together_color{
     flex-direction: column;
