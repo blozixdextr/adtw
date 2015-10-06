@@ -52,7 +52,7 @@
             <div class="panel-body booking-table">
             <div class="col-xs-6 together_color">
                 <div class="col-xs-12">
-                    <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
+                    <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white"><i class="fa fa-twitch"></i> START STREAM</a></div>
                 </div>
                 <div class="col-xs-12 new-flex">
                     <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
