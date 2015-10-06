@@ -1024,7 +1024,6 @@ p.nav-column-item i{
     height: 65px;
         background-size: 80px 65px;
     width: 80px;
-    z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10321586/33149232-6c82-11e5-94be-b280bb6416db.png);
 }
 .together_color .start-together:after{
