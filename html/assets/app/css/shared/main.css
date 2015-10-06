@@ -1016,11 +1016,11 @@ p.nav-column-item i{
     content: '';
     display: block;
     position: absolute;
-    left: 27px;
+    left: 90px;
     top: 35px;
     height: 65px;
-    background-size: 46px 65px;
-    width: 47px;
+        background-size: 80px 65px;
+    width: 80px;
     z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10318393/d1e6b932-6c71-11e5-933b-c98dc0305c93.png);
 }
@@ -1031,7 +1031,7 @@ p.nav-column-item i{
     font-weight: bold;
     color: #000;
     position: absolute;
-    right: -160px;
+    right: -113px;
     top: 83px;
 }
 .together_color{
