@@ -109,7 +109,7 @@
                 @endif
                     <div class="col-xs-6">{{ $bt->title }}</div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-6"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                        <div class="col-xs-6 text-center"><a class="btn-white" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                     @else
                         <div class="col-xs-6"><em>no orders yet :(</em></div>
                     @endif
@@ -121,7 +121,7 @@
                 <div class="col-xs-6">
                     <p>If you want to start with all banners, click here</p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6 text-center">
                     <a href="#" id="startPopups" class="btn-white">Start all together</a>
                 </div>
             </div>
