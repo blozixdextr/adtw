@@ -1043,6 +1043,12 @@ p.nav-column-item i{
 .together_color .btn-white:after:hover{
 	color:#000;
 }
+.order-banner{
+	display: flex;
+    	flex-direction: column;
+    	min-height: 200px;
+    	justify-content: space-around;
+}
 
 /*            media         */
 @media screen and (max-width:1366px){
