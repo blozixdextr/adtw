@@ -39,6 +39,9 @@ a:hover{
     text-decoration: none !important;
     color:#6441A5;
 }
+.thin-border{
+	border-width:1px !important;
+}
 
 .no-border{
 	border:0 !important;
