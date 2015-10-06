@@ -287,10 +287,7 @@ html {
 wrapper {
  padding-bottom: 170px;
 }
-.btn-white.middle {
-    font-size: 14px !important;
-    padding: 3px 5px !important;
-}
+
 .work-column>h1 {
 	margin: 14px 0 8px;
 }
@@ -995,6 +992,13 @@ p.nav-column-item i{
 .colorpicker.colorpicker-visible {
     bottom: auto;
 }
+
+
+.btn-white.middle {
+    font-size: 14px !important;
+    padding: 3px 5px !important;
+}
+
 
 /*            media         */
 @media screen and (max-width:1366px){
