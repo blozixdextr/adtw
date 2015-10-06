@@ -1036,7 +1036,11 @@ p.nav-column-item i{
     top: 83px;
 }
 .together_color{
-	margin:15px 0 70px;
+    margin:15px 0 70px;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 185px;
+    height: 100%;
 }
 .together_color .btn-white:after:hover{
 	color:#000;
