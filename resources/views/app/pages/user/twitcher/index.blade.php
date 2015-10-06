@@ -50,6 +50,19 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
+            <div class="col-xs-6 col-xs-offset-1 together_color">
+                <div>
+                    <p><strong>If you want to start with all banners, click here</strong></p>
+                    <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
+                </div>
+                <div>
+                    <p><strong>Background color for banners</strong></p>
+                    <div class="input-group" id="bgColorPicker" style="width:120px;">
+                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-5">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
@@ -74,19 +87,7 @@
                 <em>There are no orders yet</em>
             @endforelse
             </div>
-            <div class="col-xs-6 col-xs-offset-1 together_color">
-                <div>
-                    <p><strong>If you want to start with all banners, click here</strong></p>
-                    <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
-                </div>
-                <div>
-                    <p><strong>Background color for banners</strong></p>
-                    <div class="input-group" id="bgColorPicker" style="width:120px;">
-                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
-                        <span class="input-group-addon"><i></i></span>
-                    </div>
-                </div>
-            </div>
+            
         @else
             <em>There are no orders yet</em>
         @endif
