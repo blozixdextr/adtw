@@ -910,7 +910,6 @@ table .success .streamer-online-view{
 	display:flex;
 	display: flex;
     align-items: center;
-    margin-bottom:20px;
 }
 .ready-banner:last-child{
 	margin-bottom:0;
@@ -1036,7 +1035,7 @@ p.nav-column-item i{
 .together_color{
     flex-direction: column;
     justify-content: space-between;
-    min-height: 200px !important;
+    min-height: 240px !important;
     height: 100%;
 }
 .together_color .btn-white:after:hover{
@@ -1045,7 +1044,7 @@ p.nav-column-item i{
 .order-banner{
 	display: flex;
     	flex-direction: column;
-    	min-height: 200px !important;
+    	min-height: 2040px !important;
     	justify-content: space-around;
 }
 .ready-for-stream .panel-body{
@@ -1053,7 +1052,6 @@ p.nav-column-item i{
 }
 .order-banner, .together_color{
 	padding:20px;
-	box-sizing:content-box;
 }
 /*            media         */
 @media screen and (max-width:1366px){
