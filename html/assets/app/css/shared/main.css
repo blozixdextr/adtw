@@ -953,9 +953,6 @@ table .success .streamer-online-view{
 	justify-content:space-between;
 	flex-direction:column;
 }
-#bgColorPicker{
-	margin-bottom:15px;
-}
 #bgColorPicker span{
 	padding: 6px 6px;
 }
@@ -1039,6 +1036,9 @@ p.nav-column-item i{
     right: -5px;
     width: 185px;
     top: -83px;
+}
+.together_color .new-flex{
+	align-items:center;
 }
 .together_color{
     flex-direction: column;
