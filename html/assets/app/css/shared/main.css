@@ -989,6 +989,9 @@ p.nav-column-item i{
 .sect-content .paypal-flex .form-group{
 	margin-left:0;
 }
+.together_color>div:last-child p {
+    margin-bottom: 5px;
+}
 .colorpicker.colorpicker-visible {
     bottom: auto;
 }
@@ -996,7 +999,7 @@ p.nav-column-item i{
     margin-bottom: 0;
 }
 .together_color>div {
-    margin-bottom: 32px;
+    margin-bottom: 37px;
 }
 .together_color p {
     margin-bottom: 10px;
