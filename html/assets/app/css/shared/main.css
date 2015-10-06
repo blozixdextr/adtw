@@ -992,7 +992,15 @@ p.nav-column-item i{
 .colorpicker.colorpicker-visible {
     bottom: auto;
 }
-
+.col-xs-6.together_color>div:last-child {
+    margin-bottom: 0;
+}
+.col-xs-6.together_color>div {
+    margin-bottom: 35px;
+}
+.col-xs-6.together_color p {
+    margin-bottom: 10px;
+}
 
 .btn-white.middle {
     font-size: 14px !important;
