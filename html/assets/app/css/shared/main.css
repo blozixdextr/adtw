@@ -95,7 +95,9 @@ a:hover{
 	margin-top:15px;
 }
 
-
+.start-all-banners{
+	margin-top:25px;
+}
 /*                            fonts             */
 @font-face {
 font-family: FippsRegular;
