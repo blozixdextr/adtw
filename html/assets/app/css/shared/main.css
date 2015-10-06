@@ -1036,6 +1036,9 @@ p.nav-column-item i{
 .together_color .new-flex{
 	align-items:center;
 }
+.together_color i{
+	font-size:13px;
+}
 .together_color{
     flex-direction: column;
     justify-content: space-between;
