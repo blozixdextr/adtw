@@ -1012,25 +1012,30 @@ p.nav-column-item i{
 .together_color .btn-white{
 	position:relative;
 }
-.together_color .btn-white:before{
+{
     content: '';
     display: block;
     position: absolute;
-    left: -46px;
-    top: -40px;
+    left: 27px;
+    top: 35px;
     height: 65px;
     background-size: 46px 65px;
     width: 47px;
     z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
 }
-.together_color .btn-white:after{
-	content:'If you want to start with all banners, click here';
-	display:block;
-	font-size:12px;
-	font-weight:bold;
-	color:#000;
-	position:absolute;
+{
+    content: 'If you want to start with all banners, click here';
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    position: absolute;
+    right: -160px;
+    top: 83px;
+}
+.together_color{
+	margin:15px 0 70px;
 }
 .together_color .btn-white:after:hover{
 	color:#000;
