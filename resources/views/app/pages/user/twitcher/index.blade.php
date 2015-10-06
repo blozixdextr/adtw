@@ -117,7 +117,7 @@
             @empty
                 <em>There are no orders yet</em>
             @endforelse
-            <div class="row class="start-all-banners>
+            <div class="row start-all-banners">
                 <div class="col-xs-6">
                     <p>If you want to start with all banners, click here</p>
                 </div>
