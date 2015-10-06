@@ -49,14 +49,26 @@
 
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
-        <div class="panel-body booking-table">
-            <div class="col-xs-12">
+            <div class="panel-body booking-table">
+            <div class="col-xs-6 together_color">
+                <div class="col-xs-6">
+                    <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
+                </div>
+                <div class="col-xs-6 new-flex">
+                    <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
+                        <input type="text" value="#000000" class="form-control"  id="bgColor" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                    <p class="col-xs-6"><i>Set up background color for banners</i></p>
+                </div>
+            </div>
+            <div class="col-xs-6">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                    <div class="row col-xs-6 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
+                    <div class="row col-xs-12 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
                 @else
-                    <div class="row col-xs-6 ready-banner">
+                    <div class="row col-xs-12 ready-banner">
                 @endif
                     <div class="col-xs-3">
                         {{ $bt->title }}<br>
@@ -80,19 +92,7 @@
         @endif
         </div>
     </div>
-    <div class="col-xs-12 together_color">
-        <div class="col-xs-6">
-            <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
-        </div>
-        <div class="col-xs-6 new-flex">
-            <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
-                <input type="text" value="#000000" class="form-control"  id="bgColor" />
-                <span class="input-group-addon"><i></i></span>
-            </div>
-            <p class="col-xs-6"><i>Set up background color for banners</i></p>
-            
-        </div>
-    </div>
+    
     
     <div class="help-window">
         <i class="fa fa-exclamation-triangle"></i> <a href="#" onclick="toggle_visibility('foo');">Click to read how it works & rules</a>
