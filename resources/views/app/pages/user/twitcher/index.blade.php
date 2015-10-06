@@ -82,7 +82,7 @@
     </div>
     <div class="col-xs-12 together_color">
         <div class="col-xs-6">
-            <div class="text-center"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
+            <div class="text-center start-together"><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
         </div>
         <div class="col-xs-6 new-flex">
             <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
