@@ -53,11 +53,11 @@
             <div class="col-xs-6 new-flex together_color">
                 
                 <div class="col-xs-12 new-flex">
-                    <div class="col-xs-5 input-group" id="bgColorPicker">
+                    <div class="col-xs-6 input-group" id="bgColorPicker">
                         <input type="text" value="#000000" class="form-control thin-border"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
-                    <p class="col-xs-7"><i>Set up background color for banners</i></p>
+                    <p class="col-xs-6"><i>Set up background color for banners</i></p>
                 </div>
                 
                 <div class="col-xs-12">
