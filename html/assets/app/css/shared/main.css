@@ -1017,8 +1017,8 @@ p.nav-column-item i{
     content: '';
     display: block;
     position: absolute;
-    left: 90px;
-    top: 5px;
+    left: 5px;
+    top: 35px;
     height: 65px;
         background-size: 80px 65px;
     width: 80px;
