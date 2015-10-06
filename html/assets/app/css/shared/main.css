@@ -1011,6 +1011,7 @@ p.nav-column-item i{
 }
 .together_color .start-together{
 	position:relative;
+	top:2px;
 }
 .together_color .start-together:before{
     content: '';
