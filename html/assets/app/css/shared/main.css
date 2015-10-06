@@ -1012,7 +1012,7 @@ p.nav-column-item i{
 .together_color .btn-white{
 	position:relative;
 }
-{
+.together_color .btn-white:before{
     content: '';
     display: block;
     position: absolute;
@@ -1024,7 +1024,7 @@ p.nav-column-item i{
     z-index: 9000000;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10242997/edcbc33a-68fd-11e5-846b-82cb36b8e082.png);
 }
-{
+.together_color .btn-white:after{
     content: 'If you want to start with all banners, click here';
     display: block;
     font-size: 12px;
