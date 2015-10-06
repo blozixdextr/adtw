@@ -75,11 +75,11 @@
             @endforelse
             </div>
             <div class="col-xs-offset-1 col-xs-6">
-                <div class="col-xs-12">
+                <div>
                     <p><strong>If you want to start with all banners, click here</strong></p>
                     <a href="#" id="startPopups" class="btn-white">Start all together</a>
                 </div>
-                <div class="col-xs-12">
+                <div>
                     <p><strong>Background color for banners</strong></p>
                     <div class="input-group" id="bgColorPicker" style="width:120px;">
                         <input type="text" value="#000000" class="form-control"  id="bgColor" />
