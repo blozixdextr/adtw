@@ -1018,7 +1018,7 @@ p.nav-column-item i{
     display: block;
     position: absolute;
     left: 90px;
-    top: 35px;
+    top: 5px;
     height: 65px;
         background-size: 80px 65px;
     width: 80px;
@@ -1032,7 +1032,7 @@ p.nav-column-item i{
     font-weight: bold;
     color: #000;
     position: absolute;
-    right: -113px;
+    right: -30px;
     top: 83px;
 }
 .together_color{
