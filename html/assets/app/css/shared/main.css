@@ -1039,7 +1039,7 @@ p.nav-column-item i{
     margin:15px 0 70px;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 185px;
+    min-height: 185px !important;
     height: 100%;
 }
 .together_color .btn-white:after:hover{
