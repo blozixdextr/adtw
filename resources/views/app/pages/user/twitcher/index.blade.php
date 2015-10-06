@@ -50,6 +50,7 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
+            <div class="col-xs-6">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
@@ -72,7 +73,8 @@
             @empty
                 <em>There are no orders yet</em>
             @endforelse
-            <div class="row">
+            </div>
+            <div class="col-xs-offset-1 col-xs-5">
                 <div class="col-md-6">
                     <p><strong>Background color for banners</strong></p>
                     <div class="input-group" id="bgColorPicker" style="width:120px;">
