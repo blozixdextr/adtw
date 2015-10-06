@@ -1053,15 +1053,15 @@ p.nav-column-item i{
     	min-height: 240px !important;
     	padding:0 !important;
 }
-.ready-for-stream .panel-body:first-child{
+.ready-for-stream .panel-body{
 	padding:0;
 }
 
 .together_color{
 	padding:20px;
 }
-.warning-popup{
-	
+.ready-for-stream .warning-popup{
+	padding:15px;
 }
 /*            media         */
 @media screen and (max-width:1366px){
