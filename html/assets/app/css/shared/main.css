@@ -1020,11 +1020,14 @@ p.nav-column-item i{
     display: block;
     position: absolute;
     left: 75px;
-    top: -75px;
+    top: -71px;
     height: 65px;
         background-size: 80px 65px;
     width: 80px;
     background-image: url(https://cloud.githubusercontent.com/assets/14276761/10321586/33149232-6c82-11e5-94be-b280bb6416db.png);
+}
+.page .together_color .btn-white{
+	font-size:24px !important;
 }
 .together_color .start-together:after{
     content: 'If you want to start with all banners, click here';
