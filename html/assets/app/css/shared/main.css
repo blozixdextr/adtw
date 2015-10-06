@@ -998,9 +998,6 @@ p.nav-column-item i{
 .together_color>div:last-child {
     margin-bottom: 0;
 }
-.together_color>div {
-    margin-bottom: 37px;
-}
 .together_color p {
     margin-bottom: 10px;
 }
@@ -1032,14 +1029,15 @@ p.nav-column-item i{
     font-weight: bold;
     color: #000;
     position: absolute;
-    right: -30px;
-    top: 83px;
+    right: -16px;
+    width: 220px;
+    top: 76px;
 }
 .together_color{
-    margin:15px 0 70px;
+	margin: 5px 0;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 185px !important;
+    min-height: 200px !important;
     height: 100%;
 }
 .together_color .btn-white:after:hover{
