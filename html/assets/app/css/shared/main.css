@@ -1037,6 +1037,7 @@ p.nav-column-item i{
     justify-content: space-between;
     min-height: 240px !important;
     height: 100%;
+    border-right:1px solid #DDDDDD;
 }
 .together_color .btn-white:after:hover{
 	color:#000;
