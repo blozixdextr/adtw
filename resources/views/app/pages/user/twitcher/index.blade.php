@@ -76,10 +76,8 @@
             </div>
             <div class="col-xs-6">
                 <div>
-                    <div>
-                        <p><strong>If you want to start with all banners, click here</strong></p>
-                    </div>
-                    <a href="#" id="startPopups" class="btn-white">Start all together</a>
+                    <p><strong>If you want to start with all banners, click here</strong></p>
+                    <div><a href="#" id="startPopups" class="btn-white">Start all together</a></div>
                 </div>
                 <div>
                     <p><strong>Background color for banners</strong></p>
