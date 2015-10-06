@@ -119,7 +119,7 @@
             @endforelse
             <div class="row start-all-banners">
                 <div class="col-xs-6">
-                    <p>If you want to start with all banners, click here</p>
+                    <p class="font-bold">If you want to start with all banners, click here</p>
                 </div>
                 <div class="col-xs-6 text-center">
                     <a href="#" id="startPopups" class="btn-white">Start all together</a>
