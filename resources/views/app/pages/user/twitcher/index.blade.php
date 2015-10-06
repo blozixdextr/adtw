@@ -64,7 +64,7 @@
                         @endif
                     </div>
                     @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-6"><a class="btn-white popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
+                        <div class="col-xs-6"><a class="btn-white little popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Start show with {{ count($banners[$bt->id]) }} banners</a></div>
                     @else
                         <div class="col-xs-6"><em>no orders yet :(</em></div>
                     @endif
