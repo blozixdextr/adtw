@@ -32,8 +32,9 @@ class BillingController extends Controller
 
     public function withdraw(Request $request)
     {
+
         $rules = [
-            'amount' => 'required|numeric|min:1|max:1000',
+            'amount' => 'required|numeric|min:50|max:1000',
             'account' => 'required|email'
         ];
         $this->validate($request, $rules);
@@ -47,6 +48,16 @@ class BillingController extends Controller
         LogMapper::log('withdraw', $this->user->id, 'request', ['account' => $account, 'merchant' => 'paypal', 'amount' => $amount]);
 
         return redirect('/user/twitcher/billing')->with(['success' => 'You required withdrawal']);
+
+    }
+
+    public function coupon(Request $request)
+    {
+        $rules = [
+            'coupon' => 'required|min:3|max:25'
+        ];
+        $this->validate($request, $rules);
+        $coupon = $request->get('coupon');
 
     }
 

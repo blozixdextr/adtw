@@ -86,6 +86,7 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
         Route::get('log', 'BillingController@log');
         Route::get('transfers', 'BillingController@transfers');
         Route::post('withdraw', 'BillingController@withdraw');
+        Route::post('coupon', 'BillingController@coupon');
     });
 
 });
