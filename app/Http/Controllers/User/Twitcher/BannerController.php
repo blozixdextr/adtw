@@ -65,7 +65,9 @@ class BannerController extends Controller
         $trackPeriod = 1000 * 60 * Config::get('banner.track_minutes');
         $rotationPeriod = 1000 * Config::get('banner.rotation_seconds');
 
-        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType', 'trackPeriod', 'rotationPeriod'));
+        $requiredSizes = explode('*', $bannerType->title);
+
+        return view('app.pages.user.twitcher.banner.popup', compact('banners', 'bgColor', 'bannerType', 'trackPeriod', 'rotationPeriod', 'requiredSizes'));
     }
 
     public function ping($bannerType) {
@@ -116,8 +118,9 @@ class BannerController extends Controller
             return redirect('/user/twitcher');
         }
         $banners = BannerMapper::activeTwitcher($this->user, $bannerType->id);
+        $requiredSizes = explode('*', $bannerType->title);
 
-        return view('app.pages.user.twitcher.banner.show', compact('banners', 'bannerType'));
+        return view('app.pages.user.twitcher.banner.show', compact('banners', 'bannerType', 'requiredSizes'));
     }
 
 }

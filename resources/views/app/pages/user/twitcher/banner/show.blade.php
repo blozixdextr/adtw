@@ -19,7 +19,7 @@
                 var color = $('#bgColor').val();
                 color = color.replace('#', '');
                 var url = $(this).attr('href') + '?color=' + color;
-                var popup = window.open(url, 'name', 'height=620,width=820');
+                var popup = window.open(url, 'name', 'height={{ $requiredSizes[1] }},width={{ $requiredSizes[0] }}');
                 if (window.focus) {
                     popup.focus();
                 }

@@ -8,13 +8,14 @@
             background-color: #{{ $bgColor }};
         }
         .wrapper {
-            line-height: 620px;
+            /*line-height: {{ $requiredSizes[1] }}px;*/
             text-align: center;
         }
         img {
-            display: inline-block;
-            line-height: 620px;
-            vertical-align: middle;
+            display: block;
+            /*line-height: {{ $requiredSizes[1] }}px;*/
+            /*vertical-align: middle;*/
+            margin: 0 auto;
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
