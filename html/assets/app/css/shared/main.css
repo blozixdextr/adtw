@@ -12,6 +12,9 @@ ul,ol{
 body .second-page .width-80{
 	width:80%;
 }
+.font-bold{
+	font-weight:bold;
+}
 .clear{
     clear: both;
 }
