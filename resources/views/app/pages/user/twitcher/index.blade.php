@@ -62,7 +62,7 @@
                     <p class="col-xs-7"><i>Set up background color for banners</i></p>
                 </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 order-banner">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
