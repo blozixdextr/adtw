@@ -287,6 +287,10 @@ html {
 wrapper {
  padding-bottom: 170px;
 }
+.btn-white.middle {
+    font-size: 14px !important;
+    padding: 3px 5px !important;
+}
 .work-column>h1 {
 	margin: 14px 0 8px;
 }
@@ -420,13 +424,7 @@ padding: 10px;
 .second-page .work-column-item:first-child{
     margin-top: 0;
     padding-top: 10px;
-}/*
-.second-page .work-column-floats{
-    margin: 10px 0;
 }
-.second-page .work-column-floats{
-    
-}*/
 .second-page .work-column-floats h3,
 .work-column-item h3{
     font-size: 24px;
