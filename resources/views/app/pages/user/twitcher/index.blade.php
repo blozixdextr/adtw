@@ -55,11 +55,11 @@
                     <div class="start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
                 </div>
                 <div class="col-xs-12 new-flex">
-                    <div class="col-xs-6 input-group" id="bgColorPicker" style="width:120px;margin:0 auto;">
+                    <div class="col-xs-5 input-group" id="bgColorPicker">
                         <input type="text" value="#000000" class="form-control"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
-                    <p class="col-xs-6"><i>Set up background color for banners</i></p>
+                    <p class="col-xs-7"><i>Set up background color for banners</i></p>
                 </div>
             </div>
             <div class="col-xs-6">
