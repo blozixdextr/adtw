@@ -992,13 +992,13 @@ p.nav-column-item i{
 .colorpicker.colorpicker-visible {
     bottom: auto;
 }
-.col-xs-6.together_color>div:last-child {
+.together_color>div:last-child {
     margin-bottom: 0;
 }
-.col-xs-6.together_color>div {
+.together_color>div {
     margin-bottom: 32px;
 }
-.col-xs-6.together_color p {
+.together_color p {
     margin-bottom: 10px;
 }
 
