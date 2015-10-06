@@ -1051,7 +1051,7 @@ p.nav-column-item i{
 .ready-for-stream .panel-body{
 	padding:0;
 }
-.ready-for-stream .panel-body>div>div{
+.order-banner, .together_color{
 	padding:20px;
 	box-sizing:content-box;
 }
