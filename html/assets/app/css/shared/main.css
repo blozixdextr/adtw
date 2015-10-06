@@ -1046,7 +1046,7 @@ p.nav-column-item i{
 }
 .order-banner{
     	min-height: 240px !important;
-    	padding:0;
+    	padding:0 !important;
 }
 .ready-for-stream .panel-body{
 	padding:0;
