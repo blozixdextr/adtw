@@ -50,7 +50,7 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
-            <div class="col-xs-6">
+            <div class="col-xs-5">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
@@ -74,7 +74,7 @@
                 <em>There are no orders yet</em>
             @endforelse
             </div>
-            <div class="col-xs-offset-1 col-xs-5">
+            <div class="col-xs-offset-1 col-xs-6">
                 <div class="col-xs-12">
                     <p><strong>If you want to start with all banners, click here</strong></p>
                     <a href="#" id="startPopups" class="btn-white">Start all together</a>
