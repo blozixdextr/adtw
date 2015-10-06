@@ -50,7 +50,7 @@
     <div class="panel booking-table-first panel-default">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
             <div class="panel-body booking-table">
-            <div class="col-xs-6 together_color">
+            <div class="col-xs-6 new-flex together_color">
                 <div class="col-xs-12">
                     <div class="start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
                 </div>
