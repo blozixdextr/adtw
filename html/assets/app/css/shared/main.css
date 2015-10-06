@@ -906,13 +906,16 @@ table .success .streamer-online-view{
 .need-mt-30{
 	margin-top:30px;
 }
+.ready-banner:
 .ready-banner{
 	display:flex;
 	display: flex;
     align-items: center;
+        height: 80px;
+    border-bottom: 1px solid #dddddd;
 }
 .ready-banner:last-child{
-	margin-bottom:0;
+	border-bottom:0;
 }
 
 .help-window{
@@ -1043,10 +1046,8 @@ p.nav-column-item i{
 	color:#000;
 }
 .order-banner{
-	display: flex;
-    	flex-direction: column;
     	min-height: 240px !important;
-    	justify-content: space-around;
+    	padding:0;
 }
 .ready-for-stream .panel-body{
 	padding:0;
