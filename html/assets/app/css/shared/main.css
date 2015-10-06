@@ -1044,7 +1044,7 @@ p.nav-column-item i{
 .order-banner{
 	display: flex;
     	flex-direction: column;
-    	min-height: 2040px !important;
+    	min-height: 240px !important;
     	justify-content: space-around;
 }
 .ready-for-stream .panel-body{
