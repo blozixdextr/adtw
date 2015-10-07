@@ -1073,6 +1073,9 @@ p.nav-column-item i{
 	justify-content:space-between;
 	align-items:center
 }
+.coupons input[name="coupon"]{
+	width:155px;
+	height:42px;
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
