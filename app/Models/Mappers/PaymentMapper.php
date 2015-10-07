@@ -21,7 +21,9 @@ class PaymentMapper
         $coupon = CouponMapper::byCode('ADD25USD');
         if ($coupon) {
             if (CouponMapper::usedByUser($user, $coupon)) {
-                $min = $min + 25;
+                if (!CouponMapper::paidByUser($user, $coupon)) {
+                    $min = $min + 25;
+                }
             }
         }
 

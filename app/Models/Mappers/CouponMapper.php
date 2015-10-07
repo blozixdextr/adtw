@@ -37,6 +37,14 @@ class CouponMapper
         return true;
     }
 
+    public static function pay(User $user, Coupon $coupon)
+    {
+        $couponPivot = CouponUser::whereUserId($user->id)->whereCouponId($coupon->id)->whereIsPaid(false)->first();
+        $couponPivot->is_paid = true;
+
+        return $couponPivot->save();
+    }
+
     public static function byCode($code)
     {
         return Coupon::whereCode($code)->first();

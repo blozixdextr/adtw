@@ -16,15 +16,22 @@ class BillingController extends Controller
     public function index()
     {
         $minWithdraw = PaymentMapper::getMinWithdraw($this->user);
-
+        $blockWithdraw = false;
+        $withdrawMessage = '';
+        if ($this->user->availableBalance() < $minWithdraw) {
+            $blockWithdraw = true;
+            $withdrawMessage = 'Minimum withdrawal sum is $'.$minWithdraw;
+        }
         $coupon = CouponMapper::byCode('ADD25USD');
         if ($coupon) {
             if (CouponMapper::usedByUser($this->user, $coupon)) {
-
+                if (!CouponMapper::paidByUser($this->user, $coupon)) {
+                    $withdrawMessage .= '<br>'.$coupon->subtitle;
+                }
             }
         }
 
-        return view('app.pages.user.twitcher.billing.index', compact('minWithdraw'));
+        return view('app.pages.user.twitcher.billing.index', compact('minWithdraw', 'withdrawMessage', 'blockWithdraw'));
     }
 
     public function log()
@@ -67,10 +74,16 @@ class BillingController extends Controller
             return redirect('/user/twitcher/billing')->withErrors(['amount' => 'You have no such money']);
         }
         $account = $request->get('account');
-        // todo: set coupon as used and canceled
         PaymentMapper::withdrawPaypalPrepare($this->user, $account, $amount);
         NotificationMapper::withdraw($this->user, $amount, 'USD', 'paypal', $account);
         LogMapper::log('withdraw', $this->user->id, 'request', ['account' => $account, 'merchant' => 'paypal', 'amount' => $amount]);
+
+        $coupon = CouponMapper::byCode('ADD25USD');
+        if ($coupon) {
+            if (!CouponMapper::paidByUser($this->user, $coupon)) {
+                CouponMapper::pay($this->user, $coupon);
+            }
+        }
 
         return redirect('/user/twitcher/billing')->with(['success' => 'You required withdrawal']);
 
@@ -95,8 +108,10 @@ class BillingController extends Controller
                 CouponMapper::track($this->user, $coupon);
                 $this->user->balance = $this->user->balance + 25;
                 $this->user->save();
+                NotificationMapper::coupon($this->user, $coupon);
+                LogMapper::log('coupon', $coupon->code, $this->user->id);
 
-                return Redirect::back()->with(['success' => $coupon->title.'. '.$coupon->subtitle]);
+                return Redirect::back()->with(['success' => $coupon->title]);
                 break;
         }
 

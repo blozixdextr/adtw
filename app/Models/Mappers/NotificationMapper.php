@@ -3,6 +3,7 @@
 namespace App\Models\Mappers;
 
 use App\Models\Banner;
+use App\Models\Coupon;
 use App\Models\Stream;
 use App\Models\User;
 use App\Models\Notification;
@@ -36,6 +37,11 @@ class NotificationMapper
     public static function withdraw(User $user, $amount, $currency, $merchant, $account)
     {
         self::notify($user, 'You withdraw '.$amount.$currency,' to '.$merchant, $merchant);
+    }
+
+    public static function coupon(User $user, Coupon $coupon)
+    {
+        self::notify($user, 'You applied coupon '.$coupon->code.'. $25 added to your balance');
     }
 
     public static function bannerAdd(Banner $banner)
