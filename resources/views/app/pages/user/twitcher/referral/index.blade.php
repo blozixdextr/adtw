@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>My Referrals</h1>
-    <p>My referrer link is <strong>{{ url('/ref/'.$user->nickname) }}</strong></p>
+    <p>My referrer link is <strong>{{ url('/ref/'.$user->nickname) }}</strong></p> <a href="/user/twitcher/referral/log">history</a>
     <table class="table">
         <tr>
             <th>user</th>

@@ -11,13 +11,15 @@ class ReferralController extends Controller
 {
 
     public function index() {
-        $referrals = ReferralMapper::referrals($this->user, 10);
+        $referrals = ReferralMapper::referrals($this->user);
 
         return view('app.pages.user.twitcher.referral.index', compact('referrals'));
     }
 
-    public function log(Request $request) {
+    public function log() {
+        $payments = ReferralMapper::referrerLog($this->user);
 
+        return view('app.pages.user.twitcher.referral.log', compact('payments'));
     }
 
 }
