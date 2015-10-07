@@ -1307,6 +1307,10 @@ p.nav-column-item i{
     }
     .together_color .new-flex{
     	flex-direction:row;
+    	padding:0;
+    }
+    .together_color .new-flex p{
+    	padding-right:0;
     }
     .together_color .start-together:after{
     	right: -10px;
