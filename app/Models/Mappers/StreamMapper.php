@@ -127,9 +127,12 @@ class StreamMapper
         $referrer = $seller->referrer;
         if ($referrer) {
             $share = Config::get('banner.referral_share');
-            $referrerShare = (100 - $share)/100;
+            $referrerShare = $share/100;
             $amount = $transfer->amount * $referrerShare;
             $amount = round($amount, 2);
+            if ($amount == 0) {
+                return false;
+            }
             Referral::create([
                 'user_id' => $transfer->seller_id,
                 'referral_id' => $transfer->seller->referral_id,
@@ -139,7 +142,11 @@ class StreamMapper
             ]);
             $referrer->balance = $referrer->balance + $amount;
             $referrer->save();
+
+            return true;
         }
+
+        return false;
     }
 
     public static function decline(Banner $banner, Stream $stream)

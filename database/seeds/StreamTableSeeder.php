@@ -33,6 +33,7 @@ class StreamTableSeeder extends Seeder
         DB::table('stream_timelogs')->truncate();
         DB::table('banner_stream')->truncate();
         DB::table('user_transfers')->truncate();
+        DB::table('referrals')->truncate();
 
         $this->faker = FakerFactory::create();
 
