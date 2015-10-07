@@ -28,7 +28,7 @@
     <div class="clear"></div>
 
     <div id="withdraw" class="fields-border">
-        <div class="panel panel-default">
+        <div class="panel panel-default ">
         <h2 class="panel-heading"><i class="fa fa-cc-paypal"></i> Withdraw to PayPal</h2>
         <div class="panel-body">
             @if (!$blockWithdraw)
@@ -60,12 +60,12 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="need-mt-30 btn-white">Withdraw</button>
+                        <button type="submit" class="btn-white">Withdraw</button>
                     </div>
                 </div>
                 {!! Form::close() !!}
             @else
-                <div class="alert alert-danger" role="alert">{!! $withdrawMessage !!}</div>
+                <div class="alert no-margin alert-danger" role="alert">{!! $withdrawMessage !!}</div>
             @endif
         </div>
         </div>
@@ -73,28 +73,29 @@
 
     <div class="clear"></div>
 
-    <div id="withdraw" class="fields-border">
+    <div class="fields-border">
         <div class="panel panel-default">
             <h2 class="panel-heading"><i class="fa fa-money"></i> Coupons</h2>
             <div class="panel-body">
                 {!! Form::open(['url' => '/user/twitcher/billing/coupon']) !!}
-                <div class="form-group {!! ($errors && $errors->has('coupon')) ? ' has-error' : '' !!}">
-                    {!! Form::label('coupon', 'Have a coupon?', ['class' => 'col-sm-3 control-label']) !!}
-                    <div class="col-sm-9">
+                <div class="form-group coupons {!! ($errors && $errors->has('coupon')) ? ' has-error' : '' !!}">
+                    {!! Form::label('coupon', 'Have a coupon?', ['class' => 'control-label']) !!}
+                    <div>
                         {!! Form::text('coupon', old('coupon'),
                             ['class' => 'form-control',
                             'placeholder' => 'Coupon',
                             'required' => 'required',
-                            'style' => 'width:120px;display:inline-block']) !!}
+                            'style' => 'display:inline-block']) !!}
                         {!! Form::errorMessage('coupon') !!}
 
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="need-mt-30 btn-white">Apply coupon</button>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn-white">Apply coupon</button>
+                        </div>
                     </div>
                 </div>
+                
                 {!! Form::close() !!}
             </div>
         </div>

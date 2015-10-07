@@ -1068,6 +1068,27 @@ p.nav-column-item i{
 	margin-bottom:0;
 	text-align:justify;
 }
+.coupons{
+	display:flex;
+	justify-content:space-between;
+	align-items:center
+}
+.coupons input[name="coupon"]{
+	width:155px;
+	height:42px;
+}
+.panel .coupons .form-group,.panel .coupons{
+	margin-bottom:0;
+}
+.no-margin{
+	margin-bottom:0 !important;
+}
+.coupons>*{
+	margin-bottom:10px;
+}
+.coupons>div:last-child{
+	margin-bottom:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
@@ -1295,6 +1316,9 @@ p.nav-column-item i{
 	.new-flex{
 	    flex-direction: column;
 	}
+	.together_color .new-flex{
+    	flex-direction:row;
+	}
 }
 @media screen and (max-width:450px){
     .icons{
@@ -1308,6 +1332,9 @@ p.nav-column-item i{
     .together_color .new-flex{
     	flex-direction:row;
     	padding:0;
+    }
+    .coupons{
+    	flex-direction:column;
     }
     .together_color .new-flex p{
     	padding-right:0;
