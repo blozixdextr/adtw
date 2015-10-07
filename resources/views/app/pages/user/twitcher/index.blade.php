@@ -50,7 +50,7 @@
     <div class="panel booking-table-first panel-default ready-for-stream">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
             <div class="panel-body booking-table">
-            <div class="col-xs-6 new-flex together_color">
+            <div class="col-lg-6 col-md-12 new-flex together_color">
                 
                 <div class="col-xs-12 new-flex">
                     <div class="col-xs-5 input-group" id="bgColorPicker">
@@ -64,7 +64,7 @@
                     <div class="start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
                 </div>
             </div>
-            <div class="col-xs-6 order-banner">
+            <div class="col-lg-6 col-md-12 order-banner">
         @if (count($activeBanners) > 0)
             @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
