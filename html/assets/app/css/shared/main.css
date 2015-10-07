@@ -1305,6 +1305,9 @@ p.nav-column-item i{
     margin: 0 auto;
     text-align: center;
     }
+    .together_color .new-flex{
+    	flex-direction:row;
+    }
     .together_color .start-together:after{
     	right: -10px;
     width: 185px;
