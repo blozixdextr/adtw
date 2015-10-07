@@ -85,7 +85,7 @@
                             ['class' => 'form-control',
                             'placeholder' => 'Coupon',
                             'required' => 'required',
-                            'style' => 'width:120px;display:inline-block']) !!}
+                            'style' => 'display:inline-block']) !!}
                         {!! Form::errorMessage('coupon') !!}
 
                     </div>
