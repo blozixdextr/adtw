@@ -914,10 +914,10 @@ table .success .streamer-online-view{
 	display: flex;
     align-items: center;
         height: 80px;
-    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
 }
-.ready-banner:last-child{
-	border-bottom:0;
+.ready-banner:first-child{
+	border-top:0;
 }
 
 .help-window{
@@ -1076,6 +1076,18 @@ p.nav-column-item i{
         z-index:99999;
     }
 }
+@media screen and (max-width:1152px){
+	.together_color .start-together{
+		width:320px;
+		margin:0 auto;
+	}
+	.ready-banner:first-child{
+		border-top:1px solid #dddddd;
+	}
+	.together_color{
+		border-right:0;
+	}
+}
 @media screen and (max-width:992px){
     .second-page .page{
         width: auto;
@@ -1108,6 +1120,12 @@ p.nav-column-item i{
     }
     .title-place-left, .title-place-right{
     	width:70%;
+    }
+    .colorpicker-element{
+    	max-width:120px;
+    }
+    .together_color .new-flex {
+    	justify-content:center;
     }
 }
 @media screen and (max-width:750px){
