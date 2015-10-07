@@ -41,7 +41,7 @@
                     'required' => 'required',
                     'style' => 'width:120px;display:inline-block',
                     'max' => number_format($user->availableBalance(), 2),
-                    'min' => 1]) !!} USD
+                    'min' => $minWithdraw]) !!} USD
                 {!! Form::errorMessage('amount') !!}
 
             </div>

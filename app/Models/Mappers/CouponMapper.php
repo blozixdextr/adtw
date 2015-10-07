@@ -3,6 +3,8 @@
 namespace App\Models\Mappers;
 
 use App\Models\User;
+use App\Models\Coupon;
+use App\Models\CouponUser;
 use Config;
 use Session;
 use App\Models\Mappers\LogMapper;
@@ -10,31 +12,44 @@ use App\Models\Mappers\NotificationMapper;
 
 class CouponMapper
 {
-
-    public static function usedByUser(User $user, $code)
+    public static function track(User $user, Coupon $coupon)
     {
-        return true;
+        return $user->coupons()->attach($coupon->id);
     }
 
-    public static function paidByUser(User $user, $code)
+    public static function usedByUser(User $user, Coupon $coupon)
     {
-        return true;
-    }
-
-    public static function isAvailable(User $user, $code)
-    {
-        if (self::isValid($code)) {
-            if (!self::usedByUser($user, $code)) {
-                return true;
-            }
+        $couponCount = CouponUser::whereUserId($user->id)->whereCouponId($coupon->id)->count();
+        if ($couponCount > 0) {
+            return true;
         }
 
         return false;
     }
 
+    public static function paidByUser(User $user, Coupon $coupon)
+    {
+        $couponCount = CouponUser::whereUserId($user->id)->whereCouponId($coupon->id)->whereIsPaid(false)->count();
+        if ($couponCount > 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static function byCode($code)
+    {
+        return Coupon::whereCode($code)->first();
+    }
+
     public static function isValid($code)
     {
-        return true;
+        $couponCount = Coupon::whereCode($code)->count();
+        if ($couponCount > 0) {
+            return true;
+        }
+
+        return false;
     }
 
 }

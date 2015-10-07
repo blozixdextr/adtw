@@ -102,6 +102,11 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(Notification::class);
     }
 
+    public function coupons()
+    {
+        return $this->belongsToMany(Coupon::class);
+    }
+
     public function logs()
     {
         return $this->hasMany(Log::class);

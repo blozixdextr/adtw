@@ -18,7 +18,7 @@ class Coupon extends Model
 
     public function users()
     {
-        return $this->hasMany(User::class)->withPivot(['is_paid']);
+        return $this->belongsToMany(User::class)->withPivot('is_paid');
     }
 
 

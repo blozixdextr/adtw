@@ -10,10 +10,23 @@ use App\Services\Payments\PaypalPaymentService;
 use App\Services\Payments\StripePaymentService;
 use App\Models\Withdrawal;
 use App\Models\Mappers\NotificationMapper;
+use App\Models\Mappers\CouponMapper;
 
 
 class PaymentMapper
 {
+    public static function getMinWithdraw(User $user)
+    {
+        $min = 50;
+        $coupon = CouponMapper::byCode('ADD25USD');
+        if ($coupon) {
+            if (CouponMapper::usedByUser($user, $coupon)) {
+                $min = $min + 25;
+            }
+        }
+
+        return $min;
+    }
 
     public static function refillFromPaypal(User $user, PaypalPaymentService $paypalService)
     {
