@@ -91,7 +91,7 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <button type="submit" class="need-mt-30 btn-white">Apply coupon</button>
+                            <button type="submit" class="btn-white">Apply coupon</button>
                         </div>
                     </div>
                 </div>
