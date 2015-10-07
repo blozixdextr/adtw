@@ -65,7 +65,7 @@
                 </div>
                 {!! Form::close() !!}
             @else
-                <div class="alert alert-danger" role="alert">{!! $withdrawMessage !!}</div>
+                <div class="alert no-margin alert-danger" role="alert">{!! $withdrawMessage !!}</div>
             @endif
         </div>
         </div>
