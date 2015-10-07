@@ -14,7 +14,7 @@
 Route::get('/', 'IndexController@index');
 Route::get('profile', 'User\ProfileController@index');
 Route::get('profile/{userId}', 'User\ProfileController@user');
-Route::get('ref/{nickname}', 'IndexController@ref');
+Route::get('ref/{nickname}', 'IndexController@referrer');
 
 
 
