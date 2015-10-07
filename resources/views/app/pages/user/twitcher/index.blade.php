@@ -117,7 +117,7 @@
     </div>
     
     
-    <div class="panel panel-default">
+    <div class="row panel panel-default">
         <h2 class="panel-heading"><i class="fa fa-area-chart"></i> Timeline</h2>
         <div class="timeline panel-body">
             @forelse($notifications as $n)
