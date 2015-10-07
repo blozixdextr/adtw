@@ -1121,6 +1121,12 @@ p.nav-column-item i{
     .title-place-left, .title-place-right{
     	width:70%;
     }
+    .colorpicker-element{
+    	max-width:120px;
+    }
+    .together_color .new-flex {
+    	justify-content:center;
+    }
 }
 @media screen and (max-width:750px){
     .handle{
