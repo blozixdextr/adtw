@@ -4,6 +4,7 @@ namespace App\Models\Mappers;
 
 use App\Models\Banner;
 use App\Models\Coupon;
+use App\Models\Referral;
 use App\Models\Stream;
 use App\Models\User;
 use App\Models\Notification;
@@ -279,6 +280,19 @@ class NotificationMapper
             'url' => '/user/client/billing'], function ($m) use ($payment) {
             $m->to($payment->user->email)->subject('Account refilled');
         });
+    }
+
+    public static function referralPaid(Referral $referral)
+    {
+        $title = 'Your got '.$referral->amount.$referral->currency.'
+            from <a href="/profile/'.$referral->user_id.'">'.$referral->user->name.'</a>';
+        NotificationMapper::notify($referral->referrer, $title, 'money');
+    }
+
+    public static function referralAdded(User $user, User $referrer)
+    {
+        $title = '<a href="/profile/'.$user->id.'">'.$user->name.'</a> registered as your referral';
+        NotificationMapper::notify($referrer, $title, 'money');
     }
 
 }

@@ -89,6 +89,7 @@ class UserTableSeeder extends Seeder
                 'twitch_views' => rand(0, 20000),
                 'twitch_followers' => rand(0, 20000),
                 'twitch_videos' => rand(0, 20000),
+                'nickname' => $faker->firstName.$i,
                 'oauth_id' => rand(100000000, 2000000000),
                 'language_id' => $this->data['languages']->random()->id,
                 'created_at' => $date,

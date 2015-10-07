@@ -154,6 +154,7 @@ class AuthController extends Controller
                     if ($referrer) {
                         $localUser->referral_id = $referrer->id;
                     }
+                    NotificationMapper::referralAdded($localUser, $referrer);
                 }
 
                 $localUser->save();

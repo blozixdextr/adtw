@@ -133,7 +133,7 @@ class StreamMapper
             if ($amount == 0) {
                 return false;
             }
-            Referral::create([
+            $referral = Referral::create([
                 'user_id' => $transfer->seller_id,
                 'referral_id' => $transfer->seller->referral_id,
                 'transfer_id' => $transfer->id,
@@ -142,6 +142,8 @@ class StreamMapper
             ]);
             $referrer->balance = $referrer->balance + $amount;
             $referrer->save();
+
+            NotificationMapper::referralPaid($referral);
 
             return true;
         }

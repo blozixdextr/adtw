@@ -165,4 +165,11 @@ class User extends Model implements AuthenticatableContract,
     {
         return anonymizeEmail($value);
     }
+
+    public function getPaidReferralSum()
+    {
+        return Referral::whereUserId($this->id)->sum('amount');
+    }
+
+
 }
