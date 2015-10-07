@@ -1081,7 +1081,7 @@ p.nav-column-item i{
 	margin-bottom:0;
 }
 #withdrow .alert.alert-danger{
-	margin-bottom:0;
+	margin-bottom:0; 
 }
 /*            media         */
 @media screen and (max-width:1366px){
