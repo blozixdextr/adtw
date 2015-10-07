@@ -92,7 +92,7 @@
             </div>
             
         @else
-            <div class="col-xs-8 col-xs-offset-4 ready-banner">
+            <div class="col-xs-6 col-xs-offset-3 ready-banner">
                 <strong>There are no orders yet</strong>
             </div>
         @endif
