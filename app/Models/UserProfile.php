@@ -22,6 +22,7 @@ class UserProfile extends Model
         if ($value == '') {
             $value = '/assets/app/images/default-avatar.png';
         }
+        $value = str_replace('http://', 'https://', $value);
 
         return $value;
     }
