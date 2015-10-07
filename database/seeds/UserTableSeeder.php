@@ -30,6 +30,8 @@ class UserTableSeeder extends Seeder
         DB::table('ref_user')->truncate();
         DB::table('notifications')->truncate();
         DB::table('logs')->truncate();
+        DB::table('referrals')->truncate();
+        DB::table('coupon_user')->truncate();
 
         $this->faker = FakerFactory::create();
 
@@ -41,8 +43,8 @@ class UserTableSeeder extends Seeder
 
         $this->admin();
 
-        $this->streamers(10);
-        $this->clients(10);
+        $this->streamers(100);
+        $this->clients(100);
 
     }
 
@@ -69,6 +71,13 @@ class UserTableSeeder extends Seeder
         for ($i = 0; $i < $limit; $i++) {
             $date = \Carbon\Carbon::createFromTimestamp($faker->dateTimeBetween('-1 year')->getTimestamp());
             //$date = $faker->dateTimeBetween('-1 year')->getTimestamp();
+            $referralId = null;
+            if ($i > 5) {
+                $referrers = [null, 2, 3];
+                $ii = array_rand($referrers);
+                $referralId = $referrers[$ii];
+            }
+
             $user = User::create([
                 'name' => $faker->firstName,
                 'email' => $faker->freeEmail,
@@ -83,7 +92,8 @@ class UserTableSeeder extends Seeder
                 'oauth_id' => rand(100000000, 2000000000),
                 'language_id' => $this->data['languages']->random()->id,
                 'created_at' => $date,
-                'balance' => 0
+                'balance' => 0,
+                'referral_id' => $referralId
             ]);
             $profile = UserProfile::create([
                 'first_name' => $user->name,

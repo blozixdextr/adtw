@@ -132,7 +132,7 @@ class StreamMapper
             $amount = round($amount, 2);
             Referral::create([
                 'user_id' => $transfer->seller_id,
-                'referral_id' => $transfer->seller->refferal_id,
+                'referral_id' => $transfer->seller->referral_id,
                 'transfer_id' => $transfer->id,
                 'amount' => $amount,
                 'currency' => $transfer->currency,
