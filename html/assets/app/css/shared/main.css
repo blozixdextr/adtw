@@ -1083,6 +1083,12 @@ p.nav-column-item i{
 .no-margin{
 	margin-bottom:0 !important;
 }
+.coupons>*{
+	margin-bottom:10px;
+}
+.coupons>div:last-child{
+	margin-bottom:0;
+}
 /*            media         */
 @media screen and (max-width:1366px){
     .education-steps .step img {
