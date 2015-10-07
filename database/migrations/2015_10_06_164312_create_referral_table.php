@@ -16,6 +16,7 @@ class CreateReferralTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index('user_id')->unsigned();
             $table->integer('referral_id')->index('referral_id')->unsigned();
+            $table->integer('transfer_id')->index('transfer_id')->unsigned();
             $table->float('amount')->index('amount')->unsigned();
             $table->string('currency', 5);
             $table->timestamps();
