@@ -85,7 +85,9 @@
                     @endif
                 </div>
             @empty
-                <strong>There are no orders yet</strong>
+                <div class="col-xs-12 ready-banner">
+                    <strong>There are no orders yet</strong>
+                </div>
             @endforelse
             </div>
             
