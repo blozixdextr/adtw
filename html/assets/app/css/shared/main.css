@@ -1300,6 +1300,27 @@ p.nav-column-item i{
     .icons{
         padding-left: 20px;
     }
+    .together_color .start-together{
+    	width: 240px;
+    margin: 0 auto;
+    text-align: center;
+    }
+    .together_color .new-flex{
+    	flex-direction:row;
+    	padding:0;
+    }
+    .together_color .new-flex p{
+    	padding-right:0;
+    }
+    .together_color .start-together:after{
+    	right: -10px;
+    width: 185px;
+    top: -85px;
+    }
+    .together_color .start-together:before{
+    	left: 20px;
+    	top: -71px;
+}
     .second-page .work-column h1{
     	text-align:center;
     }
