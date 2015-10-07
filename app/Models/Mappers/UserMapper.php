@@ -47,6 +47,13 @@ class UserMapper
         return $user;
     }
 
+    public static function getTwitcherByNickName($name)
+    {
+        $user = User::whereNickname($name)->where(['type' => 'twitcher'])->first();
+
+        return $user;
+    }
+
     public static function findTwitchers($filters, $limit = 30)
     {
         $user = User::whereType('twitcher');

@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('twitch_views')->index('twitch_views')->unsigned()->nullable();
             $table->integer('twitch_followers')->index('twitch_followers')->unsigned()->nullable();
             $table->integer('twitch_videos')->index('twitch_videos')->unsigned()->nullable();
+            $table->string('nickname')->index('nickname')->nullable();
             $table->text('twitch_profile')->nullable();
             $table->text('twitch_channel')->nullable();
             $table->timestamp('last_activity')->nullable()->index('last_activity');
@@ -35,6 +36,7 @@ class CreateUsersTable extends Migration
             $table->string('currency', 5)->nullable()->default('USD');
             $table->integer('language_id')->nullable()->unsigned()->index('language_id');
             $table->boolean('is_welcomed')->nullable()->default(0);
+            $table->integer('referral_id')->index('referral_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

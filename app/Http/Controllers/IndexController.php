@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mappers\UserMapper;
 use Auth;
 use Illuminate\Http\Request;
 use Mail;
 use Redirect;
+use Session;
+use Illuminate\Cookie\CookieJar;
 
 class IndexController extends Controller
 {
@@ -14,6 +17,19 @@ class IndexController extends Controller
         $user = Auth::user();
 
         return view('app.pages.index', compact('user'));
+    }
+
+    public function referrer(Request $request)
+    {
+        $referrer = $request->get('referrer', '');
+        if ($referrer != '') {
+            $referrer = UserMapper::getTwitcherByNickName($referrer);
+            if ($referrer) {
+                return redirect('/')->withCookie(cookie('referrer', $referrer->id, 86400));
+            }
+        }
+
+        return redirect('/');
     }
 
     public function contactUs()
