@@ -49,9 +49,8 @@
 
     <div class="panel booking-table-first panel-default ready-for-stream">
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
-            <div class="panel-body booking-table">
+        <div class="panel-body booking-table">
             <div class="col-lg-6 col-md-12 new-flex together_color">
-                
                 <div class="col-xs-12 new-flex">
                     <div class="col-xs-5 input-group" id="bgColorPicker">
                         <input type="text" value="#000000" class="form-control thin-border"  id="bgColor" />
@@ -59,49 +58,48 @@
                     </div>
                     <p class="col-xs-6 col-xs-offset-1"><i>Set up background color for banners</i></p>
                 </div>
-                
                 <div class="col-xs-12">
-                    <div class="start-together"><a href="#" id="startPopups" class="btn-white">START STREAM</a></div>
+                    <div class="start-together">
+                        <a href="#" id="startPopups" class="btn-white">START STREAM</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 order-banner">
-        @if (count($activeBanners) > 0)
-            @forelse($bannerTypes as $bt)
+                @if (count($activeBanners) > 0)
+                @forelse($bannerTypes as $bt)
                 @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
                     <div class="col-xs-12 ready-banner active" data-id="{{ $bt->id }}" data-title="{{ $bt->title }}">
-                @else
-                    <div class="col-xs-12 ready-banner">
-                @endif
-                    <div class="col-xs-4">
-                        {{ $bt->title }}<br>
-                        @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                            <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
-                        @endif
+                        @else
+                            <div class="col-xs-12 ready-banner">
+                                @endif
+                                <div class="col-xs-4">
+                                    {{ $bt->title }}<br>
+                                    @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                                        <a class="small" href="/user/twitcher/banner/show/{{ $bt->id }}">review</a>
+                                    @endif
+                                </div>
+                                @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
+                                    <div class="col-xs-8 text-center"><a class="btn-white thin-border middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Stream only this size</a></div>
+                                @else
+                                    <div class="col-xs-8 text-center"><strong>no orders yet</strong></div>
+                                @endif
+                            </div>
+                        @empty
+                            <div class="col-xs-12 ready-banner">
+                                <strong>There are no orders yet</strong>
+                            </div>
+                        @endforelse
                     </div>
-                    @if (isset($banners[$bt->id]) && count($banners[$bt->id]) > 0)
-                        <div class="col-xs-8 text-center"><a class="btn-white thin-border middle popup" href="/user/twitcher/banner/show/{{ $bt->id }}">Stream only this size</a></div>
-                    @else
-                        <div class="col-xs-8 text-center"><strong>no orders yet</strong></div>
-                    @endif
-                </div>
-            @empty
-                <div class="col-xs-12 ready-banner">
-                    <strong>There are no orders yet</strong>
-                </div>
-            @endforelse
+                @else
+                    <div class="col-xs-6 col-xs-offset-3 ready-banner">
+                        <strong>There are no orders yet</strong>
+                    </div>
+                @endif
             </div>
-            
-        @else
-            <div class="col-xs-6 col-xs-offset-3 ready-banner">
-                <strong>There are no orders yet</strong>
+            <div class="col-xs-12 warning-popup panel-body">
+                <p><i class="fa fa-lightbulb-o"></i> Notice: By default, browsers blocks pop-ups. When a banner pop-up is blocked, the address bar will show a pop-up blocker icon <img src="//lh5.ggpht.com/KRTmuJCA8dj-JWaCNi61opBpm2AXRfW8_E5P7HLjwi1GlPDyWIUPgR5cCWeAyN4=w20-h18" width="20" height="18">. You need to allow pop-ups for Adtw.ch domain by click on blocker icon.</p>
             </div>
-        @endif
         </div>
-        <div class="col-xs-12 warning-popup panel-body">
-            <p><i class="fa fa-lightbulb-o"></i> Notice: By default, browsers blocks pop-ups. When a banner pop-up is blocked, the address bar will show a pop-up blocker icon <img src="//lh5.ggpht.com/KRTmuJCA8dj-JWaCNi61opBpm2AXRfW8_E5P7HLjwi1GlPDyWIUPgR5cCWeAyN4=w20-h18" width="20" height="18">. You need to allow pop-ups for Adtw.ch domain by click on blocker icon.</p>
-        </div>
-        
-    </div>
     </div>
     
     
