@@ -10,6 +10,7 @@
     <div class="nav-user">
         <h4 class="nav-column-title">User</h4>
         <p class="nav-column-item"><i class="fa fa-user"></i> <a href="/user/twitcher/profile">My Profile</a></p>
+        <p class="nav-column-item"><i class="fa fa-user"></i> <a href="/user/twitcher/referral">Referrals</a></p>
         <p class="nav-column-item"><i class="fa fa-sign-out"></i> <a href="/auth/logout">Logout</a></p>
     </div>
 </div>

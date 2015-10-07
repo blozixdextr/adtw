@@ -66,6 +66,8 @@ Route::group(['middleware' => 'role:twitcher', 'namespace' => 'User\Twitcher', '
 
     Route::get('notification', 'NotificationController@index');
 
+    Route::get('referral', 'ReferralController@index');
+
     Route::get('banner', 'BannerController@index');
     Route::get('banner/show/{bannerType}', 'BannerController@show');
     Route::get('banner/popup/{bannerType}', 'BannerController@popup');
