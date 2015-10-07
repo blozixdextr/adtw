@@ -52,11 +52,11 @@
         <div class="panel-body booking-table">
             <div class="col-lg-6 col-md-12 new-flex together_color">
                 <div class="col-lg-12 col-md-6 col-lg-offset-0 col-md-offset-3 new-flex">
-                    <div class="col-lg-5 col-md-6 col-sm-6 input-group" id="bgColorPicker">
+                    <div class="col-lg-5 col-md-6 col-sm-6 input-group col-xs-6" id="bgColorPicker">
                         <input type="text" value="#000000" class="form-control thin-border"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
                     </div>
-                    <p class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-1"><i>Set up background color for banners</i></p>
+                    <p class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-1 col-xs-6"><i>Set up background color for banners</i></p>
                 </div>
                 <div class="col-lg-12 col-md-12">
                     <div class="start-together">
