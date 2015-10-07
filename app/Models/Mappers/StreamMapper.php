@@ -129,6 +129,7 @@ class StreamMapper
             $share = Config::get('banner.referral_share');
             $referrerShare = (100 - $share)/100;
             $amount = $transfer->amount * $referrerShare;
+            $amount = round($amount, 2);
             Referral::create([
                 'user_id' => $transfer->seller_id,
                 'referral_id' => $transfer->seller->refferal_id,
