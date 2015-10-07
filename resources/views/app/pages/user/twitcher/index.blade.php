@@ -92,10 +92,13 @@
         @else
             <strong>There are no orders yet</strong>
         @endif
-        </div>
+        
         <div class="col-xs-12 warning-popup panel-body">
-        <p><i class="fa fa-lightbulb-o"></i> Notice: By default, browsers blocks pop-ups. When a banner pop-up is blocked, the address bar will show a pop-up blocker icon <img src="//lh5.ggpht.com/KRTmuJCA8dj-JWaCNi61opBpm2AXRfW8_E5P7HLjwi1GlPDyWIUPgR5cCWeAyN4=w20-h18" width="20" height="18">. You need to allow pop-ups for Adtw.ch domain by click on blocker icon.</p>
-    </div>
+            <p><i class="fa fa-lightbulb-o"></i> Notice: By default, browsers blocks pop-ups. When a banner pop-up is blocked, the address bar will show a pop-up blocker icon <img src="//lh5.ggpht.com/KRTmuJCA8dj-JWaCNi61opBpm2AXRfW8_E5P7HLjwi1GlPDyWIUPgR5cCWeAyN4=w20-h18" width="20" height="18">. You need to allow pop-ups for Adtw.ch domain by click on blocker icon.</p>
+        </div>
+        
+        </div>
+        
     </div>
     </div>
     
