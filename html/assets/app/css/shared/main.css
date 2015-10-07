@@ -1084,6 +1084,9 @@ p.nav-column-item i{
 	.ready-banner:first-child{
 		border-top:1px solid #dddddd;
 	}
+	.together_color{
+		border-right:0;
+	}
 }
 @media screen and (max-width:992px){
     .second-page .page{
