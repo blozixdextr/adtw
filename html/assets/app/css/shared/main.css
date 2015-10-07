@@ -1077,7 +1077,7 @@ p.nav-column-item i{
 	width:155px;
 	height:42px;
 }
-.coupons .form-group, .coupons{
+.panel .coupons .form-group,.panel .coupons{
 	margin-bottom:0;
 }
 /*            media         */
