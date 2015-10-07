@@ -914,10 +914,10 @@ table .success .streamer-online-view{
 	display: flex;
     align-items: center;
         height: 80px;
-    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
 }
-.ready-banner:last-child{
-	border-bottom:0;
+.ready-banner:first-child{
+	border-top:0;
 }
 
 .help-window{
@@ -1075,6 +1075,15 @@ p.nav-column-item i{
         width: 100%;
         z-index:99999;
     }
+}
+@media screen and (max-width:1152px){
+	.together_color .start-together{
+		width:320px;
+		margin:0 auto;
+	}
+	.ready-banner:first-child{
+		border-top:1px solid #dddddd;
+	}
 }
 @media screen and (max-width:992px){
     .second-page .page{
