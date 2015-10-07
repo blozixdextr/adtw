@@ -78,9 +78,9 @@
             <h2 class="panel-heading"><i class="fa fa-money"></i> Coupons</h2>
             <div class="panel-body">
                 {!! Form::open(['url' => '/user/twitcher/billing/coupon']) !!}
-                <div class="form-group {!! ($errors && $errors->has('coupon')) ? ' has-error' : '' !!}">
-                    {!! Form::label('coupon', 'Have a coupon?', ['class' => 'col-sm-3 control-label']) !!}
-                    <div class="col-sm-9">
+                <div class="form-group coupons {!! ($errors && $errors->has('coupon')) ? ' has-error' : '' !!}">
+                    {!! Form::label('coupon', 'Have a coupon?', ['class' => 'control-label']) !!}
+                    <div>
                         {!! Form::text('coupon', old('coupon'),
                             ['class' => 'form-control',
                             'placeholder' => 'Coupon',
@@ -89,12 +89,13 @@
                         {!! Form::errorMessage('coupon') !!}
 
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="need-mt-30 btn-white">Apply coupon</button>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="need-mt-30 btn-white">Apply coupon</button>
+                        </div>
                     </div>
                 </div>
+                
                 {!! Form::close() !!}
             </div>
         </div>
