@@ -51,7 +51,7 @@
         <h2 class="panel-heading"><i class="fa fa-play-circle"></i> Banners ready to start</h2>
         <div class="panel-body booking-table">
             <div class="col-lg-6 col-md-12 new-flex together_color">
-                <div class="col-lg-12 col-md-6 col-md-offset-3 new-flex">
+                <div class="col-lg-12 col-md-6 col-lg-offset-0 col-md-offset-3 new-flex">
                     <div class="col-lg-5 col-md-6 input-group" id="bgColorPicker">
                         <input type="text" value="#000000" class="form-control thin-border"  id="bgColor" />
                         <span class="input-group-addon"><i></i></span>
