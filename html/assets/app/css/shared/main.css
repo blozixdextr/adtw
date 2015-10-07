@@ -1327,6 +1327,9 @@ p.nav-column-item i{
     	flex-direction:row;
     	padding:0;
     }
+    .coupons{
+    	flex-direction:column;
+    }
     .together_color .new-flex p{
     	padding-right:0;
     }
