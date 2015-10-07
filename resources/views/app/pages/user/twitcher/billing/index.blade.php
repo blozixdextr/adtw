@@ -28,7 +28,7 @@
     <div class="clear"></div>
 
     <div id="withdraw" class="fields-border">
-        <div class="panel panel-default">
+        <div class="panel panel-default ">
         <h2 class="panel-heading"><i class="fa fa-cc-paypal"></i> Withdraw to PayPal</h2>
         <div class="panel-body">
             @if (!$blockWithdraw)
@@ -73,7 +73,7 @@
 
     <div class="clear"></div>
 
-    <div id="withdraw" class="fields-border">
+    <div class="fields-border">
         <div class="panel panel-default">
             <h2 class="panel-heading"><i class="fa fa-money"></i> Coupons</h2>
             <div class="panel-body">
