@@ -4,8 +4,6 @@ namespace App\Models\Mappers;
 
 use App\Models\User;
 use App\Models\Referral;
-use Request;
-use Auth;
 
 class ReferralMapper
 {

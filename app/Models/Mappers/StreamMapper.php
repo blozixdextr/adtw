@@ -4,6 +4,7 @@ namespace App\Models\Mappers;
 
 use App\Models\Banner;
 use App\Models\BannerStream;
+use App\Models\Referral;
 use App\Models\User;
 use App\Models\UserProfile ;
 use App\Models\UserPayment;
@@ -111,12 +112,33 @@ class StreamMapper
             'amount' => $paymentForTwitcher,
             'currency' => 'USD',
         ]);
+        self::referrerPay($transfer);
 
         $pivot->status = 'accepted';
         $pivot->transfer_id = $transfer->id;
         $pivot->save();
 
         return $transfer;
+    }
+
+    public static function referrerPay(UserTransfer $transfer)
+    {
+        $seller = $transfer->seller;
+        $referrer = $seller->referrer;
+        if ($referrer) {
+            $share = Config::get('banner.referral_share');
+            $referrerShare = (100 - $share)/100;
+            $amount = $transfer->amount * $referrerShare;
+            Referral::create([
+                'user_id' => $transfer->seller_id,
+                'referral_id' => $transfer->seller->refferal_id,
+                'transfer_id' => $transfer->id,
+                'amount' => $amount,
+                'currency' => $transfer->currency,
+            ]);
+            $referrer->balance = $referrer->balance + $amount;
+            $referrer->save();
+        }
     }
 
     public static function decline(Banner $banner, Stream $stream)
