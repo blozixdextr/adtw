@@ -92,7 +92,9 @@
             </div>
             
         @else
-            <strong>There are no orders yet</strong>
+            <div class="col-xs-12 ready-banner">
+                <strong>There are no orders yet</strong>
+            </div>
         @endif
         </div>
         <div class="col-xs-12 warning-popup panel-body">
