@@ -37,6 +37,14 @@
                     </div>
                 </div>
 
+                <div class="form-group {!! ($errors && $errors->has('nickname')) ? ' has-error' : '' !!}">
+                    {!! Form::label('nickname', 'Nickname') !!}
+                    <div>
+                        {!! Form::text('nickname', old('nickname', $user->nickname), ['class' => 'form-control', 'placeholder' => 'Nickname', 'required' => 'required']) !!}
+                        {!! Form::errorMessage('nickname') !!}
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div>
                         <button type="submit" class="btn btn-lg btn-success">Save</button>

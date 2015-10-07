@@ -107,6 +107,7 @@ class AuthController extends Controller
         if ($twitchIdentity->logo) {
             $profile->avatar = $twitchIdentity->logo;
         }
+        $user->nickname = $twitchIdentity->display_name;
         $user->save();
         $profile->save();
 
@@ -146,6 +147,15 @@ class AuthController extends Controller
                 $localUser->type = 'twitcher';
                 $localUser->provider = 'twitch';
                 $localUser->oauth_id = $identity->_id;
+
+                $referrer = $request->cookie('referrer', 0);
+                if ($referrer > 0) {
+                    $referrer = User::find($referrer);
+                    if ($referrer) {
+                        $localUser->referral_id = $referrer->id;
+                    }
+                }
+
                 $localUser->save();
                 Auth::loginUsingId($localUser->id);
                 $this->updateTwitchProfile($localUser, $identity);

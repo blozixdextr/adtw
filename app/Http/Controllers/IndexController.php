@@ -19,14 +19,11 @@ class IndexController extends Controller
         return view('app.pages.index', compact('user'));
     }
 
-    public function referrer(Request $request)
+    public function referrer($nickname)
     {
-        $referrer = $request->get('referrer', '');
-        if ($referrer != '') {
-            $referrer = UserMapper::getTwitcherByNickName($referrer);
-            if ($referrer) {
-                return redirect('/')->withCookie(cookie('referrer', $referrer->id, 86400));
-            }
+        $referrer = UserMapper::getTwitcherByNickName($nickname);
+        if ($referrer) {
+            return redirect('/')->withCookie(cookie('referrer', $referrer->id, 86400));
         }
 
         return redirect('/');
