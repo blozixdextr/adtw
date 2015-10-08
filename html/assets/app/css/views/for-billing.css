@@ -4,9 +4,7 @@ label[for="billing-alert"]{
 }
 .page .bil-control{
     display: flex;
-    align-items: center;
     text-align: center;
-    padding-bottom: 30px;
 }
 .bil-control .btn-white{
     position:relative;
