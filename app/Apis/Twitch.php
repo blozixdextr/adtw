@@ -27,7 +27,7 @@ class Twitch
     public function getLoginUrl() {
         $state = uniqid();
         Session::put('twitch.state', $state);
-        $url = $this->baseUrl.'/oauth2/authorize?response_type=code&client_id='.$this->clientId.'&redirect_uri='.$this->redirectUrl.'&scope=user_read channel_read&state='.$state;
+        $url = $this->baseUrl.'/oauth2/authorize?response_type=code&client_id='.$this->clientId.'&redirect_uri='.$this->redirectUrl.'&scope=user_read+channel_read&state='.$state;
 
         return $url;
     }
