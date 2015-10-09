@@ -42,7 +42,7 @@ class IndexController extends Controller
         }
         $user = $this->user;
         $now = \Carbon\Carbon::now();
-        if ($user->twitch_updated == null || $now->diffInDays($user->twitch_updated, false) < 0) {
+        if ($user->twitch_updated == null || true /*$now->diffInDays($user->twitch_updated, false) < 0*/) {
             $twitch = app('twitch');
             $channel = $twitch->getChannel();
             if ($channel && isset($channel->views)) {
